@@ -16,7 +16,7 @@ let homeImage = document.querySelector('.homeImage');
 // homeImage.style.transform = 'translateY(0)';
 let animateY = anime({
     targets: '.homeImage',
-    translateY: ['180px', '650px'], // Adjust the value as needed
+    translateY: ['180px', '666px'], // Adjust the value as needed
     easing: 'easeInOutQuad',
     autoplay: false,
 });

@@ -11,13 +11,18 @@ body {
     font-family: helvetica;
     height: 100vh;
     overflow-x: hidden;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 button {
     background: transparent;
     color: white;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 36px;
     cursor: pointer;
     border: none;
     outline: none;
@@ -25,20 +30,19 @@ button {
 
 button:hover {
     background: #f5c8e3;
-    border-radius: 34px;
 }
-#anime-demo {
-    margin-top: 150px;
-}
+
 .letter {
     display: inline-block;
     opacity: 0;
 }
 
 .homepage {
+    text-align: left;
     text-align: center;
     color: white;
     font-size: 30px;
+    margin-left: 200px;
 }
 .homeImage {
     pointer-events: none;
@@ -97,18 +101,17 @@ button:hover {
 }
 .aboutCircle {
     position: absolute;
-    /* display: inline-flex; */
     display: flex;
     transform: translate(-50%, -50%);
-    margin-top: 850px;
-    margin-left: 510px;
+    margin-top: 835px;
+    margin-left: -75px;
 }
 /* ===== ABOUT SECTION ===== */
 .aboutContainer {
     position: absolute;
     width: 600px;
     margin-top: 100px;
-    margin-left: 700px;
+    margin-left: 50px;
     text-align: left;
 }
 .aboutHeader {
@@ -147,4 +150,31 @@ button:hover {
     padding: 8px;
     display: inline-flex;
     font-size: 20px;
+}
+/* ===== SPARKLE ===== */
+
+.sparkle {
+    background: white;
+    height: 2em;
+    width: 2em;
+    border-radius: 0.1em;
+    transform: rotate(45deg);
+    position: relative;
+    transition: font-size 0.3s ease-in-out;
+    position: absolute;
+    display: flex;
+    margin-top: 745px;
+    margin-left: -475px;
+}
+
+.sparkle::after {
+    top: 1.2em;
+    right: -1.3em;
+    height: 0.6em;
+    width: 0.6em;
+    border-radius: 0.2em;
+}
+
+.sparkle:hover {
+    font-size: 1.1em;
 }
