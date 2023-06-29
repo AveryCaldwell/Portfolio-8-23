@@ -9,6 +9,8 @@ body {
         rgba(109, 171, 228, 1) 80%
     );
     font-family: helvetica;
+    height: 100vh;
+    overflow-x: hidden;
 }
 
 button {
@@ -24,6 +26,9 @@ button {
 button:hover {
     background: #f5c8e3;
     border-radius: 34px;
+}
+#anime-demo {
+    margin-top: 150px;
 }
 .letter {
     display: inline-block;
@@ -52,12 +57,13 @@ button:hover {
 .whiteblock {
     position: absolute;
     color: white;
-    background-color: white;
-    height: 1000px;
+    /* background-color: white;*/
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    height: 1500px;
     width: 25%;
     border-radius: 250px;
     left: 10%;
-    top: 25%;
+    top: calc(25%-120px);
     opacity: 1;
     transition: opacity 0.5s ease;
 }
@@ -89,24 +95,31 @@ button:hover {
     box-sizing: content-box;
     padding: 5px;
 }
-
+.aboutCircle {
+    position: absolute;
+    /* display: inline-flex; */
+    display: flex;
+    transform: translate(-50%, -50%);
+    margin-top: 850px;
+    margin-left: 510px;
+}
 /* ===== ABOUT SECTION ===== */
 .aboutContainer {
     position: absolute;
-    display: inline-flex;
-    /* justify-content: end; */
-    /* position: relative; */
-    /* display: flex; */
-    align-items: center;
+    width: 500px;
+    margin-top: 100px;
+    margin-left: 700px; /* From https://css.glass */
 }
 
-.aboutCircle {
+.aboutContent {
     position: relative;
-    /* display: flex;
-    flex: wrap;
-    justify-content: end; */
-    display: inline-flex;
-    transform: translate(-50%, -50%);
-    margin-top: 760px;
-    margin-left: -287px;
+    display: flex;
+    margin-top: 500px;
+    padding: 5px;
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
