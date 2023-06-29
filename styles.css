@@ -84,7 +84,7 @@ button:hover {
     font-size: 30px;
     margin-left: 80px;
 }
-
+/* =============== CIRCLES =============== */
 .iconCircle {
     display: inline-block;
     /* display: flex; */
@@ -106,7 +106,7 @@ button:hover {
     margin-top: 835px;
     margin-left: -75px;
 }
-/* ===== ABOUT SECTION ===== */
+/* =============== ABOUT SECTION =============== */
 .aboutContainer {
     position: absolute;
     width: 600px;
@@ -151,8 +151,8 @@ button:hover {
     display: inline-flex;
     font-size: 20px;
 }
-/* ===== SPARKLE ===== */
 
+/* =============== SPARKLE =============== */
 .sparkle {
     background: white;
     height: 2em;
