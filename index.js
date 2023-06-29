@@ -74,7 +74,6 @@ function playAnimation() {
         duration: 1400,
         delay: (el, i) => 50 * (i + 1),
         endDelay: 500,
-        complete: done,
     });
 
     timeline.play();
@@ -86,12 +85,3 @@ playButton.addEventListener('click', playAnimation);
 
 // Add the scroll event listener to trigger the animation
 window.addEventListener('scroll', playAnimationOnScroll);
-
-// animate circl in about section
-anime({
-    targets: '#aboutCircle',
-    duration: 1600,
-    loop: true,
-    easing: 'linear',
-    direction: 'alternate',
-});

@@ -40,7 +40,7 @@ button:hover {
     position: relative;
     width: 350px;
     height: 350px;
-    margin: 4px;
+    /* margin: 4px; */
     display: inline-block;
     top: -175px;
     border-radius: 50%;
@@ -58,6 +58,8 @@ button:hover {
     border-radius: 250px;
     left: 10%;
     top: 25%;
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 .textborder {
     display: inline-flex;
@@ -73,8 +75,8 @@ button:hover {
     margin-left: 80px;
 }
 
-.icon-circle {
-    display: inline-flex;
+.iconCircle {
+    display: inline-block;
     /* display: flex; */
     align-items: center;
     justify-content: center;
@@ -86,4 +88,25 @@ button:hover {
     border: solid 1px white;
     box-sizing: content-box;
     padding: 5px;
+}
+
+/* ===== ABOUT SECTION ===== */
+.aboutContainer {
+    position: absolute;
+    display: inline-flex;
+    /* justify-content: end; */
+    /* position: relative; */
+    /* display: flex; */
+    align-items: center;
+}
+
+.aboutCircle {
+    position: relative;
+    /* display: flex;
+    flex: wrap;
+    justify-content: end; */
+    display: inline-flex;
+    transform: translate(-50%, -50%);
+    margin-top: 760px;
+    margin-left: -287px;
 }
