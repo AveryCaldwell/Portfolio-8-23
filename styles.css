@@ -16,6 +16,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    perspective: 1000px;
+}
+* {
+    box-sizing: border-box;
 }
 
 button {
@@ -177,4 +184,73 @@ button:hover {
 
 .sparkle:hover {
     font-size: 1.1em;
+}
+/* =============== EDUCATION SECTION =============== */
+.eduContainer {
+    position: absolute;
+    margin-top: 1500px;
+}
+.eduCard1,
+.eduCard2,
+.eduCard3 {
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border-radius: 36px;
+    margin: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.eduHeader {
+    position: relative;
+    height: 30px;
+    transition: all 0.2s ease;
+    padding: 25px;
+}
+.eduImage {
+    width: 150px;
+    border-radius: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+.eduCard1:hover img,
+.eduCard2:hover img,
+.eduCard3:hover img {
+    display: none;
+}
+.eduContainer:hover .eduHeader {
+    height: 100px;
+    transition: all 0.2s ease;
+}
+
+.eduContent {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    margin: 5px;
+    line-height: 1.5em;
+}
+
+.eduContainer:hover .eduContent {
+    height: 3em;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s ease;
+}
+
+.eduList {
+    text-align: center;
+    list-style: none;
+    padding: 8px;
+    font-size: 20px;
+    align-items: center;
 }

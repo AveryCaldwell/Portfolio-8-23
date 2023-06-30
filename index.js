@@ -78,10 +78,3 @@ function playAnimation() {
 
     timeline.play();
 }
-
-// Add click event listener to the button
-let playButton = document.querySelector('.play-down');
-playButton.addEventListener('click', playAnimation);
-
-// Add the scroll event listener to trigger the animation
-window.addEventListener('scroll', playAnimationOnScroll);
