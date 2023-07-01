@@ -1,0 +1,256 @@
+body {
+    background: rgb(248, 201, 195);
+    background: linear-gradient(
+        90deg,
+        rgba(248, 201, 195, 1) 1%,
+        rgba(245, 200, 227, 1) 20%,
+        rgba(219, 193, 248, 1) 40%,
+        rgba(153, 179, 252, 1) 60%,
+        rgba(109, 171, 228, 1) 80%
+    );
+    font-family: helvetica;
+    height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    perspective: 1000px;
+}
+* {
+    box-sizing: border-box;
+}
+
+button {
+    background: transparent;
+    color: white;
+    padding: 10px;
+    border-radius: 36px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+button:hover {
+    background: #f5c8e3;
+}
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+}
+
+.homepage {
+    text-align: left;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin-left: 200px;
+}
+.homeImage {
+    pointer-events: none;
+    position: relative;
+    width: 350px;
+    height: 350px;
+    /* margin: 4px; */
+    display: inline-block;
+    top: -175px;
+    border-radius: 50%;
+    left: 10px;
+}
+.controls {
+    margin-top: 100px;
+}
+.whiteblock {
+    position: absolute;
+    color: white;
+    /* background-color: white;*/
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    height: 1500px;
+    width: 25%;
+    border-radius: 250px;
+    left: 10%;
+    top: calc(25%-120px);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+.textborder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    color: white;
+    border: solid 1px white;
+    width: 450px;
+    border-radius: 50px;
+    letter-spacing: 5px;
+    font-size: 30px;
+    margin-left: 80px;
+}
+/* =============== CIRCLES =============== */
+.iconCircle {
+    display: inline-block;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: solid 1px white;
+    box-sizing: content-box;
+    padding: 5px;
+}
+.aboutCircle {
+    position: absolute;
+    display: flex;
+    transform: translate(-50%, -50%);
+    margin-top: 835px;
+    margin-left: -75px;
+}
+/* =============== ABOUT SECTION =============== */
+.aboutContainer {
+    position: absolute;
+    width: 600px;
+    margin-top: 100px;
+    margin-left: 50px;
+    text-align: left;
+}
+.aboutHeader {
+    text-align: left;
+    font-size: 50px;
+    padding: 5px;
+    font-weight: bold;
+}
+.aboutContent {
+    text-align: left;
+    position: relative;
+    display: flex;
+    margin-top: 500px;
+    padding: 15px;
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.2); /* From https://css.glass */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* From https://css.glass */
+    backdrop-filter: blur(5px); /* From https://css.glass */
+    -webkit-backdrop-filter: blur(5px); /* From https://css.glass */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* From https://css.glass */
+    font-size: 24px;
+}
+.aboutSubtitle {
+    text-align: left;
+    font-size: 26px;
+    margin: 15px 0px 5px 0px;
+    padding: 5px;
+}
+.aboutBubbleItem {
+    text-align: left;
+    text-decoration: none;
+    list-style: none;
+    border-radius: 36px;
+    border: solid 1px white;
+    width: fit-content;
+    padding: 8px;
+    display: inline-flex;
+    font-size: 20px;
+}
+
+/* =============== SPARKLE =============== */
+.sparkle {
+    background: white;
+    height: 2em;
+    width: 2em;
+    border-radius: 0.1em;
+    transform: rotate(45deg);
+    position: relative;
+    transition: font-size 0.3s ease-in-out;
+    position: absolute;
+    display: flex;
+    margin-top: 745px;
+    margin-left: -475px;
+}
+
+.sparkle::after {
+    top: 1.2em;
+    right: -1.3em;
+    height: 0.6em;
+    width: 0.6em;
+    border-radius: 0.2em;
+}
+
+.sparkle:hover {
+    font-size: 1.1em;
+}
+/* =============== EDUCATION SECTION =============== */
+.eduContainer {
+    position: absolute;
+    margin-top: 1500px;
+}
+.eduCard1,
+.eduCard2,
+.eduCard3 {
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border-radius: 36px;
+    margin: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.eduHeader {
+    position: relative;
+    height: 30px;
+    transition: all 0.2s ease;
+    padding: 25px;
+}
+.eduImage {
+    width: 150px;
+    border-radius: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+.eduCard1:hover img,
+.eduCard2:hover img,
+.eduCard3:hover img {
+    display: none;
+}
+.eduContainer:hover .eduHeader {
+    height: 100px;
+    transition: all 0.2s ease;
+}
+
+.eduContent {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    margin: 5px;
+    line-height: 1.5em;
+}
+
+.eduContainer:hover .eduContent {
+    height: 3em;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s ease;
+}
+
+.eduList {
+    text-align: center;
+    list-style: none;
+    padding: 8px;
+    font-size: 20px;
+    align-items: center;
+}
