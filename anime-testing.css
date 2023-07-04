@@ -1,5 +1,6 @@
 body {
-    background: rgb(248, 201, 195);
+    font-family: helvetica;
+    overflow: hidden;
     background: linear-gradient(
         90deg,
         rgba(248, 201, 195, 1) 1%,
@@ -8,113 +9,126 @@ body {
         rgba(153, 179, 252, 1) 60%,
         rgba(109, 171, 228, 1) 80%
     );
-    font-family: helvetica;
-    height: 100vh;
-    overflow-x: hidden;
-    margin: 0;
+}
+
+.pageContainer {
+    width: 100vw;
     min-height: 100vh;
+    overflow: hidden;
+}
+.appContainer {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-    perspective: 1000px;
+    flex-direction: column;
+    position: absolute;
+    left: calc(50% - 600px);
+    top: 0;
+    transition: all 1.5s ease;
+    width: 1200px;
 }
-* {
-    box-sizing: border-box;
+.landingContainer {
+    background-color: pink;
 }
 
-button {
-    background: transparent;
+.logoSliderContainer {
+    position: absolute;
     color: white;
-    padding: 10px;
+    background: linear-gradient(
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0.25)
+    );
+    height: 120vh;
+    width: 350px;
+    border-radius: 250px;
+    left: 25%;
+    top: 40vh;
+    /* opacity: 1; */
+    /* transition: opacity 0.5s ease; */
+}
+.logoSliderImage {
+    pointer-events: none;
+    position: relative;
+    width: 320px;
+    height: 320px;
+    display: inline-block;
+    top: 15px;
+    border-radius: 50%;
+    left: 15px;
+    transition: all 1.5s ease;
+}
+.logoSliderCircle {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    bottom: -34px;
+    left: -30px;
+    border: 5px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 30px 15px white;
+    display: block;
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+/* NEWWWWW */
+/* animation css */
+.landingHeader {
+    position: relative;
+    color: white;
+    left: 30%;
+    top: 37vh;
+    height: 12vh;
+    font-size: 50px;
+}
+/* normal text */
+.landingText {
+    display: inline-block;
+    font-size: 32px;
+    position: relative;
+    left: 30%;
+    top: 37vh;
+    color: white;
+    margin-top: 15px;
+
+    width: 400px;
+}
+.landingTitle {
+    border: solid 1px white;
     border-radius: 36px;
-    cursor: pointer;
-    border: none;
-    outline: none;
+    margin-top: 15px;
+    padding: 5px;
+    display: block;
+    height: 32px;
+    text-align: center;
+    letter-spacing: 5px;
 }
-
-button:hover {
-    background: #f5c8e3;
+.landingSubtitle {
+    margin-top: 15px;
+    border-radius: 36px;
+    width: 400px;
+    padding: 5px;
+    display: block;
 }
-
+.landingButton {
+    border: solid 1px white;
+    color: white;
+    border-radius: 36px;
+    padding: 7px;
+    background-color: transparent;
+    width: 30px;
+}
+.landingButton:hover {
+    background-color: rgba(153, 179, 252, 1);
+}
+/* =============== NAME ANIMATION  =============== */
 .letter {
     display: inline-block;
     opacity: 0;
 }
 
-.homepage {
-    text-align: left;
-    text-align: center;
-    color: white;
-    font-size: 30px;
-    margin-left: 200px;
-}
-.homeImage {
-    pointer-events: none;
-    position: relative;
-    width: 350px;
-    height: 350px;
-    /* margin: 4px; */
-    display: inline-block;
-    top: -175px;
-    border-radius: 50%;
-    left: 10px;
-}
-.controls {
-    margin-top: 100px;
-}
-.whiteblock {
-    position: absolute;
-    color: white;
-    /* background-color: white;*/
-    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-    height: 1500px;
-    width: 25%;
-    border-radius: 250px;
-    left: 10%;
-    top: calc(25%-120px);
-    opacity: 1;
-    transition: opacity 0.5s ease;
-}
-.textborder {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2px;
-    color: white;
-    border: solid 1px white;
-    width: 450px;
-    border-radius: 50px;
-    letter-spacing: 5px;
-    font-size: 30px;
-    margin-left: 80px;
-}
-/* =============== CIRCLES =============== */
-.iconCircle {
-    display: inline-block;
-    /* display: flex; */
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: #ffffff;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: solid 1px white;
-    box-sizing: content-box;
-    padding: 5px;
-}
-.aboutCircle {
-    position: absolute;
-    display: flex;
-    transform: translate(-50%, -50%);
-    margin-top: 835px;
-    margin-left: -75px;
-}
 /* =============== ABOUT SECTION =============== */
 .aboutContainer {
+    background-color: purple;
+}
+/* .aboutContainer {
     position: absolute;
     width: 600px;
     margin-top: 100px;
@@ -134,11 +148,11 @@ button:hover {
     margin-top: 500px;
     padding: 15px;
     border-radius: 36px;
-    background: rgba(255, 255, 255, 0.2); /* From https://css.glass */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* From https://css.glass */
-    backdrop-filter: blur(5px); /* From https://css.glass */
-    -webkit-backdrop-filter: blur(5px); /* From https://css.glass */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     font-size: 24px;
 }
 .aboutSubtitle {
@@ -157,10 +171,10 @@ button:hover {
     padding: 8px;
     display: inline-flex;
     font-size: 20px;
-}
+} */
 
 /* =============== SPARKLE =============== */
-.sparkle {
+/* .sparkle {
     background: white;
     height: 2em;
     width: 2em;
@@ -184,9 +198,12 @@ button:hover {
 
 .sparkle:hover {
     font-size: 1.1em;
-}
+} */
 /* =============== EDUCATION SECTION =============== */
 .eduContainer {
+    background-color: green;
+}
+/* .eduContainer {
     position: absolute;
     margin-top: 1500px;
 }
@@ -253,4 +270,4 @@ button:hover {
     padding: 8px;
     font-size: 20px;
     align-items: center;
-}
+} */
