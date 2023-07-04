@@ -118,7 +118,7 @@ body {
 .landingButton:hover {
     background-color: rgba(153, 179, 252, 1);
 }
-/* =============== NAME ANIMATION  =============== */
+/* { NAME ANIMATION } */
 .letter {
     display: inline-block;
     opacity: 0;
@@ -127,25 +127,24 @@ body {
 /* =============== ABOUT SECTION =============== */
 .aboutContainer {
     background-color: purple;
-}
-/* .aboutContainer {
-    position: absolute;
-    width: 600px;
-    margin-top: 100px;
-    margin-left: 50px;
-    text-align: left;
-}
-.aboutHeader {
-    text-align: left;
-    font-size: 50px;
-    padding: 5px;
-    font-weight: bold;
-}
-.aboutContent {
-    text-align: left;
-    position: relative;
     display: flex;
-    margin-top: 500px;
+}
+/* ABOUT ME page title */
+.aboutHeader {
+    font-size: 50px;
+    color: white;
+    border-radius: 250px;
+    left: 60%;
+    top: 130vh;
+    position: absolute;
+}
+/* about me text blerb */
+.aboutContent {
+    top: 35vh;
+    left: 25%;
+    width: 445px;
+    height: 150px;
+    position: relative;
     padding: 15px;
     border-radius: 36px;
     background: rgba(255, 255, 255, 0.2);
@@ -153,26 +152,59 @@ body {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    font-size: 24px;
+    font-size: 20px;
+    color: white;
+    line-height: 1.25;
 }
-.aboutSubtitle {
-    text-align: left;
-    font-size: 26px;
-    margin: 15px 0px 5px 0px;
-    padding: 5px;
+/* encompasses title and list items*/
+.techBox {
+    color: white;
+    position: absolute;
+    top: 148vh;
+    left: 60%;
+    font-size: 20px;
+    margin-top: 15px;
 }
+/* encompasses title and list items*/
+.skillBox {
+    color: white;
+    position: absolute;
+    top: 155vh;
+    left: 60%;
+    font-size: 20px;
+    margin-top: 15px;
+}
+/* list items */
 .aboutBubbleItem {
-    text-align: left;
     text-decoration: none;
-    list-style: none;
     border-radius: 36px;
     border: solid 1px white;
-    width: fit-content;
-    padding: 8px;
-    display: inline-flex;
-    font-size: 20px;
-} */
-
+    color: white;
+    display: inline-block;
+    position: relative;
+    margin: 10px 10px 10px 0px;
+    text-align: center;
+    list-style: none;
+    padding: 5px;
+    width: 100px;
+}
+.aboutButton {
+    border-radius: 36px;
+    border: solid 1px white;
+    position: relative;
+    text-align: center;
+    list-style: none;
+    width: 125px;
+    top: 65vh;
+    left: 10%;
+    height: 65px;
+    color: white;
+    font-size: 18px;
+    background-color: transparent;
+}
+.aboutButton:hover {
+    background-color: rgba(153, 179, 252, 1);
+}
 /* =============== SPARKLE =============== */
 /* .sparkle {
     background: white;
