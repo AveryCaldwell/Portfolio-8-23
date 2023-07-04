@@ -73,7 +73,7 @@ body {
 .landingHeader {
     position: relative;
     color: white;
-    left: 30%;
+    left: 25%;
     top: 37vh;
     height: 12vh;
     font-size: 50px;
@@ -83,7 +83,7 @@ body {
     display: inline-block;
     font-size: 32px;
     position: relative;
-    left: 30%;
+    left: 25%;
     top: 37vh;
     color: white;
     margin-top: 15px;
@@ -135,12 +135,12 @@ body {
     color: white;
     border-radius: 250px;
     left: 60%;
-    top: 130vh;
+    top: 120vh;
     position: absolute;
 }
 /* about me text blerb */
 .aboutContent {
-    top: 35vh;
+    top: 28vh;
     left: 25%;
     width: 445px;
     height: 150px;
@@ -187,6 +187,7 @@ body {
     list-style: none;
     padding: 5px;
     width: 100px;
+    transition: 0.25s;
 }
 .aboutButton {
     border-radius: 36px;
@@ -204,6 +205,24 @@ body {
 }
 .aboutButton:hover {
     background-color: rgba(153, 179, 252, 1);
+}
+.aboutBubbleItem:hover,
+.aboutBubbleItem:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+}
+.tempBtn {
+    border-radius: 36px;
+    position: relative;
+    text-align: center;
+    list-style: none;
+    width: 75px;
+    top: 65vh;
+    left: 10%;
+    height: 60px;
+    font-size: 20px;
+    background-color: pink;
+    margin-left: 15px;
 }
 /* =============== SPARKLE =============== */
 /* .sparkle {
