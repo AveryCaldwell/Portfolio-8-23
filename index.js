@@ -99,7 +99,6 @@ let nextOrbitDeg = {
 	3: 100,
 };
 function nextOrbit(target) {
-	console.log(nextOrbitDeg[currentOrbit[target]]);
 	experienceRotation(nextOrbitDeg[currentOrbit[target]], `object${target}`);
 	if (currentOrbit[target] === 3) {
 		currentOrbit[target] = 1;
@@ -124,7 +123,6 @@ function constantOrbit() {
 		nextOrbit(1);
 		nextOrbit(2);
 		nextOrbit(3);
-		console.log(currentOrbit);
 	}, rotationTime / 3);
 }
 function initializeRotator() {
