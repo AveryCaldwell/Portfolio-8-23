@@ -1,67 +1,90 @@
 body {
-    background-color: gray;
-    overflow: hidden;
+	background-color: gray;
+	overflow: hidden;
 }
 .pageContainer {
-    width: 100vw;
-    min-height: 100vh;
-    overflow: hidden;
+	/* width: 100vw; */
+	min-height: 100vh;
+	overflow: hidden;
 }
 .appContainer {
-    background-color: navy;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: calc(50% - 600px);
-    top: 0;
-    transition: all 1.5s ease;
-    width: 1200px;
+	background-color: navy;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	left: calc(50% - 600px);
+	top: 0;
+	transition: all 1.5s ease;
+	width: 1200px;
 }
 .landingContainer {
-    background-color: pink;
+	background-color: pink;
 }
 .aboutContainer {
-    background-color: purple;
+	background-color: purple;
 }
 .eduContainer {
-    background-color: green;
+	background-color: green;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
 }
 .logoSliderContainer {
-    position: absolute;
-    color: white;
-    background: linear-gradient(
-        rgba(255, 255, 255, 1),
-        rgba(255, 255, 255, 0.25)
-    );
-    height: 120vh;
-    width: 350px;
-    border-radius: 250px;
-    left: 25%;
-    top: 40vh;
-    /* opacity: 1; */
-    /* transition: opacity 0.5s ease; */
+	position: absolute;
+	color: white;
+	background: linear-gradient(
+		rgba(255, 255, 255, 1),
+		rgba(255, 255, 255, 0.25)
+	);
+	height: 120vh;
+	width: 350px;
+	border-radius: 250px;
+	left: 25%;
+	top: 40vh;
+	/* opacity: 1; */
+	/* transition: opacity 0.5s ease; */
 }
 .logoSliderImage {
-    pointer-events: none;
-    position: relative;
-    width: 320px;
-    height: 320px;
-    display: inline-block;
-    top: 15px;
-    border-radius: 50%;
-    left: 15px;
-    transition: all 1.5s ease;
+	pointer-events: none;
+	position: relative;
+	width: 320px;
+	height: 320px;
+	display: inline-block;
+	top: 15px;
+	border-radius: 50%;
+	left: 15px;
+	transition: all 1.5s ease;
 }
 .logoSliderCircle {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    bottom: -34px;
-    left: -30px;
-    border: 5px solid white;
-    border-radius: 50%;
-    box-shadow: 0 0 30px 15px white;
-    display: block;
-    transition: all 0.5s ease;
-    opacity: 0;
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	bottom: -34px;
+	left: -30px;
+	border: 5px solid white;
+	border-radius: 50%;
+	box-shadow: 0 0 30px 15px white;
+	display: block;
+	transition: all 0.5s ease;
+	opacity: 0;
+}
+
+.orbital-container {
+	width: 600px;
+	height: 600px;
+	opacity: 0;
+	transition: all 1s ease;
+}
+.orbital-box {
+	width: 200px;
+	height: 100px;
+	offset-path: path("M200,0 A200,200 0 1,1 200,400 A200,200 0 1,1 200,0");
+	background: cyan;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	border-radius: 15px;
 }
