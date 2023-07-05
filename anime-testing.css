@@ -12,7 +12,7 @@ body {
 }
 
 .pageContainer {
-    width: 100vw;
+    /* width: 100vw; */
     min-height: 100vh;
     overflow: hidden;
 }
@@ -25,6 +25,8 @@ body {
     transition: all 1.5s ease;
     width: 1200px;
 }
+
+/* =============== LANDING SECTION =============== */
 .landingContainer {
     background-color: pink;
 }
@@ -39,7 +41,7 @@ body {
     height: 120vh;
     width: 350px;
     border-radius: 250px;
-    left: 25%;
+    left: 15%;
     top: 40vh;
     /* opacity: 1; */
     /* transition: opacity 0.5s ease; */
@@ -68,8 +70,6 @@ body {
     transition: all 0.5s ease;
     opacity: 0;
 }
-/* NEWWWWW */
-/* animation css */
 .landingHeader {
     position: relative;
     color: white;
@@ -134,14 +134,14 @@ body {
     font-size: 50px;
     color: white;
     border-radius: 250px;
-    left: 60%;
+    left: 53%;
     top: 120vh;
     position: absolute;
 }
 /* about me text blerb */
 .aboutContent {
     top: 28vh;
-    left: 25%;
+    left: 22%;
     width: 445px;
     height: 150px;
     position: relative;
@@ -161,7 +161,7 @@ body {
     color: white;
     position: absolute;
     top: 148vh;
-    left: 60%;
+    left: 53%;
     font-size: 20px;
     margin-top: 15px;
 }
@@ -170,7 +170,7 @@ body {
     color: white;
     position: absolute;
     top: 155vh;
-    left: 60%;
+    left: 53%;
     font-size: 20px;
     margin-top: 15px;
 }
@@ -197,7 +197,7 @@ body {
     list-style: none;
     width: 125px;
     top: 65vh;
-    left: 10%;
+    left: 5%;
     height: 65px;
     color: white;
     font-size: 18px;
@@ -218,45 +218,38 @@ body {
     list-style: none;
     width: 75px;
     top: 65vh;
-    left: 10%;
+    left: 7%;
     height: 60px;
     font-size: 20px;
     background-color: pink;
     margin-left: 15px;
 }
-/* =============== SPARKLE =============== */
-/* .sparkle {
-    background: white;
-    height: 2em;
-    width: 2em;
-    border-radius: 0.1em;
-    transform: rotate(45deg);
-    position: relative;
-    transition: font-size 0.3s ease-in-out;
-    position: absolute;
-    display: flex;
-    margin-top: 745px;
-    margin-left: -475px;
-}
 
-.sparkle::after {
-    top: 1.2em;
-    right: -1.3em;
-    height: 0.6em;
-    width: 0.6em;
-    border-radius: 0.2em;
-}
-
-.sparkle:hover {
-    font-size: 1.1em;
-} */
 /* =============== EDUCATION SECTION =============== */
 .eduContainer {
-    background-color: green;
+	background-color: green;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
 }
-/* .eduContainer {
-    position: absolute;
-    margin-top: 1500px;
+.orbital-container {
+	width: 600px;
+	height: 600px;
+	opacity: 0;
+	transition: all 1s ease;
+}
+.orbital-box {
+	width: 200px;
+	height: 100px;
+	offset-path: path("M200,0 A200,200 0 1,1 200,400 A200,200 0 1,1 200,0");
+	background: cyan;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	border-radius: 15px;
 }
 .eduCard1,
 .eduCard2,

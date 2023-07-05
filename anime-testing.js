@@ -74,3 +74,94 @@ let animation = anime({
     delay: anime.stagger(100, { start: 1000 }),
     translateX: [-10, 30],
 });
+let currentPosition = {
+    object1: 0,
+    object2: 1 / 3,
+    object3: 2 / 3,
+};
+const rotationTime = 9000;
+function experienceRotation(endDeg, target, speedOverride) {
+    if (endDeg > 100) {
+        endDeg = 100;
+    }
+    const fullRotation = rotationTime;
+    const distTravel = endDeg - currentPosition[target];
+    const duration = Math.abs(distTravel * (fullRotation / 100));
+    targetDiv = document.getElementById(target);
+    targetDiv.animate(
+        [
+            { offsetDistance: String(currentPosition[target]) + '%' },
+            { offsetDistance: String(endDeg) + '%' },
+        ],
+        {
+            //expects "33.33%"
+            duration: speedOverride !== undefined ? speedOverride : duration,
+            easing: 'linear',
+            iterations: 1,
+            fill: 'forwards',
+        }
+    );
+    if (endDeg === 100) {
+        currentPosition[target] = 0;
+    } else {
+        currentPosition[target] = endDeg;
+    }
+}
+let currentOrbit = {
+    1: 1,
+    2: 2,
+    3: 3,
+};
+let nextOrbitDeg = {
+    1: (1 / 3) * 100,
+    2: (2 / 3) * 100,
+    3: 100,
+};
+function nextOrbit(target) {
+    experienceRotation(nextOrbitDeg[currentOrbit[target]], `object${target}`);
+    if (currentOrbit[target] === 3) {
+        currentOrbit[target] = 1;
+    } else {
+        currentOrbit[target] += 1;
+    }
+}
+let orbit;
+
+function constantOrbit() {
+    orbitting = true;
+    // let degreeArr = [33, 66, 100];
+    // let timing = {
+    // 	33: 1320,
+    // 	66: 1320,
+    // 	100: 1360,
+    // };
+    nextOrbit(1);
+    nextOrbit(2);
+    nextOrbit(3);
+    orbit = setInterval(function () {
+        nextOrbit(1);
+        nextOrbit(2);
+        nextOrbit(3);
+    }, rotationTime / 3);
+}
+function initializeRotator() {
+    experienceRotation((1 / 3) * 100, 'object2', 1);
+    experienceRotation((2 / 3) * 100, 'object3', 1);
+    document.getElementsByClassName('orbital-container')[0].style.opacity = 1;
+    constantOrbit();
+}
+let orbitting = false;
+function rotatorClick(target) {
+    if (!orbitting && currentOrbit[target] !== 1) {
+        constantOrbit();
+    }
+    let stopRotator = setInterval(function () {
+        if (currentOrbit[target] === 1) {
+            clearInterval(stopRotator);
+            clearInterval(orbit);
+            orbitting = false;
+        }
+    }, 1000);
+}
+initializeRotator();
+// setActivePage();
