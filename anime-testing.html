@@ -77,7 +77,7 @@
                 <div class="aboutSubtitle">
                     Design Skills
                 </div>
-                <div class="aboutBubble">
+                <div class="aboutBubble ">
                     <li class="aboutBubbleItem">Design</li>
                     <li class="aboutBubbleItem">Design</li>
                     <li class="aboutBubbleItem">Design</li>
@@ -89,19 +89,15 @@
 
 
         <!-- =================== EDUCATION PAGE =================== -->
-        <div class="eduContainer">
-            <h1>
+        <div class="eduContainer pageContainer">
+
+            <h1 class="eduTitle">
                 Education
             </h1>
-            <!-- https://devsnap.me/anime-js-examples -->
-            <!-- number 14 -->
-            <!-- cool circle idea https://codepen.io/lmgonzalves/pen/dmbmpQ -->
-            <!--basic animation    https://codepen.io/Shokeen/pen/dRGLON -->
 
-            <!-- <div class='logoSliderCircle'></div> -->
             <div class="orbital-container">
                 <div id="object1" class="orbital-box" onclick="rotatorClick(1)">
-                    <h1>Box1</h1>
+                    <img src="assets/2.png" class="eduImage" alt="Mississippi College" style="width: 150px" />
                 </div>
                 <div id="object2" class="orbital-box" onclick="rotatorClick(2)">
                     <h1>Box2</h1>
@@ -110,28 +106,45 @@
                     <h1>Box3</h1>
                 </div>
             </div>
-            <!-- TODO: add acolades -->
 
-            <div class="eduCard1 square">
+            <div class="eduCard1 hide square">
                 <div class="eduHeader">
-                    Mississippi College | 2012-2016
+                    Mississippi College | GPA: 3.93/4.0
                 </div>
                 <img src="assets/2.png" class="eduImage" alt="Mississippi College" style="width: 150px" />
-                <div class="eduContent">
+                <div class="eduContent ">
                     <li class="eduList">
-                        <em> Clinton, MS</em>
+                        <em> Clinton, MS | 2012-2016</em>
                     </li>
                     <li class="eduList">
-                        Bachelor of Science in Marketing
+                        Headerman Scholar
+                    </li>
+                    <li class="eduList">
+                        Women in Business, Member & Speaker
+                    </li>
+                    <li class="eduList">
+                        Outstanding Marketing Award
+                    </li>
+                    <li class="eduList">
+                        Sandra Parks Award
+                    </li>
+                    <li class="eduList">
+                        Who's Who
+                    </li>
+                    <li class="eduList">
+                        Mortar Board
+                    </li>
+                    <li class="eduList">
+                        Delta Mu Delta, Epsilon Iota Delta, Omicron Delta Kappa
                     </li>
                 </div>
             </div>
-            <div class="eduCard2 square">
+            <div class="eduCard2 hide square">
                 <div class="eduHeader">Chung Yuan Christian University | 2015
                 </div>
                 <img src="assets/CYCU.png" class="eduImage" alt="Chung Yuan Christian University"
                     style="width: 150px" />
-                <div class="eduContent">
+                <div class="eduContent ">
                     <li class="eduList">
                         <em>Taipei, Taiwan</em>
                     </li>
@@ -141,11 +154,11 @@
 
                 </div>
             </div>
-            <div class="eduCard3 square">
+            <div class="eduCard3 hide square">
                 <div class="eduHeader">University of Washington | 2022-2023
                 </div>
                 <img src="assets/3.png" class="eduImage" alt="University of Washington" style="width: 150px" />
-                <div class="eduContent">
+                <div class="eduContent ">
                     <li class="eduList">
                         <em>Full Stack Developer Coding Bootcamp</em>
                     </li>
@@ -153,12 +166,18 @@
                         Certificate of Completion
                     </li>
 
+                    <li class="eduList">
+                        GPA: 98.27%/100%
+                    </li>
                 </div>
             </div>
+            <button class="tempBtn" onclick="setActivePage('Projects')"><span> ^ </span></button>
+
+            <!-- =================== PROJECTS PAGE =================== -->
+            <div class="projectContainer pageContainer"></div>
+
         </div>
 
-
-        <div class="eduContainer pageContainer"></div>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>

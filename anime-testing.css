@@ -28,7 +28,7 @@ body {
 
 /* =============== LANDING SECTION =============== */
 .landingContainer {
-    background-color: pink;
+    /* background-color: pink; */
 }
 
 .logoSliderContainer {
@@ -41,7 +41,7 @@ body {
     height: 120vh;
     width: 350px;
     border-radius: 250px;
-    left: 15%;
+    left: 20%;
     top: 40vh;
     /* opacity: 1; */
     /* transition: opacity 0.5s ease; */
@@ -73,7 +73,7 @@ body {
 .landingHeader {
     position: relative;
     color: white;
-    left: 25%;
+    left: 50%;
     top: 37vh;
     height: 12vh;
     font-size: 50px;
@@ -83,7 +83,7 @@ body {
     display: inline-block;
     font-size: 32px;
     position: relative;
-    left: 25%;
+    left: 50%;
     top: 37vh;
     color: white;
     margin-top: 15px;
@@ -126,7 +126,7 @@ body {
 
 /* =============== ABOUT SECTION =============== */
 .aboutContainer {
-    background-color: purple;
+    /* background-color: purple; */
     display: flex;
 }
 /* ABOUT ME page title */
@@ -141,7 +141,7 @@ body {
 /* about me text blerb */
 .aboutContent {
     top: 28vh;
-    left: 22%;
+    left: 53%;
     width: 445px;
     height: 150px;
     position: relative;
@@ -161,7 +161,7 @@ body {
     color: white;
     position: absolute;
     top: 148vh;
-    left: 53%;
+    left: 55%;
     font-size: 20px;
     margin-top: 15px;
 }
@@ -170,7 +170,7 @@ body {
     color: white;
     position: absolute;
     top: 155vh;
-    left: 53%;
+    left: 55%;
     font-size: 20px;
     margin-top: 15px;
 }
@@ -227,30 +227,44 @@ body {
 
 /* =============== EDUCATION SECTION =============== */
 .eduContainer {
-	background-color: green;
-	display: flex;
-	align-content: center;
-	align-items: center;
-	justify-content: center;
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .orbital-container {
-	width: 600px;
-	height: 600px;
-	opacity: 0;
-	transition: all 1s ease;
+    /* width: 600px; */
+    height: 600px;
+    opacity: 0;
+    transition: all 1s ease;
+    position: relative;
+    top: 40vh;
+    left: 30%;
 }
 .orbital-box {
-	width: 200px;
-	height: 100px;
-	offset-path: path("M200,0 A200,200 0 1,1 200,400 A200,200 0 1,1 200,0");
-	background: cyan;
-	display: flex;
-	align-content: center;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	border-radius: 15px;
+    width: 200px;
+    height: 100px;
+    offset-path: path('M200,0 A200,200 0 1,1 200,400 A200,200 0 1,1 200,0');
+    background: cyan;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border-radius: 15px;
 }
+.eduTitle {
+    position: absolute;
+    color: white;
+    bottom: 90vh;
+}
+.eduHeader {
+    transition: all 0.2s ease;
+    padding: 25px;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+
 .eduCard1,
 .eduCard2,
 .eduCard3 {
@@ -269,28 +283,12 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.eduHeader {
-    position: relative;
-    height: 30px;
-    transition: all 0.2s ease;
-    padding: 25px;
-}
 .eduImage {
     width: 150px;
     border-radius: 100%;
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
-}
-.eduCard1:hover img,
-.eduCard2:hover img,
-.eduCard3:hover img {
-    display: none;
-}
-.eduContainer:hover .eduHeader {
-    height: 100px;
-    transition: all 0.2s ease;
 }
 
 .eduContent {
@@ -301,17 +299,14 @@ body {
     line-height: 1.5em;
 }
 
-.eduContainer:hover .eduContent {
-    height: 3em;
-    opacity: 1;
-    visibility: visible;
-    transition: all 0.2s ease;
-}
-
 .eduList {
     text-align: center;
     list-style: none;
     padding: 8px;
     font-size: 20px;
     align-items: center;
-} */
+}
+/* =============== PROJECT SECTION =============== */
+.projectContainer {
+    background-color: orange;
+}
