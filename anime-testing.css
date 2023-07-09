@@ -328,6 +328,7 @@ body {
     background-color: orange;
     display: flex;
 }
+/* ===============LEFT SIDE COMPUTER SECTION STARTS */
 /* ABOUT ME page title */
 .projectHeader {
     font-size: 50px;
@@ -365,27 +366,13 @@ body {
 .projectSlides {
     display: none;
 }
-/* Fading animation */
-.textFade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
 
-@keyframes textFade {
-    from {
-        opacity: 0.4;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* project text arrows */
-.arrowContainer {
+/* The dots/bullets/indicators */
+.textSlideshowDot {
     text-align: center;
-    /* margin-top: -31px; */
-    /* margin-right: 488px; */
+    margin-top: 320px;
 }
+/* ===============RIGHT SIDE COMPUTER SECTION STARTS */
 /* computer image */
 .computer {
     pointer-events: none;

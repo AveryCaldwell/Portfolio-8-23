@@ -190,23 +190,33 @@
             <!-- css similar <div class="slideshow-container">-->
             <div class="textSlideshow ">
                 <!-- css similar to <div class="mySlides fade"> -->
-                <div class="projectSlides textFade">
+                <div class="projectSlides fade">
                     <div class="numbertext">Project 1 text blah blah blah</div>
                 </div>
-                <div class="projectSlides textFade">
-                    <p>Project 2 text blah blah blah </p>
-                </div>
-                <div class="projectSlides textFade">
-                    <p>Project 3 text blah blah blah </p>
-                </div>
-                <div class="arrowContainer">
-                    <a class="textPrev" onclick="plusSlides(-1)">❮</a>
-                    <a class="textNext" onclick="plusSlides(1)">❯</a>
-                </div> <!-- arrowContainer -->
 
+                <div class="projectSlides fade">
+                    <div class="numbertext">Project 2 text blah blah blah</div>
+                </div>
+
+                <div class="projectSlides fade">
+                    <div class="numbertext">Project 3 text blah blah blah</div>
+                </div>
+
+                <!-- <div class="arrowContainer"> -->
+                <a class="textPrev" onclick="plusSlides(-1)">❮</a>
+                <a class="textNext" onclick="plusSlides(1)">❯</a>
+                <!-- </div> arrowContainer -->
+
+            </div>
+            <br />
+
+            <div class="textSlideshowDot">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
             </div> <!-- textSlideshow-->
+
         </div> <!-- projectContent-->
-        <br>
 
 
         <div class="computerContainer">
