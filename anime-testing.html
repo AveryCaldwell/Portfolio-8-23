@@ -185,23 +185,27 @@
         <h1 class="projectHeader">
             Projects
         </h1>
+        <!-- css similar to  <div class="computerContainer"> -->
+        <div class="projectContent">
+            <!-- css similar <div class="slideshow-container">-->
+            <div class="textSlideshow ">
+                <!-- css similar to <div class="mySlides fade"> -->
+                <div class="projectSlides textFade">
+                    <div class="numbertext">Project 1 text blah blah blah</div>
+                </div>
+                <div class="projectSlides textFade">
+                    <p>Project 2 text blah blah blah </p>
+                </div>
+                <div class="projectSlides textFade">
+                    <p>Project 3 text blah blah blah </p>
+                </div>
+                <div class="arrowContainer">
+                    <a class="textPrev" onclick="plusSlides(-1)">❮</a>
+                    <a class="textNext" onclick="plusSlides(1)">❯</a>
+                </div> <!-- arrowContainer -->
 
-        <div class="projectContent ">
-            <div class="projectSlides textFade">
-                <p>Project 1 text blah blah blah </p>
-            </div>
-            <div class="projectSlides textFade">
-                <p>Project 2 text blah blah blah </p>
-            </div>
-            <div class="projectSlides textFade">
-                <p>Project 3 text blah blah blah </p>
-            </div>
-            <div class="arrowContainer">
-                <a class="textPrev" onclick="plusSlides(-1)">❮</a>
-                <a class="textNext" onclick="plusSlides(1)">❯</a>
-            </div> <!-- arrowContainer -->
+            </div> <!-- textSlideshow-->
         </div> <!-- projectContent-->
-
         <br>
 
 
@@ -237,6 +241,7 @@
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
+
         </div><!-- computer container -->
 
     </div><!-- project container -->

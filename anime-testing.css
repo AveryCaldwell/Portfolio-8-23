@@ -334,25 +334,17 @@ body {
     color: white;
     border-radius: 250px;
     left: 5%;
-    top: 305vh;
+    top: 300vh;
     position: absolute;
 }
 /* about me text blerb */
 .projectContent {
-    position: relative;
+    position: absolute;
     height: 400px;
     width: 450px;
-    left: 10%;
-    bottom: 84vh;
-}
-
-.projectSlides {
-    /* right: 10%; */
-    /* bottom: 85vh; */
-    /* width: 485px; */
-    /* left: 5%; */
-    height: 316px;
-    padding: 15px;
+    line-height: 1.25;
+    left: 58px;
+    bottom: 62vh;
     border-radius: 36px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -361,7 +353,17 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
     font-size: 20px;
     color: white;
-    line-height: 1.25;
+}
+.textSlideshow {
+    max-width: 1000px;
+    position: relative;
+    top: 5vh;
+    right: 5px;
+    text-align: center;
+}
+/* Hide the images by default */
+.projectSlides {
+    display: none;
 }
 /* Fading animation */
 .textFade {
@@ -377,6 +379,7 @@ body {
         opacity: 1;
     }
 }
+
 /* project text arrows */
 .arrowContainer {
     text-align: center;
@@ -400,7 +403,7 @@ body {
     height: 350px;
     width: 350px;
     right: 10%;
-    bottom: 94vh;
+    bottom: 74vh;
 }
 
 /* Slideshow container */
@@ -453,12 +456,14 @@ body {
     border-radius: 3px 0 0 3px;
 }
 .textNext {
-    left: 500px;
+    left: 455px;
     border-radius: 3px 0 0 3px;
 }
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
-.next:hover {
+.next:hover,
+.textPrev:hover,
+.textNext:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -502,8 +507,8 @@ body {
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
     .prev,
-    .next,
-    .text {
+    .textPrev .next,
+    .textNext .text {
         font-size: 11px;
     }
 }
