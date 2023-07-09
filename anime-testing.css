@@ -229,8 +229,8 @@ body {
 .eduContainer {
     /* background-color: green; */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
 }
 .orbital-container {
     /* width: 600px; */
@@ -238,38 +238,55 @@ body {
     opacity: 0;
     transition: all 1s ease;
     position: relative;
-    top: 40vh;
-    left: 30%;
+    left: 42%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .orbital-box {
-    width: 200px;
-    height: 100px;
     offset-path: path('M200,0 A200,200 0 1,1 200,400 A200,200 0 1,1 200,0');
-    background: cyan;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    border-radius: 15px;
+    width: 300px;
+    height: 150px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 36px;
+    margin: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 .eduTitle {
     position: absolute;
     color: white;
-    bottom: 90vh;
 }
 .eduHeader {
     transition: all 0.2s ease;
     padding: 25px;
     color: white;
-    text-align: center;
     font-size: 24px;
+    text-align: center;
+    align-items: center;
+    display: flex;
 }
 
 .eduCard1,
 .eduCard2,
 .eduCard3 {
-    width: 600px;
-    height: 300px;
+    /* bottom: 30vh; */
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    width: 300px;
+    height: 150px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
@@ -309,4 +326,184 @@ body {
 /* =============== PROJECT SECTION =============== */
 .projectContainer {
     background-color: orange;
+    display: flex;
+}
+/* ABOUT ME page title */
+.projectHeader {
+    font-size: 50px;
+    color: white;
+    border-radius: 250px;
+    left: 5%;
+    top: 305vh;
+    position: absolute;
+}
+/* about me text blerb */
+.projectContent {
+    position: relative;
+    height: 400px;
+    width: 450px;
+    left: 10%;
+    bottom: 84vh;
+}
+
+.projectSlides {
+    /* right: 10%; */
+    /* bottom: 85vh; */
+    /* width: 485px; */
+    /* left: 5%; */
+    height: 316px;
+    padding: 15px;
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 20px;
+    color: white;
+    line-height: 1.25;
+}
+/* Fading animation */
+.textFade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes textFade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* project text arrows */
+.arrowContainer {
+    text-align: center;
+    /* margin-top: -31px; */
+    /* margin-right: 488px; */
+}
+/* computer image */
+.computer {
+    pointer-events: none;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: inline-block;
+    top: 15px;
+    right: 100px;
+    transition: all 1.5s ease;
+}
+/* Computer container */
+.computerContainer {
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    right: 10%;
+    bottom: 94vh;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    bottom: 25vh;
+    right: 93px;
+    width: 485px;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.textPrev,
+.textNext {
+    cursor: pointer;
+    position: absolute;
+    top: 7vh;
+    left: -75px;
+    padding: 35px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.textNext {
+    left: 500px;
+    border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* The dots/bullets/indicators */
+.dotContainer {
+    text-align: center;
+    margin-top: -240px;
+    margin-right: 35px;
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+        font-size: 11px;
+    }
 }
