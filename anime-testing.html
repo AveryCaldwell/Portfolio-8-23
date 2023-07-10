@@ -181,80 +181,93 @@
 
 
         <!-- =================== PROJECTS PAGE =================== -->
-        <div class="projectContainer pageContainer"></div>
-        <h1 class="projectHeader">
-            Projects
-        </h1>
-        <!-- css similar to  <div class="computerContainer"> -->
-        <div class="projectContent">
-            <!-- css similar <div class="slideshow-container">-->
-            <div class="textSlideshow ">
-                <!-- css similar to <div class="mySlides fade"> -->
-                <div class="projectSlides fade">
-                    <div class="numbertext">Project 1 text blah blah blah</div>
+        <div class="projectContainer pageContainer">
+
+            <!-- SQUIGGLE LINE -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="388.405 -1 610.9 737" width="610.9000244140625"
+                height="737">
+                <path fill="none" stroke="black" stroke-width="1"
+                    d="M698-1q308 8 164 113-312 238-330 81 6-70 65-22c90 123 25 408-164 320-159-138 146-237 307-212a50 50 0 1 1 58 457"
+                    class="svg-elem-1"></path>
+            </svg>
+
+
+            <h1 class="projectHeader">
+                Projects
+            </h1>
+            <!-- css similar to  <div class="computerContainer"> -->
+            <div class="projectContent">
+                <!-- css similar <div class="slideshow-container">-->
+                <div class="textSlideshow ">
+                    <!-- css similar to <div class="mySlides fade"> -->
+                    <div class="projectSlides fade">
+                        <div class="numbertext">TasteBuds</div>
+                        <a href="https://github.com/AveryCaldwell/TasteBuds">TasteBuds Github</a>
+                    </div>
+
+                    <div class="projectSlides fade">
+                        <div class="numbertext">CheersCheck</div>
+                        <a href="https://github.com/AveryCaldwell/CheersCheck">CheersCheck Github</a>
+                    </div>
+
+                    <div class="projectSlides fade">
+                        <div class="numbertext">Wear You Wander</div>
+                        <a href="https://github.com/AveryCaldwell/WearYouWander">Wear You Wander Github</a>
+                    </div>
+
+                    <!-- <div class="arrowContainer"> -->
+                    <a class="textPrev" onclick="plusSlides(-1)">❮</a>
+                    <a class="textNext" onclick="plusSlides(1)">❯</a>
+                    <!-- </div> arrowContainer -->
+
+                </div>
+                <br />
+
+                <div class="textSlideshowDot">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div> <!-- textSlideshow-->
+
+            </div> <!-- projectContent-->
+
+
+            <div class="computerContainer">
+                <img src="./assets/comp.png" alt="comp" class="computer">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="/assets/buds.png" style="width:100%">
+                        <!-- <div class="text">Caption Text</div> -->
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="/assets/CC.png" style="width:100%">
+                        <!-- <div class="text">Caption Two</div> -->
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="/assets/WYW.png" style="width:100%">
+                        <!-- <div class="text">Caption Three</div> -->
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+
+                </div>
+                <br>
+
+                <div class="dotContainer">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
                 </div>
 
-                <div class="projectSlides fade">
-                    <div class="numbertext">Project 2 text blah blah blah</div>
-                </div>
+            </div><!-- computer container -->
 
-                <div class="projectSlides fade">
-                    <div class="numbertext">Project 3 text blah blah blah</div>
-                </div>
-
-                <!-- <div class="arrowContainer"> -->
-                <a class="textPrev" onclick="plusSlides(-1)">❮</a>
-                <a class="textNext" onclick="plusSlides(1)">❯</a>
-                <!-- </div> arrowContainer -->
-
-            </div>
-            <br />
-
-            <div class="textSlideshowDot">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div> <!-- textSlideshow-->
-
-        </div> <!-- projectContent-->
-
-
-        <div class="computerContainer">
-            <img src="./assets/comp.png" alt="comp" class="computer">
-            <div class="slideshow-container">
-                <div class="mySlides fade">
-                    <div class="numbertext">1 / 3</div>
-                    <img src="/assets/WYW.png" style="width:100%">
-                    <!-- <div class="text">Caption Text</div> -->
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="numbertext">2 / 3</div>
-                    <img src="/assets/team.png" style="width:100%">
-                    <!-- <div class="text">Caption Two</div> -->
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="numbertext">3 / 3</div>
-                    <img src="/assets/buds.png" style="width:100%">
-                    <!-- <div class="text">Caption Three</div> -->
-                </div>
-
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a>
-
-            </div>
-            <br>
-
-            <div class="dotContainer">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-
-        </div><!-- computer container -->
-
-    </div><!-- project container -->
+        </div><!-- project container -->
 
     </div> <!-- app container -->
 

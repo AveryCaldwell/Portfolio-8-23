@@ -211,3 +211,4 @@ function showSlides(n) {
     }
     textSlides[slideIndex - 1].style.display = 'block';
 }
+// svg path
