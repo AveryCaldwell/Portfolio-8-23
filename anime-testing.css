@@ -345,7 +345,7 @@ body {
     width: 450px;
     line-height: 1.25;
     left: 58px;
-    bottom: 54vh;
+    bottom: 50vh;
     border-radius: 36px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -377,11 +377,11 @@ body {
 .computer {
     pointer-events: none;
     position: relative;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     display: inline-block;
     top: 155px;
-    right: 100px;
+    right: 130px;
     transition: all 1.5s ease;
 }
 /* Computer container */
@@ -397,9 +397,9 @@ body {
 .slideshow-container {
     max-width: 1000px;
     position: relative;
-    bottom: 15vh;
-    right: 93px;
-    width: 485px;
+    bottom: 22vh;
+    right: 125px;
+    width: 587px;
 }
 
 /* Hide the images by default */
@@ -505,6 +505,12 @@ body {
  * MIT license (https://opensource.org/licenses/MIT)
  * W. https://svgartista.net
  **************************************************/
+.svgContainer {
+    /* background-color: pink; */
+    position: relative;
+    right: 181px;
+    bottom: 14vh;
+}
 
 @-webkit-keyframes animate-svg-stroke-1 {
     0% {
@@ -532,7 +538,7 @@ body {
 
 .svg-elem-1 {
     -webkit-animation: animate-svg-stroke-1 2s
-        cubic-bezier(0.47, 0, 0.745, 0.715) 15s both;
-    animation: animate-svg-stroke-1 2s cubic-bezier(0.47, 0, 0.745, 0.715) 15s
+        cubic-bezier(0.47, 0, 0.745, 0.715) 5s both;
+    animation: animate-svg-stroke-1 2s cubic-bezier(0.47, 0, 0.745, 0.715) 5s
         both;
 }

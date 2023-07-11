@@ -212,3 +212,10 @@ function showSlides(n) {
     textSlides[slideIndex - 1].style.display = 'block';
 }
 // svg path
+const startButton = document.getElementById('startButton');
+const svgPath = document.getElementById('svgPath');
+
+startButton.addEventListener('click', function () {
+    svgPath.style.animation =
+        'animate-svg-stroke-1 2s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both';
+});
