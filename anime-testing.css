@@ -345,7 +345,7 @@ body {
     width: 450px;
     line-height: 1.25;
     left: 58px;
-    bottom: 50vh;
+    bottom: 150vh;
     border-radius: 36px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -390,14 +390,14 @@ body {
     height: 350px;
     width: 350px;
     right: 10%;
-    bottom: 74vh;
+    bottom: 173vh;
 }
 
 /* Slideshow container */
 .slideshow-container {
     max-width: 1000px;
     position: relative;
-    bottom: 22vh;
+    bottom: 21vh;
     right: 125px;
     width: 587px;
 }
@@ -541,4 +541,10 @@ body {
         cubic-bezier(0.47, 0, 0.745, 0.715) 5s both;
     animation: animate-svg-stroke-1 2s cubic-bezier(0.47, 0, 0.745, 0.715) 5s
         both;
+}
+
+/* =============== RESUME SECTION =============== */
+.resumeContainer {
+    /* background-color: purple; */
+    display: flex;
 }
