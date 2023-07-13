@@ -179,7 +179,14 @@
         </div>
 
 
+        <div class="svgContainer">
 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="616.321 -210 744.3 1389 " class="svg-cord">
+                <path id="svgPath" fill="none" stroke="#EEE" stroke-width="3"
+                    d="M869-207q137 214-71 346-196 76-177-11 36-95 125 56c66 127-103 197-119 165-6-11-18-90 106-118a50 50 0 1 1 267 945" />
+            </svg>
+
+        </div>
         <!-- =================== PROJECTS PAGE =================== -->
         <div class="projectContainer pageContainer">
 
@@ -216,19 +223,9 @@
                         </div>
                     </div>
 
-                    <!-- <div class="arrowContainer"> -->
-                    <a class="textPrev" onclick="plusSlides(-1)">❮</a>
-                    <a class="textNext" onclick="plusSlides(1)">❯</a>
-                    <!-- </div> arrowContainer -->
-
-                </div>
+                </div> <!-- textSlideshow -->
                 <br />
 
-                <div class="textSlideshowDot">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div> <!-- textSlideshow-->
 
             </div> <!-- projectContent-->
 
@@ -270,29 +267,22 @@
 
             </div><!-- computer container -->
 
-            <button class="aboutButton" onclick="setActivePage('Resume')"><span>Read
+            <button id="startButton" class="aboutButton" onclick="setActivePage('Resume')"><span>Read
                     More</span></button>
             <button class="tempBtn" onclick="setActivePage('Edu')"><span> ^ </span></button>
-            <button id="startButton">start</button>
-            <!-- SQUIGGLE LINE -->
-            <div class="svgContainer">
+            <!-- <button id="startButton">start</button> -->
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="616.321 -210 744.3 1389 " width="1000" height="1000">
-                    <path id="svgPath" fill="none" stroke="#EEE" stroke-width="3"
-                        d="M869-207q137 214-71 346-196 76-177-11 36-95 125 56c66 127-103 197-119 165-6-11-18-90 106-118a50 50 0 1 1 267 945" />
-                </svg>
-
-            </div> <!-- svg container -->
 
         </div><!-- project container -->
-
+        <!-- SQUIGGLE LINE -->
+        <!-- svg container -->
 
         <!-- =================== RESUME PAGE =================== -->
         <div class="resumeContainer pageContainer">
 
             <h1>Resume</h1>
 
-            <button class="tempBtn" onclick="setActivePage('Projects')"><span> ^ </span></button>
+            <button id="tempBtn" onclick="setActivePage('Projects')"><span> ^ </span></button>
 
         </div> <!-- resume container -->
 

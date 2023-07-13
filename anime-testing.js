@@ -218,5 +218,10 @@ const svgPath = document.getElementById('svgPath');
 
 startButton.addEventListener('click', function () {
     svgPath.style.animation =
-        'animate-svg-stroke-1 2s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both';
+        'animate-svg-stroke-1 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.25s both';
+});
+const tempBtn = document.getElementById('tempBtn');
+tempBtn.addEventListener('click', function () {
+    svgPath.style.animation =
+        'animate-svg-stroke-reverse 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.25s both';
 });
