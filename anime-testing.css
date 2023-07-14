@@ -227,7 +227,7 @@ body {
 
 /* =============== EDUCATION SECTION =============== */
 .eduContainer {
-    /* background-color: green; */
+    background-color: green;
     display: flex;
     /* align-items: center; */
     /* justify-content: center; */
@@ -238,12 +238,11 @@ body {
     opacity: 0;
     transition: all 1s ease;
     position: relative;
-    left: 42%;
-    margin-left: auto;
-    margin-right: auto;
+    left: 22%;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* top: 5vh; */
 }
 .orbital-box {
     offset-path: path('M200,0 A200,200 0 1,1 200,400 A200,200 0 1,1 200,0');
@@ -263,16 +262,31 @@ body {
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
+.cardContainer {
+    top: 13vh;
+    position: relative;
+    left: 70%;
+    height: 600px;
+    transition: all 1s ease;
+    display: flex;
+    flex-direction: column;
+}
 .eduTitle {
     position: absolute;
     color: white;
-}
-.eduHeader {
     transition: all 0.2s ease;
     padding: 25px;
     color: white;
-    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    font-size: 36px;
+}
+.eduHeader {
+    transition: all 0.2s ease;
+    padding: 5px;
+    color: white;
+    font-size: 20px;
     text-align: center;
     align-items: center;
     display: flex;
@@ -281,12 +295,12 @@ body {
 .eduCard1,
 .eduCard2,
 .eduCard3 {
-    /* bottom: 30vh; */
+    padding: 5px;
     justify-content: center;
     text-align: center;
     display: flex;
     width: 300px;
-    height: 150px;
+    /* height: 150px; */
     overflow: hidden;
     position: relative;
     cursor: pointer;
@@ -308,12 +322,30 @@ body {
     margin-right: auto;
 }
 
-.eduContent {
+/* .eduContent {
     height: 0;
     opacity: 0;
     visibility: hidden;
     margin: 5px;
     line-height: 1.5em;
+} */
+#eduSlideshow {
+    height: 500px;
+    max-width: 1000px;
+    position: relative;
+    top: 2vh;
+    padding: 10px;
+    right: 5px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.eduSlides {
+    display: none;
 }
 
 .eduList {
@@ -322,6 +354,20 @@ body {
     padding: 8px;
     font-size: 20px;
     align-items: center;
+}
+.eduBtn {
+    border-radius: 36px;
+    border: solid 1px white;
+    position: relative;
+    text-align: center;
+    list-style: none;
+    width: 125px;
+    top: 65vh;
+    height: 65px;
+    color: white;
+    font-size: 18px;
+    background-color: transparent;
+    cursor: pointer;
 }
 /* =============== PROJECT SECTION =============== */
 .projectContainer {
@@ -367,13 +413,6 @@ body {
     display: none;
 }
 
-/* The dots/bullets/indicators */
-.textSlideshowDot {
-    text-align: center;
-    margin-top: 320px;
-    cursor: pointer;
-    caret-color: transparent;
-}
 /* ===============RIGHT SIDE COMPUTER SECTION STARTS */
 /* computer image */
 .computer {
@@ -425,20 +464,7 @@ body {
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
-.textPrev,
-.textNext {
-    cursor: pointer;
-    position: absolute;
-    top: 7vh;
-    left: -75px;
-    padding: 35px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
+
 /* Position the "next button" to the right */
 .next {
     right: 0;
@@ -450,9 +476,7 @@ body {
 }
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
-.next:hover,
-.textPrev:hover,
-.textNext:hover {
+.next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
