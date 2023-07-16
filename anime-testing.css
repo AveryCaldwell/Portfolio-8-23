@@ -203,7 +203,8 @@ body {
     font-size: 18px;
     background-color: transparent;
 }
-.aboutButton:hover {
+.aboutButton:hover,
+.tempBtn:hover {
     background-color: rgba(153, 179, 252, 1);
 }
 .aboutBubbleItem:hover,
@@ -216,18 +217,20 @@ body {
     position: relative;
     text-align: center;
     list-style: none;
-    width: 75px;
-    top: 65vh;
     left: 7%;
-    height: 60px;
     font-size: 20px;
-    background-color: pink;
+    background-color: transparent;
     margin-left: 15px;
+    color: white;
+    border: solid 1px white;
+    width: 125px;
+    top: 65vh;
+    height: 65px;
 }
 
 /* =============== EDUCATION SECTION =============== */
 .eduContainer {
-    background-color: green;
+    /* background-color: green; */
     display: flex;
     /* align-items: center; */
     /* justify-content: center; */
@@ -238,7 +241,7 @@ body {
     opacity: 0;
     transition: all 1s ease;
     position: relative;
-    left: 22%;
+    left: 27%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -263,9 +266,9 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .cardContainer {
-    top: 13vh;
+    top: 9vh;
     position: relative;
-    left: 70%;
+    left: 60%;
     height: 600px;
     transition: all 1s ease;
     display: flex;
@@ -281,12 +284,13 @@ body {
     align-items: center;
     display: flex;
     font-size: 36px;
+    margin-left: 50px;
 }
 .eduHeader {
     transition: all 0.2s ease;
     padding: 5px;
     color: white;
-    font-size: 20px;
+    font-size: 22px;
     text-align: center;
     align-items: center;
     display: flex;
@@ -295,13 +299,13 @@ body {
 .eduCard1,
 .eduCard2,
 .eduCard3 {
-    padding: 5px;
+    padding: 15px;
     justify-content: center;
     text-align: center;
     display: flex;
-    width: 300px;
+    width: 350px;
+    height: fit-content;
     /* height: 150px; */
-    overflow: hidden;
     position: relative;
     cursor: pointer;
     border-radius: 36px;
@@ -330,14 +334,18 @@ body {
     line-height: 1.5em;
 } */
 #eduSlideshow {
-    list-style: none;
-    width: 300px;
+    list-style-type: circle;
+    line-height: 40px;
+    list-style-position: inside;
+    width: 350px;
     height: 500px;
+    color: white;
     max-width: 1000px;
     position: relative;
     top: 2vh;
-    padding: 5px;
-    text-align: center;
+    padding: 35px;
+    text-align: left;
+    font-size: 18px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -405,15 +413,60 @@ body {
 .textSlideshow {
     max-width: 1000px;
     position: relative;
-    top: 10vh;
+    /* top: 10vh; */
+    padding: 15px;
     right: 5px;
-    text-align: center;
+    /* text-align: center; */
 }
 /* Hide the images by default */
 .projectSlides {
     display: none;
 }
+#slideTitle {
+    padding: 5px;
+    font-size: 26px;
+    text-align: center;
+    font-weight: bold;
+    top: 5px;
+}
+/* project github icon */
+.iconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#github {
+    cursor: pointer;
+    position: relative;
+    font-size: 50px;
+    background-color: #18191f;
+    color: #fff;
+    box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
+        2px 2px 10px #00000080, 2px 2px 3px #00000080,
+        inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
+        inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080;
+
+    border-radius: 29px;
+    padding: 11px 19px;
+    margin: 0 40px;
+    animation: animate 3s linear infinite;
+    text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+        0 0 200px #0072ff;
+}
+
+#github {
+    animation-delay: 0.1s;
+}
+
+@keyframes animate {
+    from {
+        filter: hue-rotate(0deg);
+    }
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
 /* ===============RIGHT SIDE COMPUTER SECTION STARTS */
 /* computer image */
 .computer {
@@ -439,9 +492,10 @@ body {
 .slideshow-container {
     max-width: 1000px;
     position: relative;
-    bottom: 21vh;
+    bottom: 20vh;
     right: 125px;
     width: 587px;
+    height: 382px;
 }
 
 /* Hide the images by default */
@@ -517,7 +571,13 @@ body {
         opacity: 1;
     }
 }
-
+/* On smaller screens, 
+/* @media only screen and (max-width: 700px) {
+    .slideshow-container,
+    .computerContainer,
+    .projectContainer {
+    }
+} */
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
     .prev,

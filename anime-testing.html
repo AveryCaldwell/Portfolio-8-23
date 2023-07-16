@@ -8,6 +8,7 @@
     <title>Anime Testing</title>
     <link rel="stylesheet" href="anime-testing.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 </head>
@@ -83,8 +84,8 @@
                     <li class="aboutBubbleItem">Design</li>
                 </div>
             </div>
-            <button class="aboutButton" onclick="setActivePage('Edu')"><span>Read More</span></button>
-            <button class="tempBtn" onclick="setActivePage('Landing')"><span> ^ </span></button>
+            <button class="aboutButton" onclick="setActivePage('Edu')"><span>Show More</span></button>
+            <button class="tempBtn" onclick="setActivePage('Landing')"><span>Back</span></button>
         </div>
 
 
@@ -123,6 +124,7 @@
                     <!-- css similar to <div class="mySlides fade"> -->
                     <div class="mySlides fade">
                         <div class="numbertext">
+                            <li>2012-2016 | Clinton, MS</li>
                             <li>Headerman Scholar</li>
                             <li>Women in Business, Member & Speaker</li>
                             <li>Outstanding Marketing Award</li>
@@ -133,15 +135,33 @@
                         </div> <!-- numbertext -->
                     </div> <!-- mySlides -->
                     <div class="mySlides fade">
-                        <div class="numbertext">Certificate of Completion</div>
-                    </div>
+                        <div class="numbertext">
+                            <li>
+                                Taipei, Taiwan
+                            </li>
+
+                            <li>
+                                Summer Business Program 2015
+                            </li>
+                            <li>
+                                Certificate of Completion
+                            </li>
+                        </div><!-- numbertext -->
+                    </div><!-- mySlides -->
                     <div class="mySlides fade">
-                        <div class="numbertext">Full Stack Developer Coding Bootcamp</div>
-                    </div>
+                        <div class="numbertext">
+                            <li>
+                                Full Stack Developer Coding Bootcamp
+                            </li>
+                            <li> Team Lead</li>
+                            <li>GPA: 98.27% / 100%</li>
+                        </div><!-- numbertext -->
+                    </div><!-- mySlides -->
                 </div> <!-- eduSlideshow -->
             </div> <!-- cardContainer -->
 
-            <button class="eduBtn" onclick="setActivePage('Projects')"><span> next </span></button>
+            <button class="eduBtn" onclick="setActivePage('Projects')"><span> See Projects </span></button>
+            <button class="tempBtn" onclick="setActivePage('About')"><span>Back</span></button>
         </div> <!-- eduContainer -->
 
         <div class="svgContainer">
@@ -165,33 +185,65 @@
                 <div class="textSlideshow ">
                     <!-- css similar to <div class="mySlides fade"> -->
                     <div class="projectSlides fade">
-                        <div class="numbertext">TasteBuds</div>
-                        <a href="https://github.com/AveryCaldwell/TasteBuds">TasteBuds Github</a>
+                        <div id="slideTitle" class="numbertext">TasteBuds</div>
                         <div class="projectDetails">
-                            details
+                            <p>
+
+                                A social media app that allows users to never dine alone again! This app allows the user
+                                to
+                                create a profile, see other users posts, create posts, and join other events!
+                            </p>
+                            <p>
+                                Technologies: Tailwind, React, MERN stack, Node.js/Express.js, Apollo, GraphQL, MongoDb,
+                                Mongoose, GitHub, Heroku
+                            </p>
+                        </div>
+                        <div class="iconContainer">
+                            <a href="https://github.com/AveryCaldwell/TasteBuds">
+                                <i class="fa fa-github-square github" id="github"></i>
+                            </a>
                         </div>
                     </div>
 
                     <div class="projectSlides fade">
-                        <div class="numbertext">CheersCheck</div>
-                        <a href="https://github.com/AveryCaldwell/CheersCheck">CheersCheck Github</a>
+                        <div id="slideTitle" class="numbertext">CheersCheck</div>
                         <div class="projectDetails">
-                            details
+                            <p>
+                                An application that allows the user to easily organize their liquor collection, keep
+                                track of what inventory have on hand, and
+                                share it with friends.
+                            </p>
+                            <p>
+                                Technologies: HTML, CSS, Bootstrap, JavaScript, MySQL, Sequelize, Handlebars.js,
+                                Node.js, Express, Dotenv, Bycrypt, Heroku, GitHub, JSHint, Masonry, Anime.js
+                            </p>
                         </div>
+                        <div class="iconContainer">
+                            <a href="https://github.com/AveryCaldwell/CheersCheck">
+                                <i class="fa fa-github-square github" id="github"></i>
+                            </a>
+                        </div><!-- icon container -->
                     </div>
 
                     <div class="projectSlides fade">
-                        <div class="numbertext">Wear You Wander</div>
-                        <a href="https://github.com/AveryCaldwell/WearYouWander">Wear You Wander Github</a>
+                        <div id="slideTitle" class="numbertext">Wear You Wander</div>
                         <div class="projectDetails">
-                            details
+                            <p>
+                                An application that analyzes the weather and suggests which type of outerwear would be
+                                most suitable.
+                            </p>
+                            <p>
+                                Technologies: HTML, CSS, Foundation Framework, JavaScript, jQuery, Server Side APIs, Git
+                                Pages, GitHub
+                            </p>
                         </div>
+                        <div class="iconContainer">
+                            <a href="https://github.com/AveryCaldwell/WearYouWander"><i
+                                    class="fa fa-github-square github" id="github"></i></a>
+                        </div> <!-- icon container -->
                     </div>
 
                 </div> <!-- textSlideshow -->
-                <br />
-
-
             </div> <!-- projectContent-->
 
 
