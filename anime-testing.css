@@ -504,7 +504,7 @@ body {
 
 /* Hide the images by default */
 .mySlides {
-    /* display: block; */
+    display: block;
 }
 
 /* Next & previous buttons */
@@ -799,4 +799,46 @@ body {
 .resumeLink {
     text-decoration: none;
     color: rgba(153, 179, 252, 1);
+}
+/* back button */
+.resumeBtnBox {
+    /* display: inline-block; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.resumeBtn,
+.textBtn,
+.resumeNextBtn {
+    text-align: center;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    border-radius: 36px;
+    bottom: 244px;
+    background-color: transparent;
+    color: white;
+    border: solid 1px white;
+    width: 150px;
+    height: 75px;
+    font-size: 18px;
+}
+.resumeBtn {
+    left: 350px;
+    right: 0;
+}
+/* shows plain text */
+.textBtn {
+    left: 0;
+    right: 350px;
+}
+.resumeNextBtn {
+    left: 150px;
+    right: 150px;
+}
+.resumeBtn:hover,
+.textBtn:hover,
+.resumeNextBtn:hover {
+    background-color: pink;
 }

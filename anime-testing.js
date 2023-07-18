@@ -1,5 +1,13 @@
 //array of pages
-const pages = ['Landing', 'About', 'Edu', 'Projects', 'Resume'];
+const pages = [
+    'Landing',
+    'About',
+    'Edu',
+    'Projects',
+    'Resume',
+    'References',
+    'Contact',
+];
 // state
 let currentPage = 'Landing';
 let pageIndexObj = {
@@ -8,6 +16,8 @@ let pageIndexObj = {
     Edu: 2,
     Projects: 3,
     Resume: 4,
+    References: 5,
+    Contact: 6,
 };
 
 // sets the active page shown

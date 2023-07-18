@@ -353,25 +353,32 @@ workExperience() {
 }
 
 </pre>
+                <!--TODO:  give option for copy text and plain text -->
             </div><!-- code box -->
-            <!-- FIXME: does not do checkbox animation and dissapears -->
-            <div class="downloadBtn">
-                <div class="text">
-                    <a href="/assets/resume.pdf" download="resume" class="resumeLink">
-                        <pre><code> < Download /> </code></pre>
-                    </a>
-                </div>
-            </div>
-            <div class="progress-bar"></div>
-            <svg class="downloadSvg" x="0px" y="0px" viewBox="0 0 25 30" style="enable-background:new 0 0 25 30;">
-                <path class="check" class="st0" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
-            </svg>
 
-            <button class="tempBtn" onclick="setActivePage('Projects')">
-                <span>Back</span>
-            </button>
-        </div>
-        <!-- resume container -->
+            <!-- FIXME: does not do checkbox animation and dissapears -->
+            <div class="resumeBtnBox">
+                <button class="resumeBtn" onclick="setActivePage('Projects')"> Back </button>
+                <button class="textBtn">Show Plain Text</button>
+                <button class="resumeNextBtn" onclick="setActivePage('References')">Next</button>
+                <div class="downloadBtn">
+                    <div class="text">
+                        <a href="/assets/resume.pdf" download="resume" class="resumeLink">
+                            <pre><code> < Download /> </code></pre>
+                        </a>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <svg class="downloadSvg" x="0px" y="0px" viewBox="0 0 25 30"
+                        style="enable-background:new 0 0 25 30;">
+                        <path class="check" class="st0" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
+                    </svg>
+                </div>
+
+            </div><!-- resume button box -->
+
+        </div><!-- resume container -->
+
     </div>
     <!-- app container -->
 
