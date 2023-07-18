@@ -298,3 +298,89 @@ document.addEventListener('DOMContentLoaded', function () {
     // If there are texts in the array, start the typing effect after a delay of 'newTextDelay' + 250 milliseconds
     if (textArray.length) setTimeout(type, newTextDelay + 250);
 });
+
+// ===BUTTON ANIMATION FOR DOWNLOAD===
+function $(selector) {
+    return document.querySelectorAll(selector);
+}
+
+// Helper function to set stroke-dashoffset for path elements
+function setDashOffset(pathEl) {
+    let length = pathEl.getTotalLength();
+    pathEl.setAttribute('stroke-dasharray', length);
+    return length;
+}
+
+// Create the animation function
+function startAnimation() {
+    let pathEls = $('.check');
+    let offsets = [];
+    for (let i = 0; i < pathEls.length; i++) {
+        let pathEl = pathEls[i];
+        let offset = setDashOffset(pathEl);
+        offsets.push(offset);
+        pathEl.setAttribute('stroke-dashoffset', offset);
+    }
+
+    // Create the animation timeline
+    let basicTimeline = anime.timeline({
+        autoplay: false,
+    });
+
+    basicTimeline
+        .add({
+            targets: '.text',
+            duration: 1,
+            opacity: '0',
+        })
+        .add({
+            targets: '.downloadBtn',
+            duration: 1300,
+            height: 10,
+            width: 300,
+            backgroundColor: '#2B2D2F',
+            border: '0',
+            borderRadius: 100,
+        })
+        .add({
+            targets: '.progress-bar',
+            duration: 2000,
+            width: 300,
+            easing: 'linear',
+        })
+        .add({
+            targets: '.downloadBtn',
+            width: 0,
+            duration: 1,
+        })
+        .add({
+            targets: '.progress-bar',
+            width: 80,
+            height: 80,
+            delay: 500,
+            duration: 750,
+            borderRadius: 80,
+            backgroundColor: '#71DFBE',
+        })
+        .add({
+            targets: pathEls,
+            strokeDashoffset: function (el, i) {
+                return [offsets[i], 0];
+            },
+            duration: 200,
+            easing: 'easeInOutSine',
+        });
+
+    let downloadBtn = document.querySelector('.downloadBtn');
+    downloadBtn.addEventListener('click', function () {
+        basicTimeline.play();
+    });
+
+    let text = document.querySelector('.text');
+    text.addEventListener('click', function () {
+        basicTimeline.play();
+    });
+}
+
+// Call the animation function
+startAnimation();
