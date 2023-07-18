@@ -378,6 +378,10 @@ body {
     background-color: transparent;
     cursor: pointer;
 }
+/* FIXME: temporary */
+.eduBtnContainer {
+    margin-top: 50px;
+}
 /* =============== PROJECT SECTION =============== */
 .projectContainer {
     /* background-color: orange; */
@@ -495,12 +499,12 @@ body {
     bottom: 20vh;
     right: 125px;
     width: 587px;
-    height: 382px;
+    height: 385px;
 }
 
 /* Hide the images by default */
 .mySlides {
-    display: none;
+    /* display: block; */
 }
 
 /* Next & previous buttons */
@@ -656,17 +660,84 @@ body {
     height: 65px;
     color: white;
     font-size: 18px;
-    background-color: purple;
     cursor: pointer;
 }
 /* =============== RESUME SECTION =============== */
 .resumeContainer {
-    /* background-color: purple; */
+    background-color: purple;
     display: flex;
+    color: white;
 }
-
+.resumeTitle {
+    font-size: 50px;
+    padding: 25px;
+    /* FIXME    update margintop */
+    margin-left: auto;
+    margin-right: auto;
+}
 .svg-cord {
     width: 120vh;
     height: 120vh;
     pointer-events: none;
+}
+/* snippet of code for resume */
+.codeBox {
+    position: relative;
+    padding: 19px;
+    height: 800px;
+    width: 1000px;
+    top: 18vh;
+    right: 10%;
+    font-size: 16px;
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* typing animation */
+.typingContainer p {
+    font-size: 3rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    overflow: hidden;
+    /* FIXME update margin-left */
+    margin-top: 75px;
+    position: absolute;
+    width: 500px;
+    margin-left: 10%;
+}
+.typingContainer p span.typed-text {
+    font-weight: normal;
+    color: #dd7732;
+}
+.typingContainer p span.cursor {
+    display: inline-block;
+    background-color: #ccc;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+}
+.typingContainer p span.cursor.typing {
+    animation: none;
+}
+@keyframes blink {
+    0% {
+        background-color: #ccc;
+    }
+    49% {
+        background-color: #ccc;
+    }
+    50% {
+        background-color: transparent;
+    }
+    99% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: #ccc;
+    }
 }

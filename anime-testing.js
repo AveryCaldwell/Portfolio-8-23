@@ -187,20 +187,26 @@ function showSlides(n) {
     let slides = document.getElementsByClassName('mySlides');
     let textSlides = document.getElementsByClassName('projectSlides');
     let dots = document.getElementsByClassName('dot');
+
     if (n > slides.length) {
-        slideIndex = 1;
+        slideIndex = 1; // Reset to the first slide
     }
     if (n < 1) {
-        slideIndex = slides.length;
+        slideIndex = slides.length; // Reset to the last slide
     }
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';
     }
+    // Remove the 'active' class from all dots
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(' active', '');
     }
-    // project side
+
     slides[slideIndex - 1].style.display = 'block';
+    dots[slideIndex - 1].className += ' active';
+
+    // project side
+    // Add the same reset logic for the textSlides
     if (n > textSlides.length) {
         slideIndex = 1;
     }
@@ -220,8 +226,75 @@ startButton.addEventListener('click', function () {
     svgPath.style.animation =
         'animate-svg-stroke-1 0.25s cubic-bezier(0.47, 0, 0.745, 0.715) 0.25s both';
 });
-const tempBtn = document.getElementById('tempBtn');
+const tempBtn = document.getElementsByClassName('tempBtn')[0];
 tempBtn.addEventListener('click', function () {
     svgPath.style.animation =
         'animate-svg-stroke-reverse 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both';
+});
+
+// ====TYPING ANIMATION====
+const typedTextSpan = document.querySelector('.typed-text');
+const cursorSpan = document.querySelector('.cursor');
+const textArray = ['hard', 'fun', 'a journey', 'LIFE']; // Array of text strings to be displayed and typed out
+const typingDelay = 200; // Delay time in milliseconds between typing each character
+const erasingDelay = 100; // Delay time in milliseconds between erasing each character
+const newTextDelay = 2000; // Delay between current and next text
+let textArrayIndex = 0; // Index to keep track of the current text in the textArray
+let charIndex = 0; // Index to keep track of the current character being typed or erased
+
+// Function to perform the typing effect
+function type() {
+    // Check if there are more characters to type in the current text
+    if (charIndex < textArray[textArrayIndex].length) {
+        // Add the 'typing' class to the cursor element to make it blink
+        if (!cursorSpan.classList.contains('typing'))
+            cursorSpan.classList.add('typing');
+        // Append the next character to the typedTextSpan
+        typedTextSpan.textContent +=
+            textArray[textArrayIndex].charAt(charIndex);
+
+        // Move to the next character and call the 'type' function again after 'typingDelay' milliseconds
+        charIndex++;
+        setTimeout(type, typingDelay);
+    } else {
+        // When typing is completed for the current text, remove the 'typing' class from the cursor
+        cursorSpan.classList.remove('typing');
+        // Start the erasing effect by calling the 'erase' function after 'newTextDelay' milliseconds
+        setTimeout(erase, newTextDelay);
+    }
+}
+
+// Function to perform the erasing effect
+function erase() {
+    // Check if there are characters to erase in the current text
+    if (charIndex > 0) {
+        // Add the 'typing' class to the cursor element to make it blink
+        if (!cursorSpan.classList.contains('typing'))
+            cursorSpan.classList.add('typing');
+
+        // Erase the last character from the typedTextSpan
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(
+            0,
+            charIndex - 1
+        );
+
+        // Move to the previous character and call the 'erase' function again after 'erasingDelay' milliseconds
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+    } else {
+        // When erasing is completed, remove the 'typing' class from the cursor
+        cursorSpan.classList.remove('typing');
+        // Move to the next text in the textArray
+        textArrayIndex++;
+        // If all texts in the array have been shown, reset the index to show the first text again
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+        // Start typing the next text after a delay of 'typingDelay' + 1100 milliseconds
+        setTimeout(type, typingDelay + 1100);
+    }
+}
+// Add an event listener to start the typing effect when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function () {
+    // On DOM Load initiate the effect
+    // If there are texts in the array, start the typing effect after a delay of 'newTextDelay' + 250 milliseconds
+    if (textArray.length) setTimeout(type, newTextDelay + 250);
 });
