@@ -404,7 +404,7 @@ body {
     width: 450px;
     line-height: 1.25;
     left: 58px;
-    bottom: 150vh;
+    bottom: 250vh;
     border-radius: 36px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -479,7 +479,8 @@ body {
     width: 600px;
     height: 600px;
     display: inline-block;
-    top: 155px;
+    /* top: 155px;*/
+    /* bottom: 251vh; */
     right: 130px;
     transition: all 1.5s ease;
 }
@@ -489,14 +490,15 @@ body {
     height: 350px;
     width: 350px;
     right: 10%;
-    bottom: 173vh;
+    bottom: 262vh;
+    /* top: 300vh; */
 }
 
 /* Slideshow container */
 .slideshow-container {
     max-width: 1000px;
     position: relative;
-    bottom: 20vh;
+    bottom: 35vh;
     right: 125px;
     width: 587px;
     height: 385px;
@@ -667,6 +669,7 @@ body {
     /* background-color: purple; */
     display: flex;
     color: white;
+    height: 100vh;
 }
 .resumeTitle {
     font-size: 50px;
@@ -748,14 +751,12 @@ body {
     height: 80px;
     width: 200px;
     text-align: center;
-    position: absolute;
+    position: relative;
     transform: translateY(-50%);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
     cursor: pointer;
     border-radius: 14px;
-    bottom: 40px;
+    bottom: -81vh;
+    margin-right: -849px;
 }
 
 .text {
@@ -801,22 +802,26 @@ body {
     color: rgba(153, 179, 252, 1);
 }
 /* back button */
-.resumeBtnBox {
-    /* display: inline-block; */
+.resumeBox {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 45vh;
+    position: relative;
 }
 .resumeBtn,
 .textBtn,
 .resumeNextBtn {
+    position: relative;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
     text-align: center;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 10px;
     cursor: pointer;
     border-radius: 36px;
-    bottom: 244px;
+    top: 78vh;
     background-color: transparent;
     color: white;
     border: solid 1px white;
@@ -825,20 +830,24 @@ body {
     font-size: 18px;
 }
 .resumeBtn {
-    left: 350px;
-    right: 0;
+    /* right: 0; */
 }
-/* shows plain text */
 .textBtn {
-    left: 0;
-    right: 350px;
+    /* right: 350px; */
 }
 .resumeNextBtn {
-    left: 150px;
-    right: 150px;
+    /* right: 150px; */
 }
 .resumeBtn:hover,
 .textBtn:hover,
 .resumeNextBtn:hover {
     background-color: pink;
+}
+/* =============== CONTACT SECTION =============== */
+.contactContainer {
+    background-color: orange;
+}
+/* =============== REFERENCE SECTION =============== */
+.referenceContainer {
+    background-color: yellow;
 }
