@@ -394,3 +394,5 @@ function startAnimation() {
 
 // Call the animation function
 startAnimation();
+
+// CONTACT FORM

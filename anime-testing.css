@@ -404,7 +404,7 @@ body {
     width: 450px;
     line-height: 1.25;
     left: 58px;
-    bottom: 250vh;
+    bottom: 148vh;
     border-radius: 36px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -479,8 +479,8 @@ body {
     width: 600px;
     height: 600px;
     display: inline-block;
-    /* top: 155px;*/
-    /* bottom: 251vh; */
+    /* top: 155px; */
+    bottom: 1vh;
     right: 130px;
     transition: all 1.5s ease;
 }
@@ -490,7 +490,7 @@ body {
     height: 350px;
     width: 350px;
     right: 10%;
-    bottom: 262vh;
+    bottom: 161vh;
     /* top: 300vh; */
 }
 
@@ -498,7 +498,7 @@ body {
 .slideshow-container {
     max-width: 1000px;
     position: relative;
-    bottom: 35vh;
+    bottom: 33vh;
     right: 125px;
     width: 587px;
     height: 385px;
@@ -544,7 +544,7 @@ body {
 /* The dots/bullets/indicators */
 .dotContainer {
     text-align: center;
-    margin-top: -240px;
+    margin-top: -400px;
     margin-right: 35px;
 }
 .dot {
@@ -843,11 +843,9 @@ body {
 .resumeNextBtn:hover {
     background-color: pink;
 }
-/* =============== CONTACT SECTION =============== */
-.contactContainer {
-    background-color: orange;
-}
+
 /* =============== REFERENCE SECTION =============== */
 .referenceContainer {
     background-color: yellow;
 }
+/* =============== CONTACT SECTION =============== */
