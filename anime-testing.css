@@ -26,7 +26,7 @@ body {
     width: 1200px;
 }
 
-/* =============== LANDING SECTION =============== */
+/* ============================== LANDING SECTION ============================== */
 .landingContainer {
     /* background-color: pink; */
 }
@@ -124,7 +124,7 @@ body {
     opacity: 0;
 }
 
-/* =============== ABOUT SECTION =============== */
+/* ============================== ABOUT SECTION ============================== */
 .aboutContainer {
     /* background-color: purple; */
     display: flex;
@@ -228,9 +228,8 @@ body {
     height: 65px;
 }
 
-/* =============== EDUCATION SECTION =============== */
+/* ============================== EDUCATION SECTION ============================== */
 .eduContainer {
-    /* background-color: green; */
     display: flex;
     /* align-items: center; */
     /* justify-content: center; */
@@ -326,13 +325,6 @@ body {
     margin-right: auto;
 }
 
-/* .eduContent {
-    height: 0;
-    opacity: 0;
-    visibility: hidden;
-    margin: 5px;
-    line-height: 1.5em;
-} */
 #eduSlideshow {
     list-style-type: circle;
     line-height: 40px;
@@ -382,7 +374,7 @@ body {
 .eduBtnContainer {
     margin-top: 50px;
 }
-/* =============== PROJECT SECTION =============== */
+/* ============================== PROJECT SECTION ============================== */
 .projectContainer {
     /* background-color: orange; */
     display: flex;
@@ -664,7 +656,7 @@ body {
     font-size: 18px;
     cursor: pointer;
 }
-/* =============== RESUME SECTION =============== */
+/* ============================== RESUME SECTION ============================== */
 .resumeContainer {
     /* background-color: purple; */
     display: flex;
@@ -672,11 +664,9 @@ body {
     height: 100vh;
 }
 .resumeTitle {
+    position: absolute;
     font-size: 40px;
     padding: 15px;
-    /* FIXME    update margintop */
-    margin-left: auto;
-    margin-right: auto;
 }
 .svg-cord {
     width: 120vh;
@@ -689,8 +679,7 @@ body {
     padding: 20px;
     height: 800px;
     width: 1000px;
-    top: 18vh;
-    right: 10%;
+    top: 15vh;
     font-size: 16px;
     border-radius: 36px;
     background: rgba(255, 255, 255, 0.2);
@@ -852,14 +841,238 @@ body {
     font-size: 12px;
     /* FIXME: redo margin */
     margin-top: 150px;
-    width: 1000px;
-    background-color: navy;
+    width: 1200px;
 }
-/* =============== REFERENCE SECTION =============== */
-.referenceContainer {
-    background-color: yellow;
+/* ============================== REFERENCE SECTION ============================== */
+.refContainer {
+    /* background-color: navy; */
+}
+.refHeader {
+    position: relative;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+}
+/* box containing reference cards */
+.refBox {
+        position: relative;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* justify-items: center; */
+    /* align-items: center; */
+}
+
+
+.center {
+  position: absolute;
+  top: 35vh;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.card {
+  width: 450px;
+  height: 250px;
+  background-color: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
+  box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem;
+}
+
+.card h1 {
+  text-align: center;
+}
+
+.card .additional {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+background: rgb(255,221,112);
+background: radial-gradient(circle, rgba(255,221,112,1) 0%, rgba(255,157,112,1) 100%);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card.green .additional {
+background: rgb(255,221,112);
+background: radial-gradient(circle, rgba(255,221,112,1) 0%, rgba(101,230,181,1) 100%);
+}
+.card.blue .additional {
+background: rgb(252,70,107);
+background: radial-gradient(circle, rgba(252,70,107,1) 0%, rgba(63,94,251,1) 100%);
+}
+
+.card:hover .additional {
+  width: 100%;
+  border-radius: 0 5px 5px 0;
+}
+
+.card .additional .user-card {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+.card .additional .user-card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: -2px;
+  height: 80%;
+  border-left: 2px solid rgba(0,0,0,0.025);*/
+}
+
+.card .additional .user-card .level,
+.card .additional .user-card .points {
+  top: 15%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: rgba(0,0,0,0.15);
+  padding: 0.125rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.card .additional .user-card .points {
+  top: 85%;
+}
+
+.card .additional .user-card svg {
+  top: 50%;
+}
+
+.card .additional .more-info {
+  width: 300px;
+  float: left;
+  position: absolute;
+  left: 150px;
+  height: 100%;
+}
+
+.card .additional .more-info h1 {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.card.green .additional .more-info h1 {
+  color: #224C36;
+}
+.card.blue .additional .more-info h1 {
+  color: #000e54;
+}
+
+.card .additional .coords {
+  margin: 0 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.card.green .additional .coords {
+  color: #325C46;
+}
+.card.blue .additional .coords {
+  color: #000a38;
+}
+.card .additional .coords span + span {
+  float: right;
+}
+
+.card .additional .stats {
+  font-size: 2rem;
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  top: auto;
+  color: #fff;
+}
+
+.card.green .additional .stats {
+  /* color: #325C46; */
+  color: white;
+}
+
+.card .additional .stats > div {
+  flex: 1;
+  text-align: center;
+}
+
+.card .additional .stats i {
+  display: block;
+}
+
+.card .additional .stats div.title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card .additional .stats div.value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+.card .additional .stats div.value.infinity {
+  font-size: 2.5rem;
+}
+
+.card .general {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.card .general .more {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9em;
+}
+
+
+
+
+/* ============================== CONTACT SECTION ============================== */
+.contactContainer {
+    background-color: magenta;
     display: flex;
     color: white;
     height: 100vh;
 }
-/* =============== CONTACT SECTION =============== */
+.contactBtn,
+.topBtn,
+.refNextBtn,
+.refBtn {
+    position: relative;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 36px;
+    top: 78vh;
+    background-color: transparent;
+    color: white;
+    border: solid 1px white;
+    width: 150px;
+    height: 75px;
+    font-size: 18px;
+}
