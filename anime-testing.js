@@ -212,9 +212,6 @@ function showSlides(n) {
         dots[i].className = dots[i].className.replace(' active', '');
     }
 
-    slides[slideIndex - 1].style.display = 'block';
-    dots[slideIndex - 1].className += ' active';
-
     // project side
     // Add the same reset logic for the textSlides
     if (n > textSlides.length) {
@@ -227,6 +224,8 @@ function showSlides(n) {
         textSlides[i].style.display = 'none';
     }
     textSlides[slideIndex - 1].style.display = 'block';
+    slides[slideIndex - 1].style.display = 'block';
+    dots[slideIndex - 1].className += ' active';
 }
 // svg path
 const startButton = document.getElementById('startButton');
@@ -395,4 +394,39 @@ function startAnimation() {
 // Call the animation function
 startAnimation();
 
-// CONTACT FORM
+// ======CONTACT FORM======
+
+// Function to display resume in plain text
+const showPlainTextBtn = document.getElementById('showPlainTextBtn');
+// Add an event listener to the "Show Plain Text" button
+showPlainTextBtn.addEventListener('click', togglePlainText);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const showPlainTextBtn = document.getElementById('showPlainTextBtn');
+    showPlainTextBtn.addEventListener('click', togglePlainText);
+});
+// FIXME: doesnt work
+// TODO; change text on plain text button to "Show Code Text"
+function togglePlainText() {
+    const resumePlainText = document.querySelector('.resumePlainText');
+    const codeBox = document.querySelector('.codeBox');
+    const buttonContainer = document.querySelector('.buttonContainer');
+
+    if (
+        resumePlainText.style.display === 'none' ||
+        resumePlainText.style.display === ''
+    ) {
+        // If resumePlainText is hidden, show it and hide codeBox
+        resumePlainText.style.display = 'block';
+        codeBox.style.display = 'none';
+        // Apply styles to the button container
+        buttonContainer.style.top = '87vh';
+        buttonContainer.style.padding = '0px';
+        buttonContainer.style.fontSize = '12px';
+    } else {
+        // If resumePlainText is shown, hide it and show codeBox
+        resumePlainText.style.display = 'none';
+        codeBox.style.display = 'block';
+        buttonContainer.style.top = '78vh'; // Reset the top position of the button container
+    }
+}

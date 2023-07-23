@@ -672,8 +672,8 @@ body {
     height: 100vh;
 }
 .resumeTitle {
-    font-size: 50px;
-    padding: 25px;
+    font-size: 40px;
+    padding: 15px;
     /* FIXME    update margintop */
     margin-left: auto;
     margin-right: auto;
@@ -686,7 +686,7 @@ body {
 /* snippet of code for resume */
 .codeBox {
     position: relative;
-    padding: 19px;
+    padding: 20px;
     height: 800px;
     width: 1000px;
     top: 18vh;
@@ -844,6 +844,17 @@ body {
     background-color: pink;
 }
 
+/* resume plain text */
+.resumePlainText {
+    display: none;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 12px;
+    /* FIXME: redo margin */
+    margin-top: 150px;
+    width: 1000px;
+    background-color: navy;
+}
 /* =============== REFERENCE SECTION =============== */
 .referenceContainer {
     background-color: yellow;
