@@ -405,7 +405,7 @@ body {
     width: 450px;
     line-height: 1.25;
     left: 58px;
-    bottom: 148vh;
+    top: 322vh;
     border-radius: 36px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -480,8 +480,8 @@ body {
     width: 600px;
     height: 600px;
     display: inline-block;
-    top: 155px;
-    /* bottom: 1vh; */
+    /* top: 155px; */
+    bottom: 1vh;
     right: 130px;
     transition: all 1.5s ease;
 }
@@ -491,8 +491,7 @@ body {
     height: 350px;
     width: 350px;
     right: 10%;
-    /* bottom: 161vh; */
-    top: 300vh;
+    top: 313vh;
 }
 
 /* Slideshow container */
