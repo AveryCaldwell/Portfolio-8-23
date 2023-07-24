@@ -856,205 +856,217 @@ body {
 }
 /* box containing reference cards */
 .refBox {
-        position: relative;
+    position: relative;
     display: grid;
     /* grid-template-columns: 1fr 1fr 1fr; */
     /* justify-items: center; */
     /* align-items: center; */
 }
 
-
 .center {
-  position: absolute;
-  top: 35vh;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
+    position: absolute;
+    top: 35vh;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
 }
 
 .card {
-  width: 450px;
-  height: 250px;
-  background-color: #fff;
-  background: linear-gradient(#f8f8f8, #fff);
-  box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
-  border-radius: 6px;
-  overflow: hidden;
-  position: relative;
-  margin: 1.5rem;
+    width: 450px;
+    height: 250px;
+    background-color: #fff;
+    background: linear-gradient(#f8f8f8, #fff);
+    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    margin: 1.5rem;
 }
 
 .card h1 {
-  text-align: center;
+    text-align: center;
 }
 
 .card .additional {
-  position: absolute;
-  width: 150px;
-  height: 100%;
-background: rgb(255,221,112);
-background: radial-gradient(circle, rgba(255,221,112,1) 0%, rgba(255,157,112,1) 100%);
-  transition: width 0.4s;
-  overflow: hidden;
-  z-index: 2;
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    background: rgb(255, 221, 112);
+    background: radial-gradient(
+        circle,
+        rgba(255, 221, 112, 1) 0%,
+        rgba(255, 157, 112, 1) 100%
+    );
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
 }
 
 .card.green .additional {
-background: rgb(255,221,112);
-background: radial-gradient(circle, rgba(255,221,112,1) 0%, rgba(101,230,181,1) 100%);
+    background: rgb(255, 221, 112);
+    background: radial-gradient(
+        circle,
+        rgba(255, 221, 112, 1) 0%,
+        rgba(101, 230, 181, 1) 100%
+    );
 }
 .card.blue .additional {
-background: rgb(252,70,107);
-background: radial-gradient(circle, rgba(252,70,107,1) 0%, rgba(63,94,251,1) 100%);
+    background: rgb(252, 70, 107);
+    background: radial-gradient(
+        circle,
+        rgba(252, 70, 107, 1) 0%,
+        rgba(63, 94, 251, 1) 100%
+    );
 }
 
 .card:hover .additional {
-  width: 100%;
-  border-radius: 0 5px 5px 0;
+    width: 100%;
+    border-radius: 0 5px 5px 0;
 }
 
 .card .additional .user-card {
-  width: 150px;
-  height: 100%;
-  position: relative;
-  float: left;
+    width: 150px;
+    height: 100%;
+    position: relative;
+    float: left;
 }
 
 .card .additional .user-card::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 10%;
-  right: -2px;
-  height: 80%;
-  border-left: 2px solid rgba(0,0,0,0.025);*/
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10%;
+    right: -2px;
+    height: 80%;
+    border-left: 2px solid rgba(0, 0, 0, 0.025);
 }
 
 .card .additional .user-card .level,
 .card .additional .user-card .points {
-  top: 15%;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 0.75em;
-  font-weight: bold;
-  background: rgba(0,0,0,0.15);
-  padding: 0.125rem 0.75rem;
-  border-radius: 100px;
-  white-space: nowrap;
+    top: 15%;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 0.125rem 0.75rem;
+    border-radius: 100px;
+    white-space: nowrap;
 }
 
 .card .additional .user-card .points {
-  top: 85%;
+    top: 85%;
 }
 
 .card .additional .user-card svg {
-  top: 50%;
+    top: 50%;
 }
 
 .card .additional .more-info {
-  width: 300px;
-  float: left;
-  position: absolute;
-  left: 150px;
-  height: 100%;
+    width: 300px;
+    float: left;
+    position: absolute;
+    left: 150px;
+    height: 100%;
 }
 
 .card .additional .more-info h1 {
-  color: #fff;
-  margin-bottom: 0;
+    color: #fff;
+    margin-bottom: 0;
 }
 
 .card.green .additional .more-info h1 {
-  color: #224C36;
+    color: #224c36;
 }
 .card.blue .additional .more-info h1 {
-  color: #000e54;
+    color: #000e54;
 }
 
 .card .additional .coords {
-  margin: 0 1rem;
-  color: #fff;
-  font-size: 1rem;
+    margin: 0 1rem;
+    color: #fff;
+    font-size: 1rem;
 }
 
 .card.green .additional .coords {
-  color: #325C46;
+    color: #325c46;
 }
 .card.blue .additional .coords {
-  color: #000a38;
+    color: #000a38;
 }
 .card .additional .coords span + span {
-  float: right;
+    float: right;
 }
 
 .card .additional .stats {
-  font-size: 2rem;
-  display: flex;
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  right: 1rem;
-  top: auto;
-  color: #fff;
+    font-size: 2rem;
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    top: auto;
+    color: #fff;
 }
 
 .card.green .additional .stats {
-  /* color: #325C46; */
-  color: white;
+    /* color: #325C46; */
+    color: white;
 }
 
 .card .additional .stats > div {
-  flex: 1;
-  text-align: center;
+    flex: 1;
+    text-align: center;
 }
 
 .card .additional .stats i {
-  display: block;
+    display: block;
 }
 
 .card .additional .stats div.title {
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .card .additional .stats div.value {
-  font-size: 1.5rem;
-  font-weight: bold;
-  line-height: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
 }
 
 .card .additional .stats div.value.infinity {
-  font-size: 2.5rem;
+    font-size: 2.5rem;
 }
 
 .card .general {
-  width: 300px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  box-sizing: border-box;
-  padding: 1rem;
-  padding-top: 0;
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 1rem;
+    padding-top: 0;
 }
 
 .card .general .more {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  font-size: 0.9em;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.9em;
 }
-
-
-
 
 /* ============================== CONTACT SECTION ============================== */
 .contactContainer {
-    background-color: magenta;
+    /* background-color: magenta; */
     display: flex;
     color: white;
     height: 100vh;
+}
+.contactHeader {
+    text-align: center;
+    margin-left: auto;
 }
 .contactBtn,
 .topBtn,
@@ -1075,4 +1087,145 @@ background: radial-gradient(circle, rgba(252,70,107,1) 0%, rgba(63,94,251,1) 100
     width: 150px;
     height: 75px;
     font-size: 18px;
+}
+#form-div {
+    background-color: rgba(72, 72, 72, 0.4);
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 35px;
+    padding-bottom: 50px;
+    width: 450px;
+    float: left;
+    left: 50%;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: -260px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+.feedback-input {
+    color: #3c3c3c;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 0;
+    line-height: 22px;
+    background-color: #fbfbfb;
+    padding: 13px 13px 13px 54px;
+    margin-bottom: 10px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 3px solid rgba(0, 0, 0, 0);
+}
+
+.feedback-input:focus {
+    background: #fff;
+    box-shadow: 0;
+    border: 3px solid #3498db;
+    color: #3498db;
+    outline: none;
+    padding: 13px 13px 13px 54px;
+}
+
+.focused {
+    color: #30aed6;
+    border: #30aed6 solid 3px;
+}
+/* Icons ---------------------------------- */
+#name {
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+#name:focus {
+    background-size: 30px 30px;
+    background-position: 8px 5px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+#email {
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+#email:focus {
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+#comment {
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    line-height: 150%;
+    resize: vertical;
+}
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+    background-color: white;
+}
+
+#button-blue {
+    float: left;
+    width: 100%;
+    border: #fbfbfb solid 4px;
+    cursor: pointer;
+    background-color: rgba(153, 179, 252, 1);
+    color: white;
+    font-size: 24px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top: -4px;
+    font-weight: 700;
+}
+#button-blue:hover {
+    background-color: rgba(0, 0, 0, 0);
+    color: #6dabe4;
+}
+
+.submit:hover {
+    color: #dbc1f8;
+}
+.ease {
+    width: 0px;
+    height: 74px;
+    background-color: #fbfbfb;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+
+.submit:hover .ease {
+    width: 100%;
+    background-color: white;
+}
+
+@media only screen and (max-width: 580px) {
+    #form-div {
+        left: 3%;
+        margin-right: 3%;
+        width: 88%;
+        margin-left: 0;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
 }
