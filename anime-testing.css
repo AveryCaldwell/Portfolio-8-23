@@ -1240,7 +1240,8 @@ textarea:focus {
 }
 .my-path {
     fill: none;
-    stroke: black;
+    /* stroke: black; */
+    stroke: white;
     stroke-width: 4;
 }
 #lineDrawing {
@@ -1262,7 +1263,7 @@ textarea:focus {
     font-size: 15px;
     line-height: 24px;
     color: white;
-    top: 90%;
+    /* top: 90%; */
     width: 100%;
     position: relative;
     text-align: center;
