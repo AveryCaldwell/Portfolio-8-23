@@ -1,101 +1,10 @@
-// import * as React from 'react';
-// import Box from '@mui/material/Box';
-// import Drawer from '@mui/material/Drawer';
-// import Button from '@mui/material/Button';
-// import List from '@mui/material/List';
-// import Divider from '@mui/material/Divider';
-// import ListItem from '@mui/material/ListItem';
-// import ListItemButton from '@mui/material/ListItemButton';
-// import ListItemText from '@mui/material/ListItemText';
-
-// export default function TemporaryDrawer() {
-//     const [state, setState] = React.useState({
-//         top: false,
-//         bottom: false,
-//     });
-
-//     const toggleDrawer = (anchor, open) => (event) => {
-//         if (
-//             event.type === 'keydown' &&
-//             (event.key === 'Tab' || event.key === 'Shift')
-//         ) {
-//             return;
-//         }
-
-//         setState({ ...state, [anchor]: open });
-//     };
-
-//     const list = (anchor) => (
-//         <Box
-//             sx={{
-//                 width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250,
-//             }}
-//             role='presentation'
-//             onClick={toggleDrawer(anchor, false)}
-//             onKeyDown={toggleDrawer(anchor, false)}
-//         >
-//             <List>
-//                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map(
-//                     (text, index) => (
-//                         <ListItem key={text} disablePadding>
-//                             <ListItemButton>
-//                                 <ListItemText primary={text} />
-//                             </ListItemButton>
-//                         </ListItem>
-//                     )
-//                 )}
-//             </List>
-//             <Divider />
-//             <List>
-//                 {[
-//                     'About',
-//                     'Education',
-//                     'Projects',
-//                     'Resume',
-//                     'References',
-//                     'Contact',
-//                 ].map((text, index) => (
-//                     <ListItem key={text} disablePadding>
-//                         <ListItemButton>
-//                             <ListItemText primary={text} />
-//                         </ListItemButton>
-//                     </ListItem>
-//                 ))}
-//             </List>
-//         </Box>
-//     );
-
-//     return (
-//         <div>
-//             {['Avery Caldwell', 'Full Stack Developer'].map((anchor) => (
-//                 <React.Fragment key={anchor}>
-//                     <Button onClick={toggleDrawer(anchor, true)}>
-//                         {anchor}
-//                     </Button>
-//                     <Drawer
-//                         anchor={anchor}
-//                         open={state[anchor]}
-//                         onClose={toggleDrawer(anchor, false)}
-//                     >
-//                         {list(anchor)}
-//                     </Drawer>
-//                 </React.Fragment>
-//             ))}
-//         </div>
-//     );
-// }
-
-import React from 'react';
+import * as React from 'react';
+import * as Material from '@mui/material';
+import avesLogo from '../assets/aves.png';
 import { Typography } from '@mui/material';
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 
+// ICONs
+import MenuIcon from '@mui/icons-material/Menu';
 import {
     CollectionsBookmark,
     Edit,
@@ -106,7 +15,8 @@ import {
     Work,
 } from '@mui/icons-material';
 
-function App() {
+// -------------function that renders nav bar
+function Nav() {
     const [state, setState] = React.useState({
         top: false,
         left: false,
@@ -124,92 +34,155 @@ function App() {
 
         setState({ ...state, [anchor]: open });
     };
-
+    // -------------rendersdrawer component
     const iemsList = (anchor) => (
-        <Box
+        <Material.Box
             sx={{
                 width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250,
-                backgroundColor: '#09212E',
                 height: '100%',
+                color: 'white',
             }}
             role='drawer'
             onClick={toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
         >
+            <Material.Box
+                className='navBox'
+                sx={{
+                    display: 'flex',
+                    cursor: 'pointer',
+                }}
+            >
+                {/* // -------------LOGO */}
+                <img
+                    src={avesLogo}
+                    style={{
+                        height: '150px',
+                        width: '150px',
+                        borderRadius: 300,
+                        border: '2px solid #e9f4e9',
+                        boxShadow: 2,
+                        cursor: 'pointer',
+                        marginLeft: 'auto',
+                        marginRight: 'auto',
+                    }}
+                    onClick={() => {
+                        handleClick('Landing');
+                        setOpen(false);
+                    }}
+                    alt='AvesLogo'
+                />
+            </Material.Box>
             <Typography
                 sx={{
                     textAlign: 'center',
                     pt: 4,
-                    color: 'green',
+                    color: 'white',
                     fontSize: 20,
+                    marginBottom: '20px',
                 }}
             >
                 Avery Caldwell
             </Typography>
-            <List>
-                <ListItemButton>
-                    <ListItemIcon>{<Help />}</ListItemIcon>
-                    <ListItemText primary={'How to write'} />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>{<CollectionsBookmark />}</ListItemIcon>
-                    <ListItemText primary={'Posts'} />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>{<UploadFile />}</ListItemIcon>
-                    <ListItemText primary={'Pick Article'} />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>{<Edit />}</ListItemIcon>
-                    <ListItemText primary={'Improve'} />
-                </ListItemButton>
-            </List>
-            <Divider />
-            <List>
-                <ListItemButton>
-                    <ListItemIcon>{<Edit />}</ListItemIcon>
-                    <ListItemText primary={'Suggest'} />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>{<Work />}</ListItemIcon>
-                    <ListItemText primary={'Work with us'} />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>{<PermMedia />}</ListItemIcon>
-                    <ListItemText primary={'Media'} />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemIcon>{<Feedback />}</ListItemIcon>
-                    <ListItemText primary={'Contact us'} />
-                </ListItemButton>
-            </List>
-        </Box>
+            <Material.Divider />
+            <Material.List>
+                <Material.ListItemButton>
+                    <Material.ListItemIcon>{<Help />}</Material.ListItemIcon>
+                    <Material.ListItemText primary={'About'} />
+                </Material.ListItemButton>
+                <Material.ListItemButton>
+                    <Material.ListItemIcon>
+                        {<CollectionsBookmark />}
+                    </Material.ListItemIcon>
+                    <Material.ListItemText primary={'Education'} />
+                </Material.ListItemButton>
+                <Material.ListItemButton>
+                    <Material.ListItemIcon>
+                        {<UploadFile />}
+                    </Material.ListItemIcon>
+                    <Material.ListItemText primary={'Projects'} />
+                </Material.ListItemButton>
+                <Material.ListItemButton>
+                    <Material.ListItemIcon>{<Edit />}</Material.ListItemIcon>
+                    <Material.ListItemText primary={'Resume'} />
+                </Material.ListItemButton>
+            </Material.List>
+            <Material.List>
+                <Material.ListItemButton>
+                    <Material.ListItemIcon>{<Edit />}</Material.ListItemIcon>
+                    <Material.ListItemText primary={'References'} />
+                </Material.ListItemButton>
+                <Material.ListItemButton>
+                    <Material.ListItemIcon>
+                        {<Feedback />}
+                    </Material.ListItemIcon>
+                    <Material.ListItemText primary={'Contact'} />
+                </Material.ListItemButton>
+                <Material.ListItemButton>
+                    <Material.ListItemIcon>
+                        {<PermMedia />}
+                    </Material.ListItemIcon>
+                    <Material.ListItemText primary={'Home'} />
+                </Material.ListItemButton>
+            </Material.List>
+            <Material.Divider />
+        </Material.Box>
     );
-
+    // --------------renders top header
     return (
         <div>
-            <div>
-                <h1>Avery Caldwell</h1>
-                <h2>Full Stack Developer</h2>
-            </div>
-            <center>
-                {['left', 'right', 'top', 'bottom'].map((anchor) => (
-                    <React.Fragment key={anchor}>
-                        <Button onClick={toggleDrawer(anchor, true)}>
-                            {anchor}
-                        </Button>
-                        <Drawer
-                            anchor={anchor}
-                            open={state[anchor]}
-                            onClose={toggleDrawer(anchor, false)}
-                        >
-                            {iemsList(anchor)}
-                        </Drawer>
-                    </React.Fragment>
-                ))}
-            </center>
+            <Material.Toolbar
+                sx={{
+                    color: 'white',
+                    p: 2,
+                    display: 'flex',
+                    alignContent: 'start',
+                    alignItems: 'baseline',
+                    marginLeft: '5px',
+                }}
+            >
+                {/* TODO: add on click function to menu icon */}
+                <MenuIcon
+                    sx={{
+                        height: '50px',
+                        width: '50px',
+                    }}
+                />
+                <Typography
+                    variant='h3'
+                    sx={{
+                        marginLeft: '15px',
+                        fontWeight: 'bold',
+                    }}
+                >
+                    Avery Caldwell
+                </Typography>
+                <Typography
+                    variant='h4'
+                    sx={{
+                        marginLeft: '15px',
+                        fontWeight: 'light',
+                    }}
+                >
+                    Full Stack Developer
+                </Typography>
+            </Material.Toolbar>
+            {['left'].map((anchor) => (
+                <React.Fragment key={anchor}>
+                    <Material.Button onClick={toggleDrawer(anchor, true)}>
+                        {anchor}
+                    </Material.Button>
+                    <Material.Drawer
+                        anchor={anchor}
+                        open={state[anchor]}
+                        onClose={toggleDrawer(anchor, false)}
+                    >
+                        {iemsList(anchor)}
+                    </Material.Drawer>
+                </React.Fragment>
+            ))}
         </div>
     );
 }
 
-export default App;
+export default Nav;
