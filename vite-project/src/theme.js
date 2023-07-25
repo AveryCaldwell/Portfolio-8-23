@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
-const theme = (createTheme = {
+const theme = createTheme({
     palette: {
         mode: 'light',
         primary: {
@@ -16,22 +16,10 @@ const theme = (createTheme = {
         text: {
             primary: '#f5f5f5',
         },
-        mode: 'dark',
-        primary: {
-            main: '#3f51b5',
-        },
-        secondary: {
-            main: '#f50057',
-        },
-        background: {
-            paper: '#6dabe4',
-        },
-        text: {
-            primary: '#f5f5f5',
-        },
     },
     typography: {
         fontFamily: 'Montserrat',
     },
 });
+
 export default theme;
