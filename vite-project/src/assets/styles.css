@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+#root {
+    height: 100%;
+    --orange: #f8c9c3;
+    --pink: #f5c8e3;
+    --periwinkle: #dbc1f8;
+    --purple: #99b3fc;
+    --blue: #6dabe4;
+}

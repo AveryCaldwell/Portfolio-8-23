@@ -30,5 +30,8 @@ const theme = (createTheme = {
             primary: '#f5f5f5',
         },
     },
+    typography: {
+        fontFamily: 'Montserrat',
+    },
 });
 export default theme;
