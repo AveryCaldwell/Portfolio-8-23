@@ -75,6 +75,7 @@ function Nav() {
             </Material.Box>
             <Typography
                 sx={{
+                    fontFamily: 'Roboto',
                     textAlign: 'center',
                     pt: 4,
                     color: 'white',
@@ -151,6 +152,7 @@ function Nav() {
                 <Typography
                     variant='h3'
                     sx={{
+                        fontFamily: 'Roboto',
                         marginLeft: '15px',
                         fontWeight: 'bold',
                     }}
@@ -160,6 +162,7 @@ function Nav() {
                 <Typography
                     variant='h4'
                     sx={{
+                        fontFamily: 'Roboto',
                         marginLeft: '15px',
                         fontWeight: 'light',
                     }}
