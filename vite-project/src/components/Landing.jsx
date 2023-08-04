@@ -27,18 +27,7 @@ function Landing() {
     });
     return (
         <>
-            <div className='logoSliderContainer' style={logoSliderContainer}>
-                <img
-                    src={avesLogo}
-                    style={logoSliderImage}
-                    alt='aves'
-                    className='logoSliderImage'
-                />
-                <div
-                    className='logoSliderCircle'
-                    style={logoSliderCircle}
-                ></div>
-            </div>
+           
             <div className='landingContainer pageContainer'>
                 <div className='landingHeader' style={landingHeader}>
                     <span className='letter'>A</span>

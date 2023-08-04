@@ -6,6 +6,16 @@ import * as Material from '@mui/material';
 //Components
 import Nav from './components/Nav';
 import Landing from './components/Landing';
+import About from './components/About';
+import Edu from './components/Edu';
+import Projects from './components/Projects';
+import Resume from './components/Resume';
+import Ref from './components/Ref';
+import Contact from './components/Contact';
+import LogoSlider from './components/LogoSlider';
+import Footer from './components/Footer';
+import SvgContainer from './components/SvgContainer';
+import { appContainer } from './components/Styles';
 
 // This function renders main content of web app
 function App() {
@@ -35,22 +45,9 @@ function App() {
     return (
         <>
             <ThemeProvider theme={theme}>
-                <div
-                    className='App'
-                    style={{
-                        fontFamily: 'Roboto',
-                        backgroundColor: 'gray',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        position: 'absolute',
-                        left: 'calc(50% - 600px)',
-                        top: '0',
-                        transition: ' all 1.5s ease',
-                        width: '1200px',
-                        minHeight: '100vh',
-                        overflow: 'hidden',
-                    }}
-                >
+                <div className='App appContainer' style={appContainer}>
+                    <Nav />
+                    <Material.Box></Material.Box>
                     <main
                         className='pageContainer'
                         style={{
@@ -58,9 +55,16 @@ function App() {
                             overflow: 'hidden',
                         }}
                     >
-                        <Nav />
-                        <Material.Box></Material.Box>
+                        <LogoSlider />
                         <Landing />
+                        <About />
+                        <Edu />
+                        <SvgContainer />
+                        <Projects />
+                        <Resume />
+                        <Ref />
+                        <Contact />
+                        <Footer />
                     </main>
                 </div>
             </ThemeProvider>

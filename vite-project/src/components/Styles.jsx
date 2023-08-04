@@ -1,3 +1,13 @@
+export const appContainer = {
+    display: 'flex',
+    flexDirection: 'column',
+    position: 'absolute',
+    left: 'calc(50% - 600px)',
+    top: '0',
+    transition: 'all 1.5s ease',
+    width: '1200px',
+};
+
 export const logoSliderImage = {
     pointerEvents: 'none',
     position: 'relative',
