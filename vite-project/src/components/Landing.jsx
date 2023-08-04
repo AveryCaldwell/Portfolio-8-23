@@ -1,38 +1,40 @@
-import { useRef, useState } from 'react';
-import * as Material from '@mui/material';
+import { useEffect, useRef } from 'react';
+// import * as Material from '@mui/material';
 import anime from 'animejs/lib/anime.es.js';
-import avesLogo from '../assets/aves.png';
-import {
-    logoSliderImage,
-    logoSliderContainer,
-    logoSliderCircle,
-    landingHeader,
-} from './Styles';
+import { landingHeader } from './Styles';
 
 // This function renders main content of web app
 function Landing() {
-    // Name animation
-    let animation = anime({
-        targets: '.letter',
-        opacity: 1,
-        translateY: 50,
-        rotate: {
-            value: 360,
-            duration: 2000,
-            easing: 'easeInExpo',
-        },
-        scale: anime.stagger([0.7, 1], { from: 'center' }),
-        delay: anime.stagger(100, { start: 1000 }),
-        translateX: [-10, 30],
-    });
+    // Name/letter animation
+    useEffect(() => {
+        const animation = anime({
+            targets: '.letter',
+            opacity: 1,
+            translateY: 50,
+            rotate: {
+                value: 360,
+                duration: 2000,
+                easing: 'easeInExpo',
+            },
+            scale: anime.stagger([0.7, 1], { from: 'center' }),
+            delay: anime.stagger(100, { start: 1000 }),
+            translateX: [-10, 30],
+        });
+        return () => {
+            // Clean up the animation when the component unmounts
+            animation.pause();
+        };
+    }, []);
     // function to scroll to next page
     const containerRef = useRef(null);
 
     const handleClickScroll = () => {
         const lastChildElement = containerRef.current?.lastElementChild;
         lastChildElement?.scrollIntoView({ behavior: 'smooth' });
+        console.log('Landing scroll successful');
     };
 
+    // render landing page
     return (
         <>
             <div className='landingContainer pageContainer' ref={containerRef}>
@@ -56,14 +58,14 @@ function Landing() {
                     <div className='landingTitle'>Portfolio 2022-2023</div>
                     <div className='landingSubtitle'>
                         Full Stack Developer
-                        <span>
+                        {/* <span>
                             <button
                                 className='landingButton'
                                 onClick={handleClickScroll}
                             >
                                 Next
                             </button>
-                        </span>
+                        </span> */}
                     </div>
                 </div>
             </div>

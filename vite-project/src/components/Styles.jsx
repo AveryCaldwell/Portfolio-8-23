@@ -11,7 +11,7 @@ export const pageContainer = {
     minHeight: '100vh',
     overflow: 'hidden',
 };
-
+/* ============================== LANDING SECTION ============================== */
 export const logoSliderImage = {
     pointerEvents: 'none',
     position: 'relative',
