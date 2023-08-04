@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useRef, useState } from 'react';
 import * as Material from '@mui/material';
 import anime from 'animejs/lib/anime.es.js';
 import avesLogo from '../assets/aves.png';
@@ -25,10 +25,17 @@ function Landing() {
         delay: anime.stagger(100, { start: 1000 }),
         translateX: [-10, 30],
     });
+    // function to scroll to next page
+    const containerRef = useRef(null);
+
+    const handleClickScroll = () => {
+        const lastChildElement = containerRef.current?.lastElementChild;
+        lastChildElement?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
         <>
-           
-            <div className='landingContainer pageContainer'>
+            <div className='landingContainer pageContainer' ref={containerRef}>
                 <div className='landingHeader' style={landingHeader}>
                     <span className='letter'>A</span>
                     <span className='letter'>v</span>
@@ -52,7 +59,7 @@ function Landing() {
                         <span>
                             <button
                                 className='landingButton'
-                                onclick="setActivePage('About')"
+                                onClick={handleClickScroll}
                             >
                                 Next
                             </button>
