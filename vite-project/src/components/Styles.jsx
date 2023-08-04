@@ -7,6 +7,10 @@ export const appContainer = {
     transition: 'all 1.5s ease',
     width: '1200px',
 };
+export const pageContainer = {
+    minHeight: '100vh',
+    overflow: 'hidden',
+};
 
 export const logoSliderImage = {
     pointerEvents: 'none',

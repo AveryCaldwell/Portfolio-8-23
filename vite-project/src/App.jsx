@@ -15,7 +15,7 @@ import Contact from './components/Contact';
 import LogoSlider from './components/LogoSlider';
 import Footer from './components/Footer';
 import SvgContainer from './components/SvgContainer';
-import { appContainer } from './components/Styles';
+import { appContainer, pageContainer } from './components/Styles';
 
 // This function renders main content of web app
 function App() {
@@ -45,16 +45,10 @@ function App() {
     return (
         <>
             <ThemeProvider theme={theme}>
+                <Nav />
+                <Material.Box></Material.Box>
                 <div className='App appContainer' style={appContainer}>
-                    <Nav />
-                    <Material.Box></Material.Box>
-                    <main
-                        className='pageContainer'
-                        style={{
-                            minHeight: '100vh',
-                            overflow: 'hidden',
-                        }}
-                    >
+                    <main className='pageContainer' style={pageContainer}>
                         <LogoSlider />
                         <Landing />
                         <About />
