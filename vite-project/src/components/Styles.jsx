@@ -72,27 +72,28 @@ export const landingText = {
 export const landingTitle = {
     border: 'solid 1px white',
     borderRadius: '36px',
-    marginTop: '15px',
     padding: '5px',
     display: 'block',
-    height: '32px',
     textAlign: 'center',
     letterSpacing: '5px',
+    fontFamily: 'Roboto',
 };
 export const landingSubtitle = {
     marginTop: '15px',
     borderRadius: '36px',
     width: '400px',
-    padding: '5px',
+    padding: '15px',
     display: 'block',
+    fontFamily: 'Roboto',
 };
 
 export const landingButton = {
     color: 'white',
     padding: '7px',
     backgroundColor: 'transparent',
-    width: '30px',
     border: 'none',
+    fontSize: '50px',
+    cursor: 'pointer',
 };
 /* { NAME ANIMATION } */
 export const letter = {

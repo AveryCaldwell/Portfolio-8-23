@@ -6,7 +6,6 @@ import {
     logoSliderImage,
     logoSliderContainer,
     logoSliderCircle,
-    landingButton,
 } from './Styles';
 
 // This function renders main content of web app
