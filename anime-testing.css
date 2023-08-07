@@ -134,13 +134,13 @@ body {
     font-size: 50px;
     color: white;
     border-radius: 250px;
-    left: 53%;
+    left: 55%;
     top: 120vh;
     position: absolute;
 }
 /* about me text blerb */
 .aboutContent {
-    top: 28vh;
+    top: 128vh;
     left: 53%;
     width: 445px;
     height: 150px;
@@ -196,7 +196,7 @@ body {
     text-align: center;
     list-style: none;
     width: 125px;
-    top: 65vh;
+    top: 165vh;
     left: 5%;
     height: 65px;
     color: white;

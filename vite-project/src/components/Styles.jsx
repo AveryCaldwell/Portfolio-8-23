@@ -100,3 +100,103 @@ export const letter = {
     display: 'inline-block',
     opacity: '0',
 };
+/* ============================== ABOUT SECTION ============================== */
+export const aboutContainer = {
+    display: 'flex',
+    backgroundColor: 'green',
+    fontSize: '50px',
+    color: 'white',
+    borderRadius: '250px',
+    left: '60%',
+    top: '80vh',
+    // position: 'relative',
+};
+export const aboutHeader = {
+    fontSize: '50px',
+    color: 'white',
+    borderRadius: '250px',
+    left: '55%',
+    top: '125vh',
+    position: 'absolute',
+};
+export const aboutContent = {
+    top: '133vh',
+    left: '55%',
+    width: '445px',
+    height: '150px',
+    // position: 'relative',
+    position: 'absolute',
+    padding: '15px',
+    borderRadius: '36px',
+    background: ' rgba(255, 255, 255, 0.2)',
+    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+    backdropFilter: 'blur(5px)',
+    border: '1px solid rgba(255, 255, 255, 0.3)',
+    fontSize: '20px',
+    color: 'white',
+    lineHeight: '1.25',
+};
+export const techBox = {
+    color: 'white',
+    position: 'absolute',
+    top: '148vh',
+    left: '55%',
+    fontSize: '20px',
+    marginTop: '15px',
+};
+export const skillBox = {
+    color: 'white',
+    position: 'absolute',
+    top: '155vh',
+    left: '55%',
+    fontSize: '20px',
+    marginTop: '15px',
+};
+export const aboutBubbleItem = {
+    textDecoration: 'none',
+    borderRadius: '36px',
+    border: '1px solid white',
+    color: 'white',
+    display: 'inline-block',
+    position: 'relative',
+    margin: '10px 10px 10px 10px',
+    textAlign: 'center',
+    listStyle: 'none',
+    padding: '5px',
+    width: '100px',
+    transition: '0.25s',
+};
+
+export const aboutButton = {
+    borderRadius: '36px',
+    border: '1px solid white',
+    // position: 'relative',
+    position: 'absolute',
+    textAlign: 'center',
+    listStyle: 'none',
+    width: '125px',
+    top: '165vh',
+    left: '55%',
+    height: '65px',
+    color: 'white',
+    fontSize: '18px',
+    lineHeight: '1.25',
+    backgroundColor: 'transparent',
+    pointer: 'cursor',
+};
+export const backButton = {
+    borderRadius: '36px',
+    border: '1px solid white',
+    position: 'absolute',
+    textAlign: 'center',
+    listStyle: 'none',
+    width: '135px',
+    top: '165vh',
+    left: '70%',
+    height: '65px',
+    color: 'white',
+    fontSize: '18px',
+    lineHeight: '1.25',
+    backgroundColor: 'transparent',
+    pointer: 'cursor',
+};
