@@ -6,7 +6,7 @@ import {} from './Styles';
 
 // This function renders main content of web app
 function Footer() {
-    return <h1>Footer</h1>;
+    return;
 }
 
 export default Footer;

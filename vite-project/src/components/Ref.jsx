@@ -6,7 +6,7 @@ import {} from './Styles';
 
 // This function renders main content of web app
 function Ref() {
-    return <h1>Ref</h1>;
+    return ;
 }
 
 export default Ref;

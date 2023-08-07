@@ -6,6 +6,7 @@ import {
     logoSliderImage,
     logoSliderContainer,
     logoSliderCircle,
+    landingButton,
 } from './Styles';
 
 // This function renders main content of web app
@@ -86,14 +87,6 @@ function LogoSlider() {
                 style={logoSliderImage}
             />
             <div className='logoSliderCircle' style={logoSliderCircle}></div>
-            <span>
-                <button
-                    className='landingButton'
-                    onClick={() => setActivePage('About')}
-                >
-                    Next
-                </button>
-            </span>
         </div>
     );
 }

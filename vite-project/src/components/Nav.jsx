@@ -194,6 +194,7 @@ function Nav() {
                     </Material.ListItemIcon>
                     <Material.ListItemText primary={'Contact'} />
                 </Material.ListItemButton>
+                {/* FIXME: not working */}
                 <Material.ListItemButton
                     onClick={() => setActivePage('Landing')}
                 >

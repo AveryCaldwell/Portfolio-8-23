@@ -1,7 +1,15 @@
 import { useEffect, useRef } from 'react';
 // import * as Material from '@mui/material';
 import anime from 'animejs/lib/anime.es.js';
-import { landingHeader } from './Styles';
+import {
+    landingHeader,
+    landingTitle,
+    landingText,
+    landingSubtitle,
+    landingButton,
+    letter,
+} from './Styles';
+import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 
 // This function renders main content of web app
 function Landing() {
@@ -39,33 +47,62 @@ function Landing() {
         <>
             <div className='landingContainer pageContainer' ref={containerRef}>
                 <div className='landingHeader' style={landingHeader}>
-                    <span className='letter'>A</span>
-                    <span className='letter'>v</span>
-                    <span className='letter'>e</span>
-                    <span className='letter'>r</span>
-                    <span className='letter'>y</span>
+                    <span className='letter' style={letter}>
+                        A
+                    </span>
+                    <span className='letter' style={letter}>
+                        v
+                    </span>
+                    <span className='letter' style={letter}>
+                        e
+                    </span>
+                    <span className='letter' style={letter}>
+                        r
+                    </span>
+                    <span className='letter' style={letter}>
+                        y
+                    </span>
                     <div></div>
-                    <span className='letter'>C</span>
-                    <span className='letter'>a</span>
-                    <span className='letter'>l</span>
-                    <span className='letter'>d</span>
-                    <span className='letter'>w</span>
-                    <span className='letter'>e</span>
-                    <span className='letter'>l</span>
-                    <span className='letter'>l</span>
+                    <span className='letter' style={letter}>
+                        C
+                    </span>
+                    <span className='letter' style={letter}>
+                        a
+                    </span>
+                    <span className='letter' style={letter}>
+                        l
+                    </span>
+                    <span className='letter' style={letter}>
+                        d
+                    </span>
+                    <span className='letter' style={letter}>
+                        w
+                    </span>
+                    <span className='letter' style={letter}>
+                        e
+                    </span>
+                    <span className='letter' style={letter}>
+                        l
+                    </span>
+                    <span className='letter' style={letter}>
+                        l
+                    </span>
                 </div>
-                <div className='landingText'>
-                    <div className='landingTitle'>Portfolio 2022-2023</div>
-                    <div className='landingSubtitle'>
+                <div className='landingText' style={landingText}>
+                    <div className='landingTitle' style={landingTitle}>
+                        Portfolio 2022-2023
+                    </div>
+                    <div className='landingSubtitle' style={landingSubtitle}>
                         Full Stack Developer
-                        {/* <span>
+                        <span>
                             <button
                                 className='landingButton'
-                                onClick={handleClickScroll}
+                                onClick={() => setActivePage('About')}
+                                style={landingButton}
                             >
-                                Next
+                                <ArrowCircleRightOutlinedIcon />
                             </button>
-                        </span> */}
+                        </span>
                     </div>
                 </div>
             </div>

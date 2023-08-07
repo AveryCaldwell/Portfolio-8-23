@@ -6,7 +6,7 @@ import {} from './Styles';
 
 // This function renders main content of web app
 function About() {
-    return <h1>About</h1>;
+    return;
 }
 
 export default About;

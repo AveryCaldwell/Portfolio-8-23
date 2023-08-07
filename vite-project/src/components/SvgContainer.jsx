@@ -5,8 +5,8 @@ import avesLogo from '../assets/aves.png';
 import {} from './Styles';
 
 // This function renders main content of web app
-function Resume() {
-    return <h1>Resume</h1>;
+function SvgContainer() {
+    return;
 }
 
-export default Resume;
+export default SvgContainer;

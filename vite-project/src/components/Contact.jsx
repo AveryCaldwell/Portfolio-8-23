@@ -6,7 +6,7 @@ import {} from './Styles';
 
 // This function renders main content of web app
 function Contact() {
-    return <h1>Contact</h1>;
+    return ;
 }
 
 export default Contact;

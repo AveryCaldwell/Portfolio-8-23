@@ -6,7 +6,7 @@ import {} from './Styles';
 
 // This function renders main content of web app
 function Projects() {
-    return <h1>Projects</h1>;
+    return ;
 }
 
 export default Projects;

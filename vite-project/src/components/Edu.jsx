@@ -6,7 +6,7 @@ import {} from './Styles';
 
 // This function renders main content of web app
 function Edu() {
-    return <h1>Edu</h1>;
+    return ;
 }
 
 export default Edu;

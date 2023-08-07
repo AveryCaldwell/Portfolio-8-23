@@ -15,6 +15,7 @@ import Contact from './components/Contact';
 import LogoSlider from './components/LogoSlider';
 import Footer from './components/Footer';
 import SvgContainer from './components/SvgContainer';
+// Styling
 import { appContainer, pageContainer } from './components/Styles';
 
 // This function renders main content of web app

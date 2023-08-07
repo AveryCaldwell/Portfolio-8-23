@@ -59,3 +59,43 @@ export const landingHeader = {
     fontSize: '50px',
     fontFamily: 'Roboto',
 };
+export const landingText = {
+    display: 'inline-block',
+    fontSize: '32px',
+    position: 'relative',
+    left: '50%',
+    top: '37vh',
+    color: 'white',
+    marginTop: '15px',
+    width: '400px',
+};
+export const landingTitle = {
+    border: 'solid 1px white',
+    borderRadius: '36px',
+    marginTop: '15px',
+    padding: '5px',
+    display: 'block',
+    height: '32px',
+    textAlign: 'center',
+    letterSpacing: '5px',
+};
+export const landingSubtitle = {
+    marginTop: '15px',
+    borderRadius: '36px',
+    width: '400px',
+    padding: '5px',
+    display: 'block',
+};
+
+export const landingButton = {
+    color: 'white',
+    padding: '7px',
+    backgroundColor: 'transparent',
+    width: '30px',
+    border: 'none',
+};
+/* { NAME ANIMATION } */
+export const letter = {
+    display: 'inline-block',
+    opacity: '0',
+};
