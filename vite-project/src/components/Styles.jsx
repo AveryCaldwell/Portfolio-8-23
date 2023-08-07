@@ -122,8 +122,8 @@ export const aboutHeader = {
 export const aboutContent = {
     top: '133vh',
     left: '55%',
-    width: '445px',
-    height: '150px',
+    width: '750px',
+    height: '400px',
     // position: 'relative',
     position: 'absolute',
     padding: '15px',
@@ -134,8 +134,14 @@ export const aboutContent = {
     border: '1px solid rgba(255, 255, 255, 0.3)',
     fontSize: '20px',
     color: 'white',
-    lineHeight: '1.25',
+    lineHeight: '1.35',
+    fontFamily: 'Roboto',
 };
+export const aboutText = {
+    padding: '10px',
+    textIndent: '25px',
+};
+
 export const techBox = {
     color: 'white',
     position: 'absolute',
