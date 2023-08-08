@@ -107,23 +107,25 @@ export const aboutContainer = {
     fontSize: '50px',
     color: 'white',
     borderRadius: '250px',
-    left: '60%',
-    top: '80vh',
-    // position: 'relative',
+    left: '10%',
+    top: '-10vh',
+    fontFamily: 'Roboto',
+    position: 'absolute',
+    width: '1000px',
 };
 export const aboutHeader = {
-    fontSize: '50px',
+    fontSize: '48px',
     color: 'white',
     borderRadius: '250px',
     left: '55%',
-    top: '125vh',
+    top: '123vh',
     position: 'absolute',
 };
 export const aboutContent = {
-    top: '133vh',
+    top: '130vh',
     left: '55%',
-    width: '750px',
-    height: '400px',
+    width: '800px',
+    height: 'fit-content',
     // position: 'relative',
     position: 'absolute',
     padding: '15px',
@@ -137,6 +139,15 @@ export const aboutContent = {
     lineHeight: '1.35',
     fontFamily: 'Roboto',
 };
+export const aboutSubtitle = {
+    padding: '15px',
+    fontSize: '22px',
+    color: 'white',
+    lineHeight: '1.35',
+    fontFamily: 'Roboto',
+    fontWeight: 'bold',
+    textAlign: 'center',
+};
 export const aboutText = {
     padding: '10px',
     textIndent: '25px',
@@ -144,7 +155,7 @@ export const aboutText = {
 
 export const techBox = {
     color: 'white',
-    position: 'absolute',
+    // position: 'absolute',
     top: '148vh',
     left: '55%',
     fontSize: '20px',
@@ -152,7 +163,7 @@ export const techBox = {
 };
 export const skillBox = {
     color: 'white',
-    position: 'absolute',
+    // position: 'absolute',
     top: '155vh',
     left: '55%',
     fontSize: '20px',
