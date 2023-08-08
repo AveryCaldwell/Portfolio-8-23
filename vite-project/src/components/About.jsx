@@ -13,24 +13,9 @@ import {
     backButton,
     aboutText,
     aboutSubtitle,
+    skillSubtitle,
 } from './Styles';
 
-// 'HTML',
-//         'CSS',
-//         'JavaScript',
-//         'Node.js',
-//         'jQuery',
-//         'APIs',
-//         'Express',
-//         'MySQL',
-//         'Sequel',
-//         'Handlebars',
-//         'Apollo',
-//         'GraphQL',
-//         'MongoDB',
-//         'Heroku',
-//         'Insomnia',
-//         'React',
 // This function renders main content of About section
 function About() {
     const frontendData = [
@@ -48,13 +33,13 @@ function About() {
         'UX/UI',
     ];
     const backendData = [
-        ' Node.js',
+        'Node.js',
         'Express.js, ',
         'MySQL/NoSQL',
         'RESTful/GraphQL',
-        'OAuth',
         'Heroku/Git Pages',
         'Isomnia/Postman',
+        'OAuth',
         'MongoDB',
         'Git',
         'Sequelize',
@@ -73,8 +58,78 @@ function About() {
             {skill}
         </li>
     ));
+
+    const pages = [
+        'Landing',
+        'About',
+        'Edu',
+        'Projects',
+        'Resume',
+        'References',
+        'Contact',
+    ];
+    // state
+    let currentPage = 'Landing';
+    let pageIndexObj = {
+        Landing: 0,
+        About: 1,
+        Edu: 2,
+        Projects: 3,
+        Resume: 4,
+        References: 5,
+        Contact: 6,
+    };
+    const setActivePage = (newPage) => {
+        const appContainer = document.getElementsByClassName('appContainer')[0];
+        const pageIndex = pages.indexOf(newPage);
+        const currentPageIndex = pages.indexOf(currentPage);
+        const calculatedVH = pageIndex * 100;
+        if (newPage !== currentPage) {
+            const pageDiff =
+                pageIndex < currentPageIndex
+                    ? Math.abs(currentPageIndex - pageIndex)
+                    : Math.abs(pageIndex - currentPageIndex);
+            pages.forEach(
+                (element, index) =>
+                    (pageIndexObj[element] = index - pages.indexOf(newPage))
+            );
+            currentPage = newPage;
+            console.log(pageIndexObj);
+            console.log(pageDiff);
+            appContainer.style.transition = `all ${pageDiff * 1.5}s ease`;
+            const logoSliderImage =
+                document.getElementsByClassName('logoSliderImage')[0];
+            const logoSliderCircle =
+                document.getElementsByClassName('logoSliderCircle')[0];
+            // if > 0, then the page is moving upwards
+            if (currentPageIndex - pageIndex > 0) {
+                //  changing top prop value to move the image
+                if (pageIndex === 0) {
+                    setTimeout(function () {
+                        logoSliderImage.style.top = `15px`;
+                    }, 1200);
+                    logoSliderCircle.style.opacity = '0';
+                }
+            } else {
+                if (pageIndex >= 1) {
+                    logoSliderImage.style.top = `calc(100% - 335px)`;
+                    setTimeout(function () {
+                        logoSliderCircle.style.opacity = '1';
+                    }, 1000);
+                }
+            }
+
+            appContainer.style.top = `calc(0% - ${calculatedVH}vh)`;
+        }
+    };
+
     return (
-        <div style={{ minHeight: '100vh', overflow: 'hidden' }}>
+        <div
+            style={{
+                minHeight: '100vh',
+                overflow: 'hidden',
+            }}
+        >
             <div
                 className='aboutContainer pageContainer'
                 style={aboutContainer}
@@ -119,15 +174,15 @@ function About() {
                     <div class='aboutSubtitle' style={aboutSubtitle}>
                         Thanks for reading! - Avery
                     </div>
+                    {/* TODO: add animation on skill hover */}
                     <div className='techBox' style={techBox}>
-                        <div className='aboutSubtitle' style={aboutSubtitle}>
+                        <div className='aboutSubtitle' style={skillSubtitle}>
                             Front End Skills
                         </div>
-
                         {renderedFrontendSkills}
                     </div>
                     <div className='skillBox' style={skillBox}>
-                        <div className='aboutSubtitle' style={aboutSubtitle}>
+                        <div className='aboutSubtitle' style={skillSubtitle}>
                             Back End Skills
                         </div>
                         {renderedBackendSkills}

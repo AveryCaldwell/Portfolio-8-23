@@ -102,55 +102,71 @@ export const letter = {
 };
 /* ============================== ABOUT SECTION ============================== */
 export const aboutContainer = {
+    marginTop: '1200px',
     display: 'flex',
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
     fontSize: '50px',
     color: 'white',
     borderRadius: '250px',
-    left: '10%',
-    top: '-10vh',
+    left: '5%',
+    // top: '0vh',
+    bottom: '145vh',
     fontFamily: 'Roboto',
-    position: 'absolute',
-    width: '1000px',
+    // position: 'absolute',
+    width: '1200px',
+    minHeight: '100vh',
+    // overflow: 'hidden',
 };
 export const aboutHeader = {
     fontSize: '48px',
     color: 'white',
     borderRadius: '250px',
     left: '55%',
-    top: '123vh',
+    top: '110vh',
     position: 'absolute',
 };
 export const aboutContent = {
-    top: '130vh',
+    top: '118vh',
     left: '55%',
     width: '800px',
     height: 'fit-content',
     // position: 'relative',
     position: 'absolute',
-    padding: '15px',
+    padding: '10px',
     borderRadius: '36px',
     background: ' rgba(255, 255, 255, 0.2)',
     boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
     backdropFilter: 'blur(5px)',
     border: '1px solid rgba(255, 255, 255, 0.3)',
-    fontSize: '20px',
+    fontSize: '18px',
     color: 'white',
     lineHeight: '1.35',
     fontFamily: 'Roboto',
 };
 export const aboutSubtitle = {
     padding: '15px',
-    fontSize: '22px',
+    fontSize: '20px',
     color: 'white',
     lineHeight: '1.35',
     fontFamily: 'Roboto',
     fontWeight: 'bold',
     textAlign: 'center',
 };
+export const skillSubtitle = {
+    padding: '10px',
+    fontSize: '18px',
+    color: 'white',
+    fontFamily: 'Roboto',
+    textAlign: 'left',
+    backgroundColor: '#99b3fc',
+    width: 'fit-content',
+    borderRadius: '36px',
+    marginBottom: '5px',
+    fontWeight: 'bold',
+};
 export const aboutText = {
     padding: '10px',
-    textIndent: '25px',
+    textIndent: '35px',
 };
 
 export const techBox = {
@@ -158,7 +174,7 @@ export const techBox = {
     // position: 'absolute',
     top: '148vh',
     left: '55%',
-    fontSize: '20px',
+    fontSize: '16px',
     marginTop: '15px',
 };
 export const skillBox = {
@@ -166,21 +182,21 @@ export const skillBox = {
     // position: 'absolute',
     top: '155vh',
     left: '55%',
-    fontSize: '20px',
+    fontSize: '16px',
     marginTop: '15px',
 };
 export const aboutBubbleItem = {
     textDecoration: 'none',
     borderRadius: '36px',
-    border: '1px solid white',
+    border: '1px solid #EEEEEE',
     color: 'white',
     display: 'inline-block',
     position: 'relative',
     margin: '10px 10px 10px 10px',
     textAlign: 'center',
     listStyle: 'none',
-    padding: '5px',
-    width: '100px',
+    padding: '10px',
+    width: 'fit-content',
     transition: '0.25s',
 };
 
@@ -192,14 +208,15 @@ export const aboutButton = {
     textAlign: 'center',
     listStyle: 'none',
     width: '125px',
-    top: '165vh',
-    left: '55%',
+    // top: '202vh',
+    // left: '5%',
     height: '65px',
     color: 'white',
     fontSize: '18px',
     lineHeight: '1.25',
     backgroundColor: 'transparent',
-    pointer: 'cursor',
+    cursor: 'pointer',
+    marginTop: '30px',
 };
 export const backButton = {
     borderRadius: '36px',
@@ -208,12 +225,13 @@ export const backButton = {
     textAlign: 'center',
     listStyle: 'none',
     width: '135px',
-    top: '165vh',
-    left: '70%',
+    // top: '202vh',
+    left: '25%',
     height: '65px',
     color: 'white',
     fontSize: '18px',
     lineHeight: '1.25',
     backgroundColor: 'transparent',
-    pointer: 'cursor',
+    cursor: 'pointer',
+    marginTop: '30px',
 };
