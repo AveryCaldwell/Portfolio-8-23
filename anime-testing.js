@@ -86,6 +86,7 @@ let animation = anime({
     delay: anime.stagger(100, { start: 1000 }),
     translateX: [-10, 30],
 });
+// Education Orbit animation
 let currentPosition = {
     object1: 0,
     object2: 1 / 3,
@@ -99,7 +100,7 @@ function experienceRotation(endDeg, target, speedOverride) {
     const fullRotation = rotationTime;
     const distTravel = endDeg - currentPosition[target];
     const duration = Math.abs(distTravel * (fullRotation / 100));
-    targetDiv = document.getElementById(target);
+    const targetDiv = document.getElementById(target);
     targetDiv.animate(
         [
             { offsetDistance: String(currentPosition[target]) + '%' },

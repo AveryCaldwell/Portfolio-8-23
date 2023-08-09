@@ -235,3 +235,139 @@ export const backButton = {
     cursor: 'pointer',
     marginTop: '30px',
 };
+/* ============================== EDUCATION SECTION ============================== */
+export const orbitalContainer = {
+    height: '600px',
+    opacity: '0',
+    // position: 'relative',
+    transition: 'all 1s ease',
+    display: 'flex',
+    // justifyContent: 'center',
+    alignItems: 'center',
+};
+export const orbitalBox = {
+    offsetPath: `path('M200,0 A200,200 0 1,1 200,400 A200,200 0 1,1 200,0')`,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    width: '300px',
+    height: '150px',
+    overflow: 'hidden',
+    cursor: 'pointer',
+    borderRadius: '36px',
+    margin: '15px',
+    background: 'rgba(255, 255, 255, 0.2)',
+    boxShadow: ' 0 4px 30px rgba(0, 0, 0, 0.1)',
+    backdropFilter: ' blur(5px)',
+    border: '1px solid rgba(255, 255, 255, 0.3)',
+};
+export const cardContainer = {
+    top: '9vh',
+    position: 'relative',
+    left: '60%',
+    // height: 'fit-content',
+    display: 'flex',
+    transition: 'all 1s ease',
+    flexDirection: 'column',
+    overflow: 'hidden',
+};
+export const eduTitle = {
+    position: 'absolute',
+    color: 'white',
+    transition: 'all .2s ease',
+    padding: '25px',
+    textAlign: 'center',
+    alignItems: 'center',
+    display: 'flex',
+    fontSize: '36px',
+    marginLeft: '50px',
+    fontFamily: 'Roboto',
+};
+export const eduHeader = {
+    transition: 'all 0.2s ease',
+    padding: '5px',
+    color: 'white',
+    fontSize: '22px',
+    textAlign: 'center',
+    alignItems: 'center',
+    display: 'flex',
+    fontFamily: 'Roboto',
+};
+export const eduCard = {
+    height: 'fit-content',
+    fontFamily: 'Roboto',
+    padding: '15px',
+    justifyContent: 'center',
+    textAlign: 'center',
+    display: 'flex',
+    width: '350px',
+    position: 'relative',
+    cursor: 'pointer',
+    borderRadius: '36px',
+    margin: '15px',
+    background: 'rgba(255, 255, 255, 0.2)',
+    boxShadow: ' 0 4px 30px rgba(0, 0, 0, 0.1)',
+    backdropFilter: ' blur(5px)',
+    border: '1px solid rgba(255, 255, 255, 0.3)',
+};
+export const eduImage = {
+    width: '150px',
+    borderRadius: '100%',
+    display: 'flex',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+};
+export const eduSlideshow = {
+    fontFamily: 'Roboto',
+    listStyleType: 'circle',
+    lineHeight: '20px',
+    listStylePosition: 'inside',
+    width: '350px',
+    // height: '500px',
+    color: 'white',
+    maxWidth: '1000px',
+    position: 'relative',
+    top: '2vh',
+    padding: '15px',
+    textAlign: 'left',
+    fontSize: '18x',
+    background: 'rgba(255, 255, 255, 0.2)',
+    borderRadius: '16px',
+    boxShadow: ' 0 4px 30px rgba(0, 0, 0, 0.1)',
+    backdropFilter: ' blur(5px)',
+    border: '1px solid rgba(255, 255, 255, 0.3)',
+};
+// export const eduSlides = {
+//     display: 'none',
+// };
+// export const eduList = {
+//     textAlign: 'center',
+//     listStyle: 'none',
+//     padding: '8px',
+//     fontSize: '20px',
+//     alignItems: 'center',
+// };
+export const eduBtn = {
+    borderRadius: '36px',
+    border: 'solid 1px white',
+    position: 'relative',
+    textAlign: 'center',
+    listStyle: 'none',
+    width: '125px',
+    top: '65vh',
+    height: '65px',
+    color: 'white',
+    fontSize: '18px',
+    backgroundColor: 'transparent',
+    cursor: 'pointer',
+};
+export const eduBtnContainer = {
+    marginTop: '50px',
+};
+// TODO: add keyframes
+export const mySlides = {
+    display: 'block',
+    animationName: 'fade',
+    animationDuration: ' 1.5s',
+};
