@@ -106,7 +106,6 @@ export const letter = {
 };
 /* ============================== ABOUT SECTION ============================== */
 export const aboutContainer = {
-    marginTop: '1200px',
     display: 'flex',
     fontSize: '50px',
     color: 'white',
@@ -243,7 +242,8 @@ export const backButton = {
 };
 /* ============================== EDUCATION SECTION ============================== */
 export const orbitalContainer = {
-    height: '600px',
+    // height: '600px',
+    height: '780px',
     opacity: '0',
     // position: 'relative',
     transition: 'all 1s ease',
@@ -268,6 +268,19 @@ export const orbitalBox = {
     backdropFilter: ' blur(5px)',
     border: '1px solid rgba(255, 255, 255, 0.3)',
 };
+export const eduTitle = {
+    position: 'absolute',
+    color: 'white',
+    transition: 'all .2s ease',
+    padding: '25px',
+    textAlign: 'center',
+    alignItems: 'center',
+    display: 'flex',
+    fontSize: '46px',
+    marginTop: '75px', // navbar is 50px
+    marginLeft: '90px',
+    fontFamily: 'Roboto',
+};
 export const cardContainer = {
     top: '9vh',
     position: 'relative',
@@ -278,18 +291,7 @@ export const cardContainer = {
     flexDirection: 'column',
     overflow: 'hidden',
 };
-export const eduTitle = {
-    position: 'absolute',
-    color: 'white',
-    transition: 'all .2s ease',
-    padding: '25px',
-    textAlign: 'center',
-    alignItems: 'center',
-    display: 'flex',
-    fontSize: '36px',
-    marginLeft: '50px',
-    fontFamily: 'Roboto',
-};
+
 export const eduHeader = {
     transition: 'all 0.2s ease',
     padding: '5px',
