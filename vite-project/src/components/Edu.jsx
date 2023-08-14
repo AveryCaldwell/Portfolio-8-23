@@ -184,7 +184,7 @@ const setActivePage = (newPage) => {
             style={{ display: 'flex', minHeight: '100vh', overflow: 'hidden' }}
         >
             <h1 className='eduTitle' style={eduTitle}>
-                Education
+                Education - Disclaimer: page under construction
             </h1>
 
             <div className='orbitalContainer' style={orbitalContainer}>

@@ -282,7 +282,7 @@ export const eduTitle = {
     fontFamily: 'Roboto',
 };
 export const cardContainer = {
-    top: '9vh',
+    top: '15vh',
     position: 'relative',
     left: '60%',
     // height: 'fit-content',
