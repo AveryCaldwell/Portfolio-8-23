@@ -116,6 +116,7 @@ export const aboutContainer = {
     width: '1200px',
     minHeight: '100vh',
     // overflow: 'hidden',
+    //height: "100vh",
 };
 export const aboutHeader = {
     fontSize: '48px',

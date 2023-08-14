@@ -8,6 +8,7 @@ import {
     landingSubtitle,
     landingButton,
     letter,
+    pageContainer
 } from './Styles';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 
@@ -112,7 +113,7 @@ function Landing() {
     // render landing page
     return (
         <>
-            <div className='landingContainer pageContainer' ref={containerRef}>
+            <div className='landingContainer pageContainer' style={pageContainer} ref={containerRef}>
                 <div className='landingHeader' style={landingHeader}>
                     <span className='letter' style={letter}>
                         A

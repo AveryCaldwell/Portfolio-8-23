@@ -21,6 +21,72 @@ import {
 
 // This function renders main content of web app
 function Edu() {
+    //array of pages
+const pages = [
+    'Landing',
+    'About',
+    'Edu',
+    'Projects',
+    'Resume',
+    'References',
+    'Contact',
+];
+// state
+let currentPage = 'Landing';
+let pageIndexObj = {
+    Landing: 0,
+    About: 1,
+    Edu: 2,
+    Projects: 3,
+    Resume: 4,
+    References: 5,
+    Contact: 6,
+};
+
+// sets the active page shown
+const setActivePage = (newPage) => {
+    const appContainer = document.getElementsByClassName('appContainer')[0];
+    const pageIndex = pages.indexOf(newPage);
+    const currentPageIndex = pages.indexOf(currentPage);
+    const calculatedVH = pageIndex * 100;
+    if (newPage !== currentPage) {
+        const pageDiff =
+            pageIndex < currentPageIndex
+                ? Math.abs(currentPageIndex - pageIndex)
+                : Math.abs(pageIndex - currentPageIndex);
+        pages.forEach(
+            (element, index) =>
+                (pageIndexObj[element] = index - pages.indexOf(newPage))
+        );
+        currentPage = newPage;
+        console.log(pageIndexObj);
+        console.log(pageDiff);
+        appContainer.style.transition = `all ${pageDiff * 1.5}s ease`;
+        const logoSliderImage =
+            document.getElementsByClassName('logoSliderImage')[0];
+        const logoSliderCircle =
+            document.getElementsByClassName('logoSliderCircle')[0];
+        // if > 0, then the page is moving upwards
+        if (currentPageIndex - pageIndex > 0) {
+            //  changing top prop value to move the image
+            if (pageIndex === 0) {
+                setTimeout(function () {
+                    logoSliderImage.style.top = `15px`;
+                }, 1200);
+                logoSliderCircle.style.opacity = '0';
+            }
+        } else {
+            if (pageIndex >= 1) {
+                logoSliderImage.style.top = `calc(100% - 335px)`;
+                setTimeout(function () {
+                    logoSliderCircle.style.opacity = '1';
+                }, 1000);
+            }
+        }
+
+        appContainer.style.top = `calc(0% - ${calculatedVH}vh)`;
+    }
+};
     // Education Orbit animation
     let currentPosition = {
         object1: 0,
@@ -66,10 +132,7 @@ function Edu() {
         3: 100,
     };
     function nextOrbit(target) {
-        experienceRotation(
-            nextOrbitDeg[currentOrbit[target]],
-            `object${target}`
-        );
+        experienceRotation(nextOrbitDeg[currentOrbit[target]], `object${target}`);
         if (currentOrbit[target] === 3) {
             currentOrbit[target] = 1;
         } else {
@@ -92,9 +155,7 @@ function Edu() {
     function initializeRotator() {
         experienceRotation((1 / 3) * 100, 'object2', 1);
         experienceRotation((2 / 3) * 100, 'object3', 1);
-        document.getElementsByClassName(
-            'orbitalContainer'
-        )[0].style.opacity = 1;
+        document.getElementsByClassName('orbitalContainer')[0].style.opacity = 1;
         constantOrbit();
     }
     let orbitting = false;
@@ -115,6 +176,8 @@ function Edu() {
         initializeRotator();
     }, []); // Empty dependency array means this effect will run after initial render
 
+
+  
     return (
         <div
             className='eduContainer pageContainer'

@@ -226,6 +226,7 @@ function Nav() {
                         height: '50px',
                         width: '50px',
                     }}
+                    onClick={toggleDrawer('left', true)}
                 />
                 <Typography
                     variant='h3'
@@ -250,9 +251,9 @@ function Nav() {
             </Material.Toolbar>
             {['left'].map((anchor) => (
                 <React.Fragment key={anchor}>
-                    <Material.Button onClick={toggleDrawer(anchor, true)}>
+                    {/* <Material.Button onClick={toggleDrawer(anchor, true)}>
                         {anchor}
-                    </Material.Button>
+                    </Material.Button> */}
                     <Material.Drawer
                         anchor={anchor}
                         open={state[anchor]}

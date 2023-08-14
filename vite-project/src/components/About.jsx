@@ -14,6 +14,7 @@ import {
     aboutText,
     aboutSubtitle,
     skillSubtitle,
+    pageContainer
 } from './Styles';
 
 // This function renders main content of About section
@@ -124,15 +125,15 @@ function About() {
     };
 
     return (
-        <div
-            style={{
-                minHeight: '100vh',
-                overflow: 'hidden',
-            }}
-        >
+        // <div
+        //     style={{
+        //         minHeight: '100vh',
+        //         overflow: 'hidden',
+        //     }}
+        // >
             <div
                 className='aboutContainer pageContainer'
-                style={aboutContainer}
+                style={Object.assign({},aboutContainer,pageContainer)}
             >
                 <div className='aboutHeader' style={aboutHeader}>
                     About Me
@@ -204,7 +205,7 @@ function About() {
                     </button>
                 </div>
             </div>
-        </div>
+        // </div>
     );
 }
 
