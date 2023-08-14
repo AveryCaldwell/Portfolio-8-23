@@ -374,6 +374,13 @@ export const eduBtnContainer = {
     marginTop: '50px',
 };
 // TODO: add keyframes
+export const svgContainer = {
+    position: 'absolute',
+    top: '340vh',
+    transform: 'rotateY(45deg)',
+    pointerEvents: 'none',
+    zIndex: '0',
+}
 export const mySlides = {
     display: 'block',
     animationName: 'fade',
@@ -383,4 +390,40 @@ export const svgCord = {
     width: "120vh",
     height: "120vh",
     pointerEvents: "none",
+};
+// styles.jsx
+
+// ...existing styles...
+
+export const animateSvgStroke1 = {
+    "@-webkit-keyframes animate-svg-stroke-1": {
+        "0%": {
+            strokeDashoffset: "2515.90478515625px",
+            strokeDasharray: "2515.90478515625px",
+        },
+        "100%": {
+            strokeDashoffset: "0",
+            strokeDasharray: "2515.90478515625px",
+        },
+    },
+    "@keyframes animate-svg-stroke-1": {
+        "0%": {
+            strokeDashoffset: "2515.90478515625px",
+            strokeDasharray: "2515.90478515625px",
+        },
+        "100%": {
+            strokeDashoffset: "0",
+            strokeDasharray: "2515.90478515625px",
+        },
+    },
+    "@keyframes animate-svg-stroke-reverse": {
+        "100%": {
+            strokeDashoffset: "2515.90478515625px",
+            strokeDasharray: "2515.90478515625px",
+        },
+        "0%": {
+            strokeDashoffset: "0",
+            strokeDasharray: "2515.90478515625px",
+        },
+    },
 };
