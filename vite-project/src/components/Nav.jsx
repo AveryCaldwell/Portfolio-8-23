@@ -5,6 +5,7 @@ import { Typography } from '@mui/material';
 
 // ICONs
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import {
     CollectionsBookmark,
     Edit,
@@ -13,6 +14,7 @@ import {
     PermMedia,
     UploadFile,
 } from '@mui/icons-material';
+
 
 // -------------function that renders nav bar
 function Nav() {
@@ -148,11 +150,22 @@ function Nav() {
                     textAlign: 'center',
                     pt: 4,
                     color: 'white',
+                    fontSize: 22,
+                    marginBottom: '5px',
+                }}
+            >
+                Avery Caldwell
+            </Typography>            <Typography
+                sx={{
+                    fontFamily: 'Roboto',
+                    textAlign: 'center',
+                    pt: 1,
+                    color: 'white',
                     fontSize: 20,
                     marginBottom: '20px',
                 }}
             >
-                Avery Caldwell
+               Full Stack Developer
             </Typography>
             <Material.Divider />
             <Material.List>
@@ -177,11 +190,11 @@ function Nav() {
                 <Material.ListItemButton
                     onClick={() => setActivePage('Resume')}
                 >
-                    <Material.ListItemIcon>{<Edit />}</Material.ListItemIcon>
+                    <Material.ListItemIcon>
+                        {<Edit />}
+                        </Material.ListItemIcon>
                     <Material.ListItemText primary={'Resume'} />
                 </Material.ListItemButton>
-            </Material.List>
-            <Material.List>
                 <Material.ListItemButton onClick={() => setActivePage('Ref')}>
                     <Material.ListItemIcon>{<Edit />}</Material.ListItemIcon>
                     <Material.ListItemText primary={'References'} />
@@ -205,6 +218,19 @@ function Nav() {
                 </Material.ListItemButton>
             </Material.List>
             <Material.Divider />
+            <CloseIcon
+                    sx={{
+                        display: 'block',
+                        height: '50px',
+                        width: '50px',
+                        // FIXME: reposition close button
+                        marginTop: '50px',
+                        marginLeft: 'auto',
+                        marginRight: 'auto',
+                        cursor: 'pointer'
+                    }}
+                    onClick={toggleDrawer('left', false)}
+                />
         </Material.Box>
     );
     // --------------renders top header
@@ -217,18 +243,18 @@ function Nav() {
                     display: 'flex',
                     alignContent: 'start',
                     alignItems: 'baseline',
-                    marginLeft: '5px',
+                    marginLeft: '5px',    background: ' rgba(255, 255, 255, 0.2)',
                 }}
             >
                 {/* TODO: add on click function to menu icon */}
                 <MenuIcon
                     sx={{
                         height: '50px',
-                        width: '50px',
+                        width: '50px',    cursor: 'pointer'
                     }}
                     onClick={toggleDrawer('left', true)}
                 />
-                <Typography
+                {/* <Typography
                     variant='h3'
                     sx={{
                         fontFamily: 'Roboto',
@@ -247,7 +273,7 @@ function Nav() {
                     }}
                 >
                     Full Stack Developer
-                </Typography>
+                </Typography> */}
             </Material.Toolbar>
             {['left'].map((anchor) => (
                 <React.Fragment key={anchor}>
