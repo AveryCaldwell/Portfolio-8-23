@@ -379,3 +379,8 @@ export const mySlides = {
     animationName: 'fade',
     animationDuration: ' 1.5s',
 };
+export const svgCord = {
+    width: "120vh",
+    height: "120vh",
+    pointerEvents: "none",
+};
