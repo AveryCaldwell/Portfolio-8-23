@@ -12,17 +12,7 @@ export const pageContainer = {
     overflow: 'hidden',
 };
 /* ============================== LANDING SECTION ============================== */
-export const logoSliderImage = {
-    pointerEvents: 'none',
-    position: 'relative',
-    width: '320px',
-    height: '320px',
-    display: 'inline-block',
-    top: '15px',
-    borderRadius: '50%',
-    left: '15px',
-    transition: 'all 1.5s ease',
-};
+
 export const logoSliderContainer = {
     position: 'absolute',
     color: 'white',
@@ -33,8 +23,19 @@ export const logoSliderContainer = {
     height: '120vh',
     width: '350px',
     borderRadius: '250px',
-    left: '20%',
+    left: '5%',
     top: '40vh',
+};
+export const logoSliderImage = {
+    pointerEvents: 'none',
+    position: 'relative',
+    width: '300px',
+    height: '300px',
+    display: 'inline-block',
+    top: '15px',
+    borderRadius: '50%',
+    left: '24px',
+    transition: 'all 1.5s ease',
 };
 export const logoSliderCircle = {
     position: 'absolute',
@@ -44,7 +45,7 @@ export const logoSliderCircle = {
     width: '400px',
     borderRadius: '50%',
     left: '-30px',
-    bottom: '-34px',
+    bottom: '-26px',
     boxShadow: '0 0 30px 15px white',
     display: 'block',
     transition: 'all 0.5s ease',
@@ -53,7 +54,7 @@ export const logoSliderCircle = {
 export const landingHeader = {
     position: 'relative',
     color: 'white',
-    left: '50%',
+    left: '40%',
     top: '37vh',
     height: '12vh',
     fontSize: '50px',
@@ -63,8 +64,8 @@ export const landingText = {
     display: 'inline-block',
     fontSize: '32px',
     position: 'relative',
-    left: '50%',
-    top: '37vh',
+    left: '40%',
+    top: '38vh',
     color: 'white',
     marginTop: '15px',
     width: '400px',
@@ -76,15 +77,17 @@ export const landingTitle = {
     display: 'block',
     textAlign: 'center',
     letterSpacing: '5px',
-    fontFamily: 'Roboto',
+    fontFamily: 'Roboto',   
+
 };
 export const landingSubtitle = {
     marginTop: '15px',
     borderRadius: '36px',
     width: '400px',
-    padding: '15px',
+    padding: '5px',
     display: 'block',
     fontFamily: 'Roboto',
+
 };
 
 export const landingButton = {
@@ -94,6 +97,7 @@ export const landingButton = {
     border: 'none',
     fontSize: '50px',
     cursor: 'pointer',
+
 };
 /* { NAME ANIMATION } */
 export const letter = {
@@ -104,13 +108,12 @@ export const letter = {
 export const aboutContainer = {
     marginTop: '1200px',
     display: 'flex',
-    // backgroundColor: 'green',
     fontSize: '50px',
     color: 'white',
     borderRadius: '250px',
-    left: '5%',
+    // left: '5%',
     // top: '0vh',
-    bottom: '145vh',
+    // bottom: '145vh',
     fontFamily: 'Roboto',
     // position: 'absolute',
     width: '1200px',
@@ -122,14 +125,15 @@ export const aboutHeader = {
     fontSize: '48px',
     color: 'white',
     borderRadius: '250px',
-    left: '55%',
+    left: '40%',
     top: '110vh',
     position: 'absolute',
+
 };
 export const aboutContent = {
     top: '118vh',
-    left: '55%',
-    width: '800px',
+    left: '40%',
+    width: '900px',
     height: 'fit-content',
     // position: 'relative',
     position: 'absolute',
@@ -143,6 +147,7 @@ export const aboutContent = {
     color: 'white',
     lineHeight: '1.35',
     fontFamily: 'Roboto',
+    overflow: 'scroll',
 };
 export const aboutSubtitle = {
     padding: '15px',
