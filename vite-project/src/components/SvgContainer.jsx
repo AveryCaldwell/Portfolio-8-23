@@ -1,5 +1,5 @@
 import * as React from "react";
-import { svgCord, svgContainer, animateSvgStroke1  } from "./Styles";
+import {startButton, svgCord, svgContainer, animateSvgStroke1  } from "./Styles";
 
 // This function renders main content of web app
 function SvgContainer() {
@@ -35,7 +35,7 @@ function SvgContainer() {
       />
       </svg>
 
-      <button
+      <button style={startButton}
         id="startButton"
         class="aboutButton"
         onClick={() => setActivePage('Resume')}

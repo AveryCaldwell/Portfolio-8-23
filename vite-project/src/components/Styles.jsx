@@ -377,6 +377,7 @@ export const svgContainer = {
   pointerEvents: "none",
   zIndex: "0",
 };
+/* Hide the images by default */
 export const mySlides = {
   display: "block",
   animationName: "fade",
@@ -425,6 +426,8 @@ export const projectContainer = {
   display: "flex",
   height: "100vh",
 };
+/* LEFT SIDE COMPUTER SECTION STARTS */
+/* ABOUT ME page title */
 export const projectHeader = {
   fontSize: "50px",
   color: "white",
@@ -433,6 +436,7 @@ export const projectHeader = {
   top: "310vh",
   position: "absolute",
 };
+/* about me text blerb */
 export const projectContent = {
   position: "absolute",
   height: "400px",
@@ -453,6 +457,7 @@ export const textSlideshow = {
   padding: "15px",
   right: "5px",
 };
+/* Hide the images by default */
 export const projectSlides = {
   display: "none",
 };
@@ -463,6 +468,7 @@ export const slideTitle = {
   fontWeight: "bold",
   top: "5px",
 };
+/* project github icon */
 export const iconContainer = {
   display: "flex",
   justifyContent: "center",
@@ -497,3 +503,100 @@ export const keyframes = {
         },
     },
 };
+/* ===============RIGHT SIDE COMPUTER SECTION STARTS */
+/* computer image */
+export const computer = {
+    pointerEvents: 'none',
+    position: 'relative',
+    width: '600px',
+    height: '600px',
+    display: 'inline-block',
+    bottom: '1vh',
+    right: '130px',
+    transition: 'all 1.5s ease',
+};
+/* Computer container */
+export const computerContainer = {
+    position: 'absolute',
+    height: '350px',
+    width: '350px',
+    right: '10%',
+    top: '313vh',
+}
+/* Slideshow container */
+export const slideshowContainer = {
+    maxWidth: '1000px',
+    position: 'relative',
+    bottom: '33vh',
+    right: '125px',
+    width: '587px',
+    height: '385px',
+}
+/* Next & previous buttons */
+export const arrows = {
+    cursor: 'pointer',
+    position: 'absolute',
+    top: '50%',
+    width: 'auto',
+    marginTop: -'22px',
+    padding: '16px',
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: '18px',
+    transition: '0.6s ease',
+    borderRadius: '0 3px 3px 0',
+    userSelect: 'none',
+}
+/* Position the "next button" to the right */
+export const next = {
+    right: '0',
+    borderRadius: '3px 0 0 3px',
+}
+// export const textNext = {
+//     left: '455px',
+//     borderRadius: '3px 0 0 3px',
+// }
+/* The dots/bullets/indicators */
+export const dotContainer = {
+    textAlign: 'center',
+    marginTop: '-400px',
+    marginRright: '35px',
+}
+export const dot = {
+    cursor: 'pointer',
+    height: '15px',
+    width: '15px',
+    margin: '0 2px',
+    backgroundColor: '#bbb',
+    borderRadius: '50',
+    display: 'inline-block',
+    transition: 'background-color 0.6s ease',
+}
+/* Fading animation */
+export const fade = { 
+    animationName: 'fade',
+    animationDuration: '1.5s',
+}
+// /* // TODO: add to styles.jsx */
+// @keyframes fade {
+//     from {
+//         opacity: 0.4;
+//     }
+//     to {
+//         opacity: 1;
+//     }
+// }
+export const startButton = {
+    borderRadius: '36px',
+    border: 'solid 1px white',
+    position: 'relative',
+    textAlign: 'center',
+    listStyle: 'none',
+    width: '125px',
+    top: '65vh',
+    left: '5',
+    height: '65px',
+    color: 'white',
+    fontSize: '18px',
+    cursor: 'pointer',
+}
