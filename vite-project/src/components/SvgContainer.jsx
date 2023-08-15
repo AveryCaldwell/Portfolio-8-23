@@ -7,16 +7,15 @@ function SvgContainer() {
   document.addEventListener("DOMContentLoaded", function () {
     const startButton = document.getElementById("startButton");
     const svgPath = document.getElementById("svgPath");
-    const returnBtn = document.getElementsByClassName("tempBtn")[0];
+    const returnBtn = document.getElementsByClassName("returnBtn")[0];
 
     startButton.addEventListener("click", function () {
       svgPath.style.animation =
-        "animate-svg-stroke-1 0.25s cubic-bezier(0.47, 0, 0.745, 0.715) 0.25s both";
+        "animateSvgStroke1 0.25s cubic-bezier(0.47, 0, 0.745, 0.715) 0.25s both";
     });
-     returnBtn = document.getElementsByClassName("tempBtn")[0];
-    tempBtn.addEventListener("click", function () {
+    returnBtn.addEventListener("click", function () {
       svgPath.style.animation =
-        "animate-svg-stroke-reverse 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both";
+        "animateSvgStrokeReverse 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both";
     });
   });
   return (
@@ -27,7 +26,7 @@ function SvgContainer() {
         className="svg-cord"
         style={svgCord}
       >
-        <path
+        <path style={animateSvgStroke1}
           id="svgPath"
           fill="none"
           stroke="#EEE"

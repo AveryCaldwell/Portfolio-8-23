@@ -1,19 +1,19 @@
 import * as React from "react";
-import {pageContainer} from "./Styles";
+import {projectContainer, pageContainer,projectHeader, projectContent, textSlideshow, projectSlides, github,iconContainer, slideTitle} from "./Styles";
 
 // This function renders main content of web app
 function Projects() {
   return (
     <React.Fragment>
-      <div className="projectContainer pageContainer">
-        <h1 className="projectHeader">Projects</h1>
-        <div className="projectContent">
-          <div className="textSlideshow">
-            <div className="projectSlides fade">
-              <div id="slideTitle" className="numbertext">
+      <div className="projectContainer pageContainer" style={Object.assign({},projectContainer,pageContainer)}>
+        <h1 className="projectHeader" style={projectHeader}>Projects</h1>
+        <div className="projectContent" style={projectContent}>
+          <div className="textSlideshow" style={textSlideshow}>
+            <div className="projectSlides fade" style={projectSlides}>
+              <div id="slideTitle" className="numbertext" style={slideTitle}>
                 TasteBuds
               </div>
-              <div className="projectDetails">
+              <div className="projectDetails" >
                 <p>
                   A social media app that allows users to never dine alone
                   again! This app allows the user to create a profile, see other
@@ -24,17 +24,17 @@ function Projects() {
                   Apollo, GraphQL, MongoDb, Mongoose, GitHub, Heroku
                 </p>
               </div>
-              <div className="iconContainer">
+              <div className="iconContainer" style={iconContainer}>
                 <a href="https://github.com/AveryCaldwell/TasteBuds">
                   <i className="fa fa-github-square github" id="github"></i>
                 </a>
               </div>
             </div>
-            <div className="projectSlides fade">
-              <div id="slideTitle" className="numbertext">
+            <div className="projectSlides fade" style={projectSlides}>
+              <div id="slideTitle" className="numbertext"  style={slideTitle}>
                 CheersCheck
               </div>
-              <div className="projectDetails">
+              <div className="projectDetails" >
                 <p>
                   An application that allows the user to easily organize their
                   liquor collection, keep track of what inventory have on hand,
@@ -46,15 +46,15 @@ function Projects() {
                   Heroku, GitHub, JSHint, Masonry, Anime.js
                 </p>
               </div>
-              <div className="iconContainer">
+              <div className="iconContainer" style={iconContainer}>
                 <a href="https://github.com/AveryCaldwell/CheersCheck">
-                  <i className="fa fa-github-square github" id="github"></i>
+                  <i className="fa fa-github-square github" id="github" style={github}></i>
                 </a>
               </div>
             </div>
 
-            <div className="projectSlides fade">
-              <div id="slideTitle" className="numbertext">
+            <div className="projectSlides fade" style={projectSlides}>
+              <div id="slideTitle" className="numbertext" style={slideTitle}>
                 Wear You Wander
               </div>
               <div className="projectDetails">
@@ -67,7 +67,7 @@ function Projects() {
                   jQuery, Server Side APIs, Git Pages, GitHub
                 </p>
               </div>
-              <div className="iconContainer">
+              <div className="iconContainer" style={iconContainer}>
                 <a href="https://github.com/AveryCaldwell/WearYouWander">
                   <i className="fa fa-github-square github" id="github"></i>
                 </a>
