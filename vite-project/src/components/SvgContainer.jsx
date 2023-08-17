@@ -1,25 +1,48 @@
 import * as React from "react";
-import {startButton, svgCord, svgContainer, animateSvgStroke1  } from "./Styles";
+import { pageContainer, svgCord, svgContainer, animateSvgStroke1, mouseContainer, mouse, mouseBtnText, mouseBtn } from "./Styles";
+import * as Material from '@mui/material';
+import MouseIcon from "@mui/icons-material/Mouse";
 
 // This function renders main content of web app
 function SvgContainer() {
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const startButton = document.getElementById("startButton");
+  const handleMouseBtnClick = () => {
+    console.log("Mouse button worked");
     const svgPath = document.getElementById("svgPath");
-    const returnBtn = document.getElementsByClassName("returnBtn")[0];
+    svgPath.style.animation =
+      "animateSvgStroke1 0.25s cubic-bezier(0.47, 0, 0.745, 0.715) 0.25s both";
+  };
 
-    startButton.addEventListener("click", function () {
-      svgPath.style.animation =
-        "animateSvgStroke1 0.25s cubic-bezier(0.47, 0, 0.745, 0.715) 0.25s both";
-    });
-    returnBtn.addEventListener("click", function () {
-      svgPath.style.animation =
-        "animateSvgStrokeReverse 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both";
-    });
-  });
+  const handleReturnBtnClick = () => {
+    console.log("Return button worked");
+    const svgPath = document.getElementById("svgPath");
+    svgPath.style.animation =
+      "animateSvgStrokeReverse 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both";
+  };
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   const mouseBtn = document.getElementById("mouseBtn");
+  //   const svgPath = document.getElementById("svgPath");
+  //   const returnBtn = document.getElementsByClassName("returnBtn")[0];
+
+  //   mouseBtn.addEventListener("click", function () {
+  //     svgPath.style.animation =
+  //       "animateSvgStroke1 0.25s cubic-bezier(0.47, 0, 0.745, 0.715) 0.25s both";
+  //   });
+  //   returnBtn.addEventListener("click", function () {
+  //     svgPath.style.animation =
+  //       "animateSvgStrokeReverse 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both";
+  //   });
+  // });
+
   return (
-    <div className="svgContainer" style={svgContainer}>
+
+    // FIXME: get svg animation working
+    <div className="svgContainer" style={Object.assign({}, svgContainer, pageContainer)}>
+          <button class="returnBtn" onClick={handleReturnBtnClick}>
+                <span> Back </span>
+            </button>
+
+{/* ===COMPUTER WIRE SVG=== */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="616.321 -210 744.3 1389 "
@@ -35,16 +58,11 @@ function SvgContainer() {
       />
       </svg>
 
-      <button style={startButton}
-        id="startButton"
-        class="aboutButton"
-        onClick={() => setActivePage('Resume')}
-      >
-        <span>Read More</span>
-      </button>
-      <button class="returnBtn" onClick={() => setActivePage('Edu')}>
-        <span> ^ </span>
-      </button>
+      {/* ===BUTTONS=== */}
+        <Material.Box  sx={mouseContainer}>
+        <MouseIcon sx={mouse}/>
+        <Material.Button id="mouseBtn" sx={mouseBtn}> <span style={mouseBtnText} onClick={handleMouseBtnClick}> Click  Here! </span></Material.Button>
+        </Material.Box>
     </div>
   );
 }

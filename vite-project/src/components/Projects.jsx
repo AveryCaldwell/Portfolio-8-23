@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as Material from "@mui/material";
 
 import {
   projectContainer,
@@ -18,7 +19,14 @@ import {
   slideshowContainer,
   computerContainer,
   computer,
-  mySlides,activeDot, computerImage, prev
+  mySlides,
+  activeDot,
+  computerImage,
+  prev,
+  mouseContainer,
+  mouse,
+  mouseBtn,
+  mouseBtnText,
 } from "./Styles";
 
 import Tech from "../assets/Tech.png";
@@ -30,7 +38,7 @@ import CC from "../assets/CC.png";
 import Employee from "../assets/Employee.png";
 import comp from "../assets/comp.png";
 // ICON
-import GitHubIcon from '@mui/icons-material/GitHub';
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 // This function renders main content of web app
 function Projects() {
@@ -90,7 +98,7 @@ function Projects() {
       image: Weather,
     },
     {
-      title: "🧑‍💼 Employee Tracker",
+      title: "💼 Employee Tracker",
       description:
         "A command-line application that manages a company's employee database, using Node.js, Inquirer, and MySQL.",
       technologies:
@@ -113,14 +121,77 @@ function Projects() {
   const currentSlide = (n) => {
     setSlideIndex(n);
   };
+  const pages = [
+    "Landing",
+    "About",
+    "Edu",
+    "Projects",
+    "Resume",
+    "References",
+    "Contact",
+  ];
+  // state
+  let currentPage = "Landing";
+  let pageIndexObj = {
+    Landing: 0,
+    About: 1,
+    Edu: 2,
+    Projects: 3,
+    Resume: 4,
+    References: 5,
+    Contact: 6,
+  };
+  const setActivePage = (newPage) => {
+    const appContainer = document.getElementsByClassName("appContainer")[0];
+    const pageIndex = pages.indexOf(newPage);
+    const currentPageIndex = pages.indexOf(currentPage);
+    const calculatedVH = pageIndex * 100;
+    if (newPage !== currentPage) {
+      const pageDiff =
+        pageIndex < currentPageIndex
+          ? Math.abs(currentPageIndex - pageIndex)
+          : Math.abs(pageIndex - currentPageIndex);
+      pages.forEach(
+        (element, index) =>
+          (pageIndexObj[element] = index - pages.indexOf(newPage))
+      );
+      currentPage = newPage;
+      console.log(pageIndexObj);
+      console.log(pageDiff);
+      appContainer.style.transition = `all ${pageDiff * 1.5}s ease`;
+      const logoSliderImage =
+        document.getElementsByClassName("logoSliderImage")[0];
+      const logoSliderCircle =
+        document.getElementsByClassName("logoSliderCircle")[0];
+      // if > 0, then the page is moving upwards
+      if (currentPageIndex - pageIndex > 0) {
+        //  changing top prop value to move the image
+        if (pageIndex === 0) {
+          setTimeout(function () {
+            logoSliderImage.style.top = `15px`;
+          }, 1200);
+          logoSliderCircle.style.opacity = "0";
+        }
+      } else {
+        if (pageIndex >= 1) {
+          logoSliderImage.style.top = `calc(100% - 335px)`;
+          setTimeout(function () {
+            logoSliderCircle.style.opacity = "1";
+          }, 1000);
+        }
+      }
 
+      appContainer.style.top = `calc(0% - ${calculatedVH}vh)`;
+    }
+  };
+  // Create a function to trigger the SVG animation
 
   return (
     <>
       <div
         className='projectContainer pageContainer'
         style={Object.assign({}, projectContainer, pageContainer)}>
-        <h1 className='projectHeader' style={projectHeader}>
+        <h1 className='projectHeader' onClick={() => setActivePage('Resume')}style={projectHeader}>
           Projects
         </h1>
 
@@ -148,8 +219,7 @@ function Projects() {
                   {/* Icons */}
                   <div className='iconContainer' style={iconContainer}>
                     <a href={project.githubLink}>
-                    
-                       <GitHubIcon  style={github}/>
+                      <GitHubIcon style={github} />
                     </a>
                   </div>
                 </div>
@@ -161,7 +231,7 @@ function Projects() {
         {/* === COMPUTER === */}
         <div className='computerContainer' style={computerContainer}>
           <div className='slideshowContainer' style={slideshowContainer}>
-                <img src={comp} alt="comp" class="computer" style={computer}/>
+            <img src={comp} alt='comp' class='computer' style={computer} />
             {projects.map((project, index) => (
               <div
                 key={index}
@@ -182,8 +252,10 @@ function Projects() {
             ))}
 
             {/* Next & previous buttons */}
-            <a className='prev'  style={Object.assign({}, arrows, prev)}
-              onClick={() => plusSlides(1)}> 
+            <a
+              className='prev'
+              style={Object.assign({}, arrows, prev)}
+              onClick={() => plusSlides(1)}>
               ❮
             </a>
             <a
@@ -207,10 +279,26 @@ function Projects() {
             ))}
           </div>
         </div>
+
+        {/* === BUTTONS === */}
+        {/* <Material.Box sx={mouseContainer}>
+          <MouseIcon sx={mouse} />
+          <Material.Button id='mouseBtn' sx={mouseBtn}>
+            {" "}
+            <span
+              style={mouseBtnText}
+              onClick={() => {
+                setActivePage("Resume");
+              }}>
+              {" "}
+              Click Here!{" "}
+            </span>
+          </Material.Button>
+        </Material.Box> */}
+
       </div>
     </>
   );
 }
 
 export default Projects;
-

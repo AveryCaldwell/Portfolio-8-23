@@ -371,11 +371,13 @@ export const eduBtnContainer = {
 };
 /* ============================== SVG PATH SECTION ============================== */
 export const svgContainer = {
-  position: "absolute",
-  top: "340vh",
-  transform: "rotateY(45deg)",
-  pointerEvents: "none",
-  zIndex: "0",
+  // position: "absolute",
+  // position: 'relative',
+  // bottom: '-69vh',
+  // transform: "rotateY(45deg)",
+  // pointerEvents: "none",
+  // zIndex: "1",
+  marginTop: '550px'
 };
 /* Hide the images by default */
 export const mySlides = {
@@ -427,13 +429,13 @@ export const animateSvgStroke1 = {
 //   height: "100vh",
 // };
 export const projectContainer = {
-  display: 'flex',
-  flexDirection: 'column', // Stack content vertically
-  alignItems: 'center', // Center horizontally
-  justifyContent: 'center', // Center vertically
-  minHeight: '100vh', // Set a minimum height for the container  
-  fontFamily: 'Roboto',
-
+  display: "flex",
+  flexDirection: "column", // Stack content vertically
+  alignItems: "center", // Center horizontally
+  justifyContent: "center", // Center vertically
+  minHeight: "100vh", // Set a minimum height for the container
+  fontFamily: "Roboto",
+  // position: 'absolute',
 };
 /* LEFT SIDE COMPUTER SECTION STARTS */
 /* ABOUT ME page title */
@@ -487,111 +489,113 @@ export const github = {
   cursor: "pointer",
   position: "relative",
   color: "white",
-  fontSize: '50px',
+  fontSize: "50px",
   animation: "animate 3s linear infinite",
   textShadow: `0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
         0 0 200px #0072ff`,
 };
 export const keyframes = {
-    "#github": {
-        animationDelay: "0.1s",
+  "#github": {
+    animationDelay: "0.1s",
+  },
+  "@keyframes animate": {
+    from: {
+      filter: "hue-rotate(0deg)",
     },
-    "@keyframes animate": {
-        from: {
-            filter: "hue-rotate(0deg)",
-        },
-        to: {
-            filter: "hue-rotate(360deg)",
-        },
+    to: {
+      filter: "hue-rotate(360deg)",
     },
+  },
 };
 /* ===============RIGHT SIDE COMPUTER SECTION STARTS */
 /* computer image */
 export const computer = {
-    pointerEvents: 'none',
-    position: 'relative',
-    width: '600px',
-    height: '600px',
-    display: 'inline-block',
-    // bottom: '1vh',
-    // right: '130px',
-    transition: 'all 1.5s ease',
+  pointerEvents: "none",
+  position: "relative",
+  width: "600px",
+  height: "600px",
+  display: "inline-block",
+  // bottom: '1vh',
+  // right: '130px',
+  transition: "all 1.5s ease",
 };
 export const computerImage = {
-    height: '325px',
-    width: '575px',position: 'relative',  bottom: '22vh',
-    right: '-15px',
-}
+  height: "325px",
+  width: "575px",
+  position: "relative",
+  bottom: "28vh",
+  right: "-15px",
+};
 /* Computer container */
 export const computerContainer = {
-    position: 'absolute',
-    height: '350px',
-    width: '350px',
-    left: '70%',
-    top: '350vh',
-}
+  position: "absolute",
+  height: "350px",
+  width: "350px",
+  left: "70%",
+  top: "350vh",
+};
 /* Slideshow container */
 export const slideshowContainer = {
-    maxWidth: '1000px',
-    position: 'relative',
-    bottom: '33vh',
-    right: '125px',
-    width: '587px',
-    height: '385px',
-}
+  maxWidth: "1000px",
+  position: "relative",
+  bottom: "33vh",
+  right: "125px",
+  width: "587px",
+  height: "385px",
+};
 /* Next & previous buttons */
 export const arrows = {
-    cursor: 'pointer',
-    position: 'absolute',
-    top: '50%',
-    width: 'auto',
-    marginTop: -'22px',
-    padding: '16px',
-    color: 'white',
-    fontSize: '40px',
-    transition: '0.6s ease',
-    borderRadius: '0 3px 3px 0',
-    userSelect: 'none',
-}
+  cursor: "pointer",
+  position: "absolute",
+  top: "50%",
+  width: "auto",
+  marginTop: -"22px",
+  padding: "16px",
+  color: "white",
+  fontSize: "40px",
+  transition: "0.6s ease",
+  borderRadius: "0 3px 3px 0",
+  userSelect: "none",
+};
 /* Position the "next button" to the right */
 export const next = {
-    right: '-55px',
-    top:'17vh',
-    borderRadius: '3px 0 0 3px',
-}
+  right: "-55px",
+  top: "17vh",
+  borderRadius: "3px 0 0 3px",
+};
 export const prev = {
-    left: '-55px', 
-    top:'17vh',
-    borderRadius: '3px 0 0 3px',
-}
+  left: "-55px",
+  top: "17vh",
+  borderRadius: "3px 0 0 3px",
+};
 // export const textNext = {
 //     left: '455px',
 //     borderRadius: '3px 0 0 3px',
 // }
 /* The dots/bullets/indicators */
 export const dotContainer = {
-    textAlign: 'center',
-    marginTop: '-400px',
-    marginRright: '35px',
-}
+  textAlign: "center",
+  marginTop: "-400px",
+  marginRright: "35px",
+};
 export const dot = {
-  cursor: 'pointer',
-  height: '15px',
-  width: '15px',
-  margin: '0 2px',
-  backgroundColor: '#bbb',
-  borderRadius: '50%',
-  display: 'inline-block',
-  transition: 'background-color 0.6s ease',
+  cursor: "pointer",
+  height: "15px",
+  width: "15px",
+  margin: "0 2px",
+  backgroundColor: "#bbb",
+  borderRadius: "50%",
+  display: "inline-block",
+  transition: "background-color 0.6s ease",
 };
 export const activeDot = {
-  backgroundColor: '#0072ff',
+  backgroundColor: "#0072ff",
 };
 /* Fading animation */
-export const fade = { 
-    animationName: 'fade',
-    animationDuration: '1.5s',
-}
+export const fade = {
+  animationName: "fade",
+  animationDuration: "1.5s",
+};
 // /* // TODO: add to styles.jsx */
 // @keyframes fade {
 //     from {
@@ -601,17 +605,44 @@ export const fade = {
 //         opacity: 1;
 //     }
 // }
-export const startButton = {
-    borderRadius: '36px',
-    border: 'solid 1px white',
-    position: 'relative',
-    textAlign: 'center',
-    listStyle: 'none',
-    width: '125px',
-    top: '65vh',
-    left: '5',
-    height: '65px',
-    color: 'white',
-    fontSize: '18px',
-    cursor: 'pointer',
-}
+// export const startButton = {
+//   borderRadius: "36px",
+//   border: "solid 1px white",
+//   position: "relative",
+//   textAlign: "center",
+//   listStyle: "none",
+//   width: "125px",
+//   top: "65vh",
+//   left: "5",
+//   height: "65px",
+//   color: "white",
+//   fontSize: "18px",
+//   cursor: "pointer",
+// };
+export const mouseContainer = {
+  // bottom: "-25vh",
+  bottom: '105vh',
+  // position: 'absolute',
+   position: 'relative',
+  left:'25%',
+  cursor: 'pointer',
+  // top: '5vh'
+};
+export const mouse = {
+  posiiton: "absolute",
+  color: "white",
+  fontSize: "170px",
+  position: "static",cursor: 'pointer',
+};
+export const mouseBtn = {
+   wordBreak: 'break-all',
+   width:'100px', fontSize: '30px',cursor: 'pointer',
+};
+export const mouseBtnText = {
+  wordBreak: "break-all",
+  width: "90px",
+  fontSize: "26px",
+  marginLeft: "-270px",
+  marginBottom: "100px",
+  lineHeight: "initial",
+};
