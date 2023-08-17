@@ -422,9 +422,18 @@ export const animateSvgStroke1 = {
   },
 };
 /* ============================== PROJECTS SECTION ============================== */
+// export const projectContainer = {
+//   display: "flex",
+//   height: "100vh",
+// };
 export const projectContainer = {
-  display: "flex",
-  height: "100vh",
+  display: 'flex',
+  flexDirection: 'column', // Stack content vertically
+  alignItems: 'center', // Center horizontally
+  justifyContent: 'center', // Center vertically
+  minHeight: '100vh', // Set a minimum height for the container  
+  fontFamily: 'Roboto',
+
 };
 /* LEFT SIDE COMPUTER SECTION STARTS */
 /* ABOUT ME page title */
@@ -443,7 +452,7 @@ export const projectContent = {
   width: "450px",
   lineHeight: "1.25",
   left: "58px",
-  top: "332vh",
+  top: "325vh",
   borderRadius: "36px",
   background: "rgba(255, 255, 255, 0.2)",
   boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
@@ -477,15 +486,8 @@ export const iconContainer = {
 export const github = {
   cursor: "pointer",
   position: "relative",
-  fontSize: "50px",
-  backgroundColor: "#18191f",
   color: "white",
-  boxShadow: `2px 2px 2px #00000080, 10px 1px 12px #00000080, 2px 2px 10px #00000080, 2px 2px 3px #00000080,
-  inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
-  inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080`,
-  borderRadius: "29px",
-  padding: "11px 19px",
-  margin: "0 40px",
+  fontSize: '50px',
   animation: "animate 3s linear infinite",
   textShadow: `0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
         0 0 200px #0072ff`,
@@ -511,17 +513,22 @@ export const computer = {
     width: '600px',
     height: '600px',
     display: 'inline-block',
-    bottom: '1vh',
-    right: '130px',
+    // bottom: '1vh',
+    // right: '130px',
     transition: 'all 1.5s ease',
 };
+export const computerImage = {
+    height: '325px',
+    width: '575px',position: 'relative',  bottom: '22vh',
+    right: '-15px',
+}
 /* Computer container */
 export const computerContainer = {
     position: 'absolute',
     height: '350px',
     width: '350px',
-    right: '10%',
-    top: '313vh',
+    left: '70%',
+    top: '350vh',
 }
 /* Slideshow container */
 export const slideshowContainer = {
@@ -541,15 +548,20 @@ export const arrows = {
     marginTop: -'22px',
     padding: '16px',
     color: 'white',
-    fontWeight: 'bold',
-    fontSize: '18px',
+    fontSize: '40px',
     transition: '0.6s ease',
     borderRadius: '0 3px 3px 0',
     userSelect: 'none',
 }
 /* Position the "next button" to the right */
 export const next = {
-    right: '0',
+    right: '-55px',
+    top:'17vh',
+    borderRadius: '3px 0 0 3px',
+}
+export const prev = {
+    left: '-55px', 
+    top:'17vh',
     borderRadius: '3px 0 0 3px',
 }
 // export const textNext = {
@@ -563,15 +575,18 @@ export const dotContainer = {
     marginRright: '35px',
 }
 export const dot = {
-    cursor: 'pointer',
-    height: '15px',
-    width: '15px',
-    margin: '0 2px',
-    backgroundColor: '#bbb',
-    borderRadius: '50',
-    display: 'inline-block',
-    transition: 'background-color 0.6s ease',
-}
+  cursor: 'pointer',
+  height: '15px',
+  width: '15px',
+  margin: '0 2px',
+  backgroundColor: '#bbb',
+  borderRadius: '50%',
+  display: 'inline-block',
+  transition: 'background-color 0.6s ease',
+};
+export const activeDot = {
+  backgroundColor: '#0072ff',
+};
 /* Fading animation */
 export const fade = { 
     animationName: 'fade',
