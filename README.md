@@ -114,12 +114,11 @@
     <a href="https://www.mongodb.com/"><img alt="MongoDB" src ="https://img.shields.io/badge/MongoDB%20-23F05033.svg?logo=MongoDB&logoColor=white"/></a>
   &emsp;
     <a href="https://www.github.com"><img alt="GitHub Pages" src="https://img.shields.io/badge/GitHub%20Pages-%23327FC7.svg?style=flat&llogo=github&logoColor=white"></a>
-    &emsp;
+ &emsp;
     <a href="https://www.heroku.com/home"><img alt="Heroku" src="https://img.shields.io/badge/Heroku%20-00b56a.svg?logo=Heroku&logoColor=white
 "></a>
   
-
-  
+ 
  </p>
   
 ### 👉Graphic Designing
@@ -168,6 +167,18 @@
 </p>
 
 <br/>
+
+
+## 🔗 Resources
+-  [Emojis](https://gist.github.com/rxaviers/7360908) ✨
+- [Badge Icons](https://simpleicons.org/?q=zoom) 📛 
+
+<br/>
+
+
+
+
+
 
 ## 🙋‍♀️ Let's Connect
 <p align="center">
