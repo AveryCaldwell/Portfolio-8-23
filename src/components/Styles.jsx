@@ -371,13 +371,13 @@ export const eduBtnContainer = {
 };
 /* ============================== SVG PATH SECTION ============================== */
 export const svgContainer = {
-  // position: "absolute",
-  // position: 'relative',
-  // bottom: '-69vh',
-  // transform: "rotateY(45deg)",
+  position: "absolute",
+  position: 'relative',
+  bottom: '-59vh',
+  left: '250px',
   // pointerEvents: "none",
-  // zIndex: "1",
-  marginTop: '550px'
+  cursor: 'pointer',
+  // marginTop: '550px'
 };
 /* Hide the images by default */
 export const mySlides = {
@@ -523,7 +523,7 @@ export const computerImage = {
   height: "325px",
   width: "575px",
   position: "relative",
-  bottom: "28vh",
+  bottom: "42vh",
   right: "-15px",
 };
 /* Computer container */
@@ -621,7 +621,7 @@ export const fade = {
 // };
 export const mouseContainer = {
   // bottom: "-25vh",
-  bottom: '105vh',
+  bottom: '125vh',
   // position: 'absolute',
    position: 'relative',
   left:'25%',
@@ -629,14 +629,18 @@ export const mouseContainer = {
   // top: '5vh'
 };
 export const mouse = {
-  posiiton: "absolute",
+  posiiton: "absolute", 
   color: "white",
   fontSize: "170px",
-  position: "static",cursor: 'pointer',
+  // position: "static",
+  cursor: 'pointer',
+  // marginRight: '100px',
 };
 export const mouseBtn = {
    wordBreak: 'break-all',
-   width:'100px', fontSize: '30px',cursor: 'pointer',
+   width:'100px', 
+   fontSize: '30px',
+   cursor: 'pointer',
 };
 export const mouseBtnText = {
   wordBreak: "break-all",
@@ -646,7 +650,7 @@ export const mouseBtnText = {
   marginBottom: "100px",
   lineHeight: "initial",
 };
-
+/* ============================== RESUME SECTION ============================== */
 export const resumeContainer = {
     backgroundColor: 'purple',
         display: 'flex',

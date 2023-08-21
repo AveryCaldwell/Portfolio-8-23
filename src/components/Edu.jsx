@@ -320,14 +320,8 @@ const setActivePage = (newPage) => {
                 >
                     <span> See Projects </span>
                 </button>
-                <button
-                    className='tempBtn'
-                    onClick={() => setActivePage('About')}
-                >
-                    <span>Back</span>
-                </button>
-            </div>
-            {/* <!-- btn container --> */}
+            </div> {/* <!-- btn container --> */}
+            
         </div>
     );
 }

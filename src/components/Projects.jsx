@@ -280,21 +280,7 @@ function Projects() {
           </div>
         </div>
 
-        {/* === BUTTONS === */}
-        {/* <Material.Box sx={mouseContainer}>
-          <MouseIcon sx={mouse} />
-          <Material.Button id='mouseBtn' sx={mouseBtn}>
-            {" "}
-            <span
-              style={mouseBtnText}
-              onClick={() => {
-                setActivePage("Resume");
-              }}>
-              {" "}
-              Click Here!{" "}
-            </span>
-          </Material.Button>
-        </Material.Box> */}
+
 
       </div>
     </>
