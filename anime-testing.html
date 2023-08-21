@@ -1,0 +1,1032 @@
+<!-- https://www.sitepoint.com/get-started-anime-js/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Anime Testing</title>
+    <link rel="stylesheet" href="anime-testing.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <!-- ======================= LANDING PAGE ======================= -->
+    <div class="appContainer pageContainer">
+        <div class="logoSliderContainer">
+            <img src="./assets/aves.png" alt="aves" class="logoSliderImage" />
+            <div class="logoSliderCircle"></div>
+        </div>
+
+        <div class="landingContainer pageContainer">
+            <div class="landingHeader">
+                <span class="letter">A</span>
+                <span class="letter">v</span>
+                <span class="letter">e</span>
+                <span class="letter">r</span>
+                <span class="letter">y</span>
+                <div></div>
+                <span class="letter">C</span>
+                <span class="letter">a</span>
+                <span class="letter">l</span>
+                <span class="letter">d</span>
+                <span class="letter">w</span>
+                <span class="letter">e</span>
+                <span class="letter">l</span>
+                <span class="letter">l</span>
+            </div>
+            <div class="landingText">
+                <div class="landingTitle">Portfolio 2022-2023</div>
+                <div class="landingSubtitle">
+                    Full Stack Developer
+                    <span><button class="landingButton" onclick="setActivePage('About')">
+                            >
+                        </button></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- =================== ABOUT PAGE =================== -->
+
+        <div class="aboutContainer pageContainer">
+            <div class="aboutHeader">About Me</div>
+            <div class="aboutContent">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+                ab harum minus vitae praesentium maxime, veniam fugiat
+                dolor. Sed quaerat quo molestiae distinctio optio quidem
+                tenetur veritatis laboriosam, corrupti repudiandae?
+            </div>
+            <div class="techBox">
+                <div>Technical Skills</div>
+                <div>
+                    <li class="aboutBubbleItem">Software</li>
+                    <li class="aboutBubbleItem">Software</li>
+                    <li class="aboutBubbleItem">Software</li>
+                </div>
+            </div>
+            <div class="skillBox">
+                <div class="aboutSubtitle">Design Skills</div>
+                <div class="aboutBubble">
+                    <li class="aboutBubbleItem">Design</li>
+                    <li class="aboutBubbleItem">Design</li>
+                    <li class="aboutBubbleItem">Design</li>
+                </div>
+            </div>
+            <button class="aboutButton" onclick="setActivePage('Edu')">
+                <span>Show More</span>
+            </button>
+            <button class="tempBtn" onclick="setActivePage('Landing')">
+                <span>Back</span>
+            </button>
+        </div>
+
+        <!-- =================== EDUCATION PAGE =================== -->
+        <div class="eduContainer pageContainer">
+            <h1 class="eduTitle">Education</h1>
+
+            <div class="orbital-container">
+                <div id="object1" class="orbital-box" onclick="rotatorClick(1)">
+                    <img src="assets/2.png" class="eduImage" alt="Mississippi College" style="width: 150px" />
+                </div>
+                <div id="object2" class="orbital-box" onclick="rotatorClick(2)">
+                    <img src="assets/CYCU.png" class="eduImage" alt="Chung Yuan Christian University"
+                        style="width: 150px" />
+                </div>
+                <div id="object3" class="orbital-box" onclick="rotatorClick(3)">
+                    <img src="assets/3.png" class="eduImage" alt="University of Washington" style="width: 150px" />
+                </div>
+            </div>
+
+            <div class="cardContainer">
+                <div class="eduCard1 hide square" onclick="rotatorClick(1)">
+                    <div class="eduHeader" onclick="currentSlide(1)">
+                        Mississippi College
+                    </div>
+                </div>
+                <div class="eduCard2 hide square" onclick="rotatorClick(2)">
+                    <div class="eduHeader" onclick="currentSlide(2)">
+                        Chung Yuan Christian University
+                    </div>
+                </div>
+                <div class="eduCard3 hide square" onclick="rotatorClick(3)">
+                    <div class="eduHeader" onclick="currentSlide(3)">
+                        University of Washington
+                    </div>
+                </div>
+
+                <div id="eduSlideshow">
+                    <!-- css similar to <div class="mySlides fade"> -->
+                    <div class="mySlides fade">
+                        <div class="numbertext">
+                            <li>2012-2016 | Clinton, MS</li>
+                            <li>Headerman Scholar</li>
+                            <li>Women in Business, Member & Speaker</li>
+                            <li>Outstanding Marketing Award</li>
+                            <li>Sandra Parks Award</li>
+                            <li>Who's Who</li>
+                            <li>Mortar Board</li>
+                            <li>
+                                Delta Mu Delta, Epsilon Iota Delta, Omicron
+                                Delta Kappa
+                            </li>
+                        </div>
+                        <!-- numbertext -->
+                    </div>
+                    <!-- mySlides -->
+                    <div class="mySlides fade">
+                        <div class="numbertext">
+                            <li>Taipei, Taiwan</li>
+
+                            <li>Summer Business Program 2015</li>
+                            <li>Certificate of Completion</li>
+                        </div>
+                        <!-- numbertext -->
+                    </div>
+                    <!-- mySlides -->
+                    <div class="mySlides fade">
+                        <div class="numbertext">
+                            <li>Full Stack Developer Coding Bootcamp</li>
+                            <li>Team Lead</li>
+                            <li>GPA: 98.27% / 100%</li>
+                        </div>
+                        <!-- numbertext -->
+                    </div>
+                    <!-- mySlides -->
+                </div>
+                <!-- eduSlideshow -->
+            </div>
+            <!-- cardContainer -->
+            <div class="eduBtnContainer">
+                <button class="eduBtn" onclick="setActivePage('Projects')">
+                    <span> See Projects </span>
+                </button>
+                <button class="tempBtn" onclick="setActivePage('About')">
+                    <span>Back</span>
+                </button>
+            </div>
+            <!-- btn container -->
+        </div>
+        <!-- eduContainer -->
+
+        <div class="svgContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="616.321 -210 744.3 1389 " class="svg-cord">
+                <path id="svgPath" fill="none" stroke="#EEE" stroke-width="3"
+                    d="M869-207q137 214-71 346-196 76-177-11 36-95 125 56c66 127-103 197-119 165-6-11-18-90 106-118a50 50 0 1 1 267 375" />
+            </svg>
+        </div>
+        <!-- svgContainer -->
+
+        <!-- =================== PROJECTS PAGE =================== -->
+        <div class="projectContainer pageContainer">
+            <h1 class="projectHeader">Projects</h1>
+            <!-- css similar to  <div class="computerContainer"> -->
+            <div class="projectContent">
+                <!-- css similar <div class="slideshow-container">-->
+                <div class="textSlideshow">
+                    <!-- css similar to <div class="mySlides fade"> -->
+                    <div class="projectSlides fade">
+                        <div id="slideTitle" class="numbertext">
+                            TasteBuds
+                        </div>
+                        <div class="projectDetails">
+                            <p>
+                                A social media app that allows users to
+                                never dine alone again! This app allows the
+                                user to create a profile, see other users
+                                posts, create posts, and join other events!
+                            </p>
+                            <p>
+                                Technologies: Tailwind, React, MERN stack,
+                                Node.js/Express.js, Apollo, GraphQL,
+                                MongoDb, Mongoose, GitHub, Heroku
+                            </p>
+                        </div>
+                        <div class="iconContainer">
+                            <a href="https://github.com/AveryCaldwell/TasteBuds">
+                                <i class="fa fa-github-square github" id="github"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="projectSlides fade">
+                        <div id="slideTitle" class="numbertext">
+                            CheersCheck
+                        </div>
+                        <div class="projectDetails">
+                            <p>
+                                An application that allows the user to
+                                easily organize their liquor collection,
+                                keep track of what inventory have on hand,
+                                and share it with friends.
+                            </p>
+                            <p>
+                                Technologies: HTML, CSS, Bootstrap,
+                                JavaScript, MySQL, Sequelize, Handlebars.js,
+                                Node.js, Express, Dotenv, Bycrypt, Heroku,
+                                GitHub, JSHint, Masonry, Anime.js
+                            </p>
+                        </div>
+                        <div class="iconContainer">
+                            <a href="https://github.com/AveryCaldwell/CheersCheck">
+                                <i class="fa fa-github-square github" id="github"></i>
+                            </a>
+                        </div>
+                        <!-- icon container -->
+                    </div>
+
+                    <div class="projectSlides fade">
+                        <div id="slideTitle" class="numbertext">
+                            Wear You Wander
+                        </div>
+                        <div class="projectDetails">
+                            <p>
+                                An application that analyzes the weather and
+                                suggests which type of outerwear would be
+                                most suitable.
+                            </p>
+                            <p>
+                                Technologies: HTML, CSS, Foundation
+                                Framework, JavaScript, jQuery, Server Side
+                                APIs, Git Pages, GitHub
+                            </p>
+                        </div>
+                        <div class="iconContainer">
+                            <a href="https://github.com/AveryCaldwell/WearYouWander"><i
+                                    class="fa fa-github-square github" id="github"></i></a>
+                        </div>
+                        <!-- icon container -->
+                    </div>
+                </div>
+                <!-- textSlideshow -->
+            </div>
+            <!-- projectContent-->
+
+            <div class="computerContainer">
+                <img src="./assets/comp.png" alt="comp" class="computer" />
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <!-- <div class="numbertext">1 / 3</div> -->
+                        <img src="/assets/buds.png" style="width: 100%" />
+                    </div>
+
+                    <div class="mySlides fade">
+                        <!-- <div class="numbertext">2 / 3</div> -->
+                        <img src="/assets/CC.png" style="width: 100%" />
+                    </div>
+
+                    <div class="mySlides fade">
+                        <!-- <div class="numbertext">3 / 3</div> -->
+                        <img src="/assets/WYW.png" style="width: 100%" />
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
+                <br />
+
+                <div class="dotContainer">
+                    <div class="dot" onclick="currentSlide(1)"></div>
+                    <div class="dot" onclick="currentSlide(2)"></div>
+                    <div class="dot" onclick="currentSlide(3)"></div>
+                </div>
+            </div>
+            <!-- computer container -->
+
+            <button id="startButton" class="aboutButton" onclick="setActivePage('Resume')">
+                <span>Read More</span>
+            </button>
+            <button class="tempBtn" onclick="setActivePage('Edu')">
+                <span> ^ </span>
+            </button>
+        </div>
+        <!-- project container -->
+
+        <!-- =================== RESUME PAGE =================== -->
+        <div class="resumeContainer pageContainer">
+            <h1 class="resumeTitle">Resume</h1>
+            <div class="typingContainer">
+                <p>Coding is <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+            </div>
+            <div class="resumeBox">
+                <button class="resumeBtn" onclick="setActivePage('Projects')"> Back </button>
+                <button class="textBtn" id="showPlainTextBtn">Show Plain Text</button>
+
+                <button class="resumeNextBtn" onclick="setActivePage('References')">Next</button>
+                <div class="downloadBtn">
+                    <div class="text">
+                        <a href="/assets/resume.pdf" download="resume" class="resumeLink">
+                            <pre><code> < Download /> </code></pre>
+                        </a>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <svg class="downloadSvg" x="0px" y="0px" viewBox="0 0 25 30"
+                        style="enable-background:new 0 0 25 30;">
+                        <path class="check" class="st0" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="codeBox">
+                <code> class AveryCaldwell { </code>
+                <pre>
+constructor() {
+    this.name = 'Avery Caldwell';
+    this.dayOfBirthTimestamp = 12071993;
+    this.email = 'averycaldwell7@gmail.com';
+    }
+
+</pre>
+                <pre>
+
+workExperience() {
+        return [
+        {'2020-2023': 'Suspicious Activity Investigator - BSA/AML at BankPlus'},
+        {'2018-2020': 'Analyst and Regulatory Specialist - CIP/QA at BankPlus'},
+        {'2017-2018': 'Lending Assistant at BankPlus'}
+        ];
+    }
+
+</pre>
+                <pre>
+
+    education() {
+        return [
+        {'2022-2023': 'University of Washington - Certificate in Full Stack Development'},
+        {'2012-2016': 'Mississippi College - Bachelors of Science in Marketing'},
+        {'2015': 'Chung Yuan Christian University - Business Program Certificate'}
+        ];
+    }
+
+</pre>
+                <pre>
+
+    skills() {
+        return [
+        'HTML/CSS/JS', 'React', 'Vue', 'Node.js/Express.js', 'Bootstrap, Tailwind, Material UI', 'Vite', 'SCSS',
+        'npm', 'PWA', 'SPA', 'Git/Github/Github Pages', 'NativeScript', 'Web-extensions', 'Web Sockets',
+        'Firebase', 'PHP', 'MySQL, MongoDB, ORM', 'Wordpress', 'Photoshop, Canva, Davinci Resolve', 'UX/UI',
+        'NestJS', 'Jest', 'Apollo', 'Heroku, Insomnia'
+        ];
+    }
+}
+
+</pre>
+            </div><!-- code box -->
+            <!-- PLAIN TEXT RESUME -->
+            <div class=resumePlainText>
+                <h1>AVERY CALDWELL</h1>
+                </br>
+                <ul>
+                    <li>Seattle, WA </li>
+                    <li>Phone: 601-506-1057 </li>
+                    <li>Email: averycaldwell7@gmail.com </li>
+                    <li>Github: https://github.com/AveryCaldwelll </li>
+                    <li>Portfolio: https://github.com/AveryCaldwell/postgrad-portfolio
+                    </li>
+                </ul>
+
+                </br>
+
+                <h2>SUMMARY</h2>
+                <p>Full Stack web developer with a background in banking. Trained at University of Washington Coding
+                    Bootcamp
+                    & earned a certificate in full-stack web development. Versatile problem-solver excited about
+                    expanding
+                    knowledge; focused on adaptive design and development. Strengths in creativity, teamwork, and
+                    building
+                    projects effectively on all accounts.</p>
+
+                <h2>TECHNICAL SKILLS</h2>
+                <ul><strong>Technologies:</strong>
+                    <li> JavaScript, HTML, CSS,, React, MERN, MySQL, NoSQL, GraphQL, Apollo, MongoDB, Insomnia,
+                        Heroku, Postman, OAth, Restful APIs, Jest, Git, Github, Gitlab, JSON Web Tokens, Wordpress,
+                        Passport.js
+                    </li>
+                    <strong>Frameworks and Libraries:</strong>
+                    <li>Angular, Vue.js, Anime.js, Material-UI, Bootstrap, Vite, Express, jQuery, SASS,
+                        Handlebars.js, bcrypt, Node.js, Tailwind CSS, Bulma, Next.js, Foundation, Chart.js, D3.js</li>
+                </ul>
+
+                </br>
+
+                <h2>PROJECTS</h2>
+                <ul>
+                    <h3><strong>Wear You Wander | </strong>https://github.com/AveryCaldwell/WearYouWander |
+                        https://averycaldwell.github.io/WearYouWander/</h3>
+                    <li>
+                        Wear You Wander is an application that uses 2 server-side APIs with client-side storage to
+                        analyze
+                        historical weather conditions to suggest accommodating outerwear.</li>
+                    <li>As Team Lead for this project, I assigned tasks, created the concept of the application, worked
+                        with both
+                        APIs, and integrated the team’s work.</li>
+                    <li> HTML, CSS, Foundation Framework, JavaScript, and jQuery</li>
+
+                    <h3><strong>Cheers Check |</strong> https://github.com/AveryCaldwell/CheersCheck |
+                        https://averycaldwell.github.io/CheersCheck/</h3>
+                    <li> A new liquor inventory application - the perfect tool for anyone who enjoys keeping track of
+                        their favorite
+                        spirits! You can easily organize your liquor collection, keep track of what you have on hand.
+                    </li>
+                    <li> As Team Lead for this project, I assigned tasks, created the concept of the application, worked
+                        with both
+                        APIs, and integrated the team’s work.</li>
+                    <li>HTML, CSS, Bootstrap, JavaScript, MySQL, Sequelize, Handlebars.js. Node, Express, Heroku, and
+                        Anime.js jQuery</li>
+
+                    <h3><strong> TasteBuds | </strong>https://github.com/AveryCaldwell/TasteBuds |
+                        https://taste-buds.herokuapp.com/
+                    </h3>
+                    <li>A social media app that allows users to never dine alone again! This app allows the user to
+                        create a
+                        profile, see other users posts, create posts and comments, and join other events!</li>
+                    <li>As a Team Member, I ensured app functionality and that acceptance criteria was met, as well as,
+                        created
+                        the concept of the application and integrated the front to the backend.</li>
+                    <li> HTML, CSS, Javascript, Tailwind, Express, Node, Heroku, MongoDB, Mongoose, MongoCompass,
+                        Apollo,
+                        GraphQL, React</li>
+                </ul>
+                </br>
+                <h2>EXPERIENCE</h2>
+
+                <h3><strong>Suspicious Activity Investigator - BSA/AML </strong>June 2018 - Aug 2023
+                    BankPlus Ridgeland, MS </h3>
+                <ul>
+                    <li> Streamlined operations by developing and implementing compliance procedures and guidelines for
+                        cross-functional operations teams, resulting in an increase in process efficiency and improved
+                        collaboration among departments.</li>
+                    <li> Utilized critical thinking skills to evaluate risk levels of customer behavior, including
+                        transactional
+                        trends
+                        and historical statistics, effectively preventing money laundering and ensuring regulatory
+                        compliance.</li>
+                    <li> Protected the company's reputation and financial well-being by leading investigations into
+                        systemwide
+                        suspicious activities</li>
+
+                    </br>
+
+                    <em>Key Accomplishments:</em>
+                    <li> Played a pivotal role as a liaison to newly acquired banks, driving successful training and
+                        transition
+                        processes.</li>
+                    <li> Selected as a distinguished representative to attend the esteemed BSA/AML Conference,
+                        showcasing
+                        the Bank's commitment to regulatory compliance and industry best practices.</li>
+                </ul>
+
+                <h2>EDUCATION</h2>
+                <ul>
+                    <h3>Certificate in Full Stack Development: University of Washington, Seattle, WA May 2023</h3>
+                    <li>A 24 week intensive program focused on gaining skills in front end and back end technologies.
+                    </li>
+                    <h3>Bachelors of Science in Marketing: Mississippi College, Clinton, MS 2012-2016</h3>
+                    <h3>Business Program Certificate: Chung Yuan Christian University, Taipei, Taiwan 2015</h3>
+                    <li> A 2 month program focused on gaining international business skills and adapting to new
+                        environments.</li>
+                </ul>
+
+            </div>
+
+            <!-- FIXME: does not do checkbox animation and dissapears -->
+            <!-- <div class="resumeBtnBox"> -->
+
+            <!-- </div> -->
+            <!-- resume button box -->
+
+        </div> <!-- resume container -->
+
+
+        <!-- =================== REFERENCE PAGE =================== -->
+        <div class="refContainer pageContainer">
+            <button class="refBtn" onclick="setActivePage('Resume')"> Back </button>
+            <button class="refNextBtn" onclick="setActivePage('Contact')">Next</button>
+            <div class="refHeader">Whats the sitch?</div>
+
+            <div class="refBox">
+                <div class="center">
+
+                    <!-- CARD 1 -->
+                    <div class="card">
+                        <div class="additional">
+                            <div class="user-card">
+                                <div class="level center">
+                                    Ref 1
+                                </div>
+                                <div class="points center">
+                                    Level 36
+                                </div>
+                                <svg width="110" height="110" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg"
+                                    role="img" aria-labelledby="title desc" class="center">
+                                    <title id="title">Software Architect</title>
+                                    <desc id="desc">Cartoon of a Caucasian woman smiling, and wearing black glasses and
+                                        a
+                                        purple shirt
+                                        with white collar drawn by Alvaro Montoro.</desc>
+                                    <style>
+                                        .skin {
+                                            fill: #eab38f;
+                                        }
+
+                                        .eyes {
+                                            fill: #1f1f1f;
+                                        }
+
+                                        .hair {
+                                            fill: #2f1b0d;
+                                        }
+
+                                        .line {
+                                            fill: none;
+                                            stroke: #2f1b0d;
+                                            stroke-width: 2px;
+                                        }
+                                    </style>
+                                    <defs>
+                                        <clipPath id="scene">
+                                            <circle cx="125" cy="125" r="115" />
+                                        </clipPath>
+                                        <clipPath id="lips">
+                                            <path
+                                                d="M 106,132 C 113,127 125,128 125,132 125,128 137,127 144,132 141,142  134,146  125,146  116,146 109,142 106,132 Z" />
+                                        </clipPath>
+                                    </defs>
+                                    <circle cx="125" cy="125" r="120" fill="rgba(0,0,0,0.15)" />
+                                    <g stroke="none" stroke-width="0" clip-path="url(#scene)">
+                                        <rect x="0" y="0" width="250" height="250" fill="#b0d2e5" />
+                                        <g id="head">
+                                            <path fill="none" stroke="#111111" stroke-width="2" d="M 68,103 83,103.5" />
+                                            <path class="hair"
+                                                d="M 67,90 67,169 78,164 89,169 100,164 112,169 125,164 138,169 150,164 161,169 172,164 183,169 183,90 Z" />
+                                            <circle cx="125" cy="100" r="55" class="skin" />
+                                            <ellipse cx="102" cy="107" rx="5" ry="5" class="eyes" id="eye-left" />
+                                            <ellipse cx="148" cy="107" rx="5" ry="5" class="eyes" id="eye-right" />
+                                            <rect x="119" y="140" width="12" height="40" class="skin" />
+                                            <path class="line eyebrow" d="M 90,98 C 93,90 103,89 110,94"
+                                                id="eyebrow-left" />
+                                            <path class="line eyebrow" d="M 160,98 C 157,90 147,89 140,94"
+                                                id="eyebrow-right" />
+                                            <path stroke="#111111" stroke-width="4" d="M 68,103 83,102.5" />
+                                            <path stroke="#111111" stroke-width="4" d="M 182,103 167,102.5" />
+                                            <path stroke="#050505" stroke-width="3" fill="none"
+                                                d="M 119,102 C 123,99 127,99 131,102" />
+                                            <path fill="#050505"
+                                                d="M 92,97 C 85,97 79,98 80,101 81,104 84,104 85,102" />
+                                            <path fill="#050505"
+                                                d="M 158,97 C 165,97 171,98 170,101 169,104 166,104 165,102" />
+                                            <path stroke="#050505" stroke-width="3" fill="rgba(240,240,255,0.4)"
+                                                d="M 119,102 C 118,111 115,119 98,117 85,115 84,108 84,104 84,97 94,96 105,97 112,98 117,98 119,102 Z" />
+                                            <path stroke="#050505" stroke-width="3" fill="rgba(240,240,255,0.4)"
+                                                d="M 131,102 C 132,111 135,119 152,117 165,115 166,108 166,104 166,97 156,96 145,97 138,98 133,98 131,102 Z" />
+                                            <path class="hair"
+                                                d="M 60,109 C 59,39 118,40 129,40 139,40 187,43 189,99 135,98 115,67 115,67 115,67 108,90 80,109 86,101 91,92 92,87 85,99 65,108 60,109" />
+                                            <path id="mouth" fill="#d73e3e"
+                                                d="M 106,132 C 113,127 125,128 125,132 125,128 137,127 144,132 141,142  134,146  125,146  116,146 109,142 106,132 Z" />
+                                            <path id="smile" fill="white"
+                                                d="M125,141 C 140,141 143,132 143,132 143,132 125,133 125,133 125,133 106.5,132 106.5,132 106.5,132 110,141 125,141 Z"
+                                                clip-path="url(#lips)" />
+                                        </g>
+                                        <g id="shirt">
+                                            <path fill="#8665c2"
+                                                d="M 132,170 C 146,170 154,200 154,200 154,200 158,250 158,250 158,250 92,250 92,250 92,250 96,200 96,200 96,200 104,170 118,170 118,170 125,172 125,172 125,172 132,170 132,170 Z" />
+                                            <path id="arm-left" class="arm" stroke="#8665c2" fill="none"
+                                                stroke-width="14" d="M 118,178 C 94,179 66,220 65,254" />
+                                            <path id="arm-right" class="arm" stroke="#8665c2" fill="none"
+                                                stroke-width="14" d="M 132,178 C 156,179 184,220 185,254" />
+                                            <path fill="white"
+                                                d="M 117,166 C 117,166 125,172 125,172 125,182 115,182 109,170 Z" />
+                                            <path fill="white"
+                                                d="M 133,166 C 133,166 125,172 125,172 125,182 135,182 141,170 Z" />
+                                            <circle cx="125" cy="188" r="4" fill="#5a487b" />
+                                            <circle cx="125" cy="202" r="4" fill="#5a487b" />
+                                            <circle cx="125" cy="216" r="4" fill="#5a487b" />
+                                            <circle cx="125" cy="230" r="4" fill="#5a487b" />
+                                            <circle cx="125" cy="244" r="4" fill="#5a487b" />
+                                            <path stroke="#daa37f" stroke-width="1" class="skin hand" id="hand-left"
+                                                d="M 51,270 C 46,263 60,243 63,246 65,247 66,248 61,255 72,243 76,238 79,240 82,243 72,254 69,257 72,254 82,241 86,244 89,247 75,261 73,263 77,258 84,251 86,253 89,256 70,287 59,278" />
+                                            <path stroke="#daa37f" stroke-width="1" class="skin hand" id="hand-right"
+                                                d="M 199,270 C 204,263 190,243 187,246 185,247 184,248 189,255 178,243 174,238 171,240 168,243 178,254 181,257 178,254 168,241 164,244 161,247 175,261 177,263 173,258 166,251 164,253 161,256 180,287 191,278" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div><!-- user-card -->
+                            <div class="more-info">
+                                <h1>Refernce Name 1</h1>
+                                <div class="coords">
+                                    <span>Company Name</span>
+                                    <span>Joined January 2019</span>
+                                </div>
+                                <div class="coords">
+                                    <span>Position/Role</span>
+                                    <span>City, Country</span>
+                                </div>
+                                <div class="stats">
+                                    <div>
+                                        <div class="title">Awards</div>
+                                        <i class="fa fa-trophy"></i>
+                                        <div class="value">2</div>
+                                    </div>
+                                    <div>
+                                        <div class="title">Matches</div>
+                                        <i class="fa fa-gamepad"></i>
+                                        <div class="value">27</div>
+                                    </div>
+                                    <div>
+                                        <div class="title">Pals</div>
+                                        <i class="fa fa-group"></i>
+                                        <div class="value">123</div>
+
+                                    </div>
+
+                                </div>
+                            </div><!-- more-info -->
+                        </div><!-- additional -->
+                        <div class="general">
+                            <h1>Reference Name 1</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at
+                                molestie
+                                lacus. Nam
+                                vestibulum sodales odio ut pulvinar.</p>
+                            <span class="more">Mouse over the card for more info</span>
+                        </div><!-- general-->
+                    </div><!-- card 1-->
+
+                    <!-- CARD 2 -->
+                    <div class="card green">
+                        <div class="additional">
+                            <div class="user-card">
+                                <div class="level center">
+                                    Ref 2
+                                </div>
+                                <div class="points center">
+                                    Level 29
+                                </div>
+                                <svg width="110" height="110" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg"
+                                    role="img" aria-labelledby="title desc" class="center">
+                                    <title id="title">Teacher</title>
+                                    <desc id="desc">Cartoon of a Caucasian woman smiling, and wearing black glasses and
+                                        a
+                                        purple shirt
+                                        with white collar drawn by Alvaro Montoro.</desc>
+                                    <style>
+                                        .skin {
+                                            fill: #eab38f;
+                                        }
+
+                                        .eyes {
+                                            fill: #1f1f1f;
+                                        }
+
+                                        .hair {
+                                            fill: #2f1b0d;
+                                        }
+
+                                        .line {
+                                            fill: none;
+                                            stroke: #2f1b0d;
+                                            stroke-width: 2px;
+                                        }
+                                    </style>
+                                    <defs>
+                                        <clipPath id="scene">
+                                            <circle cx="125" cy="125" r="115" />
+                                        </clipPath>
+                                        <clipPath id="lips">
+                                            <path
+                                                d="M 106,132 C 113,127 125,128 125,132 125,128 137,127 144,132 141,142  134,146  125,146  116,146 109,142 106,132 Z" />
+                                        </clipPath>
+                                    </defs>
+                                    <circle cx="125" cy="125" r="120" fill="rgba(0,0,0,0.15)" />
+                                    <g stroke="none" stroke-width="0" clip-path="url(#scene)">
+                                        <rect x="0" y="0" width="250" height="250" fill="#b0d2e5" />
+                                        <g id="head">
+                                            <path fill="none" stroke="#111111" stroke-width="2" d="M 68,103 83,103.5" />
+                                            <path class="hair"
+                                                d="M 67,90 67,169 78,164 89,169 100,164 112,169 125,164 138,169 150,164 161,169 172,164 183,169 183,90 Z" />
+                                            <circle cx="125" cy="100" r="55" class="skin" />
+                                            <ellipse cx="102" cy="107" rx="5" ry="5" class="eyes" id="eye-left" />
+                                            <ellipse cx="148" cy="107" rx="5" ry="5" class="eyes" id="eye-right" />
+                                            <rect x="119" y="140" width="12" height="40" class="skin" />
+                                            <path class="line eyebrow" d="M 90,98 C 93,90 103,89 110,94"
+                                                id="eyebrow-left" />
+                                            <path class="line eyebrow" d="M 160,98 C 157,90 147,89 140,94"
+                                                id="eyebrow-right" />
+                                            <path stroke="#111111" stroke-width="4" d="M 68,103 83,102.5" />
+                                            <path stroke="#111111" stroke-width="4" d="M 182,103 167,102.5" />
+                                            <path stroke="#050505" stroke-width="3" fill="none"
+                                                d="M 119,102 C 123,99 127,99 131,102" />
+                                            <path fill="#050505"
+                                                d="M 92,97 C 85,97 79,98 80,101 81,104 84,104 85,102" />
+                                            <path fill="#050505"
+                                                d="M 158,97 C 165,97 171,98 170,101 169,104 166,104 165,102" />
+                                            <path stroke="#050505" stroke-width="3" fill="rgba(240,240,255,0.4)"
+                                                d="M 119,102 C 118,111 115,119 98,117 85,115 84,108 84,104 84,97 94,96 105,97 112,98 117,98 119,102 Z" />
+                                            <path stroke="#050505" stroke-width="3" fill="rgba(240,240,255,0.4)"
+                                                d="M 131,102 C 132,111 135,119 152,117 165,115 166,108 166,104 166,97 156,96 145,97 138,98 133,98 131,102 Z" />
+                                            <path class="hair"
+                                                d="M 60,109 C 59,39 118,40 129,40 139,40 187,43 189,99 135,98 115,67 115,67 115,67 108,90 80,109 86,101 91,92 92,87 85,99 65,108 60,109" />
+                                            <path id="mouth" fill="#d73e3e"
+                                                d="M 106,132 C 113,127 125,128 125,132 125,128 137,127 144,132 141,142  134,146  125,146  116,146 109,142 106,132 Z" />
+                                            <path id="smile" fill="white"
+                                                d="M125,141 C 140,141 143,132 143,132 143,132 125,133 125,133 125,133 106.5,132 106.5,132 106.5,132 110,141 125,141 Z"
+                                                clip-path="url(#lips)" />
+                                        </g>
+                                        <g id="shirt">
+                                            <path fill="#8665c2"
+                                                d="M 132,170 C 146,170 154,200 154,200 154,200 158,250 158,250 158,250 92,250 92,250 92,250 96,200 96,200 96,200 104,170 118,170 118,170 125,172 125,172 125,172 132,170 132,170 Z" />
+                                            <path id="arm-left" class="arm" stroke="#8665c2" fill="none"
+                                                stroke-width="14" d="M 118,178 C 94,179 66,220 65,254" />
+                                            <path id="arm-right" class="arm" stroke="#8665c2" fill="none"
+                                                stroke-width="14" d="M 132,178 C 156,179 184,220 185,254" />
+                                            <path fill="white"
+                                                d="M 117,166 C 117,166 125,172 125,172 125,182 115,182 109,170 Z" />
+                                            <path fill="white"
+                                                d="M 133,166 C 133,166 125,172 125,172 125,182 135,182 141,170 Z" />
+                                            <circle cx="125" cy="188" r="4" fill="#5a487b" />
+                                            <circle cx="125" cy="202" r="4" fill="#5a487b" />
+                                            <circle cx="125" cy="216" r="4" fill="#5a487b" />
+                                            <circle cx="125" cy="230" r="4" fill="#5a487b" />
+                                            <circle cx="125" cy="244" r="4" fill="#5a487b" />
+                                            <path stroke="#daa37f" stroke-width="1" class="skin hand" id="hand-left"
+                                                d="M 51,270 C 46,263 60,243 63,246 65,247 66,248 61,255 72,243 76,238 79,240 82,243 72,254 69,257 72,254 82,241 86,244 89,247 75,261 73,263 77,258 84,251 86,253 89,256 70,287 59,278" />
+                                            <path stroke="#daa37f" stroke-width="1" class="skin hand" id="hand-right"
+                                                d="M 199,270 C 204,263 190,243 187,246 185,247 184,248 189,255 178,243 174,238 171,240 168,243 178,254 181,257 178,254 168,241 164,244 161,247 175,261 177,263 173,258 166,251 164,253 161,256 180,287 191,278" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div><!-- user-card -->
+                            <div class="more-info">
+                                <h1>Refernce Name 2</h1>
+                                <div class="coords">
+                                    <span>Group Name</span>
+                                    <span>Joined January 2019</span>
+                                </div>
+                                <div class="coords">
+                                    <span>Position/Role</span>
+                                    <span>City, Country</span>
+                                </div>
+                                <div class="stats">
+                                    <div>
+                                        <div class="title">Awards</div>
+                                        <i class="fa fa-trophy"></i>
+                                        <div class="value">2</div>
+                                    </div>
+                                    <div>
+                                        <div class="title">Matches</div>
+                                        <i class="fa fa-gamepad"></i>
+                                        <div class="value">27</div>
+                                    </div>
+                                    <div>
+                                        <div class="title">Pals</div>
+                                        <i class="fa fa-group"></i>
+                                        <div class="value">123</div>
+                                    </div>
+
+                                </div>
+                            </div> <!-- more-info -->
+                        </div><!-- additional -->
+                        <div class="general">
+                            <h1>Refernce Name 2</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at
+                                molestie
+                                lacus. Nam
+                                vestibulum sodales odio ut pulvinar.</p>
+                            <span class="more">Mouse over the card for more info</span>
+                        </div><!-- general-->
+                    </div> <!-- card 2-->
+
+                    <!-- CARD 3 -->
+                    <div class="card blue">
+                        <div class="additional">
+                            <div class="user-card">
+                                <div class="level center">
+                                    Ref 1
+                                </div>
+                                <div class="points center">
+                                    Level 36
+                                </div>
+                                <svg width="110" height="110" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg"
+                                    role="img" aria-labelledby="title desc" class="center">
+                                    <title id="title">Software Architect</title>
+                                    <desc id="desc">Cartoon of a Caucasian woman smiling, and wearing black glasses and
+                                        a
+                                        purple shirt
+                                        with white collar drawn by Alvaro Montoro.</desc>
+                                    <style>
+                                        .skin {
+                                            fill: #eab38f;
+                                        }
+
+                                        .eyes {
+                                            fill: #1f1f1f;
+                                        }
+
+                                        .hair {
+                                            fill: #2f1b0d;
+                                        }
+
+                                        .line {
+                                            fill: none;
+                                            stroke: #2f1b0d;
+                                            stroke-width: 2px;
+                                        }
+                                    </style>
+                                    <defs>
+                                        <clipPath id="scene">
+                                            <circle cx="125" cy="125" r="115" />
+                                        </clipPath>
+                                        <clipPath id="lips">
+                                            <path
+                                                d="M 106,132 C 113,127 125,128 125,132 125,128 137,127 144,132 141,142  134,146  125,146  116,146 109,142 106,132 Z" />
+                                        </clipPath>
+                                    </defs>
+                                    <circle cx="125" cy="125" r="120" fill="rgba(0,0,0,0.15)" />
+                                    <g stroke="none" stroke-width="0" clip-path="url(#scene)">
+                                        <rect x="0" y="0" width="250" height="250" fill="#b0d2e5" />
+                                        <g id="head">
+                                            <path fill="none" stroke="#111111" stroke-width="2" d="M 68,103 83,103.5" />
+                                            <path class="hair"
+                                                d="M 67,90 67,169 78,164 89,169 100,164 112,169 125,164 138,169 150,164 161,169 172,164 183,169 183,90 Z" />
+                                            <circle cx="125" cy="100" r="55" class="skin" />
+                                            <ellipse cx="102" cy="107" rx="5" ry="5" class="eyes" id="eye-left" />
+                                            <ellipse cx="148" cy="107" rx="5" ry="5" class="eyes" id="eye-right" />
+                                            <rect x="119" y="140" width="12" height="40" class="skin" />
+                                            <path class="line eyebrow" d="M 90,98 C 93,90 103,89 110,94"
+                                                id="eyebrow-left" />
+                                            <path class="line eyebrow" d="M 160,98 C 157,90 147,89 140,94"
+                                                id="eyebrow-right" />
+                                            <path stroke="#111111" stroke-width="4" d="M 68,103 83,102.5" />
+                                            <path stroke="#111111" stroke-width="4" d="M 182,103 167,102.5" />
+                                            <path stroke="#050505" stroke-width="3" fill="none"
+                                                d="M 119,102 C 123,99 127,99 131,102" />
+                                            <path fill="#050505"
+                                                d="M 92,97 C 85,97 79,98 80,101 81,104 84,104 85,102" />
+                                            <path fill="#050505"
+                                                d="M 158,97 C 165,97 171,98 170,101 169,104 166,104 165,102" />
+                                            <path stroke="#050505" stroke-width="3" fill="rgba(240,240,255,0.4)"
+                                                d="M 119,102 C 118,111 115,119 98,117 85,115 84,108 84,104 84,97 94,96 105,97 112,98 117,98 119,102 Z" />
+                                            <path stroke="#050505" stroke-width="3" fill="rgba(240,240,255,0.4)"
+                                                d="M 131,102 C 132,111 135,119 152,117 165,115 166,108 166,104 166,97 156,96 145,97 138,98 133,98 131,102 Z" />
+                                            <path class="hair"
+                                                d="M 60,109 C 59,39 118,40 129,40 139,40 187,43 189,99 135,98 115,67 115,67 115,67 108,90 80,109 86,101 91,92 92,87 85,99 65,108 60,109" />
+                                            <path id="mouth" fill="#d73e3e"
+                                                d="M 106,132 C 113,127 125,128 125,132 125,128 137,127 144,132 141,142  134,146  125,146  116,146 109,142 106,132 Z" />
+                                            <path id="smile" fill="white"
+                                                d="M125,141 C 140,141 143,132 143,132 143,132 125,133 125,133 125,133 106.5,132 106.5,132 106.5,132 110,141 125,141 Z"
+                                                clip-path="url(#lips)" />
+                                        </g>
+                                        <g id="shirt">
+                                            <path fill="#8665c2"
+                                                d="M 132,170 C 146,170 154,200 154,200 154,200 158,250 158,250 158,250 92,250 92,250 92,250 96,200 96,200 96,200 104,170 118,170 118,170 125,172 125,172 125,172 132,170 132,170 Z" />
+                                            <path id="arm-left" class="arm" stroke="#8665c2" fill="none"
+                                                stroke-width="14" d="M 118,178 C 94,179 66,220 65,254" />
+                                            <path id="arm-right" class="arm" stroke="#8665c2" fill="none"
+                                                stroke-width="14" d="M 132,178 C 156,179 184,220 185,254" />
+                                            <path fill="white"
+                                                d="M 117,166 C 117,166 125,172 125,172 125,182 115,182 109,170 Z" />
+                                            <path fill="white"
+                                                d="M 133,166 C 133,166 125,172 125,172 125,182 135,182 141,170 Z" />
+                                            <circle cx="125" cy="188" r="4" fill="#5a487b" />
+                                            <circle cx="125" cy="202" r="4" fill="#5a487b" />
+                                            <circle cx="125" cy="216" r="4" fill="#5a487b" />
+                                            <circle cx="125" cy="230" r="4" fill="#5a487b" />
+                                            <circle cx="125" cy="244" r="4" fill="#5a487b" />
+                                            <path stroke="#daa37f" stroke-width="1" class="skin hand" id="hand-left"
+                                                d="M 51,270 C 46,263 60,243 63,246 65,247 66,248 61,255 72,243 76,238 79,240 82,243 72,254 69,257 72,254 82,241 86,244 89,247 75,261 73,263 77,258 84,251 86,253 89,256 70,287 59,278" />
+                                            <path stroke="#daa37f" stroke-width="1" class="skin hand" id="hand-right"
+                                                d="M 199,270 C 204,263 190,243 187,246 185,247 184,248 189,255 178,243 174,238 171,240 168,243 178,254 181,257 178,254 168,241 164,244 161,247 175,261 177,263 173,258 166,251 164,253 161,256 180,287 191,278" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div><!-- user-card -->
+                            <div class="more-info">
+                                <h1>Reference Name 1</h1>
+                                <div class="coords">
+                                    <span>Company Name</span>
+                                    <span>Joined January 2019</span>
+                                </div>
+                                <div class="coords">
+                                    <span>Position/Role</span>
+                                    <span>City, Country</span>
+                                </div>
+                                <div class="stats">
+                                    <div>
+                                        <div class="title">Awards</div>
+                                        <i class="fa fa-trophy"></i>
+                                        <div class="value">2</div>
+                                    </div>
+                                    <div>
+                                        <div class="title">Matches</div>
+                                        <i class="fa fa-gamepad"></i>
+                                        <div class="value">27</div>
+                                    </div>
+                                    <div>
+                                        <div class="title">Email</div>
+                                        <i class="fa fa-group"></i>
+                                        <div class="value">123@gmail.com</div>
+                                    </div>
+
+                                </div>
+                            </div><!-- more-info -->
+                        </div><!-- additional -->
+                        <div class="general">
+                            <h1>Reference Name 3</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at
+                                molestie
+                                lacus. Nam
+                                vestibulum sodales odio ut pulvinar.</p>
+                            <span class="more">Mouse over the card for more info</span>
+                        </div><!-- general-->
+                    </div><!-- card 2-->
+                </div> <!-- center-->
+
+            </div><!-- ref box -->
+
+        </div> <!-- ref container -->
+
+
+        <!-- =================== CONTACT PAGE =================== -->
+        <div class="contactContainer pageContainer">
+
+            <button class="contactBtn" onclick="setActivePage('References')"> Back </button>
+            <button class="topBtn" onclick="setActivePage('Landing')">Top</button>
+            <div id="form-main">
+                <h1 class="contactHeader">Let's Chat!</h1>
+                <div id="form-div">
+                    <!-- TODO: make email functional -->
+                    <!-- action="mailto:averycaldwell7@gmail.com" enctype="text/plain" -->
+                    <form method="post" class="form" id="form1">
+                        <p class="name">
+                            <input name="name" type="text"
+                                class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"
+                                placeholder="Name" id="name" />
+                        </p>
+                        <p class="email">
+                            <input name="email" type="text" class="validate[required,custom[email]] feedback-input"
+                                id="email" placeholder="Email" />
+                        </p>
+                        <p class="formText">
+                            <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment"
+                                placeholder="Comment"></textarea>
+                        </p>
+                        <div class="submit">
+                            <input type="submit" value="Send" id="button-blue" />
+                            <div class="ease"></div>
+                        </div>
+                    </form>
+                </div><!-- form-div  -->
+
+                <!------------------------------------ Name drawing ------------------------------------>
+                <div class="thanksText">
+                    <h3>Thank you for visiting my portfolio!</h3>
+                </div>
+                <h1 class="nameHeader">Sincerely,</h1>
+                <div id="lineDrawing">
+                    <svg viewBox="0 0 1000 1500" class="svgName">
+                        <g class="lines">
+                            <path fill="none" stroke-width="3.84" class="my-path"
+                                d="M62.74 785.333c80.105-48.063 172.21-433.607 209.06-513.451 11.577-25.083 23.856-48.272 33.077-74.09 1.327-3.715 1.55-9.338 5.292-10.585 1.808-.602 3.856 41.207 3.97 42.338 2.932 29.327 3.188 59.194 5.291 88.643 7.379 103.296 3.97 207.377 3.97 310.915 0 10.133-1.207 50.033 7.938 56.891 17.433 13.075 20.878-14.916 22.492-25.137 8.725-55.264 6.615-112.082 6.615-168.027v-59.537c0-13.23-2.205-17.2 0-17.2 2.248 0 8.446 20.425 8.905 22.626 10.72 51.408 9.646 45.34 10.126 47.695 7.906 38.774 6.99 36.116 7.906 38.774 3.723 10.812 9.976 27.865 9.976 23.21 0-18.523 0-33.076 16.202-78.947 1.622-4.594 10.49-34.976 15.216-36.158 1.03-.257-7.396 37.325 11.051 41.014 16.544 3.31 39.88 5.062 51.599-9.26.45-.551 9.95-11.681 9.95-11.681 5.182-9.13-9.95-20.073-27.388-9.13-18.521 11.623-24.64 87.41 6.854 92.254 68.402 10.524 133.888-98.543 80.705-148.18-3.48-3.249-17.728-15.323-23.815-15.877-42.183-1.414-40.924 58.497-23.314 43.66 19.316-16.273 94.423-16.46 97.405 0 5.69 31.409-26.691 92.784-14.554 120.397 2.256 5.132 11.078 13.716 17.2 11.908 20.312-5.998 8.246-20.049 17.2-51.599 2.28-8.034 4.006-17.054 10.296-22.492 13.518-4.856 17.61 9.49 17.61 22.492 0 6.566-5.232 53.22 6.493 67.475 15.86 19.284 31.41-13.857 31.753-34.399.468-28.05 7.643-45.455 6.615-14.553-.252 7.566.038 21.956 0 25.6-.84 81.042 9.104 130.192-48.953 178.148-8.744 7.223-7.243 4.6-19.503 8.286-19.523 5.872-51.42-24.156-49.466-41.362 9.779-86.076 110.947-37.826 154.967-34.399 106.209 8.27 203.136 26.569 240.794-93.936 6.371-20.388 11.907-39.201 11.907-60.86 0-99.579-174.62-130.76-242.117-138.92-126.917-15.341-262.16-34.71-388.974-15.876-56.966 8.46-108.873 31.784-164.058 46.307-70.87 18.65-163.471 31.753-236.824 31.753" />
+                    </svg>
+                </div>
+
+                <footer class="site-footer">
+
+                    <div class="container">
+                        <hr>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-6 col-xs-12">
+                                <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+                                    <a href="www.github.com/AveryCaldwell">Avery Caldwell</a>.
+                                </p>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <ul class="social-icons">
+                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div> <!-- contact container -->
+
+
+
+            <!------------------------------------ FOOTER ------------------------------------>
+
+
+        </div> <!-- app container -->
+
+        <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+        <script src="anime-testing.js" type="text/javascript"></script>
+</body>
+
+</html>

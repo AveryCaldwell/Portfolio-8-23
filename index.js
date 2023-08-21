@@ -1,169 +1,62 @@
-//============================= SQUARE =============================
-// let animation = anime({
-//     targets: 'div',
-//     // Properties
-//     translateX: 100,
-//     borderRadius: 50,
-//     // Property Parameters
-//     duration: 2000,
-//     easing: 'linear',
-//     // Animation Parameters
-//     direction: 'alternate',
-// });
+//array of pages
+const pages = ['Landing', 'About', 'Edu'];
+// state
+let currentPage = 'Landing';
+let pageIndexObj = {
+    Landing: 0,
+    About: 1,
+    Edu: 2,
+};
 
-// =============================PENDULUM=============================
-// let animation = anime({
-//     targets: '#rod',
-//     rotate: [60, -60], // from 60 to -60 degrees
-//     duration: 3000,
-//     easing: 'easeInOutSine',
-//     direction: 'alternate',
-//     loop: true,
-// });
+// sets the active page shown
+const setActivePage = (newPage) => {
+    const appContainer = document.getElementsByClassName('appContainer')[0];
+    const pageIndex = pages.indexOf(newPage);
+    const currentPageIndex = pages.indexOf(currentPage);
+    const calculatedVH = pageIndex * 100;
+    if (newPage !== currentPage) {
+        const pageDiff =
+            pageIndex < currentPageIndex
+                ? Math.abs(currentPageIndex - pageIndex)
+                : Math.abs(pageIndex - currentPageIndex);
+        pages.forEach(
+            (element, index) =>
+                (pageIndexObj[element] = index - pages.indexOf(newPage))
+        );
+        currentPage = newPage;
+        console.log(pageIndexObj);
+        console.log(pageDiff);
+        appContainer.style.transition = `all ${pageDiff * 1.5}s ease`;
+        const logoSliderImage =
+            document.getElementsByClassName('logoSliderImage')[0];
+        const logoSliderCircle =
+            document.getElementsByClassName('logoSliderCircle')[0];
+        // if > 0, then the page is moving upwards
+        if (currentPageIndex - pageIndex > 0) {
+            //  changing top prop value to move the image
+            if (pageIndex === 0) {
+                setTimeout(function () {
+                    logoSliderImage.style.top = `15px`;
+                }, 1200);
+                logoSliderCircle.style.opacity = '0';
+            }
+        } else {
+            if (pageIndex >= 1) {
+                logoSliderImage.style.top = `calc(100% - 335px)`;
+                setTimeout(function () {
+                    logoSliderCircle.style.opacity = '1';
+                }, 1000);
+            }
+        }
 
-// =============================BATTERY=============================
-// let animation = anime({
-//     targets: '.segment',
-//     width: 20,
-//     duration: 300,
-//     delay: function (el, i, l) {
-//         return i * 500;
-//     },
-//     endDelay: 500,
-//     easing: 'linear',
-//     loop: true,
-// });
-// =============================BATTERY BUT BETTER=============================
-// let progress = document.querySelector('#progress');
+        // // FIXME: needs to references existing position in array to dictate ease
+        // //     transition: all 1.5s ease;
 
-// let battery = {
-//     progress: '0%',
-// };
+        appContainer.style.top = `calc(0% - ${calculatedVH}vh)`;
+    }
+};
+// setActivePage();
 
-// let icon = anime({
-//     targets: '.segment',
-//     width: 20,
-//     duration: 300,
-//     delay: anime.stagger(500),
-//     endDelay: 500,
-//     easing: 'linear',
-//     loop: true,
-// });
-
-// let label = anime({
-//     targets: battery,
-//     progress: '100%',
-//     duration: 30000,
-//     easing: 'linear',
-//     round: 1,
-//     update: function () {
-//         progress.innerHTML = battery.progress;
-//     },
-//     complete: function () {
-//         icon.pause();
-//         icon.seek(icon.duration);
-//     },
-// });
-
-// =============================BOX=============================
-// let box = document.querySelector('#box');
-
-// let animation = anime({
-//     targets: '#content',
-//     translateY: [
-//         { value: 50, duration: 500 },
-//         { value: 0, duration: 500, delay: 1500 },
-//         { value: -53, duration: 500, delay: 500 },
-//         { value: 0, duration: 500, delay: 2500 },
-//         { value: 50, duration: 500, delay: 500 },
-//         { value: 0, duration: 500, delay: 1500 },
-//     ],
-//     translateX: [
-//         { value: 53, duration: 500, delay: 1000 },
-//         { value: 0, duration: 500, delay: 2500 },
-//         { value: -53, duration: 500, delay: 500 },
-//         { value: 0, duration: 500, delay: 2500 },
-//     ],
-//     easing: 'linear',
-//     begin: function () {
-//         box.style.borderBottom = 'none';
-//     },
-//     complete: function () {
-//         box.style.borderBottom = 'solid darkorange 3px';
-//     },
-// });
-// =============================TEXT=============================
-// let animation = anime({
-//     targets: '.letter',
-//     opacity: 1,
-//     translateY: 50,
-//     rotate: {
-//         value: 360,
-//         duration: 2000,
-//         easing: 'easeInExpo',
-//     },
-//     scale: anime.stagger([0.7, 1], { from: 'center' }),
-//     delay: anime.stagger(100, { start: 1000 }),
-//     translateX: [-10, 30],
-// });
-
-//  =============================TIMELINE ============================= -->
-// let animation = anime.timeline({
-//     duration: 1000,
-//     easing: 'easeInOutSine',
-//     loop: true,
-// });
-
-// animation
-//     .add({
-//         targets: '.one',
-//         keyframes: [
-//             { translateY: -50, backgroundColor: 'rgb(255, 0, 0)' },
-//             { translateY: 0, backgroundColor: 'rgb(128, 128, 128)' },
-//         ],
-//     })
-//     .add(
-//         {
-//             targets: '.two',
-//             keyframes: [
-//                 { translateY: -50, backgroundColor: 'rgb(0, 255, 0)' },
-//                 { translateY: 0, backgroundColor: 'rgb(128, 128, 128)' },
-//             ],
-//         },
-//         '-=900'
-//     )
-//     .add(
-//         {
-//             targets: '.three',
-//             keyframes: [
-//                 { translateY: -50, backgroundColor: 'rgb(0, 0, 255)' },
-//                 { translateY: 0, backgroundColor: 'rgb(128, 128, 128)' },
-//             ],
-//         },
-//         '-=800'
-//     );
-//  =============================PORTFOLIO ============================= -->
-
-let animation = anime({
-    targets: '.letter',
-    opacity: 1,
-    translateY: 50,
-    rotate: {
-        value: 360,
-        duration: 2000,
-        easing: 'easeInExpo',
-    },
-    scale: anime.stagger([0.7, 1], { from: 'center' }),
-    delay: anime.stagger(100, { start: 1000 }),
-    translateX: [-10, 30],
-});
-
-var homeImage = document.querySelector('.homeImage');
-// homeImage.style.transform = 'translateY(0)';
-var animateY = anime({
-    targets: '.homeImage',
-    translateY: ['0', '180px'], // Adjust the value as needed
-    easing: 'easeInOutQuad',
-    autoplay: false,
-});
-document.querySelector('.play-up').onclick = animateY.restart;
+// for each page, we need to know the diff between the current page and all other pages {FIRST}
+// need to create an object that houses the diff from the 1st page
+// need to create a way of knowing which pages are between the current page and target page
