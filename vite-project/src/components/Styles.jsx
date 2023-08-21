@@ -646,3 +646,10 @@ export const mouseBtnText = {
   marginBottom: "100px",
   lineHeight: "initial",
 };
+
+export const resumeContainer = {
+    backgroundColor: 'purple',
+        display: 'flex',
+    color: 'white',
+    height: '100vh',
+}
