@@ -373,7 +373,7 @@ export const eduBtnContainer = {
 export const svgContainer = {
   position: "absolute",
   position: 'relative',
-  bottom: '-59vh',
+  bottom: '-50vh',
   left: '250px',
   // pointerEvents: "none",
   cursor: 'pointer',
@@ -412,7 +412,7 @@ export const animateSvgStroke1 = {
       strokeDasharray: "2515.90478515625px",
     },
   },
-  "@keyframes nimateSvgStrokeReverse": {
+  "@keyframes animateSvgStrokeReverse": {
     "100%": {
       strokeDashoffset: "2515.90478515625px",
       strokeDasharray: "2515.90478515625px",
@@ -538,7 +538,7 @@ export const computerContainer = {
 export const slideshowContainer = {
   maxWidth: "1000px",
   position: "relative",
-  bottom: "33vh",
+  bottom: "38vh",
   right: "125px",
   width: "587px",
   height: "385px",
@@ -549,7 +549,7 @@ export const arrows = {
   position: "absolute",
   top: "50%",
   width: "auto",
-  marginTop: -"22px",
+  marginTop: "22px",
   padding: "16px",
   color: "white",
   fontSize: "40px",
@@ -560,12 +560,12 @@ export const arrows = {
 /* Position the "next button" to the right */
 export const next = {
   right: "-55px",
-  top: "17vh",
+  top: "22vh",
   borderRadius: "3px 0 0 3px",
 };
 export const prev = {
   left: "-55px",
-  top: "17vh",
+  top: "22vh",
   borderRadius: "3px 0 0 3px",
 };
 // export const textNext = {
