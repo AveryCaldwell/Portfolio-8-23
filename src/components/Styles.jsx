@@ -1,4 +1,4 @@
-import { css, keyframes } from 'styled-components';
+import { css, keyframes } from "styled-components";
 
 export const appContainer = {
   display: "flex",
@@ -374,11 +374,11 @@ export const eduBtnContainer = {
 /* ============================== SVG PATH SECTION ============================== */
 export const svgContainer = {
   position: "absolute",
-  position: 'relative',
-  bottom: '-50vh',
-  left: '250px',
+  position: "relative",
+  bottom: "-50vh",
+  left: "250px",
   // pointerEvents: "none",
-  cursor: 'pointer',
+  cursor: "pointer",
   // marginTop: '550px'
 };
 /* Hide the images by default */
@@ -435,7 +435,7 @@ export const projectContainer = {
   flexDirection: "column", // Stack content vertically
   alignItems: "center", // Center horizontally
   justifyContent: "center", // Center vertically
-  // minHeight: "100vh", 
+  // minHeight: "100vh",
   fontFamily: "Roboto",
   // position: 'absolute',
 };
@@ -623,26 +623,26 @@ export const fade = {
 // };
 export const mouseContainer = {
   // bottom: "-25vh",
-  bottom: '125vh',
+  bottom: "125vh",
   // position: 'absolute',
-   position: 'relative',
-  left:'25%',
-  cursor: 'pointer',
+  position: "relative",
+  left: "25%",
+  cursor: "pointer",
   // top: '5vh'
 };
 export const mouse = {
-  posiiton: "absolute", 
+  posiiton: "absolute",
   color: "white",
   fontSize: "170px",
   // position: "static",
-  cursor: 'pointer',
+  cursor: "pointer",
   // marginRight: '100px',
 };
 export const mouseBtn = {
-   wordBreak: 'break-all',
-   width:'100px', 
-   fontSize: '30px',
-   cursor: 'pointer',
+  wordBreak: "break-all",
+  width: "100px",
+  fontSize: "30px",
+  cursor: "pointer",
 };
 export const mouseBtnText = {
   wordBreak: "break-all",
@@ -654,49 +654,72 @@ export const mouseBtnText = {
 };
 /* ============================== RESUME SECTION ============================== */
 export const resumeContainer = {
-    backgroundColor: 'purple',
-    display: 'flex',
-    color: 'white',
-    height: '100vh',
-    position: 'absolute',
-    top: '410vh'
-}
+  // backgroundColor: "purple",
+  display: "flex",
+  color: "white",
+  height: "100vh",
+  // position: "absolute",
+  position: "relative",
+  // top: "408vh",
+  fontFamily: "Roboto",
+  // width: "100%",
+  // padding: "5px",
+  bottom: "36vh",
+};
 export const resumeTitle = {
-  position: 'absolute',
-  fontSize: '40px',
-  pointerEvents: 'none',
-}
-export const codeBox = {
-  position: 'relative',
-  padding: '20px',
-  height: '800px',
-  width: '1000px',
-  top: '15vh',
-  fontSize: '16px',
-  borderRadius: '36px',
-  background: 'rgba(255, 255, 255, 0.2)',
-  boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-  backdropFilter: 'blur(5px)',
-  WebkitBackdropFilter: 'blur(5px)',
-  border: '1px solid rgba(255, 255, 255, 0.3)',
-}
-export const typingContainer = {
-  fontSize: '3rem',
-  padding: '.5rem',
-  fontWeight: 'bold',
-  letterSpacing: '0.1rem',
-  textAlign: 'center',
-  overflow: 'hidden',
-  marginTop: '75px',
-  position: 'absolute',
-  width: '500px',
-  marginLeft: '10%',
-}
-export const typedText = {
-  fontWeight: 'normal',
-  color: 'rgba(248, 201, 195, 1)'
-}
+  position: "relative",
+  fontSize: "40px",
+  // pointerEvents: 'none',
+};
+export const resumeBox = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+  bottom: "45vh",
+  position: "relative",
+  width: "100%",
+};
 
+/* typing animation */
+export const typingContainer = {
+  fontSize: "36px",
+  padding: "5px",
+  fontWeight: "light",
+  letterSpacing: "0.1rem",
+  textAlign: "right",
+  overflow: "hidden",
+  // marginTop: "75px",
+  position: "absolute",
+  display: "flex",
+  justifyContent: "end",
+  width: "100%",
+  marginLeft: "auto",
+  marginRight: "auto",
+};
+/* snippet of code for resume */
+export const codeBox = {
+  flexWrap: "wrap",
+  display: "flex",
+  position: "relative",
+  padding: "20px",
+  height: "fit-content",
+  width: "100%",
+  top: "38vh",
+  // top: "32vh",
+  right: "75px",
+  fontSize: "18px",
+  borderRadius: "36px",
+  background: "rgba(255, 255, 255, 0.2)",
+  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+  backdropFilter: "blur(5px)",
+  WebkitBackdropFilter: "blur(5px)",
+  border: "1px solid rgba(255, 255, 255, 0.3)",
+};
+export const typedText = {
+  fontWeight: "normal",
+  color: "rgba(248, 201, 195, 1)",
+};
 
 // Define the blink keyframes
 const blink = keyframes`
@@ -719,93 +742,126 @@ const blink = keyframes`
 // Define your styles using styled-components syntax
 export const codeCursor = css`
   display: inline-block;
-  background-color: #CCC;
+  background-color: #ccc;
   margin-left: 0.1rem;
   width: 3px;
   animation: ${blink} 1s infinite;
 `;
+
 export const downloadBtn = {
-  backgroundColor: '#ffffff',
-  height: '80px',
-  width: '200px',
-  textAlign: 'center',
-  position: 'relative',
-  transform: 'translateY(-50%)',
-  cursor: 'pointer',
-  borderRadius: '14px',
-  bottom: '-81vh',
-  marginRight: '-849px',
+  // backgroundColor: "#ffffff",
+  height: "80px",
+  width: "175px",
+  textAlign: "center",
+  position: "relative",
+  transform: "translateY(-50%)",
+  cursor: "pointer",
+  borderRadius: "36px",
+  bottom: "-78vh",
+  marginRight: "-849px",
 };
 
 export const text = {
-  font: 'bold 1.25rem/1 helvetica',
-  color: 'rgba(153, 179, 252, 1)',
-  position: 'absolute',
-  top: '50%',
-  transform: 'translateY(-52%)',
-  left: '0',
-  right: '0',
+  font: "bold 1.25rem/1 helvetica",
+  color: "rgba(153, 179, 252, 1)",
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-52%)",
+  left: "0",
+  right: "0",
 };
 
 export const progressBar = {
-  position: 'absolute',
-  height: '10px',
-  width: '0',
-  right: '0',
-  top: '50%',
-  left: '50%',
-  borderRadius: '200px',
-  transform: 'translateY(-50%) translateX(-50%)',
-  background: 'lighten(rgba(153, 179, 252, 1), 15%)',
+  position: "absolute",
+  height: "10px",
+  width: "0",
+  right: "0",
+  top: "50%",
+  left: "50%",
+  borderRadius: "200px",
+  transform: "translateY(-50%) translateX(-50%)",
+  background: "lighten(rgba(153, 179, 252, 1), 15%)",
 };
 
 export const downloadSvg = {
-  width: '30px',
-  position: 'absolute',
-  top: '50%',
-  transform: 'translateY(-50%) translateX(-50%)',
-  left: '50%',
-  right: '0',
+  width: "30px",
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-50%) translateX(-50%)",
+  left: "50%",
+  right: "0",
   enableBackground: "new 0 0 25 30",
 };
 
-
 export const check = {
-  fill: 'none',
-  stroke: '#ffffff',
-  strokeWidth: '3',
-  strokeLinecap: 'round',
-  strokeLinejoin: 'round',
+  fill: "none",
+  stroke: "#ffffff",
+  strokeWidth: "3",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
 };
 
 export const resumeLink = {
-  textDecoration: 'none',
-  color: 'rgba(153, 179, 252, 1)',
+  textDecoration: "none",
+  color: "rgba(153, 179, 252, 1)",
 };
-
-export const resumeBox = {
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  bottom: '45vh',
-  position: 'relative',
+/* resume plain text */
+export const resumePlainText = {
+  display: "none",
+  height: "100vh",
+  overflow: "hidden",
+  fontSize: "12px",
+  marginTop: "150px",
+  width: "1200px",
 };
-
 export const resumeBtn = {
-  position: 'relative',
-  display: 'inline-flex',
-  justifyContent: 'space-evenly',
-  alignItems: 'center',
-  textAlign: 'center',
-  padding: '10px',
-  cursor: 'pointer',
-  borderRadius: '36px',
-  top: '78vh',
-  backgroundColor: 'transparent',
-  color: 'white',
-  border: 'solid 1px white',
-  width: '150px',
-  height: '75px',
-  fontSize: '18px',
+  position: "relative",
+  display: "inline-flex",
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  textAlign: "center",
+  padding: "10px",
+  cursor: "pointer",
+  borderRadius: "36px",
+  top: "78vh",
+  backgroundColor: "transparent",
+  color: "white",
+  border: "solid 1px white",
+  width: "150px",
+  height: "75px",
+  fontSize: "18px",
+};
+export const resumeNextBtn = {
+  position: "relative",
+  display: "inline-flex",
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  textAlign: "center",
+  padding: "10px",
+  cursor: "pointer",
+  borderRadius: "36px",
+  top: "78vh",
+  backgroundColor: "transparent",
+  color: "white",
+  border: "solid 1px white",
+  width: "150px",
+  height: "75px",
+  fontSize: "18px",
+};
+export const textBtn = {
+  position: "relative",
+  display: "inline-flex",
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  textAlign: "center",
+  padding: "10px",
+  cursor: "pointer",
+  borderRadius: "36px",
+  top: "78vh",
+  backgroundColor: "transparent",
+  color: "white",
+  border: "solid 1px white",
+  width: "150px",
+  height: "75px",
+  fontSize: "18px",
 };
