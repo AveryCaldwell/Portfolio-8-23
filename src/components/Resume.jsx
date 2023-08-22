@@ -2,7 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 // import * as Material from '@mui/material';
 // import anime from 'animejs/lib/anime.es.js';
 // import avesLogo from '../assets/aves.png';
-import { resumeContainer, pageContainer } from "./Styles";
+import {
+  resumeContainer,
+  pageContainer,
+  resumeTitle,
+  typingContainer,
+  codeBox,
+} from "./Styles";
 
 function Resume() {
   const [showPlainText, setShowPlainText] = useState(false);
@@ -75,16 +81,22 @@ function Resume() {
     <div
       className='resumeContainer pageContainer'
       style={Object.assign({}, resumeContainer, pageContainer)}>
-      <h1 className='resumeTitle'>Resume</h1>
+      {/* //  style={resumeContainer}> */}
+      <h1 className='resumeTitle' style={resumeTitle}>
+        Resume
+      </h1>
       <div className='typingContainer'>
-        <p>
-          Coding is <span className='typed-text' ref={typedTextRef}></span>
-          <span className='cursor' ref={cursorRef}>
+        <p style={typingContainer}>
+          Coding is{" "}
+          <span
+            className='typed-text'
+            ref={typedTextRef}></span>
+          <span className='codeCursor' ref={cursorRef}>
             &nbsp;
           </span>
         </p>
       </div>
-      <div className='resumeBox'>
+      <div className='codeBox' style={codeBox}>
         <button
           className='resumeBtn'
           onClick={() => {

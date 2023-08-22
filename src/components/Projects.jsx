@@ -190,7 +190,8 @@ function Projects() {
     <>
       <div
         className='projectContainer pageContainer'
-        style={Object.assign({}, projectContainer, pageContainer)}>
+        // style={Object.assign({}, projectContainer, pageContainer)}>
+            style={projectContainer}>
         <h1 className='projectHeader' onClick={() => setActivePage('Resume')}style={projectHeader}>
           Projects
         </h1>
