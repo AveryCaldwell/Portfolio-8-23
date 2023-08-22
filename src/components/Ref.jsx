@@ -1,8 +1,16 @@
 import * as React from "react";
-import * as Material from "@mui/material";
-import anime from "animejs/lib/anime.es.js";
-import avesLogo from "../assets/aves.png";
-import { refContainer, pageContainer } from "./Styles";
+// import * as Material from "@mui/material";
+// import anime from "animejs/lib/anime.es.js";
+// import avesLogo from "../assets/aves.png";
+import {
+  refContainer,
+  pageContainer,
+  refBox,
+  refHeader,
+  center,
+  //   card,
+  refBtns,
+} from "./Styles";
 
 // This function renders main content of web app
 function Ref() {
@@ -26,8 +34,6 @@ function Ref() {
     References: 5,
     Contact: 6,
   };
-
-  // sets the active page shown
   const setActivePage = (newPage) => {
     const appContainer = document.getElementsByClassName("appContainer")[0];
     const pageIndex = pages.indexOf(newPage);
@@ -67,16 +73,39 @@ function Ref() {
           }, 1000);
         }
       }
+
       appContainer.style.top = `calc(0% - ${calculatedVH}vh)`;
     }
   };
-
   return (
-    <>
+    <React.Fragment>
       <div
-        class='refContainer pageContainer'
-        style={Object.assign({}, refContainer, pageContainer)}></div>
-    </>
+        className='refContainer pageContainer'
+        style={Object.assign({}, refContainer, pageContainer)}>
+        <button
+          style={refBtns}
+          className='refBtn'
+          onClick={() => setActivePage("Resume")}>
+          Back{" "}
+        </button>
+
+        <button
+          style={refBtns}
+          className='refNextBtn'
+          onClick={() => setActivePage("Contact")}>
+          Next
+        </button>
+
+        <div className='refHeader' style={refHeader}>
+          Whats the sitch?
+        </div>
+
+        <div className='refBox' style={refBox}>
+          <div className='center' style={center}></div>
+        </div>
+      </div>
+      {/* end div */}
+    </React.Fragment>
   );
 }
 

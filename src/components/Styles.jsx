@@ -868,4 +868,57 @@ export const textBtn = {
 /* ============================== REFERENCE SECTION ============================== */
 export const refContainer = {
   backgroundColor: "navy",
+  fontFamily: "Roboto",
+  top: "-32vh",
+  position: "relative",
+};
+
+export const refHeader = {
+  position: "relative",
+  color: "white",
+  fontSize: "40px",
+  textAlign: "center",
+  padding: "10px",
+};
+
+// box containing ref cards
+export const refBox = {
+  position: "relative",
+  display: "grid",
+};
+
+export const center = {
+  posiiton: "absolute",
+  top: "35vh",
+  left: "50%",
+  WebkitTransform: "translate(-50%, -50%)",
+};
+
+export const card = {
+  width: "450px",
+  height: "250px",
+  backgroundColor: "#fff",
+  background: "linear-gradient(#f8f8f8, #fff)",
+  boxShadow: "0 8px 16px -8px rgba(0, 0, 0, 0.4)",
+  borderRadius: "6px",
+  overflow: "hidden",
+  position: "relative",
+  margin: "1.5rem",
+};
+export const refBtns = {
+  position: "relative",
+  display: "inline-flex",
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  textAlign: "center",
+  padding: "10px",
+  cursor: "pointer",
+  borderRadius: "36px",
+  top: "78vh",
+  backgroundColor: "transparent",
+  color: "white",
+  border: "sollid 1px white",
+  width: "150px",
+  height: "75px",
+  fontSize: "18px",
 };

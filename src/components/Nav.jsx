@@ -188,7 +188,7 @@ function Nav() {
           <Material.ListItemIcon>
             {<PermContactCalendar />}
           </Material.ListItemIcon>
-          <Material.ListItemText primary={"Ref"} />
+          <Material.ListItemText primary={"References"} />
         </Material.ListItemButton>
         <Material.ListItemButton onClick={() => setActivePage("Contact")}>
           <Material.ListItemIcon>{<AlternateEmail />}</Material.ListItemIcon>
