@@ -1,3 +1,4 @@
+import { color, textTransform } from "@mui/system";
 import { css, keyframes } from "styled-components";
 
 export const appContainer = {
@@ -888,12 +889,12 @@ export const refBox = {
 };
 
 export const center = {
-  posiiton: "absolute",
+  positon: "absolute",
   top: "35vh",
   left: "50%",
-  WebkitTransform: "translate(-50%, -50%)",
+  // WebkitTransform: "translate(-50%, -50%)",
 };
-
+// .card {
 export const card = {
   width: "450px",
   height: "250px",
@@ -921,4 +922,154 @@ export const refBtns = {
   width: "150px",
   height: "75px",
   fontSize: "18px",
+};
+// .card h1
+export const cardHeader = {
+  textAlign: "center",
+};
+
+// .card .additional {
+// .card:hover .additional {
+export const additional = {
+  // position: "absolute",
+  position: "initial",
+  width: "150px",
+  height: "100%",
+  background: `radial-gradient(
+        circle,
+        rgba(255, 221, 112, 1) 0%,
+        rgba(255, 157, 112, 1) 100%
+    )`,
+  background: "rgb(255, 221, 112)",
+  transition: "width 0.4s",
+  overflow: "hidden",
+  zIndex: "2",
+  "&:hover": {
+    width: "100%",
+    borderRadius: "0 5px 5px 0",
+  },
+};
+// .card.green .additional {
+export const secondAdd = {
+  background: "reg(255,221,112)",
+  background: `radial-gradient(
+        circle,
+        rgba(255, 221, 112, 1) 0%,
+        rgba(101, 230, 181, 1) 100%
+    )`,
+};
+export const secondCoords = {
+  color: "#325c46",
+};
+// .card .additional .user-card::after {
+export const userCard = {
+  width: "150px",
+  height: "100%",
+  position: "relative",
+  float: "left",
+  "&::after": {
+    content: "",
+    display: "block",
+    position: "absolute",
+    top: "10%",
+    right: "-2px",
+    height: "80%",
+    borderLeft: "2px solid rgba(0,0,0,0.025)",
+  },
+};
+// .card .additional .user-card .level,
+// .card .additional .user-card .points
+export const userCardStats = {
+  top: "15%",
+  color: "#fff",
+  textTransform: "uppercase",
+  fontSize: "0.75rem",
+  fontWeight: "bold",
+  background: "rgba(0, 0, 0, 0.15)",
+  padding: "0.125rem 0.75rem",
+  borderRadius: "100px",
+  whiteSpace: "nowrap",
+};
+// .card .additional .user-card .points
+export const points = {
+  top: "85%",
+  position: "relative",
+};
+// .card .additional .user-card svg {
+export const cardImage = {
+  top: "50%",
+  width: "110px",
+  height: "110px",
+};
+// .card .additional .more-info {
+export const moreInfo = {
+  width: "300px",
+  float: "left",
+  position: "absolute",
+  left: "150px",
+  height: "100%",
+};
+// .card .additional .more-info h1 {
+export const moreInfoTitle = {
+  color: "white",
+  marginBottom: "0",
+};
+// .card .additional .coords {
+export const coords = {
+  margin: "0 1rem",
+  color: "white",
+  fontSize: "1rem",
+};
+// .card .additional .coords span + span {
+export const coordsSpan = {
+  float: "right",
+};
+
+// .card .additional .stats {
+export const stats = {
+  fontSize: "2rem",
+  display: "flex",
+  position: "absolute",
+  bottom: "1rem",
+  left: "1rem",
+  right: "1rem",
+  top: "auto",
+  color: "#fff",
+};
+// .card .additional .stats > div {
+export const statsTitle = {
+  flex: "1",
+  textAlign: "center",
+  fontSize: "0.75rem",
+  fontWeight: "bold",
+  textTransform: "uppercase",
+};
+// .card .additional .stats i {
+export const statsTrophy = {
+  display: "block",
+};
+// .card .additional .stats div.value {
+export const value = {
+  fontSize: "1.5rem",
+  fontWeight: "bold",
+  lineHeight: "1.5rem",
+};
+// .card .general {
+export const general = {
+  width: "300px",
+  height: "100%",
+  position: "absolute",
+  right: "0",
+  top: "0",
+  zIndex: "1",
+  boxSizing: "border-box",
+  padding: "1rem",
+  paddingTop: "0",
+};
+// .card .general .more {
+export const more = {
+  position: "absolute",
+  bottom: "1rem",
+  right: "1rem",
+  fontSize: "0.9rem",
 };
