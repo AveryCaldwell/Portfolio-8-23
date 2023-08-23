@@ -27,6 +27,7 @@ import {
   more,
   secondAdd,
   secondCoords,
+  thirdAdd,
 } from "./Styles";
 
 // This function renders main content of web app
@@ -229,7 +230,7 @@ function Ref() {
                           cx='125'
                           cy='100'
                           r='55'
-                          fill='#daa37f'
+                          fill='#EFDECD'
                           className='skin'
                         />
                         <ellipse
@@ -254,7 +255,7 @@ function Ref() {
                           width='12'
                           height='40'
                           className='skin'
-                          fill='#daa37f'
+                          fill='#EFDECD'
                         />
                         <path
                           className='line eyebrow'
@@ -435,7 +436,9 @@ function Ref() {
 
             {/* <!-- CARD 2 --> */}
             <div class='card second' style={card}>
-              <div className='additional secondAdd' style={additional}>
+              <div
+                className='additional secondAdd'
+                style={{ ...additional, ...secondAdd }}>
                 <div className='user-card' style={userCard}>
                   <div
                     className='level center'
@@ -485,7 +488,7 @@ function Ref() {
                           cx='125'
                           cy='100'
                           r='55'
-                          fill='#EFDECD'
+                          fill='#daa37f'
                           className='skin'
                         />
                         <ellipse
@@ -510,23 +513,23 @@ function Ref() {
                           width='12'
                           height='40'
                           className='skin'
-                          fill='#EFDECD'
+                          fill='#daa37f'
                         />
                         <path
                           className='line eyebrow'
-                          fill='#AF6E4D'
+                          fill='##4a3934'
                           d='M 90,98 C 93,90 103,89 110,94'
                           id='eyebrow-left'
                         />
                         <path
                           className='line eyebrow'
-                          fill='#AF6E4D'
+                          fill='##4a3934'
                           d='M 160,98 C 157,90 147,89 140,94'
                           id='eyebrow-right'
                         />
                         <path
                           className='hair'
-                          fill='#AF6E4D'
+                          fill='##4a3934'
                           d='M 60,109 C 59,39 118,40 129,40 139,40 187,43 189,99 135,98 115,67 115,67 115,67 108,90 80,109 86,101 91,92 92,87 85,99 65,108 60,109'
                         />
                         <path
@@ -658,7 +661,9 @@ function Ref() {
 
             {/* <!-- CARD 3 --> */}
             <div class='card third' style={card}>
-              <div className='additional secondAdd' style={additional}>
+              <div
+                className='additional thirdAdd'
+                style={{ ...additional, ...thirdAdd }}>
                 <div className='user-card' style={userCard}>
                   <div
                     className='level center'
@@ -678,12 +683,8 @@ function Ref() {
                     xmlns='http://www.w3.org/2000/svg'
                     role='img'
                     aria-labelledby='title desc'>
-                    <title id='title'>Software Architect</title>
-                    <desc id='desc'>
-                      Cartoon of a Caucasian woman smiling, and wearing black
-                      glasses and a purple shirt with white collar drawn by
-                      Alvaro Montoro.
-                    </desc>
+                    <title id='title'>Job</title>
+                    <desc id='desc'>Cartoon of a Caucasian woman smiling</desc>
                     <defs>
                       <clipPath id='scene'>
                         <circle cx='125' cy='125' r='115' />
@@ -875,12 +876,8 @@ function Ref() {
               </div>
               {/* === FRONT BLERP ON CARD === */}
               <div className='general' style={general}>
-                <h1 className='cardHeader'>Reference Name 1</h1>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                  a volutpat mauris, at molestie lacus. Nam vestibulum sodales
-                  odio ut pulvinar.
-                </p>
+                <h1 className='cardHeader'>Alexa Zylstra</h1>
+                <p>Badass Bish</p>
                 <span className='more' style={more}>
                   Mouse over the card for more info
                 </span>

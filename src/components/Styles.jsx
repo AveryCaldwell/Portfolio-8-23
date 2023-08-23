@@ -940,7 +940,7 @@ export const additional = {
         rgba(255, 221, 112, 1) 0%,
         rgba(255, 157, 112, 1) 100%
     )`,
-  background: "rgb(255, 221, 112)",
+  // background: "rgb(255, 221, 112)",
   transition: "width 0.4s",
   overflow: "hidden",
   zIndex: "2",
@@ -951,13 +951,21 @@ export const additional = {
 };
 // .card.green .additional {
 export const secondAdd = {
-  background: "reg(255,221,112)",
   background: `radial-gradient(
         circle,
         rgba(255, 221, 112, 1) 0%,
         rgba(101, 230, 181, 1) 100%
     )`,
 };
+// .card.blue .additional {
+export const thirdAdd = {
+  background: `radial-gradient(
+        circle,
+        rgba(252, 70, 107, 1) 0%,
+        rgba(63, 94, 251, 1) 100%
+    )`,
+};
+
 export const secondCoords = {
   color: "#325c46",
 };
