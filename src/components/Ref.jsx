@@ -448,7 +448,7 @@ function Ref() {
                   <div
                     className='points center'
                     style={Object.assign({}, userCardStats, center, points)}>
-                    Level 35
+                    Level 41
                   </div>
                   {/* === CLIP ART === */}
                   <svg
