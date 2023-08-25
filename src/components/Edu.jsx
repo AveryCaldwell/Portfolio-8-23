@@ -1,329 +1,314 @@
-import React, { useEffect, useState } from 'react'; // Importing useEffect and useRef
-
+import React, { useEffect, useState } from "react"; // Importing useEffect and useRef
+import { ThemeProvider } from "@emotion/react";
+import theme from "../theme";
 // import * as Material from '@mui/material';
-import anime from 'animejs/lib/anime.es.js';
-import CYCU from '../assets/CYCU.png';
-import MC from '../assets/MC.png';
-import UW from '../assets/UW.png';
+import anime from "animejs/lib/anime.es.js";
+import CYCU from "../assets/CYCU.png";
+import MC from "../assets/MC.png";
+import UW from "../assets/UW.png";
 import {
-    orbitalContainer,
-    orbitalBox,
-    cardContainer,
-    eduTitle,
-    eduHeader,
-    eduCard,
-    eduSlideshow,
-    eduImage,
-    eduBtn,
-    eduBtnContainer,
-    mySlides,
-} from './Styles';
+	orbitalContainer,
+	orbitalBox,
+	cardContainer,
+	eduTitle,
+	eduHeader,
+	eduSlideshow,
+	eduImage,
+	eduBtn,
+	eduBtnContainer,
+	myEduInactive,
+	myEduActive,
+	eduCardInactive,
+	eduCardActive,
+	eduDescriptionHeader,
+	eduImageInactive,
+	eduImageActive,
+} from "./Styles";
 
+function ImageIconRender({ props }) {
+	// React.useEffect(() => {
+	// 	setEducationState(activeRotator.current);
+	// 	console.log(educationState);
+	// }, [activeRotator.current]); // Empty dependency array means this effect will run after initial render
+	//console.log(educationState);
+	return (
+		<img
+			src={props.element.src}
+			className='eduImage'
+			alt={props.element.name}
+			style={
+				props.index === props.educationState
+					? { ...eduImage, ...eduImageActive }
+					: {
+							...eduImage,
+							...eduImageInactive,
+					  }
+			}
+		/>
+	);
+}
 // This function renders main content of web app
-function Edu() {
-    //array of pages
-const pages = [
-    'Landing',
-    'About',
-    'Edu',
-    'Projects',
-    'Resume',
-    'References',
-    'Contact',
-];
-// state
-let currentPage = 'Landing';
-let pageIndexObj = {
-    Landing: 0,
-    About: 1,
-    Edu: 2,
-    Projects: 3,
-    Resume: 4,
-    References: 5,
-    Contact: 6,
-};
+function EduCard({ props }) {
+	return (
+		<ThemeProvider theme={theme}>
+			<div className='cardContainer' style={cardContainer}>
+				{props.EducationArr.map(function (element, index) {
+					return (
+						<div
+							className={`eduCard${index} square`}
+							onClick={() => props.rotatorClick(index)}
+							key={`eduCard${index}`}
+							style={
+								props.educationState === index
+									? eduCardActive
+									: eduCardInactive
+							}>
+							<div
+								className='eduHeader'
+								onClick={() => props.setEducationState(index)}
+								style={eduHeader}>
+								{element.name}
+							</div>
+						</div>
+					);
+				})}
 
-// sets the active page shown
-const setActivePage = (newPage) => {
-    const appContainer = document.getElementsByClassName('appContainer')[0];
-    const pageIndex = pages.indexOf(newPage);
-    const currentPageIndex = pages.indexOf(currentPage);
-    const calculatedVH = pageIndex * 100;
-    if (newPage !== currentPage) {
-        const pageDiff =
-            pageIndex < currentPageIndex
-                ? Math.abs(currentPageIndex - pageIndex)
-                : Math.abs(pageIndex - currentPageIndex);
-        pages.forEach(
-            (element, index) =>
-                (pageIndexObj[element] = index - pages.indexOf(newPage))
-        );
-        currentPage = newPage;
-        console.log(pageIndexObj);
-        console.log(pageDiff);
-        appContainer.style.transition = `all ${pageDiff * 1.5}s ease`;
-        const logoSliderImage =
-            document.getElementsByClassName('logoSliderImage')[0];
-        const logoSliderCircle =
-            document.getElementsByClassName('logoSliderCircle')[0];
-        // if > 0, then the page is moving upwards
-        if (currentPageIndex - pageIndex > 0) {
-            //  changing top prop value to move the image
-            if (pageIndex === 0) {
-                setTimeout(function () {
-                    logoSliderImage.style.top = `15px`;
-                }, 1200);
-                logoSliderCircle.style.opacity = '0';
-            }
-        } else {
-            if (pageIndex >= 1) {
-                logoSliderImage.style.top = `calc(100% - 335px)`;
-                setTimeout(function () {
-                    logoSliderCircle.style.opacity = '1';
-                }, 1000);
-            }
-        }
+				<label style={eduDescriptionHeader}>Accolades</label>
+				<div id='eduSlideshow' style={eduSlideshow}>
+					{props.EducationArr.map(function (element, index) {
+						return (
+							<div
+								className={`${
+									props.educationState === index
+										? `myEduActive`
+										: `myEduInactive`
+								} fade`}
+								key={`myEdu${index}`}
+								style={
+									props.educationState === index
+										? myEduActive
+										: myEduInactive
+								}>
+								<div className='numbertext'>
+									{props.EducationArr[index].description.map(
+										function (description, descIndex) {
+											return (
+												<li
+													key={`desc-${index}-${descIndex}`}>
+													{description}
+												</li>
+											);
+										}
+									)}
+								</div>
+							</div>
+						);
+					})}
+				</div>
+				{/* <!-- eduSlideshow --> */}
+			</div>
+		</ThemeProvider>
+	);
+}
+function Edu({ props }) {
+	//array of pages
 
-        appContainer.style.top = `calc(0% - ${calculatedVH}vh)`;
-    }
-};
-    // Education Orbit animation
-    let currentPosition = {
-        object1: 0,
-        object2: 1 / 3,
-        object3: 2 / 3,
-    };
-    const rotationTime = 9000;
-    function experienceRotation(endDeg, target, speedOverride) {
-        if (endDeg > 100) {
-            endDeg = 100;
-        }
-        const fullRotation = rotationTime;
-        const distTravel = endDeg - currentPosition[target];
-        const duration = Math.abs(distTravel * (fullRotation / 100));
-        const targetDiv = document.getElementById(target);
-        targetDiv.animate(
-            [
-                { offsetDistance: String(currentPosition[target]) + '%' },
-                { offsetDistance: String(endDeg) + '%' },
-            ],
-            {
-                duration:
-                    speedOverride !== undefined ? speedOverride : duration,
-                easing: 'linear',
-                iterations: 1,
-                fill: 'forwards',
-            }
-        );
-        if (endDeg === 100) {
-            currentPosition[target] = 0;
-        } else {
-            currentPosition[target] = endDeg;
-        }
-    }
-    let currentOrbit = {
-        1: 1,
-        2: 2,
-        3: 3,
-    };
-    let nextOrbitDeg = {
-        1: (1 / 3) * 100,
-        2: (2 / 3) * 100,
-        3: 100,
-    };
-    function nextOrbit(target) {
-        experienceRotation(nextOrbitDeg[currentOrbit[target]], `object${target}`);
-        if (currentOrbit[target] === 3) {
-            currentOrbit[target] = 1;
-        } else {
-            currentOrbit[target] += 1;
-        }
-    }
-    let orbit;
+	// sets the active page shown
+	const EducationArr = [
+		{
+			name: "Mississippi College",
+			src: MC,
+			description: [
+				"2012-2016 | Clinton, MS",
+				"Headerman Scholar",
+				"Women in Business, Member & Speaker",
+				"Outstanding Marketing Award",
+				"Sandra Parks Award",
+				"Who's Who",
+				"Mortar Board",
+				"Delta Mu Delta, Epsilon Iota Delta, Omicron Delta Kappa",
+			],
+		},
+		{
+			name: "Chung Yuan Christian University",
+			src: CYCU,
+			description: [
+				"Taipei, Taiwan",
+				"Summer Business Program 2015",
+				"Certificate of Completion",
+			],
+		},
+		{
+			name: "University of Washington",
+			src: UW,
+			description: [
+				"Full Stack Developer Coding Bootcamp",
+				"Team Lead",
+				"GPA: 98.27% / 100%",
+			],
+		},
+	];
 
-    function constantOrbit() {
-        orbitting = true;
-        nextOrbit(1);
-        nextOrbit(2);
-        nextOrbit(3);
-        orbit = setInterval(function () {
-            nextOrbit(1);
-            nextOrbit(2);
-            nextOrbit(3);
-        }, rotationTime / 3);
-    }
-    function initializeRotator() {
-        experienceRotation((1 / 3) * 100, 'object2', 1);
-        experienceRotation((2 / 3) * 100, 'object3', 1);
-        document.getElementsByClassName('orbitalContainer')[0].style.opacity = 1;
-        constantOrbit();
-    }
-    let orbitting = false;
-    function rotatorClick(target) {
-        if (!orbitting && currentOrbit[target] !== 1) {
-            constantOrbit();
-        }
-        let stopRotator = setInterval(function () {
-            if (currentOrbit[target] === 1) {
-                clearInterval(stopRotator);
-                clearInterval(orbit);
-                orbitting = false;
-            }
-        }, 1000);
-    }
+	// Education Orbit animation
+	//const [rotatorState, setRotatorState] = useState(0);
+	let currentPosition = {
+		object1: 0,
+		object2: 1 / 3,
+		object3: 2 / 3,
+	};
+	const rotationTime = 9000;
+	function experienceRotation(endDeg, target, speedOverride) {
+		if (endDeg > 100) {
+			endDeg = 100;
+		}
+		const fullRotation = rotationTime;
+		const distTravel = endDeg - currentPosition[target];
+		const duration = Math.abs(distTravel * (fullRotation / 100));
+		const targetDiv = document.getElementById(target);
+		targetDiv.animate(
+			[
+				{ offsetDistance: String(currentPosition[target]) + "%" },
+				{ offsetDistance: String(endDeg) + "%" },
+			],
+			{
+				duration:
+					speedOverride !== undefined ? speedOverride : duration,
+				easing: "linear",
+				iterations: 1,
+				fill: "forwards",
+			}
+		);
+		if (endDeg === 100) {
+			currentPosition[target] = 0;
+		} else {
+			currentPosition[target] = endDeg;
+		}
+	}
+	let currentOrbit = {
+		1: 1,
+		2: 2,
+		3: 3,
+	};
+	let nextOrbitDeg = {
+		1: (1 / 3) * 100,
+		2: (2 / 3) * 100,
+		3: 100,
+	};
+	function nextOrbit(target) {
+		experienceRotation(
+			nextOrbitDeg[currentOrbit[target]],
+			`object${target}`
+		);
+		if (currentOrbit[target] === 3) {
+			currentOrbit[target] = 1;
+		} else {
+			currentOrbit[target] += 1;
+		}
+	}
+	let orbit;
+	let stopRotator;
+	function constantOrbit() {
+		clearInterval(orbit);
+		orbitting = true;
+		nextOrbit(1);
+		nextOrbit(2);
+		nextOrbit(3);
+		orbit = setInterval(function () {
+			nextOrbit(1);
+			nextOrbit(2);
+			nextOrbit(3);
+		}, rotationTime / 3);
+	}
+	function initializeRotator() {
+		clearInterval(orbit);
+		experienceRotation((1 / 3) * 100, "object2", 1);
+		experienceRotation((2 / 3) * 100, "object3", 1);
+		document.getElementsByClassName(
+			"orbitalContainer"
+		)[0].style.opacity = 1;
+		constantOrbit();
+	}
+	let orbitting = false;
+	const [educationState, setEducationState] = useState(0);
+	const [rotatorActiveState, setRotatorActiveState] = useState(false);
+	function rotatorClick(target) {
+		setEducationState(target);
+	}
 
-    useEffect(() => {
-        initializeRotator();
-    }, []); // Empty dependency array means this effect will run after initial render
+	useEffect(() => {
+		clearInterval(orbit);
+		// // clearInterval(stopRotator);
+		initializeRotator();
+		setRotatorActiveState(true);
+	}, [rotatorActiveState]); // Empty dependency array means this effect will run after initial render
 
-
-  
-    return (
-        <div
-            className='eduContainer pageContainer'
-            style={{ display: 'flex', minHeight: '100vh', overflow: 'hidden' }}
-        >
-            <h1 className='eduTitle' style={eduTitle}>
-                Education - Disclaimer: page under construction
-            </h1>
-
-            <div className='orbitalContainer' style={orbitalContainer}>
-                <div
-                    id='object1'
-                    className='orbitalBox'
-                    onClick={() => rotatorClick(1)}
-                    style={orbitalBox}
-                >
-                    <img
-                        src={MC}
-                        className='eduImage'
-                        alt='Mississippi College'
-                        style={eduImage}
-                    />
-                </div>
-                <div
-                    id='object2'
-                    className='orbitalBox'
-                    onClick={() => rotatorClick(2)}
-                    style={orbitalBox}
-                >
-                    <img
-                        src={CYCU}
-                        className='eduImage'
-                        alt='Chung Yuan Christian University'
-                        style={eduImage}
-                    />
-                </div>
-                <div
-                    id='object3'
-                    className='orbitalBox'
-                    onClick={() => rotatorClick(3)}
-                    style={orbitalBox}
-                >
-                    <img
-                        src={UW}
-                        className='eduImage'
-                        alt='University of Washington'
-                        style={eduImage}
-                    />
-                </div>
-            </div>
-
-            <div className='cardContainer' style={cardContainer}>
-                <div
-                    className='eduCard1 hide square'
-                    onClick={() => rotatorClick(1)}
-                    style={eduCard}
-                >
-                    <div
-                        className='eduHeader'
-                        onClick={() => currentSlide(1)}
-                        style={eduHeader}
-                    >
-                        Mississippi College
-                    </div>
-                </div>
-                <div
-                    className='eduCard2 hide square'
-                    onClick={() => rotatorClick(2)}
-                    style={eduCard}
-                >
-                    <div
-                        className='eduHeader'
-                        onClick={() => currentSlide(2)}
-                        style={eduHeader}
-                    >
-                        Chung Yuan Christian University
-                    </div>
-                </div>
-                <div
-                    className='eduCard3 hide square'
-                    style={eduCard}
-                    onClick={() => rotatorClick(3)}
-                >
-                    <div
-                        className='eduHeader'
-                        onClick={() => currentSlide(3)}
-                        style={eduHeader}
-                    >
-                        University of Washington
-                    </div>
-                </div>
-
-                <div id='eduSlideshow' style={eduSlideshow}>
-                    {/* <!-- css similar to <div className="mySlides fade"> --> */}
-                    <div className='mySlides fade' style={mySlides}>
-                        <div className='numbertext'>
-                            <li>2012-2016 | Clinton, MS</li>
-                            <li>Headerman Scholar</li>
-                            <li>Women in Business, Member & Speaker</li>
-                            <li>Outstanding Marketing Award</li>
-                            <li>Sandra Parks Award</li>
-                            <li>Who's Who</li>
-                            <li>Mortar Board</li>
-                            <li>
-                                Delta Mu Delta, Epsilon Iota Delta, Omicron
-                                Delta Kappa
-                            </li>
-                        </div>
-                        {/* <!-- numbertext --> */}
-                    </div>
-                    {/* <!-- mySlides --> */}
-                    <div className='mySlides fade' style={mySlides}>
-                        <div className='numbertext'>
-                            <li>Taipei, Taiwan</li>
-
-                            <li>Summer Business Program 2015</li>
-                            <li>Certificate of Completion</li>
-                        </div>
-                        {/* <!-- numbertext --> */}
-                    </div>
-                    {/* <!-- mySlides --> */}
-                    <div className='mySlides fade' style={mySlides}>
-                        <div className='numbertext'>
-                            <li>Full Stack Developer Coding Bootcamp</li>
-                            <li>Team Lead</li>
-                            <li>GPA: 98.27% / 100%</li>
-                        </div>
-                        {/* <!-- numbertext --> */}
-                    </div>
-                    {/* <!-- mySlides --> */}
-                </div>
-                {/* <!-- eduSlideshow --> */}
-            </div>
-            {/* <!-- cardContainer --> */}
-            <div className='eduBtnContainer' style={eduBtnContainer}>
-                <button
-                    className='eduBtn'
-                    style={eduBtn}
-                    onClick={() => setActivePage('Projects')}
-                >
-                    <span> See Projects </span>
-                </button>
-            </div> {/* <!-- btn container --> */}
-            
-        </div>
-    );
+	return (
+		<ThemeProvider theme={theme}>
+			<div
+				className='eduContainer pageContainer'
+				style={{
+					display: "flex",
+					minHeight: "100vh",
+					overflow: "hidden",
+				}}>
+				<h1 className='eduTitle' style={eduTitle}>
+					Education - Disclaimer: page under construction
+				</h1>
+				<div className='orbitalContainer' style={orbitalContainer}>
+					{EducationArr.map(function (element, index) {
+						return (
+							<div
+								id={`object${index + 1}`}
+								key={`object${index + 1}`}
+								className={"orbitalBox"}
+								onClick={() => rotatorClick(index)}
+								style={orbitalBox}>
+								<ImageIconRender
+									props={{
+										element: element,
+										setEducationState: setEducationState,
+										educationState: educationState,
+										index: index,
+									}}
+								/>
+								{/* <img
+									src={element.src}
+									className='eduImage'
+									alt={element.name}
+									style={
+										index === activeRotator.current
+											? { ...eduImage, ...eduImageActive }
+											: {
+													...eduImage,
+													...eduImageInactive,
+											  }
+									}
+								/> */}
+							</div>
+						);
+					})}
+				</div>
+				{/* <!-- cardContainer --> */}
+				<EduCard
+					props={{
+						setEducationState: setEducationState,
+						educationState: educationState,
+						EducationArr: EducationArr,
+						rotatorClick: rotatorClick,
+					}}
+				/>
+				<div className='eduBtnContainer' style={eduBtnContainer}>
+					<button
+						className='eduBtn'
+						style={eduBtn}
+						onClick={() => props.setActivePage("Projects")}>
+						<span> See Projects </span>
+					</button>
+				</div>{" "}
+				{/* <!-- btn container --> */}
+			</div>
+		</ThemeProvider>
+	);
 }
 
 export default Edu;
