@@ -4,7 +4,7 @@ import * as Material from '@mui/material';
 import {
 	projectContainer,
 	pageContainer,
-	projectHeader,
+	projectTitle,
 	projectContent,
 	textSlideshow,
 	projectSlides,
@@ -16,7 +16,6 @@ import {
 	dot,
 	dotContainer,
 	next,
-	slideshowContainer,
 	computerContainer,
 	computer,
 	mySlides,
@@ -39,7 +38,6 @@ import Employee from '../assets/Employee.png';
 import comp from '../assets/comp.png';
 // ICON
 import GitHubIcon from '@mui/icons-material/GitHub';
-
 // This function renders main content of web app
 function Projects({ props }) {
 	const projects = [
@@ -131,70 +129,64 @@ function Projects({ props }) {
 			<div
 				className="projectContainer pageContainer"
 				// style={Object.assign({}, projectContainer, pageContainer)}>
-				style={projectContainer}
+				style={pageContainer}
 			>
-				<h1
-					className="projectHeader"
-					onClick={() => props.setActivePage('Resume')}
-					style={projectHeader}
-				>
-					Projects
-				</h1>
+				<div style={{ width: '500px' }}>
+					<h1
+						className="projectTitle"
+						onClick={() => props.setActivePage('Resume')}
+						style={projectTitle}
+					>
+						Projects
+					</h1>
 
-				<div className="projectContent" style={projectContent}>
-					<div className="textSlideshow" style={textSlideshow}>
-						{projects.map((project, index) => (
-							<div
-								key={index}
-								className={`projectSlides fade ${
-									index === slideIndex ? 'active' : ''
-								}`}
-								style={{
-									...fade,
-									...projectSlides,
-									display:
-										index === slideIndex ? 'block' : 'none',
-								}}
-							>
-								{/* Slide Title */}
+					<div className="projectContent" style={projectContent}>
+						<div className="textSlideshow" style={textSlideshow}>
+							{projects.map((project, index) => (
 								<div
-									id="slideTitle"
-									className="numbertext"
-									style={slideTitle}
+									key={index}
+									className={`projectSlides fade ${
+										index === slideIndex ? 'active' : ''
+									}`}
+									style={{
+										...fade,
+										...projectSlides,
+										display:
+											index === slideIndex
+												? 'block'
+												: 'none',
+									}}
 								>
-									{project.title}
-								</div>
-								{/* Project Details */}
-								<div className="projectDetails">
-									<p>{project.description}</p>
-									<p>{project.technologies}</p>
-									{/* Icons */}
+									{/* Slide Title */}
 									<div
-										className="iconContainer"
-										style={iconContainer}
+										id="slideTitle"
+										className="numbertext"
+										style={slideTitle}
 									>
-										<a href={project.githubLink}>
-											<GitHubIcon style={github} />
-										</a>
+										{project.title}
 									</div>
+									{/* Project Details */}
+									<div className="projectDetails">
+										<p>{project.description}</p>
+										<p>{project.technologies}</p>
+										{/* Icons */}
+										<div
+											className="iconContainer"
+											style={iconContainer}
+										></div>
+									</div>
+									<a href={project.githubLink}>
+										<GitHubIcon style={github} />
+									</a>
 								</div>
-							</div>
-						))}
+							))}
+						</div>
 					</div>
 				</div>
 
 				{/* === COMPUTER === */}
 				<div className="computerContainer" style={computerContainer}>
-					<div
-						className="slideshowContainer"
-						style={slideshowContainer}
-					>
-						<img
-							src={comp}
-							alt="comp"
-							className="computer"
-							style={computer}
-						/>
+					<div className="slideshowContainer">
 						{projects.map((project, index) => (
 							<div
 								key={index}
@@ -219,14 +211,14 @@ function Projects({ props }) {
 						{/* Next & previous buttons */}
 						<a
 							className="prev"
-							style={Object.assign({}, arrows, prev)}
+							style={{ ...arrows, ...prev }}
 							onClick={() => plusSlides(1)}
 						>
 							❮
 						</a>
 						<a
 							className="next"
-							style={Object.assign({}, arrows, next)}
+							style={{ ...arrows, ...next }}
 							onClick={() => plusSlides(1)}
 						>
 							❯
@@ -248,6 +240,12 @@ function Projects({ props }) {
 							></div>
 						))}
 					</div>
+					<img
+						src={comp}
+						alt="comp"
+						className="computer"
+						style={computer}
+					/>
 				</div>
 			</div>
 		</>

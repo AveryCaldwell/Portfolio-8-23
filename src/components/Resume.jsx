@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from 'react';
 // import * as Material from '@mui/material';
-import anime from "animejs/lib/anime.es.js";
+import anime from 'animejs/lib/anime.es.js';
 // import avesLogo from '../assets/aves.png';
 import {
 	resumeContainer,
@@ -20,7 +20,7 @@ import {
 	check,
 	codeBox,
 	resumePlainText,
-} from "./Styles";
+} from './Styles';
 
 function Resume({ props }) {
 	//  state to determine whether the code block should be displayed
@@ -33,16 +33,16 @@ function Resume({ props }) {
 	const togglePlainText = () => {
 		setShowPlainText(!showPlainText);
 	};
-	const resumePlainText = showPlainText ? {} : { display: "none" }; // Define your styles here
+	const resumePlainText = showPlainText ? {} : { display: 'none' }; // Define your styles here
 
 	useEffect(() => {
 		if (textArray.length) setTimeout(type, newTextDelay + 250);
 		// Add event listener on component mount
-		document.addEventListener("DOMContentLoaded", startTypingEffect);
+		document.addEventListener('DOMContentLoaded', startTypingEffect);
 
 		// Clean up the event listener on component unmount
 		return () => {
-			document.removeEventListener("DOMContentLoaded", startTypingEffect);
+			document.removeEventListener('DOMContentLoaded', startTypingEffect);
 		};
 	}, []);
 
@@ -50,10 +50,10 @@ function Resume({ props }) {
 		if (textArray.length) setTimeout(type, newTextDelay + 250);
 	};
 	// ====TYPING ANIMATION====
-	const typedTextSpan = document.querySelector(".typed-text");
-	const cursorSpan = document.querySelector(".cursor");
+	const typedTextSpan = document.querySelector('.typed-text');
+	const cursorSpan = document.querySelector('.cursor');
 	// Array of words to show for typing animation
-	const textArray = ["hard", "cool", "a journey", "LIFE"];
+	const textArray = ['hard', 'cool', 'a journey', 'LIFE'];
 	const typingDelay = 200;
 	const erasingDelay = 100;
 	const newTextDelay = 2000;
@@ -74,7 +74,7 @@ function Resume({ props }) {
 
 			setTimeout(type, typingDelay);
 		} else {
-			cursorSpan.classList.remove("typing"); // When typing is completed for the current text, remove the 'typing' className from the cursor
+			cursorSpan.classList.remove('typing'); // When typing is completed for the current text, remove the 'typing' className from the cursor
 			setTimeout(erase, newTextDelay); // Start the erasing effect by calling the 'erase' function after 'newTextDelay' milliseconds
 		}
 	}
@@ -85,8 +85,8 @@ function Resume({ props }) {
 		// Check if there are characters to erase in the current text
 		if (charIndex > 0) {
 			// Add the 'typing' className to the cursor element to make it blink
-			if (!cursorSpan.classList.contains("typing"))
-				cursorSpan.classList.add("typing");
+			if (!cursorSpan.classList.contains('typing'))
+				cursorSpan.classList.add('typing');
 
 			// Erase the last character from the typedTextSpan
 			typedTextSpan.textContent = textArray[textArrayIndex].substring(
@@ -99,7 +99,7 @@ function Resume({ props }) {
 			setTimeout(erase, erasingDelay);
 		} else {
 			// When erasing is completed, remove the 'typing' className from the cursor
-			cursorSpan.classList.remove("typing");
+			cursorSpan.classList.remove('typing');
 			// Move to the next text in the textArray
 			textArrayIndex++;
 			// If all texts in the array have been shown, reset the index to show the first text again
@@ -109,7 +109,7 @@ function Resume({ props }) {
 		}
 	}
 	// Add an event listener to start the typing effect when the DOM is loaded
-	document.addEventListener("DOMContentLoaded", function () {
+	document.addEventListener('DOMContentLoaded', function () {
 		// On DOM Load initiate the effect
 		// If there are texts in the array, start the typing effect after a delay of newTextDelay' + 250 milliseconds
 		if (textArray.length) setTimeout(type, newTextDelay + 250);
@@ -118,59 +118,65 @@ function Resume({ props }) {
 	return (
 		<>
 			<div
-				className='resumeContainer pageContainer'
-				style={Object.assign({}, resumeContainer, pageContainer)}>
+				className="resumeContainer pageContainer"
+				style={pageContainer}
+			>
 				{/* //  style={resumeContainer}> */}
 
-				<h1 className='resumeTitle' style={resumeTitle}>
+				<h1 className="resumeTitle" style={resumeTitle}>
 					Resume
 				</h1>
 
-				<div className='typingContainer' style={typingContainer}>
+				<div className="typingContainer" style={typingContainer}>
 					<p>
-						Coding is{" "}
+						Coding is{' '}
 						<span ref={typedTextRef} style={typedText}></span>
 						<span
 							ref={cursorRef}
-							className={isTyping ? "typing" : ""}>
+							className={isTyping ? 'typing' : ''}
+						>
 							&nbsp;
 						</span>
 					</p>
 				</div>
 
-				<div className='resumeBox' style={resumeBox}>
+				<div className="resumeBox" style={resumeBox}>
 					<button
 						style={resumeBtn}
-						className='resumeBtn'
+						className="resumeBtn"
 						onClick={() => {
-							props.setActivePage("Projects");
-						}}>
-						Back{" "}
+							props.setActivePage('Projects');
+						}}
+					>
+						Back{' '}
 					</button>
 					<button
 						onClick={togglePlainText}
 						style={textBtn}
-						className='textBtn'
-						id='showPlainTextBtn'>
+						className="textBtn"
+						id="showPlainTextBtn"
+					>
 						Show Plain Text
 					</button>
 					<button
 						style={resumeNextBtn}
-						className='resumeNextBtn'
+						className="resumeNextBtn"
 						onClick={() => {
-							props.setActivePage("References");
-						}}>
+							props.setActivePage('References');
+						}}
+					>
 						Next
 					</button>
-					<div className='downloadBtn' style={downloadBtn}>
-						<div className='text' style={text}>
+					<div className="downloadBtn" style={downloadBtn}>
+						<div className="text" style={text}>
 							<a
-								href='../assets/resume.pdf'
-								download='resume'
-								className='resumeLink'
-								style={resumeLink}>
+								href="../assets/resume.pdf"
+								download="resume"
+								className="resumeLink"
+								style={resumeLink}
+							>
 								<pre>
-									<code>{" <Download/>"} </code>
+									<code>{' <Download/>'} </code>
 								</pre>
 							</a>
 						</div>
@@ -190,18 +196,18 @@ function Resume({ props }) {
             </svg>
           </div> */}
 					{/* === Resume Code Starts Here === */}
-					<div className='codeBox' style={codeBox}>
-						<code style={{ color: "green" }}>
-							{"className AveryCaldwell { "}{" "}
+					<div className="codeBox" style={codeBox}>
+						<code style={{ color: 'green' }}>
+							{'className AveryCaldwell { '}{' '}
 						</code>
-						<pre style={{ color: "yellow" }}>
+						<pre style={{ color: 'yellow' }}>
 							{`    constructor() {
     this.name = 'Avery Caldwell';
     this.dayOfBirthTimestamp = 12071993;
     this.email = 'averycaldwell7@gmail.com';
     }`}
 						</pre>
-						<pre style={{ color: "blue" }}>
+						<pre style={{ color: 'blue' }}>
 							{`workExperience() {
         return [
         {'2020-2023': 'Suspicious Activity Investigator - BSA/AML at BankPlus'},
@@ -211,7 +217,7 @@ function Resume({ props }) {
     }
 `}
 						</pre>
-						<pre style={{ color: "purple" }}>
+						<pre style={{ color: 'purple' }}>
 							{`   education() {
         return [
         {'2022-2023': 'University of Washington - Certificate in Full Stack Development'},
@@ -221,7 +227,7 @@ function Resume({ props }) {
     }`}
 						</pre>
 
-						<pre style={{ color: "magenta" }}>
+						<pre style={{ color: 'magenta' }}>
 							{`    skills() {
         return [
         'HTML/CSS/JS', 'React', 'Vue', 'Node.js/Express.js', 'Bootstrap, Tailwind, Material UI', 'Vite', 'SCSS',
@@ -235,7 +241,7 @@ function Resume({ props }) {
 						{/* <!-- code box --> */}
 					</div>
 					{/* <!-- PLAIN TEXT RESUME --> */}
-					<div className='resumePlainText' style={resumePlainText}>
+					<div className="resumePlainText" style={resumePlainText}>
 						<h1>AVERY CALDWELL</h1>
 						<ul>
 							<li>Seattle, WA </li>
@@ -262,7 +268,7 @@ function Resume({ props }) {
 						<ul>
 							<strong>Technologies:</strong>
 							<li>
-								{" "}
+								{' '}
 								JavaScript, HTML, CSS,, React, MERN, MySQL,
 								NoSQL, GraphQL, Apollo, MongoDB, Insomnia,
 								Heroku, Postman, OAth, Restful APIs, Jest, Git,
@@ -297,18 +303,18 @@ function Resume({ props }) {
 								with both APIs, and integrated the team’s work.
 							</li>
 							<li>
-								{" "}
+								{' '}
 								HTML, CSS, Foundation Framework, JavaScript, and
 								jQuery
 							</li>
 
 							<h3>
-								<strong>Cheers Check |</strong>{" "}
+								<strong>Cheers Check |</strong>{' '}
 								https://github.com/AveryCaldwell/CheersCheck |
 								https://averycaldwell.github.io/CheersCheck/
 							</h3>
 							<li>
-								{" "}
+								{' '}
 								A new liquor inventory application - the perfect
 								tool for anyone who enjoys keeping track of
 								their favorite spirits! You can easily organize
@@ -316,7 +322,7 @@ function Resume({ props }) {
 								have on hand.
 							</li>
 							<li>
-								{" "}
+								{' '}
 								As Team Lead for this project, I assigned tasks,
 								created the concept of the application, worked
 								with both APIs, and integrated the team’s work.
@@ -345,7 +351,7 @@ function Resume({ props }) {
 								integrated the front to the backend.
 							</li>
 							<li>
-								{" "}
+								{' '}
 								HTML, CSS, Javascript, Tailwind, Express, Node,
 								Heroku, MongoDB, Mongoose, MongoCompass, Apollo,
 								GraphQL, React
@@ -355,13 +361,13 @@ function Resume({ props }) {
 
 						<h3>
 							<strong>
-								Suspicious Activity Investigator - BSA/AML{" "}
+								Suspicious Activity Investigator - BSA/AML{' '}
 							</strong>
-							June 2018 - Aug 2023 BankPlus Ridgeland, MS{" "}
+							June 2018 - Aug 2023 BankPlus Ridgeland, MS{' '}
 						</h3>
 						<ul>
 							<li>
-								{" "}
+								{' '}
 								Streamlined operations by developing and
 								implementing compliance procedures and
 								guidelines for cross-functional operations
@@ -370,7 +376,7 @@ function Resume({ props }) {
 								departments.
 							</li>
 							<li>
-								{" "}
+								{' '}
 								Utilized critical thinking skills to evaluate
 								risk levels of customer behavior, including
 								transactional trends and historical statistics,
@@ -378,7 +384,7 @@ function Resume({ props }) {
 								ensuring regulatory compliance.
 							</li>
 							<li>
-								{" "}
+								{' '}
 								Protected the company's reputation and financial
 								well-being by leading investigations into
 								systemwide suspicious activities
@@ -386,13 +392,13 @@ function Resume({ props }) {
 
 							<em>Key Accomplishments:</em>
 							<li>
-								{" "}
+								{' '}
 								Played a pivotal role as a liaison to newly
 								acquired banks, driving successful training and
 								transition processes.
 							</li>
 							<li>
-								{" "}
+								{' '}
 								Selected as a distinguished representative to
 								attend the esteemed BSA/AML Conference,
 								showcasing the Bank's commitment to regulatory
@@ -419,13 +425,13 @@ function Resume({ props }) {
 								Christian University, Taipei, Taiwan 2015
 							</h3>
 							<li>
-								{" "}
+								{' '}
 								A 2 month program focused on gaining
 								international business skills and adapting to
 								new environments.
 							</li>
 						</ul>
-					</div>{" "}
+					</div>{' '}
 				</div>
 			</div>
 		</>

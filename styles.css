@@ -1,25 +1,45 @@
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	opacity: 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.4);
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.7);
 }
 body {
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    background: linear-gradient(
-        90deg,
-        rgba(248, 201, 195, 1) 1%,
-        rgba(245, 200, 227, 1) 20%,
-        rgba(219, 193, 248, 1) 40%,
-        rgba(153, 179, 252, 1) 60%,
-        rgba(109, 171, 228, 1) 80%
-    );
+	height: 100vh;
+	margin: 0;
+	overflow: hidden;
+	background: linear-gradient(
+		90deg,
+		rgba(248, 201, 195, 1) 1%,
+		rgba(245, 200, 227, 1) 20%,
+		rgba(219, 193, 248, 1) 40%,
+		rgba(153, 179, 252, 1) 60%,
+		rgba(109, 171, 228, 1) 80%
+	);
 }
 
 #root {
-    height: 100%;
-    --orange: #f8c9c3;
-    --pink: #f5c8e3;
-    --periwinkle: #dbc1f8;
-    --purple: #99b3fc;
-    --blue: #6dabe4;
+	height: 100%;
+	--orange: #f8c9c3;
+	--pink: #f5c8e3;
+	--periwinkle: #dbc1f8;
+	--purple: #99b3fc;
+	--blue: #6dabe4;
 }

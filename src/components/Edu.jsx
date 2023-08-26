@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react"; // Importing useEffect and useRef
-import { ThemeProvider } from "@emotion/react";
-import theme from "../theme";
+import React, { useEffect, useState } from 'react'; // Importing useEffect and useRef
+import { ThemeProvider } from '@emotion/react';
+import theme from '../theme';
 // import * as Material from '@mui/material';
-import anime from "animejs/lib/anime.es.js";
-import CYCU from "../assets/CYCU.png";
-import MC from "../assets/MC.png";
-import UW from "../assets/UW.png";
+import anime from 'animejs/lib/anime.es.js';
+import CYCU from '../assets/CYCU.png';
+import MC from '../assets/MC.png';
+import UW from '../assets/UW.png';
 import {
 	orbitalContainer,
 	orbitalBox,
@@ -23,7 +23,8 @@ import {
 	eduDescriptionHeader,
 	eduImageInactive,
 	eduImageActive,
-} from "./Styles";
+	pageContainer,
+} from './Styles';
 
 function ImageIconRender({ props }) {
 	// React.useEffect(() => {
@@ -34,7 +35,7 @@ function ImageIconRender({ props }) {
 	return (
 		<img
 			src={props.element.src}
-			className='eduImage'
+			className="eduImage"
 			alt={props.element.name}
 			style={
 				props.index === props.educationState
@@ -51,7 +52,7 @@ function ImageIconRender({ props }) {
 function EduCard({ props }) {
 	return (
 		<ThemeProvider theme={theme}>
-			<div className='cardContainer' style={cardContainer}>
+			<div className="cardContainer" style={cardContainer}>
 				{props.EducationArr.map(function (element, index) {
 					return (
 						<div
@@ -62,11 +63,13 @@ function EduCard({ props }) {
 								props.educationState === index
 									? eduCardActive
 									: eduCardInactive
-							}>
+							}
+						>
 							<div
-								className='eduHeader'
+								className="eduHeader"
 								onClick={() => props.setEducationState(index)}
-								style={eduHeader}>
+								style={eduHeader}
+							>
 								{element.name}
 							</div>
 						</div>
@@ -74,7 +77,7 @@ function EduCard({ props }) {
 				})}
 
 				<label style={eduDescriptionHeader}>Accolades</label>
-				<div id='eduSlideshow' style={eduSlideshow}>
+				<div id="eduSlideshow" style={eduSlideshow}>
 					{props.EducationArr.map(function (element, index) {
 						return (
 							<div
@@ -88,13 +91,15 @@ function EduCard({ props }) {
 									props.educationState === index
 										? myEduActive
 										: myEduInactive
-								}>
-								<div className='numbertext'>
+								}
+							>
+								<div className="numbertext">
 									{props.EducationArr[index].description.map(
 										function (description, descIndex) {
 											return (
 												<li
-													key={`desc-${index}-${descIndex}`}>
+													key={`desc-${index}-${descIndex}`}
+												>
 													{description}
 												</li>
 											);
@@ -116,35 +121,35 @@ function Edu({ props }) {
 	// sets the active page shown
 	const EducationArr = [
 		{
-			name: "Mississippi College",
+			name: 'Mississippi College',
 			src: MC,
 			description: [
-				"2012-2016 | Clinton, MS",
-				"Headerman Scholar",
-				"Women in Business, Member & Speaker",
-				"Outstanding Marketing Award",
-				"Sandra Parks Award",
+				'2012-2016 | Clinton, MS',
+				'Headerman Scholar',
+				'Women in Business, Member & Speaker',
+				'Outstanding Marketing Award',
+				'Sandra Parks Award',
 				"Who's Who",
-				"Mortar Board",
-				"Delta Mu Delta, Epsilon Iota Delta, Omicron Delta Kappa",
+				'Mortar Board',
+				'Delta Mu Delta, Epsilon Iota Delta, Omicron Delta Kappa',
 			],
 		},
 		{
-			name: "Chung Yuan Christian University",
+			name: 'Chung Yuan Christian University',
 			src: CYCU,
 			description: [
-				"Taipei, Taiwan",
-				"Summer Business Program 2015",
-				"Certificate of Completion",
+				'Taipei, Taiwan',
+				'Summer Business Program 2015',
+				'Certificate of Completion',
 			],
 		},
 		{
-			name: "University of Washington",
+			name: 'University of Washington',
 			src: UW,
 			description: [
-				"Full Stack Developer Coding Bootcamp",
-				"Team Lead",
-				"GPA: 98.27% / 100%",
+				'Full Stack Developer Coding Bootcamp',
+				'Team Lead',
+				'GPA: 98.27% / 100%',
 			],
 		},
 	];
@@ -167,15 +172,15 @@ function Edu({ props }) {
 		const targetDiv = document.getElementById(target);
 		targetDiv.animate(
 			[
-				{ offsetDistance: String(currentPosition[target]) + "%" },
-				{ offsetDistance: String(endDeg) + "%" },
+				{ offsetDistance: String(currentPosition[target]) + '%' },
+				{ offsetDistance: String(endDeg) + '%' },
 			],
 			{
 				duration:
 					speedOverride !== undefined ? speedOverride : duration,
-				easing: "linear",
+				easing: 'linear',
 				iterations: 1,
-				fill: "forwards",
+				fill: 'forwards',
 			}
 		);
 		if (endDeg === 100) {
@@ -221,10 +226,10 @@ function Edu({ props }) {
 	}
 	function initializeRotator() {
 		clearInterval(orbit);
-		experienceRotation((1 / 3) * 100, "object2", 1);
-		experienceRotation((2 / 3) * 100, "object3", 1);
+		experienceRotation((1 / 3) * 100, 'object2', 1);
+		experienceRotation((2 / 3) * 100, 'object3', 1);
 		document.getElementsByClassName(
-			"orbitalContainer"
+			'orbitalContainer'
 		)[0].style.opacity = 1;
 		constantOrbit();
 	}
@@ -244,34 +249,31 @@ function Edu({ props }) {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<div
-				className='eduContainer pageContainer'
-				style={{
-					display: "flex",
-					minHeight: "100vh",
-					overflow: "hidden",
-				}}>
-				<h1 className='eduTitle' style={eduTitle}>
-					Education - Disclaimer: page under construction
-				</h1>
-				<div className='orbitalContainer' style={orbitalContainer}>
-					{EducationArr.map(function (element, index) {
-						return (
-							<div
-								id={`object${index + 1}`}
-								key={`object${index + 1}`}
-								className={"orbitalBox"}
-								onClick={() => rotatorClick(index)}
-								style={orbitalBox}>
-								<ImageIconRender
-									props={{
-										element: element,
-										setEducationState: setEducationState,
-										educationState: educationState,
-										index: index,
-									}}
-								/>
-								{/* <img
+			<div className="eduContainer pageContainer" style={pageContainer}>
+				<div style={{ width: '50%', marginLeft: '100px' }}>
+					<h1 className="eduTitle" style={eduTitle}>
+						EDUCATION
+					</h1>
+					<div className="orbitalContainer" style={orbitalContainer}>
+						{EducationArr.map(function (element, index) {
+							return (
+								<div
+									id={`object${index + 1}`}
+									key={`object${index + 1}`}
+									className={'orbitalBox'}
+									onClick={() => rotatorClick(index)}
+									style={orbitalBox}
+								>
+									<ImageIconRender
+										props={{
+											element: element,
+											setEducationState:
+												setEducationState,
+											educationState: educationState,
+											index: index,
+										}}
+									/>
+									{/* <img
 									src={element.src}
 									className='eduImage'
 									alt={element.name}
@@ -284,9 +286,10 @@ function Edu({ props }) {
 											  }
 									}
 								/> */}
-							</div>
-						);
-					})}
+								</div>
+							);
+						})}
+					</div>
 				</div>
 				{/* <!-- cardContainer --> */}
 				<EduCard
@@ -297,14 +300,15 @@ function Edu({ props }) {
 						rotatorClick: rotatorClick,
 					}}
 				/>
-				<div className='eduBtnContainer' style={eduBtnContainer}>
+				<div className="eduBtnContainer" style={eduBtnContainer}>
 					<button
-						className='eduBtn'
+						className="eduBtn"
 						style={eduBtn}
-						onClick={() => props.setActivePage("Projects")}>
+						onClick={() => props.setActivePage('Projects')}
+					>
 						<span> See Projects </span>
 					</button>
-				</div>{" "}
+				</div>{' '}
 				{/* <!-- btn container --> */}
 			</div>
 		</ThemeProvider>
