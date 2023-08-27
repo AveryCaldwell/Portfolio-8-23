@@ -13,6 +13,7 @@ export const appContainer = {
 	transition: 'all 1.5s ease',
 	maxWidth: '1200px',
 	minWidth: '1200px',
+	fontFamily: 'roboto',
 };
 export const pagesContainer = {
 	height: '800px',
@@ -34,7 +35,7 @@ export const pageContainer = {
 	display: 'flex',
 	minHeight: '800px',
 	maxHeight: '800px',
-	overflow: 'hidden',
+	//overflow: 'hidden',
 	marginTop: 'calc(50vh - 400px)',
 	marginBottom: 'calc(50vh - 400px)',
 };
@@ -129,6 +130,16 @@ export const letter = {
 	opacity: '1',
 };
 /* ============================== ABOUT SECTION ============================== */
+export const fadeTransition = {
+	//animation: 'ease-in-out 3s',
+	transition: `ease 2s`,
+	position: 'absolute',
+	top: 0,
+	left: 0,
+	padding: '20px',
+	//overflow: 'auto',
+	height: '650px',
+};
 export const aboutContainer = {
 	display: 'flex',
 	fontSize: '50px',
@@ -155,7 +166,7 @@ export const aboutTitle = {
 	color: 'white',
 	transition: 'all .2s ease',
 	display: 'flex',
-	fontSize: '90px',
+	fontSize: '80px',
 	fontFamily: 'Roboto',
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
 	width: '440px',
@@ -259,16 +270,43 @@ export const aboutButton = {
 };
 
 /* ============================== EDUCATION SECTION ============================== */
+export const eduButtonSpan = {
+	display: 'flex',
+	justifyContent: 'space-around',
+	flexDirection: 'row',
+	width: '380px',
+	height: '150px',
+};
+export const eduButton = {
+	borderRadius: '36px',
+	border: '1px solid white',
+	// position: 'relative',
+	textAlign: 'center',
+	listStyle: 'none',
+	width: '150px',
+	// top: '202vh',
+	// left: '5%',
+	height: '65px',
+	color: 'white',
+	fontSize: '18px',
+	lineHeight: '1.25',
+	backgroundColor: 'transparent',
+	cursor: 'pointer',
+	marginTop: '30px',
+};
 export const orbitalContainer = {
 	// height: '600px',
 	height: '780px',
 	width: '600px',
 	opacity: '0',
+	position: 'relative',
 	// position: 'relative',
 	transition: 'all 1s ease',
 	display: 'flex',
 	// justifyContent: 'center',
 	alignItems: 'center',
+	left: '-120px',
+	top: '50px',
 };
 export const orbitalBox = {
 	offsetPath: `path('M150,0 A150,150 0 1,1 150,300 A150,150 0 1,1 150,0')`,
@@ -278,6 +316,7 @@ export const orbitalBox = {
 	position: 'absolute',
 	width: '600px',
 	height: '150px',
+	//top: '100px',
 	left: '190px',
 	marginBottom: '150px',
 	cursor: 'pointer',
@@ -292,16 +331,17 @@ export const eduTitle = {
 	position: 'absolute',
 	color: 'white',
 	transition: 'all .2s ease',
-	paddingBottom: '25px',
+	paddingBottom: '125px',
 	textAlign: 'center',
 	margin: '0',
 	alignItems: 'center',
 	display: 'flex',
-	fontSize: '90px',
+	fontSize: '80px',
 	fontFamily: 'Roboto',
 
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
 };
+
 export const eduDescriptionHeader = {
 	//position: "absolute",
 	color: 'white',
@@ -318,7 +358,7 @@ export const eduDescriptionHeader = {
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 };
 export const cardContainer = {
-	width: '900px',
+	width: '400px',
 	// height: 'fit-content',
 	display: 'flex',
 	transition: 'all 1s ease',
@@ -522,6 +562,30 @@ export const animateSvgStroke1 = {
 //   display: "flex",
 //   height: "100vh",
 // };
+export const projectsButtonSpan = {
+	display: 'flex',
+	justifyContent: 'space-around',
+	flexDirection: 'row',
+	width: '450px',
+	height: '150px',
+};
+export const projectsButton = {
+	borderRadius: '36px',
+	border: '1px solid white',
+	// position: 'relative',
+	textAlign: 'center',
+	listStyle: 'none',
+	width: '120px',
+	// top: '202vh',
+	// left: '5%',
+	height: '65px',
+	color: 'white',
+	fontSize: '18px',
+	lineHeight: '1.25',
+	backgroundColor: 'transparent',
+	cursor: 'pointer',
+	marginTop: '30px',
+};
 export const projectContainer = {
 	display: 'flex',
 	flexDirection: 'column', // Stack content vertically
@@ -539,9 +603,10 @@ export const projectTitle = {
 	transition: 'all .2s ease',
 	textAlign: 'center',
 	marginTop: '50px',
+	marginBottom: '25px',
 	alignItems: 'center',
 	display: 'flex',
-	fontSize: '90px',
+	fontSize: '80px',
 	fontFamily: 'Roboto',
 
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
@@ -550,7 +615,7 @@ export const projectTitle = {
 export const projectContent = {
 	fontFamily: 'roboto',
 	position: 'relative',
-	height: '450px',
+	height: '400px',
 	width: '450px',
 	lineHeight: '1.25',
 	borderRadius: '36px',
@@ -587,15 +652,7 @@ export const iconContainer = {
 	alignItems: 'center',
 };
 export const github = {
-	cursor: 'pointer',
-	position: 'absolute',
-	color: 'white',
-	fontSize: '50px',
-	animation: 'animate 3s linear infinite',
-	textShadow: `0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
-        0 0 200px #0072ff`,
-	right: '0px',
-	bottom: '20px',
+	fontSize: '40px',
 };
 // export const keyframes = {
 //   "#github": {
@@ -621,6 +678,7 @@ export const computer = {
 	display: 'inline-block',
 	// bottom: '1vh',
 	// right: '130px',
+	left: '15px',
 	transition: 'all 1.5s ease',
 };
 export const computerImage = {
@@ -753,68 +811,123 @@ export const mouseBtnText = {
 	lineHeight: 'initial',
 };
 /* ============================== RESUME SECTION ============================== */
+export const resumeButtonSpan = {
+	display: 'flex',
+	justifyContent: 'space-around',
+	flexDirection: 'row',
+	width: '800px',
+	height: '150px',
+};
+export const resumeButton = {
+	borderRadius: '36px',
+	border: '1px solid white',
+	// position: 'relative',
+	textAlign: 'center',
+	listStyle: 'none',
+	width: '150px',
+	// top: '202vh',
+	// left: '5%',
+	height: '65px',
+	color: 'white',
+	fontSize: '18px',
+	lineHeight: '1.25',
+	backgroundColor: 'transparent',
+	cursor: 'pointer',
+	marginTop: '30px',
+};
 export const resumeContainer = {
 	// backgroundColor: "purple",
-	display: 'flex',
-	color: 'white',
-	height: '100vh',
-	// position: "absolute",
-	position: 'relative',
-	// top: "408vh",
-	fontFamily: 'Roboto',
-	// width: "100%",
-	// padding: "5px",
-	bottom: '36vh',
+	flexDirection: 'column',
 };
 export const resumeTitle = {
-	position: 'relative',
-	fontSize: '40px',
-	// pointerEvents: 'none',
+	//position: 'absolute',
+	color: 'white',
+	transition: 'all .2s ease',
+	//paddingBottom: '125px',
+	textAlign: 'center',
+	margin: '0',
+	alignItems: 'center',
+	display: 'flex',
+	fontSize: '80px',
+	fontFamily: 'Roboto',
+	minWidth: '50%',
+	textShadow: `4px 4px rgba(0,0,0,0.1)`,
 };
 export const resumeBox = {
 	display: 'flex',
-	flexDirection: 'row',
+	//flexDirection: 'row',
 	justifyContent: 'space-between',
 	alignItems: 'center',
-	bottom: '45vh',
+	//bottom: '45vh',
 	position: 'relative',
 	width: '100%',
 };
 
 /* typing animation */
 export const typingContainer = {
+	textShadow: `2px 2px rgba(0,0,0,0.1)`,
 	fontSize: '36px',
+	color: 'white',
 	padding: '5px',
 	fontWeight: 'light',
 	letterSpacing: '0.1rem',
 	textAlign: 'right',
-	overflow: 'hidden',
+	//overflow: 'hidden',
 	// marginTop: "75px",
-	position: 'absolute',
+	//position: 'absolute',
 	display: 'flex',
 	justifyContent: 'end',
-	width: '100%',
-	marginLeft: 'auto',
-	marginRight: 'auto',
+	minWidth: '50%',
+
+	height: '50px',
+	maxWidth: '50%',
 };
 /* snippet of code for resume */
 export const codeBox = {
+	textShadow: `2px 2px rgba(0,0,0,0.1)`,
 	flexWrap: 'wrap',
 	display: 'flex',
 	position: 'relative',
-	padding: '20px',
-	height: 'fit-content',
+	//padding: '20px',
+	height: '600px',
 	width: '100%',
-	top: '38vh',
+	overflow: 'hidden',
+	//top: '38vh',
 	// top: "32vh",
-	right: '75px',
+	//right: '75px',
 	fontSize: '18px',
 	borderRadius: '36px',
-	background: 'rgba(255, 255, 255, 0.2)',
+	background: 'rgba(0, 0, 0, 0.4)',
 	boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
 	backdropFilter: 'blur(5px)',
 	WebkitBackdropFilter: 'blur(5px)',
-	border: '1px solid rgba(255, 255, 255, 0.3)',
+	border: '1px solid rgba(255, 255, 255, 0.6)',
+};
+export const codeContent = {
+	position: 'absolute',
+	margin: '35px',
+	minWidth: '1130px',
+	maxWidth: '1130px',
+	overflow: 'auto',
+	height: '500px',
+	whiteSpace: 'pre-wrap',
+	overflowWrap: 'normal',
+	//WordWrap: 'normal,',
+};
+export const resumePlainText = {
+	color: 'white',
+	fontFamily: 'roboto',
+	borderRadius: '25px',
+	//background: 'white',
+	position: 'absolute',
+	margin: '35px',
+	minWidth: '1130px',
+	maxWidth: '1130px',
+	overflow: 'auto',
+	height: '500px',
+	whiteSpace: 'pre-wrap',
+	overflowWrap: 'normal',
+	//WordWrap: 'normal,',
 };
 export const typedText = {
 	fontWeight: 'normal',
@@ -906,14 +1019,7 @@ export const resumeLink = {
 	color: 'rgba(153, 179, 252, 1)',
 };
 /* resume plain text */
-export const resumePlainText = {
-	display: 'none',
-	height: '100vh',
-	overflow: 'hidden',
-	fontSize: '12px',
-	marginTop: '150px',
-	width: '1200px',
-};
+
 export const resumeBtn = {
 	position: 'relative',
 	display: 'inline-flex',

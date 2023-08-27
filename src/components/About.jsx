@@ -15,6 +15,7 @@ import {
 	skillSubtitle,
 	pageContainer,
 	buttonSpan,
+	fadeTransition,
 } from './Styles';
 
 // This function renders main content of About section
@@ -60,22 +61,25 @@ function About({ props }) {
 		</li>
 	));
 	const [aboutButtonState, setAboutButtonState] = React.useState({
-		aboutButton0: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
-		aboutButton1: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
-		aboutButton2: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
-		aboutButton3: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
+		Introduction: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.7)' },
+		Skills: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
+		Landing: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
+		Next: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 	});
+	//TODO: Make it so the introduction button highlights and then it is based off of the current active about content
 	const aboutButtons = [
-		{ target: 'Introduction', span: 'Introduction' },
-		{ target: 'Skills', span: 'Skills' },
-		{ target: 'Landing', span: 'Back' },
-		{ target: 'Edu', span: 'Next' },
+		{ target: 'Introduction', span: 'Introduction', name: 'Introduction' },
+		{ target: 'Skills', span: 'Skills', name: 'Skills' },
+		{ target: 'Landing', span: 'Back', name: 'Landing' },
+		{ target: 'Edu', span: 'Next', name: 'Next' },
 	];
 	function setAboutHoverButton(name, style) {
 		let obj = Object.assign({}, aboutButtonState);
 		obj[name] = style;
 		setAboutButtonState(obj);
 	}
+	const [aboutContentState, setAboutContentState] =
+		React.useState('Introduction');
 	function aboutButtonSetActivePage(target) {}
 	return (
 		// <div
@@ -86,13 +90,24 @@ function About({ props }) {
 		// >
 		<div className="aboutContainer pageContainer" style={pageContainer}>
 			<div className="aboutTitle" style={aboutTitle}>
-				About Me
+				ABOUT ME
 			</div>
 			<div id="ContentContainer" style={{ marginLeft: '20px' }}>
 				<div className="aboutContent" style={aboutContent}>
-					<div id={'blurb'}>
+					<div
+						id="Introduction"
+						style={{
+							...{
+								opacity:
+									aboutContentState === 'Introduction'
+										? '1'
+										: '0',
+							},
+							...fadeTransition,
+						}}
+					>
 						<div className="aboutSubtitle" style={aboutSubtitle}>
-							Tldr: Career changer, Adventurer, Woman in Business,
+							TLDR: Career changer, Adventurer, Woman in Business,
 							Creative Thinker + Web Dev
 						</div>
 						<div className="aboutText" style={aboutText}>
@@ -131,25 +146,36 @@ function About({ props }) {
 						</div>
 					</div>
 					{/* TODO: add animation on skill hover */}
-					<div id="skills">
-						<div className="techBox" style={techBox}>
-							<div
-								className="aboutSubtitle"
-								style={skillSubtitle}
-							>
-								Front End Skills
+					<div
+						id="Skills"
+						style={{
+							...{
+								opacity:
+									aboutContentState === 'Skills' ? '1' : '0',
+							},
+							...fadeTransition,
+						}}
+					>
+						<div style={{ overflow: 'scroll', maxHeight: '100%' }}>
+							<div className="techBox" style={techBox}>
+								<div
+									className="aboutSubtitle"
+									style={skillSubtitle}
+								>
+									Front End Skills
+								</div>
+								{renderedFrontendSkills}
 							</div>
-							{renderedFrontendSkills}
-						</div>
-						<div className="skillBox" style={skillBox}>
-							<div
-								className="aboutSubtitle"
-								style={skillSubtitle}
-							>
-								Back End Skills
+							<div className="skillBox" style={skillBox}>
+								<div
+									className="aboutSubtitle"
+									style={skillSubtitle}
+								>
+									Back End Skills
+								</div>
+								{renderedBackendSkills}
+								<div className="aboutBubble"></div>
 							</div>
-							{renderedBackendSkills}
-							<div className="aboutBubble"></div>
 						</div>
 					</div>
 				</div>
@@ -160,22 +186,31 @@ function About({ props }) {
 							<button
 								className="aboutButton"
 								key={`aboutButton${index}`}
-								name={`aboutButton${index}`}
+								name={element.name}
 								style={{
 									...aboutButton,
-									...aboutButtonState[`aboutButton${index}`],
+									...aboutButtonState[element.name],
 								}}
 								onMouseEnter={(event) => {
-									setAboutHoverButton(event.target.name, {
-										boxShadow:
-											'0 4px 10px rgba(255, 255, 255, 0.7)',
-									});
+									if (
+										event.target.name !== aboutContentState
+									) {
+										//console.log(event.target.name);
+										setAboutHoverButton(event.target.name, {
+											boxShadow:
+												'0 4px 10px rgba(255, 255, 255, 0.7)',
+										});
+									}
 								}}
 								onMouseLeave={(event) => {
-									setAboutHoverButton(event.target.name, {
-										boxShadow:
-											'0 4px 10px rgba(255, 255, 255, 0.0)',
-									});
+									if (
+										event.target.name !== aboutContentState
+									) {
+										setAboutHoverButton(event.target.name, {
+											boxShadow:
+												'0 4px 10px rgba(255, 255, 255, 0.0)',
+										});
+									}
 								}}
 								onClick={function () {
 									if (
@@ -185,9 +220,36 @@ function About({ props }) {
 										props.setActivePage(element.target);
 									} else {
 										//TODO write logic for changing the data within the about content
-										console.log(
-											`This is meant to load the data of ${element.target}`
-										);
+										// console.log(
+										// 	`This is meant to load the data of ${element.target}`
+										// );
+										if (
+											element.target !== aboutContentState
+										) {
+											let inactive = 'Introduction';
+											let active = 'Skills';
+											if (
+												element.target ===
+												'Introduction'
+											) {
+												active = 'Introduction';
+												inactive = 'Skills';
+											}
+											let obj = Object.assign(
+												{},
+												aboutButtonState
+											);
+											obj[active] = {
+												boxShadow:
+													'0 4px 10px rgba(255, 255, 255, 0.7)',
+											};
+											obj[inactive] = {
+												boxShadow:
+													'0 4px 10px rgba(255, 255, 255, 0.0)',
+											};
+											setAboutButtonState(obj);
+										}
+										setAboutContentState(element.target);
 									}
 								}}
 							>
@@ -195,34 +257,6 @@ function About({ props }) {
 							</button>
 						);
 					})}
-					{/* <button
-						className="aboutButton"
-						style={aboutButton}
-						onClick={() => props.setActivePage('Edu')}
-					>
-						<span>Introduction</span>
-					</button>
-					<button
-						className="aboutButton"
-						style={aboutButton}
-						onClick={() => props.setActivePage('Edu')}
-					>
-						<span>Skills</span>
-					</button>
-					<button
-						className="aboutButton"
-						style={aboutButton}
-						onClick={() => props.setActivePage('Edu')}
-					>
-						<span>Show More</span>
-					</button>
-					<button
-						className="aboutButton"
-						style={aboutButton}
-						onClick={() => props.setActivePage('Landing')}
-					>
-						<span>Back to Home</span>
-					</button> */}
 				</div>
 			</div>
 		</div>

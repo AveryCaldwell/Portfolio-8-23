@@ -102,7 +102,7 @@ function App() {
 						<Landing props={{ setActivePage }} />
 						<About props={{ setActivePage }} />
 						<Edu props={{ setActivePage }} />
-						<SvgContainer props={{ setActivePage }} />
+						{/* <SvgContainer props={{ setActivePage }} /> */}
 						<Projects props={{ setActivePage }} />
 						<Resume props={{ setActivePage }} />
 						<Ref props={{ setActivePage }} />

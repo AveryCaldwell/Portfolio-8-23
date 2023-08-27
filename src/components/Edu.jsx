@@ -24,6 +24,8 @@ import {
 	eduImageInactive,
 	eduImageActive,
 	pageContainer,
+	eduButtonSpan,
+	eduButton,
 } from './Styles';
 
 function ImageIconRender({ props }) {
@@ -213,19 +215,21 @@ function Edu({ props }) {
 	let orbit;
 	let stopRotator;
 	function constantOrbit() {
-		clearInterval(orbit);
+		//clearInterval(orbit);
 		orbitting = true;
 		nextOrbit(1);
 		nextOrbit(2);
 		nextOrbit(3);
-		orbit = setInterval(function () {
-			nextOrbit(1);
-			nextOrbit(2);
-			nextOrbit(3);
-		}, rotationTime / 3);
+		if (orbit === undefined) {
+			orbit = setInterval(function () {
+				nextOrbit(1);
+				nextOrbit(2);
+				nextOrbit(3);
+			}, rotationTime / 3);
+		}
 	}
 	function initializeRotator() {
-		clearInterval(orbit);
+		//clearInterval(orbit);
 		experienceRotation((1 / 3) * 100, 'object2', 1);
 		experienceRotation((2 / 3) * 100, 'object3', 1);
 		document.getElementsByClassName(
@@ -241,12 +245,25 @@ function Edu({ props }) {
 	}
 
 	useEffect(() => {
-		clearInterval(orbit);
+		//clearInterval(orbit);
 		// // clearInterval(stopRotator);
 		initializeRotator();
 		setRotatorActiveState(true);
 	}, [rotatorActiveState]); // Empty dependency array means this effect will run after initial render
-
+	const [eduButtonState, setEduButtonState] = React.useState({
+		About: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
+		Projects: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
+	});
+	//TODO: Make it so the introduction button highlights and then it is based off of the current active about content
+	const eduButtons = [
+		{ target: 'About', span: 'Back', name: 'About' },
+		{ target: 'Projects', span: 'Next', name: 'Projects' },
+	];
+	function setEduHoverButton(name, style) {
+		let obj = Object.assign({}, eduButtonState);
+		obj[name] = style;
+		setEduButtonState(obj);
+	}
 	return (
 		<ThemeProvider theme={theme}>
 			<div className="eduContainer pageContainer" style={pageContainer}>
@@ -273,42 +290,56 @@ function Edu({ props }) {
 											index: index,
 										}}
 									/>
-									{/* <img
-									src={element.src}
-									className='eduImage'
-									alt={element.name}
-									style={
-										index === activeRotator.current
-											? { ...eduImage, ...eduImageActive }
-											: {
-													...eduImage,
-													...eduImageInactive,
-											  }
-									}
-								/> */}
 								</div>
 							);
 						})}
 					</div>
 				</div>
 				{/* <!-- cardContainer --> */}
-				<EduCard
-					props={{
-						setEducationState: setEducationState,
-						educationState: educationState,
-						EducationArr: EducationArr,
-						rotatorClick: rotatorClick,
-					}}
-				/>
-				<div className="eduBtnContainer" style={eduBtnContainer}>
-					<button
-						className="eduBtn"
-						style={eduBtn}
-						onClick={() => props.setActivePage('Projects')}
-					>
-						<span> See Projects </span>
-					</button>
-				</div>{' '}
+				<div>
+					<EduCard
+						props={{
+							setEducationState: setEducationState,
+							educationState: educationState,
+							EducationArr: EducationArr,
+							rotatorClick: rotatorClick,
+						}}
+					/>
+
+					<div id="eduButtonSpan" style={eduButtonSpan}>
+						{eduButtons.map(function (element, index) {
+							return (
+								<button
+									className="eduButton"
+									key={`eduButton${index}`}
+									name={element.name}
+									style={{
+										...eduButton,
+										...eduButtonState[element.name],
+									}}
+									onMouseEnter={(event) => {
+										//console.log(event.target.name);
+										setEduHoverButton(event.target.name, {
+											boxShadow:
+												'0 4px 10px rgba(255, 255, 255, 0.7)',
+										});
+									}}
+									onMouseLeave={(event) => {
+										setEduHoverButton(event.target.name, {
+											boxShadow:
+												'0 4px 10px rgba(255, 255, 255, 0.0)',
+										});
+									}}
+									onClick={function () {
+										props.setActivePage(element.target);
+									}}
+								>
+									<span>{element.span}</span>
+								</button>
+							);
+						})}
+					</div>
+				</div>
 				{/* <!-- btn container --> */}
 			</div>
 		</ThemeProvider>

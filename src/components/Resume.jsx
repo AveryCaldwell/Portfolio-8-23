@@ -20,20 +20,23 @@ import {
 	check,
 	codeBox,
 	resumePlainText,
+	codeContent,
+	resumeButton,
+	resumeButtonSpan,
 } from './Styles';
 
 function Resume({ props }) {
 	//  state to determine whether the code block should be displayed
-	const [showPlainText, setShowPlainText] = useState(false);
+	//const [showPlainText, setShowPlainText] = useState(false);
 	const [isTyping, setIsTyping] = useState(false);
 	const typedTextRef = useRef(null);
 	const cursorRef = useRef(null);
 
 	// function to display resume in plain text rather than coded text
-	const togglePlainText = () => {
-		setShowPlainText(!showPlainText);
-	};
-	const resumePlainText = showPlainText ? {} : { display: 'none' }; // Define your styles here
+	// const togglePlainText = () => {
+	// 	setShowPlainText(!showPlainText);
+	// };
+	//const resumePlainText = showPlainText ? {} : { display: 'none' }; // Define your styles here
 
 	useEffect(() => {
 		if (textArray.length) setTimeout(type, newTextDelay + 250);
@@ -53,7 +56,7 @@ function Resume({ props }) {
 	const typedTextSpan = document.querySelector('.typed-text');
 	const cursorSpan = document.querySelector('.cursor');
 	// Array of words to show for typing animation
-	const textArray = ['hard', 'cool', 'a journey', 'LIFE'];
+	const textArray = ['hard.', 'cool.', 'a journey.', 'LIFE!'];
 	const typingDelay = 200;
 	const erasingDelay = 100;
 	const newTextDelay = 2000;
@@ -114,34 +117,59 @@ function Resume({ props }) {
 		// If there are texts in the array, start the typing effect after a delay of newTextDelay' + 250 milliseconds
 		if (textArray.length) setTimeout(type, newTextDelay + 250);
 	});
-
+	const [resumeContentState, setResumeContentState] = React.useState('Code');
+	const [resumeButtonState, setResumeButtonState] = React.useState({
+		Code: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.7)' },
+		Ref: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
+	});
+	//TODO: Make it so the introduction button highlights and then it is based off of the current active about content
+	const resumeButtons = [
+		{ target: 'Code', span: 'Code', name: 'Code' },
+		{ target: 'PlainText', span: 'Plain Text', name: 'PlainText' },
+		{ target: 'Download', span: 'Download', name: 'Download' },
+		{ target: 'Projects', span: 'Back', name: 'Projects' },
+		{ target: 'Ref', span: 'Next', name: 'Ref' },
+	];
+	function setResumeHoverButton(name, style) {
+		let obj = Object.assign({}, resumeButtonState);
+		obj[name] = style;
+		setResumeButtonState(obj);
+	}
 	return (
 		<>
 			<div
 				className="resumeContainer pageContainer"
-				style={pageContainer}
+				style={{ ...pageContainer, ...resumeContainer }}
 			>
 				{/* //  style={resumeContainer}> */}
+				<div
+					style={{
+						display: 'flex',
+						width: '100%',
+						height: '100px',
+						flexDirection: 'horizontal',
+						justifyContent: 'space-between',
+					}}
+				>
+					<h1 className="resumeTitle" style={resumeTitle}>
+						RESUME
+					</h1>
 
-				<h1 className="resumeTitle" style={resumeTitle}>
-					Resume
-				</h1>
-
-				<div className="typingContainer" style={typingContainer}>
-					<p>
-						Coding is{' '}
-						<span ref={typedTextRef} style={typedText}></span>
-						<span
-							ref={cursorRef}
-							className={isTyping ? 'typing' : ''}
-						>
-							&nbsp;
-						</span>
-					</p>
+					<div className="typingContainer" style={typingContainer}>
+						<p>
+							Coding is{' '}
+							<span ref={typedTextRef} style={typedText}></span>
+							<span
+								ref={cursorRef}
+								className={isTyping ? 'typing' : ''}
+							>
+								&nbsp;
+							</span>
+						</p>
+					</div>
 				</div>
-
-				<div className="resumeBox" style={resumeBox}>
-					<button
+				{/* <div className="resumeBox" style={resumeBox}> */}
+				{/* <button
 						style={resumeBtn}
 						className="resumeBtn"
 						onClick={() => {
@@ -166,8 +194,8 @@ function Resume({ props }) {
 						}}
 					>
 						Next
-					</button>
-					<div className="downloadBtn" style={downloadBtn}>
+					</button> */}
+				{/* <div className="downloadBtn" style={downloadBtn}>
 						<div className="text" style={text}>
 							<a
 								href="../assets/resume.pdf"
@@ -180,8 +208,8 @@ function Resume({ props }) {
 								</pre>
 							</a>
 						</div>
-					</div>
-					{/* <div className='progressBar' style={progressBar}>
+					</div> */}
+				{/* <div className='progressBar' style={progressBar}>
             <svg
               className='downloadSvg'
               x='0px'
@@ -195,19 +223,44 @@ function Resume({ props }) {
               />
             </svg>
           </div> */}
-					{/* === Resume Code Starts Here === */}
-					<div className="codeBox" style={codeBox}>
-						<code style={{ color: 'green' }}>
-							{'className AveryCaldwell { '}{' '}
+				{/* === Resume Code Starts Here === */}
+				<div className="codeBox" style={codeBox}>
+					<div
+						id="codeContent"
+						style={{
+							...codeContent,
+							...{
+								opacity:
+									resumeContentState === 'Code' ? '1' : '0',
+							},
+						}}
+					>
+						<code style={{ color: 'rgb(11, 131, 186)' }}>
+							<span
+								style={{
+									color: 'rgb(222, 176, 27)',
+								}}
+							>
+								className
+							</span>{' '}
+							AveryCaldwell
+							<span
+								style={{
+									color: 'rgb(22, 59, 224)',
+								}}
+							>
+								{' {'}
+							</span>
 						</code>
-						<pre style={{ color: 'yellow' }}>
+
+						<pre style={{ color: 'lime' }}>
 							{`    constructor() {
     this.name = 'Avery Caldwell';
     this.dayOfBirthTimestamp = 12071993;
     this.email = 'averycaldwell7@gmail.com';
     }`}
 						</pre>
-						<pre style={{ color: 'blue' }}>
+						<pre style={{ color: 'lime' }}>
 							{`workExperience() {
         return [
         {'2020-2023': 'Suspicious Activity Investigator - BSA/AML at BankPlus'},
@@ -217,8 +270,8 @@ function Resume({ props }) {
     }
 `}
 						</pre>
-						<pre style={{ color: 'purple' }}>
-							{`   education() {
+						<pre style={{ color: 'lime' }}>
+							{`   Education() {
         return [
         {'2022-2023': 'University of Washington - Certificate in Full Stack Development'},
         {'2012-2016': 'Mississippi College - Bachelors of Science in Marketing'},
@@ -227,7 +280,14 @@ function Resume({ props }) {
     }`}
 						</pre>
 
-						<pre style={{ color: 'magenta' }}>
+						<code
+							style={{
+								color: 'lime',
+								width: '1000px',
+								whiteSpace: 'pre-wrap',
+								overflowWrap: 'normal',
+							}}
+						>
 							{`    skills() {
         return [
         'HTML/CSS/JS', 'React', 'Vue', 'Node.js/Express.js', 'Bootstrap, Tailwind, Material UI', 'Vite', 'SCSS',
@@ -237,11 +297,26 @@ function Resume({ props }) {
         ];
     }
 }`}
-						</pre>
+						</code>
 						{/* <!-- code box --> */}
 					</div>
 					{/* <!-- PLAIN TEXT RESUME --> */}
-					<div className="resumePlainText" style={resumePlainText}>
+					<div
+						className="resumePlainText"
+						style={{
+							...resumePlainText,
+							...{
+								opacity:
+									resumeContentState === 'PlainText'
+										? '1'
+										: '0',
+								pointerEvents:
+									resumeContentState === 'PlainText'
+										? 'auto'
+										: 'none',
+							},
+						}}
+					>
 						<h1>AVERY CALDWELL</h1>
 						<ul>
 							<li>Seattle, WA </li>
@@ -369,7 +444,7 @@ function Resume({ props }) {
 							<li>
 								{' '}
 								Streamlined operations by developing and
-								implementing compliance procedures and
+								implementing compliance procresumeres and
 								guidelines for cross-functional operations
 								teams, resulting in an increase in process
 								efficiency and improved collaboration among
@@ -432,6 +507,101 @@ function Resume({ props }) {
 							</li>
 						</ul>
 					</div>{' '}
+				</div>
+
+				<div id="resumeButtonSpan" style={resumeButtonSpan}>
+					{resumeButtons.map(function (element, index) {
+						return (
+							<button
+								className="resumeButton"
+								key={`resumeButton${index}`}
+								name={element.name}
+								style={{
+									...resumeButton,
+									...resumeButtonState[element.name],
+								}}
+								onMouseEnter={(event) => {
+									//console.log(event.target.name);
+									if (
+										event.target.name !== resumeContentState
+									) {
+										//console.log(event.target.name);
+										setResumeHoverButton(
+											event.target.name,
+											{
+												boxShadow:
+													'0 4px 10px rgba(255, 255, 255, 0.7)',
+											}
+										);
+									}
+								}}
+								onMouseLeave={(event) => {
+									if (
+										event.target.name !== resumeContentState
+									) {
+										setResumeHoverButton(
+											event.target.name,
+											{
+												boxShadow:
+													'0 4px 10px rgba(255, 255, 255, 0.0)',
+											}
+										);
+									}
+								}}
+								onClick={function () {
+									if (
+										element.target === 'Ref' ||
+										element.target === 'Projects'
+									) {
+										props.setActivePage(element.target);
+									} else if (element.target === 'Download') {
+										window.open(
+											'/resume.pdf',
+											'_blank' // <- This is what makes it open in a new window.
+										);
+										setResumeHoverButton(element.target, {
+											boxShadow:
+												'0 4px 10px rgba(255, 255, 255, 0.0)',
+										});
+									} else {
+										if (
+											element.target !==
+											resumeContentState
+										) {
+											let inactive = 'PlainText';
+											let active = 'Code';
+											if (
+												element.target === 'PlainText'
+											) {
+												active = 'PlainText';
+												inactive = 'Code';
+											}
+											let obj = Object.assign(
+												{},
+												resumeButtonState
+											);
+											obj[active] = {
+												boxShadow:
+													'0 4px 10px rgba(255, 255, 255, 0.7)',
+											};
+											obj[inactive] = {
+												boxShadow:
+													'0 4px 10px rgba(255, 255, 255, 0.0)',
+											};
+											setResumeButtonState(obj);
+										}
+										setResumeContentState(element.target);
+									}
+								}}
+							>
+								<span>
+									{resumeContentState === 'Code' ? '< ' : ''}
+									{element.span}
+									{resumeContentState === 'Code' ? ' />' : ''}
+								</span>
+							</button>
+						);
+					})}
 				</div>
 			</div>
 		</>

@@ -26,6 +26,8 @@ import {
 	mouse,
 	mouseBtn,
 	mouseBtnText,
+	projectsButtonSpan,
+	projectsButton,
 } from './Styles';
 
 import Tech from '../assets/Tech.png';
@@ -123,7 +125,25 @@ function Projects({ props }) {
 	};
 
 	// Create a function to trigger the SVG animation
-
+	const [projectsButtonState, setProjectsButtonState] = React.useState({
+		Edu: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
+		Resume: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
+	});
+	//TODO: Make it so the introduction button highlights and then it is based off of the current active about content
+	const projectsButtons = [
+		{
+			target: 'GitHub',
+			span: <GitHubIcon style={github} />,
+			name: 'GitHub',
+		},
+		{ target: 'Edu', span: 'Back', name: 'Edu' },
+		{ target: 'Resume', span: 'Next', name: 'Resume' },
+	];
+	function setProjectsHoverButton(name, style) {
+		let obj = Object.assign({}, projectsButtonState);
+		obj[name] = style;
+		setProjectsButtonState(obj);
+	}
 	return (
 		<>
 			<div
@@ -132,12 +152,8 @@ function Projects({ props }) {
 				style={pageContainer}
 			>
 				<div style={{ width: '500px' }}>
-					<h1
-						className="projectTitle"
-						onClick={() => props.setActivePage('Resume')}
-						style={projectTitle}
-					>
-						Projects
+					<h1 className="projectTitle" style={projectTitle}>
+						PROJECTS
 					</h1>
 
 					<div className="projectContent" style={projectContent}>
@@ -175,12 +191,65 @@ function Projects({ props }) {
 											style={iconContainer}
 										></div>
 									</div>
-									<a href={project.githubLink}>
+									{/* <a href={project.githubLink}>
 										<GitHubIcon style={github} />
-									</a>
+									</a> */}
 								</div>
 							))}
 						</div>
+					</div>
+					<div id="projectsButtonSpan" style={projectsButtonSpan}>
+						{projectsButtons.map(function (element, index) {
+							return (
+								<button
+									className="projectsButton"
+									key={`projectsButton${index}`}
+									name={element.name}
+									style={{
+										...projectsButton,
+										...projectsButtonState[element.name],
+									}}
+									onMouseEnter={(event) => {
+										//console.log(event.target.name);
+										setProjectsHoverButton(
+											event.target.name,
+											{
+												boxShadow:
+													'0 4px 10px rgba(255, 255, 255, 0.7)',
+											}
+										);
+									}}
+									onMouseLeave={(event) => {
+										setProjectsHoverButton(
+											event.target.name,
+											{
+												boxShadow:
+													'0 4px 10px rgba(255, 255, 255, 0.0)',
+											}
+										);
+									}}
+									onClick={function () {
+										if (element.target === 'GitHub') {
+											window.open(
+												projects[slideIndex].githubLink,
+												'_blank' // <- This is what makes it open in a new window.
+											);
+											setProjectsHoverButton(
+												element.target,
+												{
+													boxShadow:
+														'0 4px 10px rgba(255, 255, 255, 0.0)',
+												}
+											);
+										} else {
+											props.setActivePage(element.target);
+										}
+									}}
+								>
+									<span>{element.span}</span>
+								</button>
+							);
+						})}
 					</div>
 				</div>
 
@@ -225,7 +294,7 @@ function Projects({ props }) {
 						</a>
 					</div>
 
-					<div className="dotContainer" style={dotContainer}>
+					{/* <div className="dotContainer" style={dotContainer}>
 						{projects.map((_, index) => (
 							<div
 								key={index}
@@ -239,7 +308,7 @@ function Projects({ props }) {
 								}}
 							></div>
 						))}
-					</div>
+					</div> */}
 					<img
 						src={comp}
 						alt="comp"
