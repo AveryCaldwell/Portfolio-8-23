@@ -64,6 +64,7 @@ export const logoSliderImage = {
 	borderRadius: '50%',
 	left: '24px',
 	transition: 'all 1.5s ease',
+	//border: '15px solid rgba(255, 255, 255, 0.5)',
 };
 export const logoSliderCircle = {
 	position: 'absolute',
@@ -72,8 +73,8 @@ export const logoSliderCircle = {
 	height: '400px',
 	width: '400px',
 	borderRadius: '50%',
-	left: '-30px',
-	bottom: '-26px',
+	left: '-26px',
+	bottom: '-30px',
 	boxShadow: '0 0 30px 15px white',
 	display: 'block',
 	transition: 'all 0.5s ease',

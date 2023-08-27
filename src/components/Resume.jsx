@@ -39,22 +39,22 @@ function Resume({ props }) {
 	//const resumePlainText = showPlainText ? {} : { display: 'none' }; // Define your styles here
 
 	useEffect(() => {
-		if (textArray.length) setTimeout(type, newTextDelay + 250);
+		//if (textArray.length) setTimeout(type, newTextDelay + 250);
+		startTypingEffect();
 		// Add event listener on component mount
-		document.addEventListener('DOMContentLoaded', startTypingEffect);
+		//document.addEventListener('DOMContentLoaded', startTypingEffect);
 
 		// Clean up the event listener on component unmount
-		return () => {
-			document.removeEventListener('DOMContentLoaded', startTypingEffect);
-		};
+		// return () => {
+		// 	document.removeEventListener('DOMContentLoaded', startTypingEffect);
+		// };
 	}, []);
 
 	const startTypingEffect = () => {
+		console.log('typing effect')
 		if (textArray.length) setTimeout(type, newTextDelay + 250);
 	};
 	// ====TYPING ANIMATION====
-	const typedTextSpan = document.querySelector('.typed-text');
-	const cursorSpan = document.querySelector('.cursor');
 	// Array of words to show for typing animation
 	const textArray = ['hard.', 'cool.', 'a journey.', 'LIFE!'];
 	const typingDelay = 200;
@@ -115,8 +115,8 @@ function Resume({ props }) {
 	document.addEventListener('DOMContentLoaded', function () {
 		// On DOM Load initiate the effect
 		// If there are texts in the array, start the typing effect after a delay of newTextDelay' + 250 milliseconds
-		if (textArray.length) setTimeout(type, newTextDelay + 250);
 	});
+
 	const [resumeContentState, setResumeContentState] = React.useState('Code');
 	const [resumeButtonState, setResumeButtonState] = React.useState({
 		Code: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.7)' },

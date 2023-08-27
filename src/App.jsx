@@ -72,15 +72,18 @@ function App() {
 				if (pageIndex === 0) {
 					setTimeout(function () {
 						logoSliderImage.style.top = `15px`;
+						logoSliderImage.style.border = `0px`;
 					}, 1200);
 					logoSliderCircle.style.opacity = '0';
 				}
 			} else {
 				if (pageIndex >= 1) {
-					logoSliderImage.style.top = `calc(100% - 335px)`;
+					logoSliderImage.style.top = `calc(100% - 320px)`;
+					logoSliderImage.style.border =
+						'5px solid rgba(255, 255, 255, 1)';
 					setTimeout(function () {
 						logoSliderCircle.style.opacity = '1';
-					}, 1000);
+					}, 1200);
 				}
 			}
 

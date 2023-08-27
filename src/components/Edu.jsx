@@ -239,17 +239,13 @@ function Edu({ props }) {
 	}
 	let orbitting = false;
 	const [educationState, setEducationState] = useState(0);
-	const [rotatorActiveState, setRotatorActiveState] = useState(false);
 	function rotatorClick(target) {
 		setEducationState(target);
 	}
 
 	useEffect(() => {
-		//clearInterval(orbit);
-		// // clearInterval(stopRotator);
 		initializeRotator();
-		setRotatorActiveState(true);
-	}, [rotatorActiveState]); // Empty dependency array means this effect will run after initial render
+	}, []); // Empty dependency array means this effect will run after initial render
 	const [eduButtonState, setEduButtonState] = React.useState({
 		About: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 		Projects: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
