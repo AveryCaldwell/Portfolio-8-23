@@ -24,7 +24,7 @@ function App() {
 	const setActivePage = (newPage) => {
 		// The "useState" hook is used to declare a state variable called "currentPageState" which is initially set to "About".
 		//array of pages
-		console.log('active page fired');
+		// console.log('active page fired');
 		const pages = [
 			'Landing',
 			'About',

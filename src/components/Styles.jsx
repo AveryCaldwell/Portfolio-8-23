@@ -1111,23 +1111,7 @@ export const card = {
 	position: 'relative',
 	margin: '5px',
 };
-export const refBtns = {
-	// position: 'relative',
-	// display: 'inline-flex',
-	// justifyContent: 'space-evenly',
-	// alignItems: 'center',
-	// textAlign: 'center',
-	// padding: '10px',
-	// cursor: 'pointer',
-	// borderRadius: '36px',
-	// top: '78vh',
-	// backgroundColor: 'transparent',
-	// color: 'white',
-	// border: 'solid 1px white',
-	// width: '150px',
-	// height: '75px',
-	// fontSize: '18px',
-};
+
 // .card h1
 export const cardHeader = {
 	textAlign: 'center',
@@ -1136,19 +1120,21 @@ export const cardHeader = {
 // .card .additional {
 // .card:hover .additional {
 export const additional = {
-	// position: "absolute",
-	// position: 'initial',
-	// width: '110px',
-	// height: '100%',
-	// background: `radial-gradient(
-	//     circle,
-	//     rgba(255, 221, 112, 1) 0%,
-	//     rgba(255, 157, 112, 1) 100%
-	// )`,
-	// // background: "rgb(255, 221, 112)",
-	// transition: 'width 0.4s',
-	// overflow: 'hidden',
-	// zIndex: '2',
+	position: 'absolute',
+	position: 'initial',
+	width: '110px',
+	height: '100%',
+	transition: 'width 0.4s',
+	overflow: 'hidden',
+	zIndex: '2',
+};
+// .card.green .additional {
+export const firstAdd = {
+	background: `radial-gradient(
+	    circle,
+	    rgba(255, 221, 112, 1) 0%,
+	    rgba(255, 157, 112, 1) 100%
+    )`,
 };
 // .card.green .additional {
 export const secondAdd = {
@@ -1168,7 +1154,7 @@ export const thirdAdd = {
 };
 
 export const secondCoords = {
-	color: '#325c46',
+	// color: '#325c46',
 };
 // .card .additional .user-card::after {
 export const userCard = {
@@ -1217,6 +1203,7 @@ export const moreInfo = {
 	position: 'absolute',
 	left: '150px',
 	height: '100%',
+	textAlign: 'center',
 };
 // .card .additional .more-info h1 {
 export const moreInfoTitle = {
@@ -1231,7 +1218,7 @@ export const coords = {
 };
 // .card .additional .coords span + span {
 export const coordsSpan = {
-	float: 'right',
+	float: 'center',
 };
 
 // .card .additional .stats {
@@ -1265,7 +1252,7 @@ export const value = {
 };
 // .card .general {
 export const general = {
-	width: '300px',
+	width: '375px',
 	height: '100%',
 	position: 'absolute',
 	right: '0',

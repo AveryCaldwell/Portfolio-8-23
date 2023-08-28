@@ -41,7 +41,7 @@ function Resume({ props }) {
 	}, []);
 
 	const startTypingEffect = () => {
-		console.log('typing effect');
+		// console.log('typing effect');
 		if (textArray.length) setTimeout(type, newTextDelay + 250);
 	};
 	// ====TYPING ANIMATION====
