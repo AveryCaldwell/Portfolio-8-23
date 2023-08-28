@@ -10,7 +10,7 @@ import About from './components/About';
 import Edu from './components/Edu';
 import Projects from './components/Projects';
 import Resume from './components/Resume';
-import Ref from './components/Ref';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import LogoSlider from './components/LogoSlider';
 import Footer from './components/Footer';
@@ -31,7 +31,7 @@ function App() {
 			'Edu',
 			'Projects',
 			'Resume',
-			'Ref',
+			'Testimonials',
 			'Contact',
 		];
 		//setCurrentPage(newPage);
@@ -42,7 +42,7 @@ function App() {
 			Edu: 2,
 			Projects: 3,
 			Resume: 4,
-			Ref: 5,
+			Testimonials: 5,
 			Contact: 6,
 		};
 		const appContainer = document.getElementsByClassName('appContainer')[0];
@@ -87,7 +87,7 @@ function App() {
 				}
 			}
 
-			// // FIXME: needs to references existing position in array to dictate ease
+			// // FIXME: needs to Testimonials existing position in array to dictate ease
 			// //     transition: all 1.5s ease;
 
 			appContainer.style.top = `calc(0% - ${calculatedVH}vh)`;
@@ -108,7 +108,7 @@ function App() {
 						{/* <SvgContainer props={{ setActivePage }} /> */}
 						<Projects props={{ setActivePage }} />
 						<Resume props={{ setActivePage }} />
-						<Ref props={{ setActivePage }} />
+						<Testimonials props={{ setActivePage }} />
 						<Contact props={{ setActivePage }} />
 						<Footer props={{ setActivePage }} />
 					</main>

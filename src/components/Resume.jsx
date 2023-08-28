@@ -118,7 +118,7 @@ function Resume({ props }) {
 		{ target: 'PlainText', span: 'Plain Text', name: 'PlainText' },
 		{ target: 'Download', span: 'Download', name: 'Download' },
 		{ target: 'Projects', span: 'Back', name: 'Projects' },
-		{ target: 'Ref', span: 'Next', name: 'Ref' },
+		{ target: 'Testimonials', span: 'Next', name: 'Testimonials' },
 	];
 	function setResumeHoverButton(name, style) {
 		let obj = Object.assign({}, resumeButtonState);
@@ -485,7 +485,7 @@ function Resume({ props }) {
 								}}
 								onClick={function () {
 									if (
-										element.target === 'Ref' ||
+										element.target === 'Testimonials' ||
 										element.target === 'Projects'
 									) {
 										props.setActivePage(element.target);

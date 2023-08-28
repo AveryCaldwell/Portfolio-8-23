@@ -44,7 +44,7 @@ function Contact({ props }) {
 				<button
 					style={contactBtns}
 					className="contactBtn"
-					onClick={() => props.setActivePage('References')}
+					onClick={() => props.setActivePage('Testimonials')}
 				>
 					Back{' '}
 				</button>

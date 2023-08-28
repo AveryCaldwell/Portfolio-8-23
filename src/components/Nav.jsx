@@ -138,12 +138,12 @@ function Nav({ props }) {
 					<Material.ListItemText primary={'Resume'} />
 				</Material.ListItemButton>
 				<Material.ListItemButton
-					onClick={() => props.setActivePage('Ref')}
+					onClick={() => props.setActivePage('Testimonials')}
 				>
 					<Material.ListItemIcon>
 						{<PermContactCalendar />}
 					</Material.ListItemIcon>
-					<Material.ListItemText primary={'References'} />
+					<Material.ListItemText primary={'Testimonials'} />
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Contact')}

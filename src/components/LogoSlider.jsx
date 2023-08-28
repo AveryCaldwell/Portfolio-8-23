@@ -10,28 +10,6 @@ import {
 
 // This function renders main content of web app
 function LogoSlider() {
-	//array of pages
-	const pages = [
-		'Landing',
-		'About',
-		'Edu',
-		'Projects',
-		'Resume',
-		'References',
-		'Contact',
-	];
-	// state
-	let currentPage = 'Landing';
-	let pageIndexObj = {
-		Landing: 0,
-		About: 1,
-		Edu: 2,
-		Projects: 3,
-		Resume: 4,
-		References: 5,
-		Contact: 6,
-	};
-
 	return (
 		<div className="logoSliderContainer" style={logoSliderContainer}>
 			<img

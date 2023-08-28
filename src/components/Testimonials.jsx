@@ -32,7 +32,7 @@ import {
 } from './Styles';
 
 // This function renders main content of web app
-function Ref({ props }) {
+function Testimonials({ props }) {
 	const [hover, setHover] = useState(false);
 
 	const handleMouseEnter = () => {
@@ -113,7 +113,7 @@ function Ref({ props }) {
 										...center,
 									}}
 								>
-									Ref 1
+									References 1
 								</div>
 								<div
 									className="points center"
@@ -437,7 +437,7 @@ function Ref({ props }) {
 										...center,
 									}}
 								>
-									Ref 2
+									References 2
 								</div>
 								<div
 									className="points center"
@@ -734,7 +734,7 @@ function Ref({ props }) {
 										...center,
 									}}
 								>
-									Ref 1
+									References 3
 								</div>
 								<div
 									className="points center"
@@ -1025,4 +1025,4 @@ function Ref({ props }) {
 	);
 }
 
-export default Ref;
+export default Testimonials;
