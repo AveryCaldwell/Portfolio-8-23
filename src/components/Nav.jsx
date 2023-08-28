@@ -1,7 +1,7 @@
-import * as React from "react";
-import * as Material from "@mui/material";
-import avesLogo from "../assets/aves.png";
-import { Typography } from "@mui/material";
+import * as React from 'react';
+import * as Material from '@mui/material';
+import avesLogo from '../assets/aves.png';
+import { Typography } from '@mui/material';
 
 // ICONs
 // import MenuIcon from "@mui/icons-material/Menu";
@@ -16,7 +16,7 @@ import {
 	AlternateEmail,
 	Home,
 	Info,
-} from "@mui/icons-material";
+} from '@mui/icons-material';
 
 // -------------function that renders nav bar
 function Nav({ props }) {
@@ -31,8 +31,8 @@ function Nav({ props }) {
 
 	const toggleDrawer = (anchor, open) => (event) => {
 		if (
-			event.type === "keydown" &&
-			(event.key === "Tab" || event.key === "Shift")
+			event.type === 'keydown' &&
+			(event.key === 'Tab' || event.key === 'Shift')
 		) {
 			return;
 		}
@@ -43,119 +43,131 @@ function Nav({ props }) {
 	const iemsList = (anchor) => (
 		<Material.Box
 			sx={{
-				width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
-				height: "100%",
-				color: "white",
+				width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250,
+				height: '100%',
+				color: 'white',
 			}}
-			role='drawer'
+			role="drawer"
 			onClick={toggleDrawer(anchor, false)}
-			onKeyDown={toggleDrawer(anchor, false)}>
+			onKeyDown={toggleDrawer(anchor, false)}
+		>
 			<Material.Box
-				className='navBox'
+				className="navBox"
 				sx={{
-					display: "flex",
-					cursor: "pointer",
-				}}>
+					display: 'flex',
+					paddingTop: '50px',
+					cursor: 'pointer',
+				}}
+			>
 				{/* // -------------LOGO */}
 				<img
 					src={avesLogo}
 					style={{
-						height: "150px",
-						width: "150px",
+						height: '150px',
+						width: '150px',
 						borderRadius: 300,
-						border: "2px solid #e9f4e9",
+						border: '2px solid #e9f4e9',
 						boxShadow: 2,
-						cursor: "pointer",
-						marginLeft: "auto",
-						marginRight: "auto",
+						cursor: 'pointer',
+						marginLeft: 'auto',
+						marginRight: 'auto',
 					}}
 					onClick={() => {
-						handleClick("Landing");
+						handleClick('Landing');
 						setOpen(false);
 					}}
-					alt='AvesLogo'
+					alt="AvesLogo"
 				/>
 			</Material.Box>
 			<Typography
 				sx={{
-					fontFamily: "Roboto",
-					textAlign: "center",
+					fontFamily: 'Roboto',
+					textAlign: 'center',
 					pt: 4,
-					color: "white",
+					color: 'white',
 					fontSize: 22,
-					marginBottom: "5px",
-				}}>
+					marginBottom: '5px',
+				}}
+			>
 				Avery Caldwell
-			</Typography>{" "}
+			</Typography>{' '}
 			<Typography
 				sx={{
-					fontFamily: "Roboto",
-					textAlign: "center",
+					fontFamily: 'Roboto',
+					textAlign: 'center',
 					pt: 1,
-					color: "white",
+					color: 'white',
 					fontSize: 20,
-					marginBottom: "20px",
-				}}>
+					marginBottom: '20px',
+				}}
+			>
 				Full Stack Developer
 			</Typography>
 			<Material.Divider />
 			<Material.List>
 				<Material.ListItemButton
-					onClick={() => props.setActivePage("Landing")}>
+					onClick={() => props.setActivePage('Landing')}
+				>
 					<Material.ListItemIcon>{<Home />}</Material.ListItemIcon>
-					<Material.ListItemText primary={"Home"} />
+					<Material.ListItemText primary={'Home'} />
 				</Material.ListItemButton>
 				<Material.ListItemButton
-					onClick={() => props.setActivePage("About")}>
+					onClick={() => props.setActivePage('About')}
+				>
 					<Material.ListItemIcon>{<Info />}</Material.ListItemIcon>
-					<Material.ListItemText primary={"About"} />
+					<Material.ListItemText primary={'About'} />
 				</Material.ListItemButton>
 				<Material.ListItemButton
-					onClick={() => props.setActivePage("Edu")}>
+					onClick={() => props.setActivePage('Edu')}
+				>
 					<Material.ListItemIcon>{<School />}</Material.ListItemIcon>
-					<Material.ListItemText primary={"Education"} />
+					<Material.ListItemText primary={'Education'} />
 				</Material.ListItemButton>
 				<Material.ListItemButton
-					onClick={() => props.setActivePage("Projects")}>
+					onClick={() => props.setActivePage('Projects')}
+				>
 					<Material.ListItemIcon>
 						{<FolderOpen />}
 					</Material.ListItemIcon>
-					<Material.ListItemText primary={"Projects"} />
+					<Material.ListItemText primary={'Projects'} />
 				</Material.ListItemButton>
 				<Material.ListItemButton
-					onClick={() => props.setActivePage("Resume")}>
+					onClick={() => props.setActivePage('Resume')}
+				>
 					<Material.ListItemIcon>{<Article />}</Material.ListItemIcon>
-					<Material.ListItemText primary={"Resume"} />
+					<Material.ListItemText primary={'Resume'} />
 				</Material.ListItemButton>
 				<Material.ListItemButton
-					onClick={() => props.setActivePage("Ref")}>
+					onClick={() => props.setActivePage('Ref')}
+				>
 					<Material.ListItemIcon>
 						{<PermContactCalendar />}
 					</Material.ListItemIcon>
-					<Material.ListItemText primary={"References"} />
+					<Material.ListItemText primary={'References'} />
 				</Material.ListItemButton>
 				<Material.ListItemButton
-					onClick={() => props.setActivePage("Contact")}>
+					onClick={() => props.setActivePage('Contact')}
+				>
 					<Material.ListItemIcon>
 						{<AlternateEmail />}
 					</Material.ListItemIcon>
-					<Material.ListItemText primary={"Contact"} />
+					<Material.ListItemText primary={'Contact'} />
 				</Material.ListItemButton>
 				{/* FIXME: not working */}
 			</Material.List>
 			<Material.Divider />
 			<Close
 				sx={{
-					display: "block",
-					height: "50px",
-					width: "50px",
+					display: 'block',
+					height: '50px',
+					width: '50px',
 					// FIXME: reposition close button
-					marginTop: "50px",
-					marginLeft: "auto",
-					marginRight: "auto",
-					cursor: "pointer",
+					marginTop: '50px',
+					marginLeft: 'auto',
+					marginRight: 'auto',
+					cursor: 'pointer',
 				}}
-				onClick={toggleDrawer("left", false)}
+				onClick={toggleDrawer('left', false)}
 			/>
 		</Material.Box>
 	);
@@ -164,22 +176,25 @@ function Nav({ props }) {
 		<div>
 			<Material.Toolbar
 				sx={{
-					color: "white",
-					p: 2,
-					display: "flex",
-					alignContent: "start",
-					alignItems: "baseline",
-					marginLeft: "5px",
-					background: " rgba(255, 255, 255, 0.2)",
-				}}>
+					color: 'white',
+					//p: 2,
+					display: 'flex',
+					alignContent: 'start',
+					alignItems: 'baseline',
+					marginLeft: '5px',
+					background: ' rgba(255, 255, 255, 0.2)',
+					zIndex: '5',
+					padding: '5px',
+				}}
+			>
 				{/* TODO: add on click function to menu icon */}
 				<Menu
 					sx={{
-						height: "50px",
-						width: "50px",
-						cursor: "pointer",
+						height: '50px',
+						width: '50px',
+						cursor: 'pointer',
 					}}
-					onClick={toggleDrawer("left", true)}
+					onClick={toggleDrawer('left', true)}
 				/>
 				{/* <Typography
                     variant='h3'
@@ -202,7 +217,7 @@ function Nav({ props }) {
                     Full Stack Developer
                 </Typography> */}
 			</Material.Toolbar>
-			{["left"].map((anchor) => (
+			{['left'].map((anchor) => (
 				<React.Fragment key={anchor}>
 					{/* <Material.Button onClick={toggleDrawer(anchor, true)}>
                         {anchor}
@@ -210,7 +225,8 @@ function Nav({ props }) {
 					<Material.Drawer
 						anchor={anchor}
 						open={state[anchor]}
-						onClose={toggleDrawer(anchor, false)}>
+						onClose={toggleDrawer(anchor, false)}
+					>
 						{iemsList(anchor)}
 					</Material.Drawer>
 				</React.Fragment>

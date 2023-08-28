@@ -7,17 +7,7 @@ import {
 	pageContainer,
 	resumeTitle,
 	typingContainer,
-	resumeBox,
 	typedText,
-	resumeBtn,
-	resumeNextBtn,
-	downloadBtn,
-	textBtn,
-	resumeLink,
-	text,
-	progressBar,
-	downloadSvg,
-	check,
 	codeBox,
 	resumePlainText,
 	codeContent,
@@ -51,7 +41,7 @@ function Resume({ props }) {
 	}, []);
 
 	const startTypingEffect = () => {
-		console.log('typing effect')
+		console.log('typing effect');
 		if (textArray.length) setTimeout(type, newTextDelay + 250);
 	};
 	// ====TYPING ANIMATION====
@@ -141,7 +131,6 @@ function Resume({ props }) {
 				className="resumeContainer pageContainer"
 				style={{ ...pageContainer, ...resumeContainer }}
 			>
-				{/* //  style={resumeContainer}> */}
 				<div
 					style={{
 						display: 'flex',
@@ -168,61 +157,7 @@ function Resume({ props }) {
 						</p>
 					</div>
 				</div>
-				{/* <div className="resumeBox" style={resumeBox}> */}
-				{/* <button
-						style={resumeBtn}
-						className="resumeBtn"
-						onClick={() => {
-							props.setActivePage('Projects');
-						}}
-					>
-						Back{' '}
-					</button>
-					<button
-						onClick={togglePlainText}
-						style={textBtn}
-						className="textBtn"
-						id="showPlainTextBtn"
-					>
-						Show Plain Text
-					</button>
-					<button
-						style={resumeNextBtn}
-						className="resumeNextBtn"
-						onClick={() => {
-							props.setActivePage('References');
-						}}
-					>
-						Next
-					</button> */}
-				{/* <div className="downloadBtn" style={downloadBtn}>
-						<div className="text" style={text}>
-							<a
-								href="../assets/resume.pdf"
-								download="resume"
-								className="resumeLink"
-								style={resumeLink}
-							>
-								<pre>
-									<code>{' <Download/>'} </code>
-								</pre>
-							</a>
-						</div>
-					</div> */}
-				{/* <div className='progressBar' style={progressBar}>
-            <svg
-              className='downloadSvg'
-              x='0px'
-              y='0px'
-              viewBox='0 0 25 30'
-              style={downloadSvg}>
-              <path
-                style={check}
-                className='check st0'
-                d='M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2'
-              />
-            </svg>
-          </div> */}
+
 				{/* === Resume Code Starts Here === */}
 				<div className="codeBox" style={codeBox}>
 					<div
@@ -235,10 +170,10 @@ function Resume({ props }) {
 							},
 						}}
 					>
-						<code style={{ color: 'rgb(11, 131, 186)' }}>
+						<code style={{ color: 'cyan' }}>
 							<span
 								style={{
-									color: 'rgb(222, 176, 27)',
+									color: 'lime',
 								}}
 							>
 								className
@@ -246,7 +181,7 @@ function Resume({ props }) {
 							AveryCaldwell
 							<span
 								style={{
-									color: 'rgb(22, 59, 224)',
+									color: 'lime',
 								}}
 							>
 								{' {'}

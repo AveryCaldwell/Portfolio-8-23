@@ -28,7 +28,6 @@ export const pagesContainer = {
 export const landingContainer = {
 	minHeight: '800px',
 	overflow: 'hidden',
-
 	marginBottom: 'calc(50vh - 400px)',
 };
 export const pageContainer = {
@@ -145,16 +144,6 @@ export const aboutContainer = {
 	display: 'flex',
 	fontSize: '50px',
 	color: 'white',
-	//borderRadius: '250px',
-	// left: '5%',
-	// top: '0vh',
-	// bottom: '145vh',
-	//fontFamily: 'Roboto',
-	// position: 'absolute',
-	//width: '1200px',
-	//minHeight: '100vh',
-	// overflow: 'hidden',
-	//height: "100vh",
 };
 export const buttonSpan = {
 	display: 'flex',
@@ -176,10 +165,6 @@ export const aboutTitle = {
 	position: 'relative',
 };
 export const aboutContent = {
-	//	top: '20%',
-	//left: '440px',
-	//margin: '20px',
-
 	width: '700px',
 	height: '650px',
 	position: 'relative',
@@ -608,7 +593,6 @@ export const projectTitle = {
 	alignItems: 'center',
 	display: 'flex',
 	fontSize: '80px',
-	fontFamily: 'Roboto',
 
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
 };
@@ -734,24 +718,24 @@ export const prev = {
 //     borderRadius: '3px 0 0 3px',
 // }
 /* The dots/bullets/indicators */
-export const dotContainer = {
-	textAlign: 'center',
-	marginTop: '-400px',
-	marginRright: '35px',
-};
-export const dot = {
-	cursor: 'pointer',
-	height: '15px',
-	width: '15px',
-	margin: '0 2px',
-	backgroundColor: '#bbb',
-	borderRadius: '50%',
-	display: 'inline-block',
-	transition: 'background-color 0.6s ease',
-};
-export const activeDot = {
-	backgroundColor: '#0072ff',
-};
+// export const dotContainer = {
+// 	textAlign: 'center',
+// 	marginTop: '-400px',
+// 	marginRright: '35px',
+// };
+// export const dot = {
+// 	cursor: 'pointer',
+// 	height: '15px',
+// 	width: '15px',
+// 	margin: '0 2px',
+// 	backgroundColor: '#bbb',
+// 	borderRadius: '50%',
+// 	display: 'inline-block',
+// 	transition: 'background-color 0.6s ease',
+// };
+// export const activeDot = {
+// 	backgroundColor: '#0072ff',
+// };
 /* Fading animation */
 export const fade = {
 	animationName: 'fade',
@@ -985,18 +969,6 @@ export const text = {
 	right: '0',
 };
 
-export const progressBar = {
-	position: 'absolute',
-	height: '10px',
-	width: '0',
-	right: '0',
-	top: '50%',
-	left: '50%',
-	borderRadius: '200px',
-	transform: 'translateY(-50%) translateX(-50%)',
-	background: 'lighten(rgba(153, 179, 252, 1), 15%)',
-};
-
 export const downloadSvg = {
 	width: '30px',
 	position: 'absolute',
@@ -1005,14 +977,6 @@ export const downloadSvg = {
 	left: '50%',
 	right: '0',
 	enableBackground: 'new 0 0 25 30',
-};
-
-export const check = {
-	fill: 'none',
-	stroke: '#ffffff',
-	strokeWidth: '3',
-	strokeLinecap: 'round',
-	strokeLinejoin: 'round',
 };
 
 export const resumeLink = {
@@ -1074,60 +1038,95 @@ export const textBtn = {
 };
 /* ============================== REFERENCE SECTION ============================== */
 export const refContainer = {
-	// backgroundColor: "navy",
+	display: 'flex',
+	position: 'relative',
 	fontFamily: 'Roboto',
-	top: '-32vh',
-	position: 'relative',
 };
 
-export const refHeader = {
-	position: 'relative',
+export const refTitle = {
 	color: 'white',
-	fontSize: '40px',
+	transition: 'all .2s ease',
+	display: 'flex',
+	fontSize: '80px',
+	textShadow: `4px 4px rgba(0,0,0,0.1)`,
 	textAlign: 'center',
-	padding: '10px',
+	margin: '0',
+	minWidth: '50%',
+	alignItems: 'center',
 };
-
+export const refSubtitle = {
+	fontSize: '36px',
+	color: 'white',
+	fontFamily: 'Roboto',
+	textAlign: 'right',
+	textShadow: `4px 4px rgba(0,0,0,0.1)`,
+	minWidth: '50%',
+	padding: '5px',
+	fontWeight: 'light',
+	display: 'flex',
+	justifyContent: 'end',
+	minWidth: '50%',
+	maxWidth: '50%',
+};
 // box containing ref cards
 export const refBox = {
+	flexWrap: 'wrap',
+	display: 'flex',
 	position: 'relative',
-	display: 'grid',
+	height: '700px',
+	width: '100%',
+	overflow: 'hidden',
+	fontSize: '18px',
+	top: '100px',
+	right: '30%',
+	width: '1000px',
+	// fontSize: '18px',
+	// overflow: 'hidden',
+	// justifyContent: 'space-between',
+	// alignItems: 'center',
+	// width: '1000px',
+	// height: '800px',
+	// flexDirection: 'column',
 };
 
 export const center = {
-	positon: 'absolute',
-	top: '35vh',
+	position: 'absolute',
+	// margin: '35px',
+	// minWidth: '1130px',
+	// maxWidth: '1130px',
+	// height: '700px',
+	top: '50%',
 	left: '50%',
-	// WebkitTransform: "translate(-50%, -50%)",
+	WebkitTransform: 'translate(-50%, -50%)',
 };
 // .card {
 export const card = {
-	width: '450px',
-	height: '250px',
+	width: '800px',
+	height: '225px',
 	backgroundColor: '#fff',
 	background: 'linear-gradient(#f8f8f8, #fff)',
-	boxShadow: '0 8px 16px -8px rgba(0, 0, 0, 0.4)',
+	boxShadow: '0 8px 16px -8px',
 	borderRadius: '6px',
 	overflow: 'hidden',
 	position: 'relative',
-	margin: '1.5rem',
+	margin: '5px',
 };
 export const refBtns = {
-	position: 'relative',
-	display: 'inline-flex',
-	justifyContent: 'space-evenly',
-	alignItems: 'center',
-	textAlign: 'center',
-	padding: '10px',
-	cursor: 'pointer',
-	borderRadius: '36px',
-	top: '78vh',
-	backgroundColor: 'transparent',
-	color: 'white',
-	border: 'solid 1px white',
-	width: '150px',
-	height: '75px',
-	fontSize: '18px',
+	// position: 'relative',
+	// display: 'inline-flex',
+	// justifyContent: 'space-evenly',
+	// alignItems: 'center',
+	// textAlign: 'center',
+	// padding: '10px',
+	// cursor: 'pointer',
+	// borderRadius: '36px',
+	// top: '78vh',
+	// backgroundColor: 'transparent',
+	// color: 'white',
+	// border: 'solid 1px white',
+	// width: '150px',
+	// height: '75px',
+	// fontSize: '18px',
 };
 // .card h1
 export const cardHeader = {
@@ -1138,22 +1137,18 @@ export const cardHeader = {
 // .card:hover .additional {
 export const additional = {
 	// position: "absolute",
-	position: 'initial',
-	width: '150px',
-	height: '100%',
-	background: `radial-gradient(
-        circle,
-        rgba(255, 221, 112, 1) 0%,
-        rgba(255, 157, 112, 1) 100%
-    )`,
-	// background: "rgb(255, 221, 112)",
-	transition: 'width 0.4s',
-	overflow: 'hidden',
-	zIndex: '2',
-	'&:hover': {
-		width: '100%',
-		borderRadius: '0 5px 5px 0',
-	},
+	// position: 'initial',
+	// width: '110px',
+	// height: '100%',
+	// background: `radial-gradient(
+	//     circle,
+	//     rgba(255, 221, 112, 1) 0%,
+	//     rgba(255, 157, 112, 1) 100%
+	// )`,
+	// // background: "rgb(255, 221, 112)",
+	// transition: 'width 0.4s',
+	// overflow: 'hidden',
+	// zIndex: '2',
 };
 // .card.green .additional {
 export const secondAdd = {
