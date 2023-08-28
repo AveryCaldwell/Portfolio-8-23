@@ -1076,7 +1076,7 @@ export const refBox = {
 	height: '700px',
 	width: '100%',
 	overflow: 'hidden',
-	fontSize: '18px',
+	// fontSize: '18px',
 	top: '100px',
 	right: '30%',
 	width: '1000px',
@@ -1088,7 +1088,7 @@ export const refBox = {
 	// height: '800px',
 	// flexDirection: 'column',
 };
-
+// USED IN MULTIPLE PLACES ON CARD
 export const center = {
 	position: 'absolute',
 	// margin: '35px',
@@ -1099,7 +1099,7 @@ export const center = {
 	left: '50%',
 	WebkitTransform: 'translate(-50%, -50%)',
 };
-// .card {
+// EACH CARD STYLING
 export const card = {
 	width: '800px',
 	height: '225px',
@@ -1111,69 +1111,39 @@ export const card = {
 	position: 'relative',
 	margin: '5px',
 };
-
-// .card h1
+// NAME TEXT
 export const cardHeader = {
 	textAlign: 'center',
 };
-
-// .card .additional {
-// .card:hover .additional {
+// BACKGROUND COLOR AND CONTAINS AVATAR ON LEFT OF CARD
 export const additional = {
-	position: 'absolute',
+	// position: 'absolute',
 	position: 'initial',
 	width: '110px',
 	height: '100%',
 	transition: 'width 0.4s',
 	overflow: 'hidden',
 	zIndex: '2',
-};
-// .card.green .additional {
-export const firstAdd = {
-	background: `radial-gradient(
-	    circle,
-	    rgba(255, 221, 112, 1) 0%,
-	    rgba(255, 157, 112, 1) 100%
-    )`,
-};
-// .card.green .additional {
-export const secondAdd = {
-	background: `radial-gradient(
-        circle,
-        rgba(255, 221, 112, 1) 0%,
-        rgba(101, 230, 181, 1) 100%
-    )`,
-};
-// .card.blue .additional {
-export const thirdAdd = {
-	background: `radial-gradient(
-        circle,
-        rgba(252, 70, 107, 1) 0%,
-        rgba(63, 94, 251, 1) 100%
-    )`,
+	background: 'rgb(63,94,251)',
+	background: `radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(134,70,252,1) 100%)`,
 };
 
-export const secondCoords = {
-	// color: '#325c46',
-};
 // .card .additional .user-card::after {
 export const userCard = {
 	width: '150px',
 	height: '100%',
 	position: 'relative',
 	float: 'left',
-	'&::after': {
-		content: '',
-		display: 'block',
-		position: 'absolute',
-		top: '10%',
-		right: '-2px',
-		height: '80%',
-		borderLeft: '2px solid rgba(0,0,0,0.025)',
-	},
+	// '&::after': {
+	// 	content: '',
+	// 	display: 'block',
+	// 	position: 'absolute',
+	// 	top: '10%',
+	// 	right: '-2px',
+	// 	height: '80%',
+	borderLeft: '2px solid rgba(0,0,0,0.025)',
+	// },
 };
-// .card .additional .user-card .level,
-// .card .additional .user-card .points
 export const userCardStats = {
 	top: '15%',
 	color: '#fff',
@@ -1184,11 +1154,15 @@ export const userCardStats = {
 	padding: '0.125rem 0.75rem',
 	borderRadius: '100px',
 	whiteSpace: 'nowrap',
+	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 };
 // .card .additional .user-card .points
 export const points = {
 	top: '85%',
 	position: 'relative',
+	textAlign: 'center',
+	width: '50%',
+	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 };
 // .card .additional .user-card svg {
 export const cardImage = {
@@ -1198,23 +1172,28 @@ export const cardImage = {
 };
 // .card .additional .more-info {
 export const moreInfo = {
-	width: '300px',
+	width: '350px',
 	float: 'left',
 	position: 'absolute',
 	left: '150px',
+	fontSize: '16px',
+	color: 'white',
 	height: '100%',
 	textAlign: 'center',
+	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 };
 // .card .additional .more-info h1 {
 export const moreInfoTitle = {
 	color: 'white',
-	marginBottom: '0',
+	marginBottom: '10px',
+	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 };
 // .card .additional .coords {
 export const coords = {
 	margin: '0 1rem',
 	color: 'white',
-	fontSize: '1rem',
+	fontSize: '16px',
+	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 };
 // .card .additional .coords span + span {
 export const coordsSpan = {
@@ -1223,33 +1202,40 @@ export const coordsSpan = {
 
 // .card .additional .stats {
 export const stats = {
-	fontSize: '2rem',
-	display: 'flex',
+	fontSize: '14px',
+	display: 'inline-block',
+	textAlign: 'left',
 	position: 'absolute',
 	bottom: '1rem',
 	left: '1rem',
 	right: '1rem',
 	top: 'auto',
 	color: '#fff',
+	// marginBottom: '10px',
+	marginTop: '5px',
+	padding: '5px',
+	width: '100%',
+	textShadow: `2px 2px rgba(0,0,0,0.1)`,
 };
 // .card .additional .stats > div {
 export const statsTitle = {
 	flex: '1',
-	textAlign: 'center',
-	fontSize: '0.75rem',
-	fontWeight: 'bold',
-	textTransform: 'uppercase',
+	fontSize: '18px',
+	textAlign: 'left',
+	color: '#fff',
+	textShadow: `1px 1px rgba(0,0,0,0.1)`,
+	width: '100%',
 };
-// .card .additional .stats i {
-export const statsTrophy = {
-	display: 'block',
-};
+
 // .card .additional .stats div.value {
 export const value = {
-	fontSize: '1.5rem',
-	fontWeight: 'bold',
-	lineHeight: '1.5rem',
+	fontWeight: 'light',
+	fontSize: '16px',
+	textAlign: 'left',
+	textShadow: `1px 1px rgba(0,0,0,0.1)`,
+	width: '100%',
 };
+
 // .card .general {
 export const general = {
 	width: '375px',
@@ -1261,6 +1247,9 @@ export const general = {
 	boxSizing: 'border-box',
 	padding: '1rem',
 	paddingTop: '0',
+	textAlign: 'center',
+	color: '#333333',
+	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 };
 // .card .general .more {
 export const more = {
@@ -1268,6 +1257,7 @@ export const more = {
 	bottom: '1rem',
 	right: '1rem',
 	fontSize: '0.9rem',
+	color: 'gray',
 };
 /* ============================== CONTACT SECTION ============================== */
 export const contactContainer = {

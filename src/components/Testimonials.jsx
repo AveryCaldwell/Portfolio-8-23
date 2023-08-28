@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+// import * as Material from "@mui/material";
+
+// IMPORT SUBCOMPONENTS
 import { FirstAvatar, SecondAvatar, ThirdAvatar } from './TestimonialAvatars'; // Adjust the path accordingly
 
-// import * as Material from "@mui/material";
-// import anime from "animejs/lib/anime.es.js";
-// import avesLogo from "../assets/aves.png";
+// IMPORT ICONS
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+
+// IMPORT STYLING
 import {
 	refContainer,
 	pageContainer,
@@ -21,14 +26,13 @@ import {
 	coordsSpan,
 	stats,
 	statsTitle,
-	statsTrophy,
 	value,
 	general,
 	more,
-	secondAdd,
-	thirdAdd,
+	// secondAdd,
+	// thirdAdd,
 	refSubtitle,
-	firstAdd,
+	// firstAdd,
 } from './Styles';
 
 // This function renders main content of web app
@@ -48,8 +52,8 @@ function Testimonials({ props }) {
 		width: hover ? '100%' : '150px',
 		height: '100%',
 		background: hover
-			? 'linear-gradient(#92bCa6, #A2CCB6)'
-			: 'linear-gradient(#dE685E, #EE786E)',
+			? 'linear-gradient( rgba(63,94,251,1) 0%, rgba(134,70,252,1)100%)'
+			: 'linear-gradient( rgba(63,94,251,1) 0%, rgba(134,70,252,1)100%)',
 		transition: 'width 0.4s',
 		overflow: 'hidden',
 		zIndex: 2,
@@ -78,32 +82,20 @@ function Testimonials({ props }) {
 				</div>
 
 				<div className="refBox" style={refBox}>
-					{/* <div className="center" style={center}> */}
 					{/* === CARD 1 === */}
-					<div className="card first" style={{ ...card }}>
+					<div className="card first" style={card}>
 						<div
 							className="additional first"
-							style={{ ...additionalStyles }}
+							style={additionalStyles}
 							onMouseEnter={handleMouseEnter}
 							onMouseLeave={handleMouseLeave}
 						>
-							<div
-								className="user-card"
-								style={{ ...userCard, ...firstAdd }}
-							>
-								<div
-									className="level center"
-									style={{
-										...userCardStats,
-										...center,
-									}}
-								>
-									References 1
-								</div>
+							<div className="user-card" style={userCard}>
 								<div
 									className="points center"
 									style={{
 										...userCardStats,
+										...center,
 										...points,
 									}}
 								>
@@ -112,7 +104,6 @@ function Testimonials({ props }) {
 								{/* === CLIP ART === */}
 								<FirstAvatar />
 							</div>
-							{/* <!-- user-card --> */}
 							{/* BACKSIDE OF CARD */}
 							<div
 								style={{
@@ -125,68 +116,44 @@ function Testimonials({ props }) {
 									<h1 style={moreInfoTitle}>Robert Baker</h1>
 									<div id="title">Software Architect</div>
 									<div className="coords" style={coords}>
-										<span style={coordsSpan}>Boeing</span>
+										<span style={coordsSpan}>Boeing:</span>
 										<span style={coordsSpan}>
 											Joined 2015
 										</span>
 									</div>
 									<div className="coords" style={coords}>
 										<span style={coordsSpan}>
-											Software Architect
-										</span>
-										<span style={coordsSpan}>
 											Seattle, WA
 										</span>
 									</div>
 									<div className="stats" style={stats}>
 										<div>
-											<div
-												className="title"
-												style={statsTitle}
-											>
-												Contact:
-											</div>
-											<i
-												className="fa fa-trophy"
-												style={statsTrophy}
-											></i>
-											<div
-												className="value"
-												style={value}
-											>
-												nasakab@gmail.com{' '}
+											<div style={statsTitle}>
+												<MailOutlineIcon
+													style={{
+														verticalAlign: 'middle',
+													}}
+												/>{' '}
+												Email:{' '}
+												<span style={value}>
+													{' '}
+													nasakab@gmail.com{' '}
+												</span>
 											</div>
 										</div>
 
 										<div>
-											<div
-												className="title"
-												style={statsTitle}
-											>
-												Phone
-											</div>
-											<i className="fa fa-gamepad"></i>
-											<div
-												className="value"
-												style={value}
-											>
-												541-300-0887
-											</div>
-										</div>
-
-										<div>
-											<div
-												className="title"
-												style={statsTitle}
-											>
-												Pals
-											</div>
-											<i className="fa fa-group"></i>
-											<div
-												className="value"
-												style={value}
-											>
-												123
+											<div style={statsTitle}>
+												<PhoneIphoneIcon
+													style={{
+														verticalAlign: 'middle',
+													}}
+												/>{' '}
+												Phone:{' '}
+												<span style={value}>
+													{' '}
+													541-300-0887
+												</span>
 											</div>
 										</div>
 									</div>
@@ -212,99 +179,81 @@ function Testimonials({ props }) {
 					<div className="card second" style={card}>
 						<div
 							className="additional secondAdd"
-							style={{ ...additionalStyles, ...secondAdd }}
+							style={additionalStyles}
 							onMouseEnter={handleMouseEnter}
 							onMouseLeave={handleMouseLeave}
 						>
 							<div className="user-card" style={userCard}>
 								<div
-									className="level center"
+									className="points center"
 									style={{
 										...userCardStats,
 										...center,
+										...points,
 									}}
-								>
-									References 2
-								</div>
-								<div
-									className="points center"
-									style={Object.assign(
-										{},
-										userCardStats,
-										center,
-										points
-									)}
 								>
 									Level 41
 								</div>
 								{/* === CLIP ART === */}
 								<SecondAvatar />
 							</div>
-							{/* <!-- user-card --> */}
 							{/* BACKSIDE OF CARD */}
-							<div id="title">NextTrader</div>
-							<div className="more-info" style={moreInfo}>
-								<h1 style={{ color: '#224c36' }}>2nd person</h1>
-								<div
-									className="coords"
-									style={{ color: '#325c46' }}
-								>
-									<span style={coordsSpan}>NextTrader</span>
-									<span style={coordsSpan}>Joined 2016</span>
-								</div>
-								<div className="coords" style={coords}>
-									<span style={coordsSpan}>
-										Software Architect
-									</span>
-									<span style={coordsSpan}>Houston, TX</span>
-								</div>
-								<div
-									className="stats"
-									style={{
-										color: 'white',
-										flex: '1',
-										textAlign: 'center',
-									}}
-								>
-									<div>
-										<div
-											className="title"
-											style={statsTitle}
-										>
-											Awards
-										</div>
-										<i
-											className="fa fa-trophy"
-											style={statsTrophy}
-										></i>
-										<div className="value" style={value}>
-											20{' '}
-										</div>
+							<div
+								style={{
+									color: 'white',
+									textAlign: 'center',
+									padding: '5px',
+								}}
+							>
+								<div className="more-info" style={moreInfo}>
+									<h1 style={moreInfoTitle}>
+										Kenneth Gottlieb
+									</h1>
+									<div id="title">
+										Senior Software Engineer
 									</div>
-
-									<div>
-										<div
-											className="title"
-											style={statsTitle}
-										>
-											Matches
-										</div>
-										<i className="fa fa-gamepad"></i>
-										<div className="value" style={value}>
-											27
-										</div>
+									<div className="coords" style={coords}>
+										<span style={coordsSpan}>
+											NinjaTrader:{' '}
+										</span>
+										<span style={coordsSpan}>
+											Joined 2023
+										</span>
 									</div>
-
-									<div>
-										<div
-											className="title"
-											style={statsTitle}
-										>
-											Pals
+									<div className="coords" style={coords}>
+										<span style={coordsSpan}>
+											Houston, TX
+										</span>
+									</div>
+									<div className="stats" style={stats}>
+										<div>
+											<div style={statsTitle}>
+												<MailOutlineIcon
+													style={{
+														verticalAlign: 'middle',
+													}}
+												/>{' '}
+												Email:{' '}
+												<span style={value}>
+													{' '}
+													kenneth.gottlieb@ninjatrader.com{' '}
+												</span>
+											</div>
 										</div>
-										<i className="fa fa-group"></i>
-										<div className="value" style={value}>
-											123
+
+										<div>
+											<div style={statsTitle}>
+												<PhoneIphoneIcon
+													style={{
+														verticalAlign: 'middle',
+													}}
+												/>{' '}
+												Phone:{' '}
+												<span style={value}>
+													{' '}
+													936-529-7428
+												</span>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -323,107 +272,82 @@ function Testimonials({ props }) {
 							</span>
 						</div>
 					</div>
-					{/* breaking up divs, dont mind me */}
 
 					{/* <!-- CARD 3 --> */}
 					<div className="card third" style={card}>
 						<div
 							className="additional thirdAdd"
-							style={{ ...additionalStyles, ...thirdAdd }}
+							style={additionalStyles}
 							onMouseEnter={handleMouseEnter}
 							onMouseLeave={handleMouseLeave}
 						>
 							<div className="user-card" style={userCard}>
 								<div
-									className="level center"
+									className="points center"
 									style={{
 										...userCardStats,
 										...center,
+										...points,
 									}}
-								>
-									References 3
-								</div>
-								<div
-									className="points center"
-									style={Object.assign(
-										{},
-										userCardStats,
-										center,
-										points
-									)}
 								>
 									Level 29
 								</div>
 								{/* === CLIP ART === */}
 								<ThirdAvatar />
 							</div>
-							{/* <!-- user-card --> */}
 							{/* BACKSIDE OF CARD */}
-							<div id="title">Job</div>
-							<div className="more-info" style={moreInfo}>
-								<h1 style={{ color: '#224c36' }}>
-									Alexa Zylstra
-								</h1>
-								<div
-									className="coords"
-									style={{ color: '#325c46' }}
-								>
-									<span style={coordsSpan}>Healthcare</span>
-									<span style={coordsSpan}>Joined 2021</span>
-								</div>
-								<div className="coords" style={coords}>
-									<span style={coordsSpan}>QA </span>
-									<span style={coordsSpan}>
-										Nashville, TN
-									</span>
-								</div>
-								<div
-									className="stats"
-									style={{
-										color: 'white',
-										flex: '1',
-										textAlign: 'center',
-									}}
-								>
-									<div>
-										<div
-											className="title"
-											style={statsTitle}
-										>
-											Awards
-										</div>
-										<i
-											className="fa fa-trophy"
-											style={statsTrophy}
-										></i>
-										<div className="value" style={value}>
-											2{' '}
-										</div>
+							<div
+								style={{
+									color: 'white',
+									textAlign: 'center',
+									padding: '5px',
+								}}
+							>
+								<div className="more-info" style={moreInfo}>
+									<h1 style={moreInfoTitle}>Alexa Zylstra</h1>
+									<div id="title">
+										Full Stack Data Analyst
 									</div>
-
-									<div>
-										<div
-											className="title"
-											style={statsTitle}
-										>
-											Matches
-										</div>
-										<i className="fa fa-gamepad"></i>
-										<div className="value" style={value}>
-											27
-										</div>
+									<div className="coords" style={coords}>
+										<span style={coordsSpan}>HCA: </span>
+										<span style={coordsSpan}>
+											Joined: 2018
+										</span>
 									</div>
-
-									<div>
-										<div
-											className="title"
-											style={statsTitle}
-										>
-											Known
+									<div className="coords" style={coords}>
+										<span style={coordsSpan}>
+											Nashville, TN
+										</span>
+									</div>
+									<div className="stats" style={stats}>
+										<div>
+											<div style={statsTitle}>
+												<MailOutlineIcon
+													style={{
+														verticalAlign: 'middle',
+													}}
+												/>{' '}
+												Email:{' '}
+												<span style={value}>
+													{' '}
+													alexa.zylstra@hca.com{' '}
+												</span>
+											</div>
 										</div>
-										<i className="fa fa-group"></i>
-										<div className="value" style={value}>
-											10+ years
+
+										<div>
+											<div style={statsTitle}>
+												<PhoneIphoneIcon
+													style={{
+														verticalAlign: 'middle',
+													}}
+												/>{' '}
+												Phone:{' '}
+												<span style={value}>
+													{' '}
+													641-204-1133
+												</span>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -432,17 +356,20 @@ function Testimonials({ props }) {
 						{/* === FRONT BLERP ON CARD === */}
 						<div className="general" style={general}>
 							<h1 className="cardHeader">Alexa Zylstra</h1>
-							<p>Badass Bish</p>
+							<p>
+								Full Stack data scientist working on machine
+								learning solutions for healthcare problems.
+								Productionalizes models via cloud based
+								deployment in GCP.
+							</p>
 							<span className="more" style={more}>
 								Mouse over the card for more info
 							</span>
 						</div>
 					</div>
-					{/* breaking up divs, dont mind me */}
 				</div>
-				{/* </div> */}
+				{/* END OF CONTAINER DIV */}
 			</div>
-			{/* end div */}
 		</React.Fragment>
 	);
 }

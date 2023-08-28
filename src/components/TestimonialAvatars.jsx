@@ -193,7 +193,7 @@ function SecondAvatar() {
 			role="img"
 			aria-labelledby="title desc"
 		>
-			<title id="title">Software Engineer</title>
+			<title id="title">Senior Software Engineer</title>
 			<desc id="desc">Cartoon of a Caucasian man smiling</desc>
 			<defs>
 				<clipPath id="scene">
@@ -336,7 +336,7 @@ function ThirdAvatar() {
 			role="img"
 			aria-labelledby="title desc"
 		>
-			<title id="title">Job</title>
+			<title id="title">Data Scientist</title>
 			<desc id="desc">Cartoon of a Caucasian woman smiling</desc>
 			<defs>
 				<clipPath id="scene">
