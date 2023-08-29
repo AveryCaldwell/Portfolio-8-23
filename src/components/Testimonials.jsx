@@ -132,7 +132,9 @@ function Testimonials({ props }) {
 									<h1 style={moreInfoTitle}>Robert Baker</h1>
 									<div id="title">Software Architect</div>
 									<div className="coords" style={coords}>
-										<span style={coordsSpan}>Boeing:</span>
+										<span style={coordsSpan}>
+											Boeing, BR&T:
+										</span>
 										<span style={coordsSpan}>
 											Joined 2015
 										</span>
@@ -153,13 +155,13 @@ function Testimonials({ props }) {
 												Email:{' '}
 												<span style={value}>
 													{' '}
-													nasakab@gmail.com{' '}
+													robert.s.baker2@boeing.com{' '}
 												</span>
 											</div>
 										</div>
 
 										<div>
-											<div style={statsTitle}>
+											{/* <div style={statsTitle}>
 												<PhoneIphoneIcon
 													style={{
 														verticalAlign: 'middle',
@@ -168,9 +170,8 @@ function Testimonials({ props }) {
 												Phone:{' '}
 												<span style={value}>
 													{' '}
-													541-300-0887
 												</span>
-											</div>
+											</div> */}
 										</div>
 									</div>
 								</div>
@@ -258,7 +259,7 @@ function Testimonials({ props }) {
 										</div>
 
 										<div>
-											<div style={statsTitle}>
+											{/* <div style={statsTitle}>
 												<PhoneIphoneIcon
 													style={{
 														verticalAlign: 'middle',
@@ -267,9 +268,8 @@ function Testimonials({ props }) {
 												Phone:{' '}
 												<span style={value}>
 													{' '}
-													936-529-7428
 												</span>
-											</div>
+											</div> */}
 										</div>
 									</div>
 								</div>
@@ -352,7 +352,7 @@ function Testimonials({ props }) {
 										</div>
 
 										<div>
-											<div style={statsTitle}>
+											{/* <div style={statsTitle}>
 												<PhoneIphoneIcon
 													style={{
 														verticalAlign: 'middle',
@@ -361,9 +361,8 @@ function Testimonials({ props }) {
 												Phone:{' '}
 												<span style={value}>
 													{' '}
-													641-204-1133
 												</span>
-											</div>
+											</div> */}
 										</div>
 									</div>
 								</div>
@@ -385,7 +384,7 @@ function Testimonials({ props }) {
 					</div>
 				</div>
 				{/* BUTTON SPAN */}
-				<div id="testimonialsButtonSpan" style={testimonialsButtonSpan}>
+				{/* <div id="testimonialsButtonSpan" style={testimonialsButtonSpan}>
 					{testimonialsButtons.map(function (element, index) {
 						return (
 							<button
@@ -427,7 +426,7 @@ function Testimonials({ props }) {
 							</button>
 						);
 					})}
-				</div>
+				</div> */}
 
 				{/* END OF CONTAINER DIV */}
 			</div>

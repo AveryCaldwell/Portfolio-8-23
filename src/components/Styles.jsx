@@ -1065,7 +1065,6 @@ export const refSubtitle = {
 	fontWeight: 'light',
 	display: 'flex',
 	justifyContent: 'end',
-	minWidth: '50%',
 	maxWidth: '50%',
 };
 // box containing ref cards
@@ -1079,7 +1078,7 @@ export const refBox = {
 	// fontSize: '18px',
 	top: '100px',
 	right: '30%',
-	width: '1000px',
+	// width: '1000px',
 	// fontSize: '18px',
 	// overflow: 'hidden',
 	// justifyContent: 'space-between',
@@ -1103,7 +1102,6 @@ export const center = {
 export const card = {
 	width: '800px',
 	height: '225px',
-	backgroundColor: '#fff',
 	background: 'linear-gradient(#f8f8f8, #fff)',
 	boxShadow: '0 8px 16px -8px',
 	borderRadius: '6px',
@@ -1124,7 +1122,6 @@ export const additional = {
 	transition: 'width 0.4s',
 	overflow: 'hidden',
 	zIndex: '2',
-	background: 'rgb(63,94,251)',
 	background: `radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(134,70,252,1) 100%)`,
 };
 
@@ -1265,7 +1262,8 @@ export const testimonialsButtonSpan = {
 	flexDirection: 'row',
 	width: '450px',
 	height: '150px',
-};export const testimonialsButton = {
+};
+export const testimonialsButton = {
 	borderRadius: '36px',
 	border: '1px solid white',
 	// position: 'relative',
@@ -1284,140 +1282,139 @@ export const testimonialsButtonSpan = {
 };
 /* ============================== CONTACT SECTION ============================== */
 export const contactContainer = {
-	backgroundColor: 'magenta',
 	display: 'flex',
-	color: 'white',
+	position: 'relative',
 	fontFamily: 'Roboto',
-	top: '-34vh',
-	position: 'relative',
+	marginTop: 'calc(50vh - 400px)',
+	marginBottom: 'calc(50vh - 400px)',
 };
-export const contactHeader = {
-	textAlign: 'center',
-	marginLeft: 'auto',
-	fontSize: '40px',
-};
-export const contactBtns = {
-	position: 'relative',
-	display: 'inline-flex',
-	justifyContent: 'space-evenly',
-	alignItems: 'center',
-	textAlign: 'center',
-	padding: '10px',
-	cursor: 'pointer',
-	borderRadius: '36px',
-	top: '78vh',
-	backgroundColor: 'transparent',
+export const contactTitle = {
 	color: 'white',
-	border: 'solid 1px white',
-	width: '150px',
-	height: '75px',
-	fontSize: '18px',
+	transition: 'all .2s ease',
+	display: 'flex',
+	fontSize: '80px',
+	fontFamily: 'Roboto',
+	textShadow: `4px 4px rgba(0,0,0,0.1)`,
+	position: 'relative',
+	// top: '-50px',
+	height: '100px',
+	justifyContent: 'center',
+};
+export const contactSubtitle = {
+	color: '#3c3c3c',
+	transition: 'all .2s ease',
+	fontSize: '16px',
+	width: '100%',
+	position: 'relative',
+	padding: '0px',
 };
 
+/*---------------- Name drawing --------------------> */
+
+export const thanksText = {
+	textAlign: 'center',
+	display: 'flex',
+	position: 'relative',
+	flexDirection: 'column',
+	fontSize: '26px',
+	color: 'white',
+	fontWeight: 'light',
+	height: '100px',
+};
+export const myPath = {
+	// fill: 'none',
+	// stroke: 'white',
+	// strokeWidth: '4',
+};
+export const lineDrawing = {
+	position: 'relative',
+	display: 'flex',
+	height: '50px',
+};
+
+/*---------------- FORM --------------------> */
+
 export const formDiv = {
+	display: 'flex',
 	backgroundColor: 'rgba(72, 72, 72, 0.4)',
-	paddingLeft: '35px',
-	paddingRight: '35px',
-	paddingTop: '35px',
-	paddingBottom: '50px',
-	width: '450px',
-	float: 'left',
-	left: '50%',
-	position: 'absolute',
-	marginTop: '30px',
-	marginLeft: '-260px',
+	padding: '15px',
+	width: '50%',
 	MozBorderRadius: '7px',
 	WebkitBorderRadius: '7px',
+	flexDirection: 'column',
+	alignItems: 'center',
+	position: 'relative',
+	textAlign: 'center',
+	height: '550px',
+	fontSize: '20px',
+	maxWidth: '600px',
+
+	// float: 'left',
+	// marginLeft: '-260px',
+	// justifyContent: 'center',
 };
 export const feedbackInput = {
 	color: '#3c3c3c',
 	fontFamily: 'Helvetica, Arial, sans-serif',
 	fontWeight: '500',
-	fontSize: '18px',
+	fontSize: '20px',
 	lineHeight: '22px',
 	backgroundColor: '#fbfbfb',
-	padding: '13px 13px 13px 54px',
-	marginBottom: '10px',
+	padding: '10px',
+	textAlign: 'left',
 	width: '100%',
-	boxSizing: 'border-box',
 	border: '3px solid rgba(0, 0, 0, 0)',
-	'&:focus': {
-		backgroundColor: '#fff',
-		boxShadow: '0',
-		border: '3px solid #3498db',
-		color: '#3498db',
-		outline: 'none',
-		padding: '13px 13px 13px 54px',
-	},
+	// marginBottom: '10px',
+	borderRadius: '8px',
 };
-
-export const name = {
-	backgroundSize: '30px 30px',
+export const formText = {
+	textAlign: 'left',
+	fontSize: '20px',
 	backgroundPosition: '11px 8px',
 	backgroundRepeat: 'no-repeat',
-	padding: '10px',
-	'&:focus': {
-		backgroundSize: '30px 30px',
-		backgroundPosition: '8px 5px',
-		backgroundRepeat: 'no-repeat',
-	},
-};
-
-export const email = {
-	backgroundSize: '30px 30px',
-	backgroundPosition: '11px 8px',
-	backgroundRepeat: 'no-repeat',
-	padding: '10px',
-	'&:focus': {
-		backgroundPosition: '8px 5px',
-		backgroundRepeat: 'no-repeat',
-	},
+	marginBottom: '10px',
+	display: 'block',
 };
 
 export const comment = {
-	backgroundSize: '30px 30px',
-	backgroundPosition: '11px 8px',
-	backgroundRepeat: 'no-repeat',
-	padding: '10px',
+	// backgroundSize: '30px 30px',
+	// backgroundPosition: '11px 8px',
+	// backgroundRepeat: 'no-repeat',
+	// padding: '10px',
 };
 
 export const textArea = {
 	width: '100%',
-	height: '150px',
-	lineHeight: '150%',
+	height: '100px',
+	lineHeight: '12px',
 	resize: 'vertical',
 };
 
-export const buttonBlue = {
-	float: 'left',
-	width: '100%',
-	border: '#fbfbfb solid 4px',
-	cursor: 'pointer',
-	backgroundColor: 'rgba(153,179,252,1)',
+export const contactButton = {
+	display: 'flex',
+	justifyContent: 'space-around',
+	// flexDirection: 'row',
+	borderRadius: '36px',
+	border: '1px solid white',
+	textAlign: 'center',
+	width: '450px',
+	height: '65px',
 	color: 'white',
-	fontSize: '24px',
-	paddingTop: '22px',
-	paddingBottom: '22px',
-	transition: 'all 0.3s',
-	WebkitTransition: 'all 0.3s',
-	MozTransition: 'all 0.3s',
-	marginTop: '-4px',
-	fontWeight: '700',
-	'&:hover': {
-		backgroundColor: 'rgba(0, 0, 0, 0)',
-		color: '#6dabe4',
-	},
+	fontSize: '18px',
+	lineHeight: '1.25',
+	backgroundColor: 'transparent',
+	cursor: 'pointer',
 };
 
 export const ease = {
-	width: '0px',
-	height: '74px',
-	backgroundColor: '#fbfbfb',
-	transition: '0.3s ease',
-	WebkitTransition: '0.3s ease',
-	MozTransition: '0.3s ease',
-	OTransition: '0.3s ease',
-	msTransition: '0.3s ease',
+	// width: '0px',
+	// height: '74px',
+	// backgroundColor: '#fbfbfb',
+	// transition: '0.3s ease',
+	// WebkitTransition: '0.3s ease',
+	// MozTransition: '0.3s ease',
+	// OTransition: '0.3s ease',
+	// msTransition: '0.3s ease',
 };
 
 // .submit:hover {
@@ -1456,20 +1453,3 @@ export const ease = {
 // textarea:focus {
 //   background-color: white;
 // }
-
-/*---------------- Name drawing --------------------> */
-
-export const thanksText = {
-	textAlign: 'center',
-	marginTop: '600px',
-};
-export const myPath = {
-	fill: 'none',
-	stroke: 'white',
-	strokeWidth: '4',
-};
-export const lineDrawing = {
-	display: 'flex',
-	width: '800px',
-	position: 'relative',
-};
