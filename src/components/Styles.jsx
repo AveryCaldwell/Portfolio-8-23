@@ -1300,14 +1300,6 @@ export const contactTitle = {
 	height: '100px',
 	justifyContent: 'center',
 };
-export const contactSubtitle = {
-	color: '#3c3c3c',
-	transition: 'all .2s ease',
-	fontSize: '16px',
-	width: '100%',
-	position: 'relative',
-	padding: '0px',
-};
 
 /*---------------- Name drawing --------------------> */
 
@@ -1322,22 +1314,30 @@ export const thanksText = {
 	height: '100px',
 };
 export const myPath = {
-	// fill: 'none',
-	// stroke: 'white',
-	// strokeWidth: '4',
+	fill: 'none',
+	stroke: 'white',
+	strokeWidth: '4',
+	width: '75%',
 };
 export const lineDrawing = {
 	position: 'relative',
 	display: 'flex',
-	height: '50px',
 };
 
 /*---------------- FORM --------------------> */
-
+export const contactSubtitle = {
+	color: '#3c3c3c',
+	transition: 'all .2s ease',
+	fontSize: '22px',
+	width: '100%',
+	position: 'relative',
+	padding: '10px',
+	marginBottom: '10px',
+};
 export const formDiv = {
 	display: 'flex',
 	backgroundColor: 'rgba(72, 72, 72, 0.4)',
-	padding: '15px',
+	padding: '50px',
 	width: '50%',
 	MozBorderRadius: '7px',
 	WebkitBorderRadius: '7px',
@@ -1345,20 +1345,15 @@ export const formDiv = {
 	alignItems: 'center',
 	position: 'relative',
 	textAlign: 'center',
-	height: '550px',
-	fontSize: '20px',
+	height: '725px',
 	maxWidth: '600px',
-
-	// float: 'left',
-	// marginLeft: '-260px',
-	// justifyContent: 'center',
 };
 export const feedbackInput = {
 	color: '#3c3c3c',
 	fontFamily: 'Helvetica, Arial, sans-serif',
 	fontWeight: '500',
-	fontSize: '20px',
-	lineHeight: '22px',
+	fontSize: '24px',
+	lineHeight: '24px',
 	backgroundColor: '#fbfbfb',
 	padding: '10px',
 	textAlign: 'left',
@@ -1369,31 +1364,41 @@ export const feedbackInput = {
 };
 export const formText = {
 	textAlign: 'left',
-	fontSize: '20px',
+	fontSize: '26px',
 	backgroundPosition: '11px 8px',
 	backgroundRepeat: 'no-repeat',
 	marginBottom: '10px',
 	display: 'block',
 };
-
+export const name = {
+	backgroundSize: '30px 30px',
+	backgroundPosition: '11px 8px',
+	backgroundRepeat: 'no-repeat',
+	marginBottom: '20px',
+};
+export const email = {
+	backgroundSize: '30px 30px',
+	backgroundPosition: '11px 8px',
+	backgroundRepeat: 'no-repeat',
+	marginBottom: '20px',
+};
 export const comment = {
-	// backgroundSize: '30px 30px',
-	// backgroundPosition: '11px 8px',
-	// backgroundRepeat: 'no-repeat',
-	// padding: '10px',
+	backgroundSize: '30px 30px',
+	backgroundPosition: '11px 8px',
+	backgroundRepeat: 'no-repeat',
+	padding: '10px',
 };
 
 export const textArea = {
 	width: '100%',
-	height: '100px',
-	lineHeight: '12px',
+	height: '150px',
+	lineHeight: '22px',
 	resize: 'vertical',
 };
 
 export const contactButton = {
 	display: 'flex',
 	justifyContent: 'space-around',
-	// flexDirection: 'row',
 	borderRadius: '36px',
 	border: '1px solid white',
 	textAlign: 'center',
@@ -1404,52 +1409,16 @@ export const contactButton = {
 	lineHeight: '1.25',
 	backgroundColor: 'transparent',
 	cursor: 'pointer',
+	marginTop: '20px',
 };
 
 export const ease = {
-	// width: '0px',
-	// height: '74px',
-	// backgroundColor: '#fbfbfb',
-	// transition: '0.3s ease',
-	// WebkitTransition: '0.3s ease',
-	// MozTransition: '0.3s ease',
-	// OTransition: '0.3s ease',
-	// msTransition: '0.3s ease',
+	width: '0px',
+	height: '74px',
+	backgroundColor: '#fbfbfb',
+	transition: '0.3s ease',
+	WebkitTransition: '0.3s ease',
+	MozTransition: '0.3s ease',
+	OTransition: '0.3s ease',
+	msTransition: '0.3s ease',
 };
-
-// .submit:hover {
-//   color: #dbc1f8;
-// }
-// .ease {
-//   width: 0px;
-//   height: 74px;
-//   background-color: #fbfbfb;
-//   -webkit-transition: 0.3s ease;
-//   -moz-transition: 0.3s ease;
-//   -o-transition: 0.3s ease;
-//   -ms-transition: 0.3s ease;
-//   transition: 0.3s ease;
-// }
-// /* // TODO: add to styles.jsx */
-// .submit:hover .ease {
-//   width: 100%;
-//   background-color: white;
-// }
-
-// @media only screen and (max-width: 580px) {
-//   #form-div {
-//     left: 3%;
-//     margin-right: 3%;
-//     width: 88%;
-//     margin-left: 0;
-//     padding-left: 3%;
-//     padding-right: 3%;
-//   }
-// }
-/* // TODO: add to styles.jsx */
-// input:hover,
-// textarea:hover,
-// input:focus,
-// textarea:focus {
-//   background-color: white;
-// }
