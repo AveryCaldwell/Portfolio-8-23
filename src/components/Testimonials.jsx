@@ -11,7 +11,9 @@ import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 // IMPORT STYLING
 import {
 	refContainer,
+	testimonialsButtonSpan,
 	pageContainer,
+	testimonialsButton,
 	refBox,
 	refTitle,
 	center,
@@ -59,6 +61,20 @@ function Testimonials({ props }) {
 		zIndex: 2,
 		borderRadius: hover ? '0 5px 5px 0' : 'none',
 	};
+
+	const [testimonialsState, setTestimonialsButtonState] = React.useState({
+		Resume: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
+		Contact: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
+	});
+	const testimonialsButtons = [
+		{ target: 'Resume', span: 'Back', name: 'Resume' },
+		{ target: 'Contact', span: 'Next', name: 'Contact' },
+	];
+	function setTestimonialsHoverButton(name, style) {
+		let obj = Object.assign({}, testimonialsState);
+		obj[name] = style;
+		setTestimonialsButtonState(obj);
+	}
 
 	return (
 		<React.Fragment>
@@ -330,7 +346,7 @@ function Testimonials({ props }) {
 												Email:{' '}
 												<span style={value}>
 													{' '}
-													alexa.zylstra@hca.com{' '}
+													zylstra.az@gmail.com{' '}
 												</span>
 											</div>
 										</div>
@@ -368,6 +384,51 @@ function Testimonials({ props }) {
 						</div>
 					</div>
 				</div>
+				{/* BUTTON SPAN */}
+				<div id="testimonialsButtonSpan" style={testimonialsButtonSpan}>
+					{testimonialsButtons.map(function (element, index) {
+						return (
+							<button
+								className="testimonialsButton"
+								key={`testimonialsButton${index}`}
+								name={element.name}
+								style={{
+									...testimonialsButton,
+									...testimonialsState[element.name],
+								}}
+								onMouseEnter={(event) => {
+									//console.log(event.target.name);
+									setTestimonialsHoverButton(
+										event.target.name,
+										{
+											boxShadow:
+												'0 4px 10px rgba(255, 255, 255, 0.7)',
+										}
+									);
+								}}
+								onMouseLeave={(event) => {
+									setTestimonialsHoverButton(
+										event.target.name,
+										{
+											boxShadow:
+												'0 4px 10px rgba(255, 255, 255, 0.0)',
+										}
+									);
+								}}
+								onClick={function () {
+									props.setActivePage(element.target);
+									setProjectsHoverButton(element.target, {
+										boxShadow:
+											'0 4px 10px rgba(255, 255, 255, 0.0)',
+									});
+								}}
+							>
+								<span>{element.span}</span>
+							</button>
+						);
+					})}
+				</div>
+
 				{/* END OF CONTAINER DIV */}
 			</div>
 		</React.Fragment>

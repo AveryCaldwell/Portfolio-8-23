@@ -112,7 +112,6 @@ function Resume({ props }) {
 		Code: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.7)' },
 		Ref: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 	});
-	//TODO: Make it so the introduction button highlights and then it is based off of the current active about content
 	const resumeButtons = [
 		{ target: 'Code', span: 'Code', name: 'Code' },
 		{ target: 'PlainText', span: 'Plain Text', name: 'PlainText' },

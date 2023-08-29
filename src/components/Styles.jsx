@@ -1259,6 +1259,29 @@ export const more = {
 	fontSize: '0.9rem',
 	color: 'gray',
 };
+export const testimonialsButtonSpan = {
+	display: 'flex',
+	justifyContent: 'space-around',
+	flexDirection: 'row',
+	width: '450px',
+	height: '150px',
+};export const testimonialsButton = {
+	borderRadius: '36px',
+	border: '1px solid white',
+	// position: 'relative',
+	textAlign: 'center',
+	listStyle: 'none',
+	width: '120px',
+	// top: '202vh',
+	// left: '5%',
+	height: '65px',
+	color: 'white',
+	fontSize: '18px',
+	lineHeight: '1.25',
+	backgroundColor: 'transparent',
+	cursor: 'pointer',
+	marginTop: '30px',
+};
 /* ============================== CONTACT SECTION ============================== */
 export const contactContainer = {
 	backgroundColor: 'magenta',
