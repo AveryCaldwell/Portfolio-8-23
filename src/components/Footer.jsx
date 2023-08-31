@@ -14,7 +14,13 @@ function Footer() {
 							Avery Caldwell
 						</a>
 					</p>
-					<ul className="socialIcons">
+					<ul
+						style={{
+							listStyle: 'none',
+							textDecoration: 'none',
+							color: 'white',
+						}}
+					>
 						<li>
 							<a
 								className="github"

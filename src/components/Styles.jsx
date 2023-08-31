@@ -1427,17 +1427,14 @@ export const footerContainer = {
 	left: '0',
 	right: '0',
 	bottom: '0',
-	background: `linear-gradient(
-        rgba(255, 255, 255, 1),
-        rgba(255, 255, 255, 0.25)
-    )`,
-	marginBottom: 'auto',
-};
-export const siteFooter = {
 	background: 'rgba(255, 255, 255, 0.2)',
 	boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
 	backdropFilter: 'blur(5px)',
 	WebkitBackdropFilter: 'blur(5px)',
+	marginBottom: 'auto',
+	width: '100%',
+};
+export const siteFooter = {
 	padding: '45px 0 20px',
 	fontSize: '15px',
 	lineHeight: '24px',
