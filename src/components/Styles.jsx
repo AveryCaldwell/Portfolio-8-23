@@ -1,14 +1,10 @@
-import { color, textTransform } from '@mui/system';
 import { css, keyframes } from 'styled-components';
 
 export const appContainer = {
 	display: 'flex',
-	//flexDirection: 'column',
 	position: 'absolute',
 	left: 'calc(50% - 600px)',
 	height: '100vh',
-	//marginTop: 'calc(50vh - 350px)',
-	//marginBottom: 'calc(50vh - 350px)',
 	top: '0',
 	transition: 'all 1.5s ease',
 	maxWidth: '1200px',
@@ -17,7 +13,6 @@ export const appContainer = {
 };
 export const pagesContainer = {
 	height: '800px',
-	//overflow: 'hidden',
 	display: 'flex',
 	flexDirection: 'column',
 	maxWidth: '1200px',
@@ -34,7 +29,6 @@ export const pageContainer = {
 	display: 'flex',
 	minHeight: '800px',
 	maxHeight: '800px',
-	//overflow: 'hidden',
 	marginTop: 'calc(50vh - 400px)',
 	marginBottom: 'calc(50vh - 400px)',
 };

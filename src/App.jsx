@@ -18,13 +18,12 @@ import SvgContainer from './components/SvgContainer';
 // Styling
 import { appContainer, pagesContainer } from './components/Styles';
 
-// This function renders main content of web app
+// Function to set the active page and perform page transition animations
 function App() {
+	// The "useState" hook is used to declare a state variable called "currentPageState" which is initially set to "Landing".
 	const [currentPageState, setCurrentPageState] = React.useState('Landing');
 	const setActivePage = (newPage) => {
-		// The "useState" hook is used to declare a state variable called "currentPageState" which is initially set to "About".
-		//array of pages
-		// console.log('active page fired');
+		// Array of page names
 		const pages = [
 			'Landing',
 			'About',
@@ -34,8 +33,7 @@ function App() {
 			'Testimonials',
 			'Contact',
 		];
-		//setCurrentPage(newPage);
-		// state
+		// Object mapping page names to their index
 		let pageIndexObj = {
 			Landing: 0,
 			About: 1,
@@ -45,30 +43,36 @@ function App() {
 			Testimonials: 5,
 			Contact: 6,
 		};
+		// Get the container element for the app
 		const appContainer = document.getElementsByClassName('appContainer')[0];
+		// Calculate the index of the new and current page
 		const pageIndex = pages.indexOf(newPage);
-		const currentPageIndex = pages.indexOf(currentPageState);
-		const calculatedVH = pageIndex * 100;
+		const currentPageIndex = pages.indexOf(currentPageState); // Assumes currentPageState is defined elsewhere
+		const calculatedVH = pageIndex * 100; //Calculate the vertical height for the transition
+		// Check if the new page is different from the current page
 		if (newPage !== currentPageState) {
+			// Calculate the difference in pages for animation duration
 			const pageDiff =
 				pageIndex < currentPageIndex
 					? Math.abs(currentPageIndex - pageIndex)
 					: Math.abs(pageIndex - currentPageIndex);
+			// Update the page index object to reflect the new active page
 			pages.forEach(
 				(element, index) =>
 					(pageIndexObj[element] = index - pages.indexOf(newPage))
 			);
+			// Set the new current page state
 			setCurrentPageState(newPage);
-			console.log(pageIndexObj);
-			console.log(pageDiff);
-			appContainer.style.transition = `all ${pageDiff * 1.5}s ease`;
+
+			appContainer.style.transition = `all ${pageDiff * 1.5}s ease`; // Apply transition to the app container with calculated animation durations
+			// Get elements for logo animation
 			const logoSliderImage =
 				document.getElementsByClassName('logoSliderImage')[0];
 			const logoSliderCircle =
 				document.getElementsByClassName('logoSliderCircle')[0];
-			// if > 0, then the page is moving upwards
+			// Check the direction of the page transition
 			if (currentPageIndex - pageIndex > 0) {
-				//  changing top prop value to move the image
+				// Animate the logo slider image for upward transition
 				if (pageIndex === 0) {
 					setTimeout(function () {
 						logoSliderImage.style.top = `15px`;
@@ -76,7 +80,9 @@ function App() {
 					}, 1200);
 					logoSliderCircle.style.opacity = '0';
 				}
+				// Moving downwards
 			} else {
+				// Animate the logo slider image for downward transition
 				if (pageIndex >= 1) {
 					logoSliderImage.style.top = `calc(100% - 320px)`;
 					logoSliderImage.style.border =
@@ -86,6 +92,7 @@ function App() {
 					}, 1200);
 				}
 			}
+			// Apply the vertical transition to the app container
 			appContainer.style.top = `calc(0% - ${calculatedVH}vh)`;
 		}
 	};
