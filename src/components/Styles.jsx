@@ -254,15 +254,13 @@ export const eduButtonSpan = {
 	width: '380px',
 	height: '150px',
 };
+
 export const eduButton = {
 	borderRadius: '36px',
 	border: '1px solid white',
-	// position: 'relative',
 	textAlign: 'center',
 	listStyle: 'none',
 	width: '150px',
-	// top: '202vh',
-	// left: '5%',
 	height: '65px',
 	color: 'white',
 	fontSize: '18px',
@@ -271,20 +269,19 @@ export const eduButton = {
 	cursor: 'pointer',
 	marginTop: '30px',
 };
+
 export const orbitalContainer = {
-	// height: '600px',
 	height: '780px',
 	width: '600px',
 	opacity: '0',
 	position: 'relative',
-	// position: 'relative',
 	transition: 'all 1s ease',
 	display: 'flex',
-	// justifyContent: 'center',
 	alignItems: 'center',
 	left: '-120px',
 	top: '50px',
 };
+
 export const orbitalBox = {
 	offsetPath: `path('M150,0 A150,150 0 1,1 150,300 A150,150 0 1,1 150,0')`,
 	display: 'flex',
@@ -293,17 +290,12 @@ export const orbitalBox = {
 	position: 'absolute',
 	width: '600px',
 	height: '150px',
-	//top: '100px',
 	left: '190px',
 	marginBottom: '150px',
 	cursor: 'pointer',
 	borderRadius: '36px',
-
-	//background: "rgba(255, 255, 255, 0.2)",
-	//boxShadow: " 0 4px 30px rgba(0, 0, 0, 0.1)",
-	//backdropFilter: ' blur(5px)',
-	//border: "1px solid rgba(255, 255, 255, 0.3)",
 };
+
 export const eduTitle = {
 	position: 'absolute',
 	color: 'white',
@@ -328,9 +320,9 @@ export const eduDescriptionHeader = {
 	fontFamily: 'Roboto',
 	textShadow: `2px 2px rgba(0,0,0,0.1)`,
 };
+
 export const cardContainer = {
 	width: '400px',
-	// height: 'fit-content',
 	display: 'flex',
 	transition: 'all 1s ease',
 	flexDirection: 'column',
@@ -348,6 +340,7 @@ export const eduHeader = {
 	fontFamily: 'Roboto',
 	textShadow: `2px 2px rgba(0,0,0,0.1)`,
 };
+
 export const eduCardActive = {
 	height: 'fit-content',
 	fontFamily: 'Roboto',
@@ -365,6 +358,7 @@ export const eduCardActive = {
 	backdropFilter: ' blur(5px)',
 	border: '1px solid rgba(255, 255, 255, 0.8)',
 };
+
 export const eduCardInactive = {
 	height: 'fit-content',
 	fontFamily: 'Roboto',
@@ -383,7 +377,6 @@ export const eduCardInactive = {
 	border: '1px solid rgba(255, 255, 255, 0.3)',
 };
 export const eduImage = {
-	//borderRadius: "100%",
 	display: 'flex',
 	marginLeft: 'auto',
 	marginRight: 'auto',
@@ -417,23 +410,7 @@ export const eduSlideshow = {
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 	listStyleType: 'none',
 };
-export const eduBtn = {
-	borderRadius: '36px',
-	border: 'solid 1px white',
-	position: 'relative',
-	textAlign: 'center',
-	listStyle: 'none',
-	width: '125px',
-	top: '65vh',
-	height: '65px',
-	color: 'white',
-	fontSize: '18px',
-	backgroundColor: 'transparent',
-	cursor: 'pointer',
-};
-export const eduBtnContainer = {
-	marginTop: '50px',
-};
+
 /* ============================== SVG PATH SECTION ============================== */
 export const svgContainer = {
 	position: 'absolute',
