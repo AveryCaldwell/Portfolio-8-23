@@ -104,7 +104,6 @@ export const logoSliderImage = {
 	borderRadius: '50%',
 	left: '24px',
 	transition: 'all 1.5s ease',
-	//border: '15px solid rgba(255, 255, 255, 0.5)',
 };
 export const logoSliderCircle = {
 	position: 'absolute',
@@ -177,12 +176,6 @@ export const letter = {
 	opacity: '1',
 };
 /* ============================== ABOUT SECTION ============================== */
-
-// export const aboutContainer = {
-// 	display: 'flex',
-// 	fontSize: '50px',
-// 	color: 'white',
-// };
 
 export const aboutTitle = {
 	color: 'white',
@@ -680,6 +673,10 @@ export const fade = {
 	animationDuration: '1.5s',
 };
 /* ============================== RESUME SECTION ============================== */
+export const resumeContainer = {
+	flexDirection: 'column',
+};
+
 export const resumeButtonSpan = {
 	display: 'flex',
 	justifyContent: 'space-around',
@@ -690,12 +687,9 @@ export const resumeButtonSpan = {
 export const resumeButton = {
 	borderRadius: '36px',
 	border: '1px solid white',
-	// position: 'relative',
 	textAlign: 'center',
 	listStyle: 'none',
 	width: '150px',
-	// top: '202vh',
-	// left: '5%',
 	height: '65px',
 	color: 'white',
 	fontSize: '18px',
@@ -704,15 +698,10 @@ export const resumeButton = {
 	cursor: 'pointer',
 	marginTop: '30px',
 };
-export const resumeContainer = {
-	// backgroundColor: "purple",
-	flexDirection: 'column',
-};
+
 export const resumeTitle = {
-	//position: 'absolute',
 	color: 'white',
 	transition: 'all .2s ease',
-	//paddingBottom: '125px',
 	textAlign: 'center',
 	margin: '0',
 	alignItems: 'center',
@@ -724,12 +713,10 @@ export const resumeTitle = {
 };
 export const resumeBox = {
 	display: 'flex',
-	//flexDirection: 'row',
-	justifyContent: 'space-between',
-	alignItems: 'center',
-	//bottom: '45vh',
-	position: 'relative',
 	width: '100%',
+	height: '100px',
+	flexDirection: 'horizontal',
+	justifyContent: 'space-between',
 };
 
 /* typing animation */
@@ -741,13 +728,9 @@ export const typingContainer = {
 	fontWeight: 'light',
 	letterSpacing: '0.1rem',
 	textAlign: 'right',
-	//overflow: 'hidden',
-	// marginTop: "75px",
-	//position: 'absolute',
 	display: 'flex',
 	justifyContent: 'end',
 	minWidth: '50%',
-
 	height: '50px',
 	maxWidth: '50%',
 };
@@ -757,13 +740,9 @@ export const codeBox = {
 	flexWrap: 'wrap',
 	display: 'flex',
 	position: 'relative',
-	//padding: '20px',
 	height: '600px',
 	width: '100%',
 	overflow: 'hidden',
-	//top: '38vh',
-	// top: "32vh",
-	//right: '75px',
 	fontSize: '18px',
 	borderRadius: '36px',
 	background: 'rgba(0, 0, 0, 0.4)',
@@ -787,7 +766,6 @@ export const resumePlainText = {
 	color: 'white',
 	fontFamily: 'roboto',
 	borderRadius: '25px',
-	//background: 'white',
 	position: 'absolute',
 	margin: '35px',
 	minWidth: '1130px',
@@ -796,7 +774,6 @@ export const resumePlainText = {
 	height: '500px',
 	whiteSpace: 'pre-wrap',
 	overflowWrap: 'normal',
-	//WordWrap: 'normal,',
 };
 export const typedText = {
 	fontWeight: 'normal',
@@ -804,6 +781,7 @@ export const typedText = {
 };
 
 // Define the blink keyframes
+// TODO: incorporate with code
 const blink = keyframes`
   0% {
     background-color: #ccc;
@@ -830,96 +808,16 @@ export const codeCursor = css`
 	animation: ${blink} 1s infinite;
 `;
 
-export const downloadBtn = {
-	// backgroundColor: "#ffffff",
-	height: '80px',
-	width: '175px',
-	textAlign: 'center',
-	position: 'relative',
-	transform: 'translateY(-50%)',
-	cursor: 'pointer',
-	borderRadius: '36px',
-	bottom: '-78vh',
-	marginRight: '-849px',
-};
-
 export const text = {
-	font: 'bold 1.25rem/1 helvetica',
-	color: 'rgba(153, 179, 252, 1)',
-	position: 'absolute',
-	top: '50%',
-	transform: 'translateY(-52%)',
-	left: '0',
-	right: '0',
+	// font: 'bold 1.25rem/1 helvetica',
+	// color: 'rgba(153, 179, 252, 1)',
+	// position: 'absolute',
+	// top: '50%',
+	// transform: 'translateY(-52%)',
+	// left: '0',
+	// right: '0',
 };
 
-export const downloadSvg = {
-	width: '30px',
-	position: 'absolute',
-	top: '50%',
-	transform: 'translateY(-50%) translateX(-50%)',
-	left: '50%',
-	right: '0',
-	enableBackground: 'new 0 0 25 30',
-};
-
-export const resumeLink = {
-	textDecoration: 'none',
-	color: 'rgba(153, 179, 252, 1)',
-};
-/* resume plain text */
-
-export const resumeBtn = {
-	position: 'relative',
-	display: 'inline-flex',
-	justifyContent: 'space-evenly',
-	alignItems: 'center',
-	textAlign: 'center',
-	padding: '10px',
-	cursor: 'pointer',
-	borderRadius: '36px',
-	top: '78vh',
-	backgroundColor: 'transparent',
-	color: 'white',
-	border: 'solid 1px white',
-	width: '150px',
-	height: '75px',
-	fontSize: '18px',
-};
-export const resumeNextBtn = {
-	position: 'relative',
-	display: 'inline-flex',
-	justifyContent: 'space-evenly',
-	alignItems: 'center',
-	textAlign: 'center',
-	padding: '10px',
-	cursor: 'pointer',
-	borderRadius: '36px',
-	top: '78vh',
-	backgroundColor: 'transparent',
-	color: 'white',
-	border: 'solid 1px white',
-	width: '150px',
-	height: '75px',
-	fontSize: '18px',
-};
-export const textBtn = {
-	position: 'relative',
-	display: 'inline-flex',
-	justifyContent: 'space-evenly',
-	alignItems: 'center',
-	textAlign: 'center',
-	padding: '10px',
-	cursor: 'pointer',
-	borderRadius: '36px',
-	top: '78vh',
-	backgroundColor: 'transparent',
-	color: 'white',
-	border: 'solid 1px white',
-	width: '150px',
-	height: '75px',
-	fontSize: '18px',
-};
 /* ============================== REFERENCE SECTION ============================== */
 export const refContainer = {
 	display: 'flex',

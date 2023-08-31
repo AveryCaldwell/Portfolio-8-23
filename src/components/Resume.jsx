@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-// import * as Material from '@mui/material';
-import anime from 'animejs/lib/anime.es.js';
-// import avesLogo from '../assets/aves.png';
+// import anime from 'animejs/lib/anime.es.js';
+
+// STYLING
 import {
 	resumeContainer,
 	pageContainer,
@@ -13,39 +13,25 @@ import {
 	codeContent,
 	resumeButton,
 	resumeButtonSpan,
+	resumeBox,
 } from './Styles';
 
 function Resume({ props }) {
-	//  state to determine whether the code block should be displayed
-	//const [showPlainText, setShowPlainText] = useState(false);
+	// State and refs for typing animation
 	const [isTyping, setIsTyping] = useState(false);
 	const typedTextRef = useRef(null);
 	const cursorRef = useRef(null);
 
-	// function to display resume in plain text rather than coded text
-	// const togglePlainText = () => {
-	// 	setShowPlainText(!showPlainText);
-	// };
-	//const resumePlainText = showPlainText ? {} : { display: 'none' }; // Define your styles here
-
+	// Start typing effect on component mount
 	useEffect(() => {
-		//if (textArray.length) setTimeout(type, newTextDelay + 250);
 		startTypingEffect();
-		// Add event listener on component mount
-		//document.addEventListener('DOMContentLoaded', startTypingEffect);
-
-		// Clean up the event listener on component unmount
-		// return () => {
-		// 	document.removeEventListener('DOMContentLoaded', startTypingEffect);
-		// };
 	}, []);
 
+	// Function to start typing effect
 	const startTypingEffect = () => {
-		// console.log('typing effect');
 		if (textArray.length) setTimeout(type, newTextDelay + 250);
 	};
 	// ====TYPING ANIMATION====
-	// Array of words to show for typing animation
 	const textArray = ['hard.', 'cool.', 'a journey.', 'LIFE!'];
 	const typingDelay = 200;
 	const erasingDelay = 100;
@@ -53,7 +39,7 @@ function Resume({ props }) {
 	let textArrayIndex = 0;
 	let charIndex = 0;
 
-	// Function to perform the typing effect
+	// Function for typing effect
 	function type() {
 		const typedTextSpan = typedTextRef.current;
 		const cursorSpan = cursorRef.current;
@@ -71,7 +57,7 @@ function Resume({ props }) {
 			setTimeout(erase, newTextDelay); // Start the erasing effect by calling the 'erase' function after 'newTextDelay' milliseconds
 		}
 	}
-	// Function to perform the erasing effect
+	// Function for erasing effect
 	function erase() {
 		const typedTextSpan = typedTextRef.current;
 		const cursorSpan = cursorRef.current;
@@ -106,12 +92,13 @@ function Resume({ props }) {
 		// On DOM Load initiate the effect
 		// If there are texts in the array, start the typing effect after a delay of newTextDelay' + 250 milliseconds
 	});
-
+	// State for resume content and button styles
 	const [resumeContentState, setResumeContentState] = React.useState('Code');
 	const [resumeButtonState, setResumeButtonState] = React.useState({
 		Code: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.7)' },
 		Ref: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 	});
+	// Array of resume buttons
 	const resumeButtons = [
 		{ target: 'Code', span: 'Code', name: 'Code' },
 		{ target: 'PlainText', span: 'Plain Text', name: 'PlainText' },
@@ -119,6 +106,7 @@ function Resume({ props }) {
 		{ target: 'Projects', span: 'Back', name: 'Projects' },
 		{ target: 'Testimonials', span: 'Next', name: 'Testimonials' },
 	];
+	// Function to update button style on hover
 	function setResumeHoverButton(name, style) {
 		let obj = Object.assign({}, resumeButtonState);
 		obj[name] = style;
@@ -130,15 +118,8 @@ function Resume({ props }) {
 				className="resumeContainer pageContainer"
 				style={{ ...pageContainer, ...resumeContainer }}
 			>
-				<div
-					style={{
-						display: 'flex',
-						width: '100%',
-						height: '100px',
-						flexDirection: 'horizontal',
-						justifyContent: 'space-between',
-					}}
-				>
+				<div style={resumeBox}>
+					{/* ... (resume header) */}
 					<h1 className="resumeTitle" style={resumeTitle}>
 						RESUME
 					</h1>
@@ -159,6 +140,7 @@ function Resume({ props }) {
 
 				{/* === Resume Code Starts Here === */}
 				<div className="codeBox" style={codeBox}>
+					{/* Code content */}
 					<div
 						id="codeContent"
 						style={{
@@ -442,7 +424,7 @@ function Resume({ props }) {
 						</ul>
 					</div>{' '}
 				</div>
-
+				{/* Resume buttons */}
 				<div id="resumeButtonSpan" style={resumeButtonSpan}>
 					{resumeButtons.map(function (element, index) {
 						return (
@@ -455,11 +437,9 @@ function Resume({ props }) {
 									...resumeButtonState[element.name],
 								}}
 								onMouseEnter={(event) => {
-									//console.log(event.target.name);
 									if (
 										event.target.name !== resumeContentState
 									) {
-										//console.log(event.target.name);
 										setResumeHoverButton(
 											event.target.name,
 											{
