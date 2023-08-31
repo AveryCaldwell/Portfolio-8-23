@@ -215,7 +215,7 @@ function Projects({ props }) {
 							style={svgButton}
 							onClick={animateSvgStroke}
 						>
-							Animate SVG
+							✨ MAGIC ✨
 						</button>
 						{projectsButtons.map(function (element, index) {
 							return (

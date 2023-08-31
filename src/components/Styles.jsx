@@ -467,25 +467,16 @@ export const animateSvgStroke1 = {
 		},
 	},
 };
-export const svgButtonSpan = {
-	display: 'flex',
-	justifyContent: 'space-around',
-	flexDirection: 'row',
-	width: '450px',
-	height: '150px',
-};
+
 export const svgButton = {
 	borderRadius: '36px',
 	border: '1px solid white',
-	// position: 'relative',
 	textAlign: 'center',
 	listStyle: 'none',
-	width: '120px',
-	// top: '202vh',
-	// left: '5%',
+	width: '130px',
 	height: '65px',
 	color: 'white',
-	fontSize: '18px',
+	fontSize: '16px',
 	lineHeight: '1.25',
 	backgroundColor: 'transparent',
 	cursor: 'pointer',
