@@ -1,6 +1,4 @@
 import * as React from 'react';
-import * as Material from '@mui/material';
-import anime from 'animejs/lib/anime.es.js';
 import avesLogo from '../assets/aves.png';
 import {
 	logoSliderImage,
@@ -8,8 +6,9 @@ import {
 	logoSliderCircle,
 } from './Styles';
 
-// This function renders main content of web app
+// This function defines the LogoSlider component responsible for rendering the main content of the web app
 function LogoSlider() {
+	// Return JSX representing the LogoSlider component that floats between the Landing and About page
 	return (
 		<div className="logoSliderContainer" style={logoSliderContainer}>
 			<img
@@ -18,6 +17,7 @@ function LogoSlider() {
 				className="logoSliderImage"
 				style={logoSliderImage}
 			/>
+			{/* Display a circular element for logo animation */}
 			<div className="logoSliderCircle" style={logoSliderCircle}></div>
 		</div>
 	);

@@ -32,8 +32,8 @@ export const pageContainer = {
 	marginTop: 'calc(50vh - 400px)',
 	marginBottom: 'calc(50vh - 400px)',
 };
-/* ============================== LANDING SECTION ============================== */
 
+/* ============================== LOGO SLIDING SECTION ============================== */
 export const logoSliderContainer = {
 	position: 'absolute',
 	color: 'white',
@@ -73,6 +73,7 @@ export const logoSliderCircle = {
 	transition: 'all 0.5s ease',
 	opacity: '0',
 };
+/* ============================== LANDING SECTION ============================== */
 export const landingHeader = {
 	position: 'relative',
 	color: 'white',
