@@ -20,11 +20,7 @@ export const pagesContainer = {
 	marginTop: 'calc(50vh - 400px)',
 	marginBottom: 'calc(50vh - 400px)',
 };
-export const landingContainer = {
-	minHeight: '800px',
-	overflow: 'hidden',
-	marginBottom: 'calc(50vh - 400px)',
-};
+
 export const pageContainer = {
 	display: 'flex',
 	minHeight: '800px',
@@ -74,6 +70,11 @@ export const logoSliderCircle = {
 	opacity: '0',
 };
 /* ============================== LANDING SECTION ============================== */
+export const landingContainer = {
+	minHeight: '800px',
+	overflow: 'hidden',
+	marginBottom: 'calc(50vh - 400px)',
+};
 export const landingHeader = {
 	position: 'relative',
 	color: 'white',
@@ -421,36 +422,6 @@ export const eduSlideshow = {
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 	listStyleType: 'none',
 };
-// export const eduSlideshow = {
-// 	fontFamily: 'Roboto',
-// 	listStyleType: 'circle',
-// 	lineHeight: '20px',
-// 	listStylePosition: 'inside',
-// 	width: '350px',
-// 	// height: '500px',
-// 	color: 'white',
-// 	//maxWidth: "1000px",
-// 	position: 'relative',
-// 	top: '2vh',
-// 	padding: '15px',
-// 	textAlign: 'left',
-// 	fontSize: '18x',
-// 	background: 'rgba(255, 255, 255, 0.2)',
-// 	borderRadius: '16px',
-// 	boxShadow: ' 0 4px 30px rgba(0, 0, 0, 0.1)',
-// 	backdropFilter: ' blur(5px)',
-// 	border: '1px solid rgba(255, 255, 255, 0.3)',
-// };
-// export const eduSlides = {
-//     display: 'none',
-// };
-// export const eduList = {
-//     textAlign: 'center',
-//     listStyle: 'none',
-//     padding: '8px',
-//     fontSize: '20px',
-//     alignItems: 'center',
-// };
 export const eduBtn = {
 	borderRadius: '36px',
 	border: 'solid 1px white',
@@ -470,13 +441,10 @@ export const eduBtnContainer = {
 };
 /* ============================== SVG PATH SECTION ============================== */
 export const svgContainer = {
-	// position: "absolute",
 	position: 'absolute',
 	top: '360vh',
 	left: '250px',
-	// pointerEvents: "none",
 	cursor: 'pointer',
-	// marginTop: '550px'
 	zIndex: '-1',
 };
 /* Hide the images by default */
