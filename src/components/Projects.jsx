@@ -6,6 +6,7 @@ import {
 	svgContainer,
 	svgCord,
 	animateSvgStroke1,
+	svgButton,
 	// projectContainer,
 	pageContainer,
 	projectTitle,
@@ -211,7 +212,7 @@ function Projects({ props }) {
 					<div id="projectsButtonSpan" style={projectsButtonSpan}>
 						<button
 							id="svgbuttonstyle"
-							style={{ zIndex: 4, position: 'relative' }}
+							style={svgButton}
 							onClick={animateSvgStroke}
 						>
 							Animate SVG

@@ -426,7 +426,7 @@ export const svgContainer = {
 	top: '360vh',
 	left: '250px',
 	cursor: 'pointer',
-	zIndex: '1',
+	zIndex: '-1',
 };
 
 export const svgCord = {
@@ -466,6 +466,30 @@ export const animateSvgStroke1 = {
 			strokeDasharray: '2515.90478515625px',
 		},
 	},
+};
+export const svgButtonSpan = {
+	display: 'flex',
+	justifyContent: 'space-around',
+	flexDirection: 'row',
+	width: '450px',
+	height: '150px',
+};
+export const svgButton = {
+	borderRadius: '36px',
+	border: '1px solid white',
+	// position: 'relative',
+	textAlign: 'center',
+	listStyle: 'none',
+	width: '120px',
+	// top: '202vh',
+	// left: '5%',
+	height: '65px',
+	color: 'white',
+	fontSize: '18px',
+	lineHeight: '1.25',
+	backgroundColor: 'transparent',
+	cursor: 'pointer',
+	marginTop: '30px',
 };
 /* ============================== PROJECTS SECTION ============================== */
 /* Hide the images by default */
