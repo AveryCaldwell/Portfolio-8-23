@@ -1,15 +1,15 @@
 {
-	"name": "vite-project",
+	"homepage": "https://averycaldwell.github.io/Portfolio-8-23/",
+	"name": "portfolio-8-23",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-    "homepage": "http://averycaldwell.github.io/portfolio-8-23",
 	"scripts": {
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"dev": "vite",
 		"build": "vite build",
-		"preview": "vite preview",
-		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build"
+		"preview": "vite preview"
 	},
 	"dependencies": {
 		"@emotion/react": "^11.11.1",
