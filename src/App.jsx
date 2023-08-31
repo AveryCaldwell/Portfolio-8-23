@@ -14,7 +14,7 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import LogoSlider from './components/LogoSlider';
 import Footer from './components/Footer';
-import SvgContainer from './components/SvgContainer';
+// import SvgContainer from './components/SvgContainer';
 // Styling
 import { appContainer, pagesContainer } from './components/Styles';
 
@@ -108,7 +108,7 @@ function App() {
 						<Landing props={{ setActivePage }} />
 						<About props={{ setActivePage }} />
 						<Edu props={{ setActivePage }} />
-						<SvgContainer props={{ setActivePage }} />
+						{/* <SvgContainer props={{ setActivePage }} /> */}
 						<Projects props={{ setActivePage }} />
 						<Resume props={{ setActivePage }} />
 						<Testimonials props={{ setActivePage }} />

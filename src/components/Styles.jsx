@@ -410,21 +410,6 @@ export const eduSlideshow = {
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 	listStyleType: 'none',
 };
-
-/* ============================== SVG PATH SECTION ============================== */
-export const svgContainer = {
-	position: 'absolute',
-	top: '360vh',
-	left: '250px',
-	cursor: 'pointer',
-	zIndex: '-1',
-};
-/* Hide the images by default */
-export const mySlides = {
-	display: 'block',
-	animationName: 'fade',
-	animationDuration: ' 1.5s',
-};
 export const myEduActive = {
 	display: 'block',
 	animationName: 'fade',
@@ -435,6 +420,15 @@ export const myEduInactive = {
 	animationName: 'fade',
 	animationDuration: ' 1.5s',
 };
+/* ============================== SVG PATH SECTION ============================== */
+export const svgContainer = {
+	position: 'absolute',
+	top: '360vh',
+	left: '250px',
+	cursor: 'pointer',
+	zIndex: '1',
+};
+
 export const svgCord = {
 	width: '120vh',
 	height: '120vh',
@@ -474,10 +468,13 @@ export const animateSvgStroke1 = {
 	},
 };
 /* ============================== PROJECTS SECTION ============================== */
-// export const projectContainer = {
-//   display: "flex",
-//   height: "100vh",
-// };
+/* Hide the images by default */
+export const mySlides = {
+	display: 'block',
+	animationName: 'fade',
+	animationDuration: ' 1.5s',
+};
+
 export const projectsButtonSpan = {
 	display: 'flex',
 	justifyContent: 'space-around',
