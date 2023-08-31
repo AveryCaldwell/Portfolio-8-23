@@ -29,6 +29,57 @@ export const pageContainer = {
 	marginBottom: 'calc(50vh - 400px)',
 };
 
+/* ============================== NAV SECTION ============================== */
+export const navBox = {
+	display: 'flex',
+	paddingTop: '50px',
+	cursor: 'pointer',
+};
+
+export const avesImg = {
+	height: '150px',
+	width: '150px',
+	borderRadius: 300,
+	border: '2px solid #e9f4e9',
+	boxShadow: 2,
+	cursor: 'pointer',
+	marginLeft: 'auto',
+	marginRight: 'auto',
+};
+
+export const navTitleText = {
+	fontFamily: 'Roboto',
+	textAlign: 'center',
+	pt: 4,
+	color: 'white',
+	fontSize: 22,
+	marginBottom: '5px',
+};
+export const navSubtitleText = {
+	fontFamily: 'Roboto',
+	textAlign: 'center',
+	fontWeight: 'lighter',
+	pt: 1,
+	color: 'white',
+	fontSize: 18,
+	marginBottom: '20px',
+};
+
+export const closeIcon = {
+	display: 'block',
+	textAlign: 'center',
+	height: '75px',
+	width: '75px',
+	margin: '20px auto auto auto',
+	cursor: 'pointer',
+	padding: '20px',
+	borderRadius: 300,
+	cursor: 'pointer',
+	background: ' rgba(255, 255, 255, 0.2)',
+	boxShadow: '0 2px 30px rgba(0, 0, 0, 0.1)',
+	backdropFilter: 'blur(5px)',
+	border: '1px solid rgba(255, 255, 255, 0.2)',
+};
 /* ============================== LOGO SLIDING SECTION ============================== */
 export const logoSliderContainer = {
 	position: 'absolute',

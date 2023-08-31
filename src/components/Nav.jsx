@@ -1,11 +1,18 @@
 import * as React from 'react';
 import * as Material from '@mui/material';
 import avesLogo from '../assets/aves.png';
+// MUI COMPONENT
 import { Typography } from '@mui/material';
 
-// ICONs
-// import MenuIcon from "@mui/icons-material/Menu";
-// import CloseIcon from "@mui/icons-material/Close";
+// STYLING
+import {
+	navBox,
+	avesImg,
+	navTitleText,
+	navSubtitleText,
+	closeIcon,
+} from './Styles';
+// ICONS
 import {
 	Article,
 	School,
@@ -52,58 +59,20 @@ function Nav({ props }) {
 			onKeyDown={toggleDrawer(anchor, false)}
 		>
 			{/* Logo */}
-			<Material.Box
-				className="navBox"
-				sx={{
-					display: 'flex',
-					paddingTop: '50px',
-					cursor: 'pointer',
-				}}
-			>
+			<Material.Box className="navBox" sx={navBox}>
 				<img
 					src={avesLogo}
-					style={{
-						height: '150px',
-						width: '150px',
-						borderRadius: 300,
-						border: '2px solid #e9f4e9',
-						boxShadow: 2,
-						cursor: 'pointer',
-						marginLeft: 'auto',
-						marginRight: 'auto',
-					}}
+					style={avesImg}
 					onClick={() => {
 						handleClick('Landing');
 						setOpen(false);
 					}}
-					alt="AvesLogo"
+					alt="Aves Logo"
 				/>
 			</Material.Box>
 			{/* Name and title */}
-			<Typography
-				sx={{
-					fontFamily: 'Roboto',
-					textAlign: 'center',
-					pt: 4,
-					color: 'white',
-					fontSize: 22,
-					marginBottom: '5px',
-				}}
-			>
-				Avery Caldwell
-			</Typography>{' '}
-			<Typography
-				sx={{
-					fontFamily: 'Roboto',
-					textAlign: 'center',
-					pt: 1,
-					color: 'white',
-					fontSize: 20,
-					marginBottom: '20px',
-				}}
-			>
-				Full Stack Developer
-			</Typography>
+			<Typography sx={navTitleText}>Avery Caldwell</Typography>{' '}
+			<Typography sx={navSubtitleText}>Full Stack Developer</Typography>
 			<Material.Divider />
 			{/* Navigation links */}
 			<Material.List>
@@ -158,19 +127,7 @@ function Nav({ props }) {
 			</Material.List>
 			<Material.Divider />
 			{/* Close button */}
-			<Close
-				sx={{
-					display: 'block',
-					height: '50px',
-					width: '50px',
-					// FIXME: reposition close button
-					marginTop: '50px',
-					marginLeft: 'auto',
-					marginRight: 'auto',
-					cursor: 'pointer',
-				}}
-				onClick={toggleDrawer('left', false)}
-			/>
+			<Close sx={closeIcon} onClick={toggleDrawer('left', false)} />
 		</Material.Box>
 	);
 
