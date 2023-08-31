@@ -1,7 +1,5 @@
 import * as React from 'react';
-// import * as Material from '@mui/material';
-// import anime from 'animejs/lib/anime.es.js';
-// import avesLogo from '../assets/aves.png';
+// Import styling
 import {
 	aboutContent,
 	aboutTitle,
@@ -9,7 +7,6 @@ import {
 	aboutBubbleItem,
 	skillBox,
 	aboutButton,
-	aboutContainer,
 	aboutText,
 	aboutSubtitle,
 	skillSubtitle,
@@ -18,8 +15,9 @@ import {
 	fadeTransition,
 } from './Styles';
 
-// This function renders main content of About section
+// This function component represents the About section of the web app
 function About({ props }) {
+	// Arrays containing frontend and backend technology data
 	const frontendData = [
 		'HTML/CSS',
 		'JavaScript',
@@ -49,51 +47,57 @@ function About({ props }) {
 		'Jest',
 		'Apollo',
 	];
+	// Render frontend and backend skills lists
 	const renderedFrontendSkills = frontendData.map((skill, index) => (
 		<li key={index} className="aboutBubbleItem" style={aboutBubbleItem}>
 			{skill}
 		</li>
 	));
-
 	const renderedBackendSkills = backendData.map((skill, index) => (
 		<li key={index} className="aboutBubbleItem" style={aboutBubbleItem}>
 			{skill}
 		</li>
 	));
+
+	// State to manage button styles for hovering
 	const [aboutButtonState, setAboutButtonState] = React.useState({
 		Introduction: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.7)' },
 		Skills: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 		Landing: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 		Next: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 	});
-	//TODO: Make it so the introduction button highlights and then it is based off of the current active about content
+
+	// State to manage button styles for hovering
 	const aboutButtons = [
 		{ target: 'Introduction', span: 'Introduction', name: 'Introduction' },
 		{ target: 'Skills', span: 'Skills', name: 'Skills' },
 		{ target: 'Landing', span: 'Back', name: 'Landing' },
 		{ target: 'Edu', span: 'Next', name: 'Next' },
 	];
+
+	// Function to handle button hover animation
 	function setAboutHoverButton(name, style) {
 		let obj = Object.assign({}, aboutButtonState);
 		obj[name] = style;
 		setAboutButtonState(obj);
 	}
+
+	// State to manage currently active content
 	const [aboutContentState, setAboutContentState] =
 		React.useState('Introduction');
-	function aboutButtonSetActivePage(target) {}
+	// Function to set the active page when a button is clicked
+	// function aboutButtonSetActivePage(target) {}
+
 	return (
-		// <div
-		//     style={{
-		//         minHeight: '100vh',
-		//         overflow: 'hidden',
-		//     }}
-		// >
 		<div className="aboutContainer pageContainer" style={pageContainer}>
 			<div className="aboutTitle" style={aboutTitle}>
 				ABOUT ME
 			</div>
+			{/* Content Container */}
 			<div id="ContentContainer" style={{ marginLeft: '20px' }}>
+				{/* About Content Sections */}
 				<div className="aboutContent" style={aboutContent}>
+					{/* Introduction Section */}
 					<div
 						id="Introduction"
 						style={{
@@ -106,6 +110,7 @@ function About({ props }) {
 							...fadeTransition,
 						}}
 					>
+						{/* Introduction content */}
 						<div className="aboutSubtitle" style={aboutSubtitle}>
 							TLDR: Career changer, Adventurer, Woman in Business,
 							Creative Thinker + Web Dev
@@ -145,7 +150,7 @@ function About({ props }) {
 							Thanks for reading! - Avery
 						</div>
 					</div>
-					{/* TODO: add animation on skill hover */}
+					{/* Skills Section */}
 					<div
 						id="Skills"
 						style={{
@@ -156,6 +161,7 @@ function About({ props }) {
 							...fadeTransition,
 						}}
 					>
+						{/* Frontend and Backend skills */}
 						<div style={{ overflow: 'scroll', maxHeight: '100%' }}>
 							<div className="techBox" style={techBox}>
 								<div
@@ -180,6 +186,7 @@ function About({ props }) {
 					</div>
 				</div>
 
+				{/* Buttons to navigate between content sections */}
 				<div id="buttonSpan" style={buttonSpan}>
 					{aboutButtons.map(function (element, index) {
 						return (

@@ -126,28 +126,13 @@ export const letter = {
 	opacity: '1',
 };
 /* ============================== ABOUT SECTION ============================== */
-export const fadeTransition = {
-	//animation: 'ease-in-out 3s',
-	transition: `ease 2s`,
-	position: 'absolute',
-	top: 0,
-	left: 0,
-	padding: '20px',
-	//overflow: 'auto',
-	height: '650px',
-};
-export const aboutContainer = {
-	display: 'flex',
-	fontSize: '50px',
-	color: 'white',
-};
-export const buttonSpan = {
-	display: 'flex',
-	justifyContent: 'space-around',
-	flexDirection: 'row',
-	width: '700px',
-	height: '150px',
-};
+
+// export const aboutContainer = {
+// 	display: 'flex',
+// 	fontSize: '50px',
+// 	color: 'white',
+// };
+
 export const aboutTitle = {
 	color: 'white',
 	transition: 'all .2s ease',
@@ -204,7 +189,6 @@ export const aboutText = {
 
 export const techBox = {
 	color: 'white',
-	// position: 'absolute',
 	top: '148vh',
 	left: '55%',
 	fontSize: '16px',
@@ -212,7 +196,6 @@ export const techBox = {
 };
 export const skillBox = {
 	color: 'white',
-	// position: 'absolute',
 	top: '155vh',
 	left: '55%',
 	fontSize: '16px',
@@ -236,12 +219,9 @@ export const aboutBubbleItem = {
 export const aboutButton = {
 	borderRadius: '36px',
 	border: '1px solid white',
-	// position: 'relative',
 	textAlign: 'center',
 	listStyle: 'none',
 	width: '150px',
-	// top: '202vh',
-	// left: '5%',
 	height: '65px',
 	color: 'white',
 	fontSize: '18px',
@@ -249,6 +229,21 @@ export const aboutButton = {
 	backgroundColor: 'transparent',
 	cursor: 'pointer',
 	marginTop: '30px',
+};
+export const buttonSpan = {
+	display: 'flex',
+	justifyContent: 'space-around',
+	flexDirection: 'row',
+	width: '700px',
+	height: '150px',
+};
+export const fadeTransition = {
+	transition: `ease 2s`,
+	position: 'absolute',
+	top: 0,
+	left: 0,
+	padding: '20px',
+	height: '650px',
 };
 
 /* ============================== EDUCATION SECTION ============================== */
