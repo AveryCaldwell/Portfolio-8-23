@@ -18,10 +18,9 @@ import {
 	Info,
 } from '@mui/icons-material';
 
-// -------------function that renders nav bar
+// Function that renders the navigation bar
 function Nav({ props }) {
-	// sets the active page shown
-
+	// State for the drawer's open/close status
 	const [state, setState] = React.useState({
 		top: false,
 		left: false,
@@ -29,6 +28,7 @@ function Nav({ props }) {
 		right: false,
 	});
 
+	// Toggle the drawer's open/close status
 	const toggleDrawer = (anchor, open) => (event) => {
 		if (
 			event.type === 'keydown' &&
@@ -36,10 +36,10 @@ function Nav({ props }) {
 		) {
 			return;
 		}
-
 		setState({ ...state, [anchor]: open });
 	};
-	// -------------rendersdrawer component
+
+	// Render the drawer's content
 	const iemsList = (anchor) => (
 		<Material.Box
 			sx={{
@@ -51,6 +51,7 @@ function Nav({ props }) {
 			onClick={toggleDrawer(anchor, false)}
 			onKeyDown={toggleDrawer(anchor, false)}
 		>
+			{/* Logo */}
 			<Material.Box
 				className="navBox"
 				sx={{
@@ -59,7 +60,6 @@ function Nav({ props }) {
 					cursor: 'pointer',
 				}}
 			>
-				{/* // -------------LOGO */}
 				<img
 					src={avesLogo}
 					style={{
@@ -79,6 +79,7 @@ function Nav({ props }) {
 					alt="AvesLogo"
 				/>
 			</Material.Box>
+			{/* Name and title */}
 			<Typography
 				sx={{
 					fontFamily: 'Roboto',
@@ -104,6 +105,7 @@ function Nav({ props }) {
 				Full Stack Developer
 			</Typography>
 			<Material.Divider />
+			{/* Navigation links */}
 			<Material.List>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Landing')}
@@ -153,9 +155,9 @@ function Nav({ props }) {
 					</Material.ListItemIcon>
 					<Material.ListItemText primary={'Contact'} />
 				</Material.ListItemButton>
-				{/* FIXME: not working */}
 			</Material.List>
 			<Material.Divider />
+			{/* Close button */}
 			<Close
 				sx={{
 					display: 'block',
@@ -171,7 +173,8 @@ function Nav({ props }) {
 			/>
 		</Material.Box>
 	);
-	// --------------renders top header
+
+	// Render the top header
 	return (
 		<div>
 			<Material.Toolbar
@@ -187,7 +190,7 @@ function Nav({ props }) {
 					padding: '5px',
 				}}
 			>
-				{/* TODO: add on click function to menu icon */}
+				{/* Menu icon */}
 				<Menu
 					sx={{
 						height: '50px',
@@ -196,32 +199,10 @@ function Nav({ props }) {
 					}}
 					onClick={toggleDrawer('left', true)}
 				/>
-				{/* <Typography
-                    variant='h3'
-                    sx={{
-                        fontFamily: 'Roboto',
-                        marginLeft: '15px',
-                        fontWeight: 'bold',
-                    }}
-                >
-                    Avery Caldwell
-                </Typography>
-                <Typography
-                    variant='h4'
-                    sx={{
-                        fontFamily: 'Roboto',
-                        marginLeft: '15px',
-                        fontWeight: 'light',
-                    }}
-                >
-                    Full Stack Developer
-                </Typography> */}
+				{/* Drawer */}
 			</Material.Toolbar>
 			{['left'].map((anchor) => (
 				<React.Fragment key={anchor}>
-					{/* <Material.Button onClick={toggleDrawer(anchor, true)}>
-                        {anchor}
-                    </Material.Button> */}
 					<Material.Drawer
 						anchor={anchor}
 						open={state[anchor]}
