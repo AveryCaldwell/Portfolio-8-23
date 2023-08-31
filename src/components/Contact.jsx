@@ -27,12 +27,11 @@ import {
 	email,
 } from './Styles';
 
-// This function renders main content of web app
+// This function renders Content component of the app
 function Contact({ props }) {
-	const [animationStarted, setAnimationStarted] = useState(false);
-	console.log('Button clicked!'); // Add this line to log the message
+	const [animationStarted, setAnimationStarted] = useState(false); // State to track animation start
 
-	/* NAME DRAWING ------------------------------------> */
+	// Function to start the name drawing animation
 	const startAnimation = () => {
 		const lineDrawing = anime({
 			targets: '#lineDrawing .lines path',
@@ -67,7 +66,7 @@ function Contact({ props }) {
 						LET'S CHAT!
 					</h1>
 
-					{/* <!-------------- Name drawing ------------------> */}
+					{/* Name drawing animation */}
 					<div className="thanksText" style={thanksText}>
 						<div style={{ marginBottom: '10px' }}>
 							Thank you for visiting my portfolio!
@@ -103,16 +102,18 @@ function Contact({ props }) {
 						</div>
 					</div>
 				</div>
-				{/* <!------------------------- F O R M --------------------------> */}
+				{/* Form section */}
 				<div id="form-main" style={formDiv}>
 					<div id="form-div">
 						{/* <!-- TODO: make email functional --> */}
 						<form method="post" className="form" id="form1">
+							{/* Privacy note */}
 							<h1 style={contactSubtitle}>
 								** All info will be kept private{' '}
 								<MoodIcon style={{ verticalAlign: 'middle' }} />{' '}
 								**
 							</h1>
+							{/* Name input */}
 							<div className="name" style={name}>
 								<span style={formText}>Name: </span>
 								<input
@@ -124,6 +125,7 @@ function Contact({ props }) {
 									id="name"
 								/>
 							</div>
+							{/* Email input */}
 							<div className="email" style={email}>
 								<span style={formText}> Email: </span>
 
@@ -136,6 +138,7 @@ function Contact({ props }) {
 									placeholder="Email"
 								/>
 							</div>
+							{/* Message input */}
 							<div className="formText">
 								<span style={formText}>Message:</span>
 								<textarea
@@ -150,6 +153,7 @@ function Contact({ props }) {
 									placeholder="Comment"
 								></textarea>
 							</div>
+							{/* Submit button */}
 							<div className="submit">
 								<input
 									action="mailto:averycaldwell7@gmail.com"

@@ -1045,7 +1045,6 @@ export const contactTitle = {
 	fontFamily: 'Roboto',
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
 	position: 'relative',
-	// top: '-50px',
 	height: '100px',
 	justifyContent: 'center',
 };
