@@ -27,7 +27,7 @@ import {
 	eduButtonSpan,
 	eduButton,
 } from './Styles';
-
+import SchoolIcon from '@mui/icons-material/School';
 function ImageIconRender({ props }) {
 	// React.useEffect(() => {
 	// 	setEducationState(activeRotator.current);
@@ -78,7 +78,9 @@ function EduCard({ props }) {
 					);
 				})}
 
-				<label style={eduDescriptionHeader}>Accolades</label>
+				<label style={eduDescriptionHeader}>
+					ACCOLADES <SchoolIcon />
+				</label>
 				<div id="eduSlideshow" style={eduSlideshow}>
 					{props.EducationArr.map(function (element, index) {
 						return (

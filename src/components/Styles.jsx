@@ -329,19 +329,13 @@ export const eduTitle = {
 };
 
 export const eduDescriptionHeader = {
-	//position: "absolute",
 	color: 'white',
 	transition: 'all .2s ease',
-	//padding: "25px",
 	textAlign: 'center',
-	alignItems: 'center',
-	//display: "flex",
 	fontSize: '25px',
 	paddingTop: '20px',
-	// // navbar is 50px
-	//marginLeft: "90px",
 	fontFamily: 'Roboto',
-	textShadow: `1px 1px rgba(0,0,0,0.1)`,
+	textShadow: `2px 2px rgba(0,0,0,0.1)`,
 };
 export const cardContainer = {
 	width: '400px',
@@ -483,11 +477,12 @@ export const eduBtnContainer = {
 export const svgContainer = {
 	// position: "absolute",
 	position: 'absolute',
-	top: '350vh',
+	top: '360vh',
 	left: '250px',
 	// pointerEvents: "none",
 	cursor: 'pointer',
 	// marginTop: '550px'
+	zIndex: '-1',
 };
 /* Hide the images by default */
 export const mySlides = {
@@ -1115,7 +1110,6 @@ export const cardHeader = {
 };
 // BACKGROUND COLOR AND CONTAINS AVATAR ON LEFT OF CARD
 export const additional = {
-	// position: 'absolute',
 	position: 'initial',
 	width: '110px',
 	height: '100%',
@@ -1131,13 +1125,6 @@ export const userCard = {
 	height: '100%',
 	position: 'relative',
 	float: 'left',
-	// '&::after': {
-	// 	content: '',
-	// 	display: 'block',
-	// 	position: 'absolute',
-	// 	top: '10%',
-	// 	right: '-2px',
-	// 	height: '80%',
 	borderLeft: '2px solid rgba(0,0,0,0.025)',
 	// },
 };
@@ -1161,13 +1148,11 @@ export const points = {
 	width: '50%',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 };
-// .card .additional .user-card svg {
 export const cardImage = {
 	top: '50%',
 	width: '110px',
 	height: '110px',
 };
-// .card .additional .more-info {
 export const moreInfo = {
 	width: '350px',
 	float: 'left',
@@ -1179,38 +1164,34 @@ export const moreInfo = {
 	textAlign: 'center',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 };
-// .card .additional .more-info h1 {
 export const moreInfoTitle = {
 	color: 'white',
-	marginBottom: '10px',
+	marginBottom: '30px',
+	fontSize: '30px',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 };
-// .card .additional .coords {
 export const coords = {
 	margin: '0 1rem',
 	color: 'white',
-	fontSize: '16px',
+	fontSize: '18px',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 };
-// .card .additional .coords span + span {
 export const coordsSpan = {
 	float: 'center',
+	textAlign: 'center',
 };
 
-// .card .additional .stats {
 export const stats = {
-	fontSize: '14px',
+	fontSize: '18px',
 	display: 'inline-block',
-	textAlign: 'left',
+	textAlign: 'center',
 	position: 'absolute',
 	bottom: '1rem',
 	left: '1rem',
 	right: '1rem',
 	top: 'auto',
 	color: '#fff',
-	// marginBottom: '10px',
-	marginTop: '5px',
-	padding: '5px',
+	padding: '10px',
 	width: '100%',
 	textShadow: `2px 2px rgba(0,0,0,0.1)`,
 };
@@ -1224,7 +1205,6 @@ export const statsTitle = {
 	width: '100%',
 };
 
-// .card .additional .stats div.value {
 export const value = {
 	fontWeight: 'light',
 	fontSize: '16px',
@@ -1235,10 +1215,10 @@ export const value = {
 
 // .card .general {
 export const general = {
-	width: '375px',
+	width: '400px',
 	height: '100%',
 	position: 'absolute',
-	right: '0',
+	right: '10px',
 	top: '0',
 	zIndex: '1',
 	boxSizing: 'border-box',
@@ -1248,7 +1228,6 @@ export const general = {
 	color: '#333333',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 };
-// .card .general .more {
 export const more = {
 	position: 'absolute',
 	bottom: '1rem',
@@ -1260,25 +1239,25 @@ export const testimonialsButtonSpan = {
 	display: 'flex',
 	justifyContent: 'space-around',
 	flexDirection: 'row',
-	width: '450px',
+	width: '400px',
+	bottom: '225px',
+	position: 'relative',
+	left: '30%',
 	height: '150px',
 };
 export const testimonialsButton = {
 	borderRadius: '36px',
 	border: '1px solid white',
-	// position: 'relative',
 	textAlign: 'center',
 	listStyle: 'none',
 	width: '120px',
-	// top: '202vh',
-	// left: '5%',
 	height: '65px',
 	color: 'white',
 	fontSize: '18px',
 	lineHeight: '1.25',
 	backgroundColor: 'transparent',
 	cursor: 'pointer',
-	marginTop: '30px',
+	// marginTop: '30px',
 };
 /* ============================== CONTACT SECTION ============================== */
 export const contactContainer = {
@@ -1322,6 +1301,10 @@ export const myPath = {
 export const lineDrawing = {
 	position: 'relative',
 	display: 'flex',
+};
+export const svgName = {
+	width: '75%',
+	height: '500px',
 };
 
 /*---------------- FORM --------------------> */
@@ -1411,7 +1394,22 @@ export const contactButton = {
 	cursor: 'pointer',
 	marginTop: '20px',
 };
-
+export const contactButtonSpan = {
+	display: 'flex',
+	justifyContent: 'space-evenly',
+	alignItems: 'center',
+	flexDirection: 'row',
+	borderRadius: '36px',
+	border: '1px solid white',
+	textAlign: 'center',
+	width: '150px',
+	height: '65px',
+	color: 'white',
+	fontSize: '18px',
+	lineHeight: '1.25',
+	backgroundColor: 'transparent',
+	cursor: 'pointer',
+};
 export const ease = {
 	width: '0px',
 	height: '74px',
@@ -1421,4 +1419,28 @@ export const ease = {
 	MozTransition: '0.3s ease',
 	OTransition: '0.3s ease',
 	msTransition: '0.3s ease',
+};
+
+/* ============================== FOOTER SECTION ============================== */
+export const footerContainer = {
+	position: 'static',
+	left: '0',
+	right: '0',
+	bottom: '0',
+	background: `linear-gradient(
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0.25)
+    )`,
+	marginBottom: 'auto',
+};
+export const siteFooter = {
+	background: 'rgba(255, 255, 255, 0.2)',
+	boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+	backdropFilter: 'blur(5px)',
+	WebkitBackdropFilter: 'blur(5px)',
+	padding: '45px 0 20px',
+	fontSize: '15px',
+	lineHeight: '24px',
+	width: '100%',
+	textAlign: 'center',
 };

@@ -160,19 +160,7 @@ function Testimonials({ props }) {
 											</div>
 										</div>
 
-										<div>
-											{/* <div style={statsTitle}>
-												<PhoneIphoneIcon
-													style={{
-														verticalAlign: 'middle',
-													}}
-												/>{' '}
-												Phone:{' '}
-												<span style={value}>
-													{' '}
-												</span>
-											</div> */}
-										</div>
+										<div></div>
 									</div>
 								</div>
 							</div>
@@ -258,19 +246,7 @@ function Testimonials({ props }) {
 											</div>
 										</div>
 
-										<div>
-											{/* <div style={statsTitle}>
-												<PhoneIphoneIcon
-													style={{
-														verticalAlign: 'middle',
-													}}
-												/>{' '}
-												Phone:{' '}
-												<span style={value}>
-													{' '}
-												</span>
-											</div> */}
-										</div>
+										<div></div>
 									</div>
 								</div>
 							</div>
@@ -351,19 +327,7 @@ function Testimonials({ props }) {
 											</div>
 										</div>
 
-										<div>
-											{/* <div style={statsTitle}>
-												<PhoneIphoneIcon
-													style={{
-														verticalAlign: 'middle',
-													}}
-												/>{' '}
-												Phone:{' '}
-												<span style={value}>
-													{' '}
-												</span>
-											</div> */}
-										</div>
+										<div></div>
 									</div>
 								</div>
 							</div>
@@ -383,52 +347,46 @@ function Testimonials({ props }) {
 						</div>
 					</div>
 				</div>
-				{/* BUTTON SPAN */}
-				{/* <div id="testimonialsButtonSpan" style={testimonialsButtonSpan}>
-					{testimonialsButtons.map(function (element, index) {
-						return (
-							<button
-								className="testimonialsButton"
-								key={`testimonialsButton${index}`}
-								name={element.name}
-								style={{
-									...testimonialsButton,
-									...testimonialsState[element.name],
-								}}
-								onMouseEnter={(event) => {
-									//console.log(event.target.name);
-									setTestimonialsHoverButton(
-										event.target.name,
-										{
-											boxShadow:
-												'0 4px 10px rgba(255, 255, 255, 0.7)',
-										}
-									);
-								}}
-								onMouseLeave={(event) => {
-									setTestimonialsHoverButton(
-										event.target.name,
-										{
-											boxShadow:
-												'0 4px 10px rgba(255, 255, 255, 0.0)',
-										}
-									);
-								}}
-								onClick={function () {
-									props.setActivePage(element.target);
-									setProjectsHoverButton(element.target, {
-										boxShadow:
-											'0 4px 10px rgba(255, 255, 255, 0.0)',
-									});
-								}}
-							>
-								<span>{element.span}</span>
-							</button>
-						);
-					})}
-				</div> */}
 
 				{/* END OF CONTAINER DIV */}
+			</div>{' '}
+			{/* BUTTON SPAN */}
+			<div id="testimonialsButtonSpan" style={testimonialsButtonSpan}>
+				{testimonialsButtons.map(function (element, index) {
+					return (
+						<button
+							className="testimonialsButton"
+							key={`testimonialsButton${index}`}
+							name={element.name}
+							style={{
+								...testimonialsButton,
+								...testimonialsState[element.name],
+							}}
+							onMouseEnter={(event) => {
+								//console.log(event.target.name);
+								setTestimonialsHoverButton(event.target.name, {
+									boxShadow:
+										'0 4px 10px rgba(255, 255, 255, 0.7)',
+								});
+							}}
+							onMouseLeave={(event) => {
+								setTestimonialsHoverButton(event.target.name, {
+									boxShadow:
+										'0 4px 10px rgba(255, 255, 255, 0.0)',
+								});
+							}}
+							onClick={function () {
+								props.setActivePage(element.target);
+								setProjectsHoverButton(element.target, {
+									boxShadow:
+										'0 4px 10px rgba(255, 255, 255, 0.0)',
+								});
+							}}
+						>
+							<span>{element.span}</span>
+						</button>
+					);
+				})}
 			</div>
 		</React.Fragment>
 	);

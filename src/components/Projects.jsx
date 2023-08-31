@@ -33,6 +33,8 @@ import Employee from '../assets/Employee.png';
 import comp from '../assets/comp.png';
 // ICON
 import GitHubIcon from '@mui/icons-material/GitHub';
+// import SvgContainer from './SvgContainer';
+
 // This function renders main content of web app
 function Projects({ props }) {
 	const projects = [
@@ -122,7 +124,6 @@ function Projects({ props }) {
 		Edu: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 		Resume: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 	});
-	//TODO: Make it so the introduction button highlights and then it is based off of the current active about content
 	const projectsButtons = [
 		{
 			target: 'GitHub',
@@ -141,7 +142,6 @@ function Projects({ props }) {
 		<>
 			<div
 				className="projectContainer pageContainer"
-				// style={Object.assign({}, projectContainer, pageContainer)}>
 				style={pageContainer}
 			>
 				<div style={{ width: '500px' }}>
@@ -184,9 +184,6 @@ function Projects({ props }) {
 											style={iconContainer}
 										></div>
 									</div>
-									{/* <a href={project.githubLink}>
-										<GitHubIcon style={github} />
-									</a> */}
 								</div>
 							))}
 						</div>
@@ -286,22 +283,6 @@ function Projects({ props }) {
 							❯
 						</a>
 					</div>
-
-					{/* <div className="dotContainer" style={dotContainer}>
-						{projects.map((_, index) => (
-							<div
-								key={index}
-								className={`dot ${
-									index === slideIndex ? 'active' : ''
-								}`}
-								onClick={() => currentSlide(index + 1)}
-								style={{
-									...dot,
-									...(index === slideIndex ? activeDot : {}),
-								}}
-							></div>
-						))}
-					</div> */}
 					<img
 						src={comp}
 						alt="comp"
@@ -309,6 +290,8 @@ function Projects({ props }) {
 						style={computer}
 					/>
 				</div>
+
+				{/* <SvgContainer /> */}
 			</div>
 		</>
 	);

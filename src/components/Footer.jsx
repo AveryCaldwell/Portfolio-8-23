@@ -1,12 +1,38 @@
 import * as React from 'react';
 import * as Material from '@mui/material';
-import anime from 'animejs/lib/anime.es.js';
-import avesLogo from '../assets/aves.png';
-import {} from './Styles';
+import { footerContainer, siteFooter, pageContainer } from './Styles';
 
 // This function renders main content of web app
 function Footer() {
-    return;
+	return (
+		<>
+			<div className="footerContainer" style={{ ...footerContainer }}>
+				<footer style={siteFooter}>
+					<p className="copyright-text">
+						Copyright &copy; 2023 All Rights Reserved by
+						<a href="www.github.com/AveryCaldwell">
+							Avery Caldwell
+						</a>
+					</p>
+					<ul className="socialIcons">
+						<li>
+							<a
+								className="github"
+								href="https://www.linkedin.com/in/averycaldwell/"
+							></a>
+						</li>
+
+						<li>
+							<a
+								className="linkedin"
+								href="https://www.linkedin.com/in/averycaldwell/"
+							></a>
+						</li>
+					</ul>
+				</footer>
+			</div>
+		</>
+	);
 }
 
 export default Footer;

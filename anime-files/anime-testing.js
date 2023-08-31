@@ -395,8 +395,6 @@ function startAnimation() {
 // Call the animation function
 startAnimation();
 
-// ======CONTACT FORM======
-
 // Function to display resume in plain text
 const showPlainTextBtn = document.getElementById('showPlainTextBtn');
 // Add an event listener to the "Show Plain Text" button
@@ -478,6 +476,7 @@ document.querySelectorAll('.card').forEach((card) => {
 		glare.style.left = '100%';
 	});
 });
+//=================== CONTACT PAGE===================
 /* NAME DRAWING ------------------------------------> */
 var lineDrawing = anime({
 	targets: '#lineDrawing .lines path',

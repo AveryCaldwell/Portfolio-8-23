@@ -86,10 +86,6 @@ function App() {
 					}, 1200);
 				}
 			}
-
-			// // FIXME: needs to Testimonials existing position in array to dictate ease
-			// //     transition: all 1.5s ease;
-
 			appContainer.style.top = `calc(0% - ${calculatedVH}vh)`;
 		}
 	};
@@ -105,7 +101,7 @@ function App() {
 						<Landing props={{ setActivePage }} />
 						<About props={{ setActivePage }} />
 						<Edu props={{ setActivePage }} />
-						{/* <SvgContainer props={{ setActivePage }} /> */}
+						<SvgContainer props={{ setActivePage }} />
 						<Projects props={{ setActivePage }} />
 						<Resume props={{ setActivePage }} />
 						<Testimonials props={{ setActivePage }} />
