@@ -1,13 +1,14 @@
+// Import necessary libraries and styles
 import React, { useRef, useEffect, useState } from 'react';
 import anime from 'animejs'; // Import anime.js library
-import * as Material from '@mui/material';
+// import * as Material from '@mui/material';
 
+// STYLING
 import {
 	svgContainer,
 	svgCord,
 	animateSvgStroke1,
 	svgButton,
-	// projectContainer,
 	pageContainer,
 	projectTitle,
 	projectContent,
@@ -28,6 +29,7 @@ import {
 	projectsButton,
 } from './Styles';
 
+// Import images and icons
 import Tech from '../assets/Tech.png';
 import Weather from '../assets/Weather.png';
 import Team from '../assets/Weather.png';
@@ -40,10 +42,12 @@ import comp from '../assets/comp.png';
 import GitHubIcon from '@mui/icons-material/GitHub';
 // import SvgContainer from './SvgContainer';
 
-// This function renders main content of web app
+// This function renders the PROJECT content of web app
 function Projects({ props }) {
+	// Ref for SVG animation
 	const svgPathRef = useRef(null);
 
+	// Function to animate SVG stroke
 	const animateSvgStroke = () => {
 		anime({
 			targets: svgPathRef.current,
@@ -54,10 +58,12 @@ function Projects({ props }) {
 			direction: 'both',
 		});
 	};
+	// Trigger animation on component mount
 	useEffect(() => {
-		animateSvgStroke(); // Trigger animation on component mount
+		animateSvgStroke();
 	}, []); // Empty dependency array to run once after initial render
 
+	// Trigger animation on component mount
 	const projects = [
 		{
 			title: '🍽️ TasteBuds',
@@ -126,21 +132,21 @@ function Projects({ props }) {
 		},
 	];
 
+	// State to manage slide index
 	const [slideIndex, setSlideIndex] = useState(0);
 
-	// Next/previous controls
+	// Function to change slide index
 	const plusSlides = (n) => {
 		setSlideIndex(
 			(prevIndex) => (prevIndex + n + projects.length) % projects.length
 		);
 	};
 
-	// Thumbnail image controls
+	// Function to set current slide
 	const currentSlide = (n) => {
 		setSlideIndex(n);
 	};
 
-	// Create a function to trigger the SVG animation
 	const [projectsButtonState, setProjectsButtonState] = React.useState({
 		Edu: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 		Resume: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
@@ -169,10 +175,11 @@ function Projects({ props }) {
 					<h1 className="projectTitle" style={projectTitle}>
 						PROJECTS
 					</h1>
-
+					{/* Slideshow */}
 					<div className="projectContent" style={projectContent}>
 						<div className="textSlideshow" style={textSlideshow}>
 							{projects.map((project, index) => (
+								// Project slide
 								<div
 									key={index}
 									className={`projectSlides fade ${
@@ -209,7 +216,9 @@ function Projects({ props }) {
 							))}
 						</div>
 					</div>
+					{/* Buttons */}
 					<div id="projectsButtonSpan" style={projectsButtonSpan}>
+						{/* SVG Animation Button */}
 						<button
 							id="svgbuttonstyle"
 							style={svgButton}
@@ -217,6 +226,7 @@ function Projects({ props }) {
 						>
 							✨ MAGIC ✨
 						</button>
+						{/* Other Buttons */}
 						{projectsButtons.map(function (element, index) {
 							return (
 								<button
@@ -228,7 +238,6 @@ function Projects({ props }) {
 										...projectsButtonState[element.name],
 									}}
 									onMouseEnter={(event) => {
-										//console.log(event.target.name);
 										setProjectsHoverButton(
 											event.target.name,
 											{
@@ -271,7 +280,7 @@ function Projects({ props }) {
 					</div>
 				</div>
 
-				{/* === COMPUTER === */}
+				{/* Computer and Slideshow */}
 				<div className="computerContainer" style={computerContainer}>
 					<div className="slideshowContainer">
 						{projects.map((project, index) => (
@@ -320,6 +329,7 @@ function Projects({ props }) {
 				</div>
 			</div>
 
+			{/* SVG Container */}
 			<div className="svgContainer" style={svgContainer}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

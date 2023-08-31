@@ -483,13 +483,6 @@ export const svgButton = {
 	marginTop: '30px',
 };
 /* ============================== PROJECTS SECTION ============================== */
-/* Hide the images by default */
-export const mySlides = {
-	display: 'block',
-	animationName: 'fade',
-	animationDuration: ' 1.5s',
-};
-
 export const projectsButtonSpan = {
 	display: 'flex',
 	justifyContent: 'space-around',
@@ -500,12 +493,9 @@ export const projectsButtonSpan = {
 export const projectsButton = {
 	borderRadius: '36px',
 	border: '1px solid white',
-	// position: 'relative',
 	textAlign: 'center',
 	listStyle: 'none',
 	width: '120px',
-	// top: '202vh',
-	// left: '5%',
 	height: '65px',
 	color: 'white',
 	fontSize: '18px',
@@ -519,12 +509,10 @@ export const projectContainer = {
 	flexDirection: 'column', // Stack content vertically
 	alignItems: 'center', // Center horizontally
 	justifyContent: 'center', // Center vertically
-	// minHeight: "100vh",
 	fontFamily: 'Roboto',
-	// position: 'absolute',
 };
-/* LEFT SIDE COMPUTER SECTION STARTS */
-/* ABOUT ME page title */
+/* ========== LEFT SIDE COMPUTER SECTION STARTS*/
+/* Project page title */
 export const projectTitle = {
 	position: 'relative',
 	color: 'white',
@@ -535,10 +523,9 @@ export const projectTitle = {
 	alignItems: 'center',
 	display: 'flex',
 	fontSize: '80px',
-
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
 };
-/* about me text blerb */
+/* Project text blerb */
 export const projectContent = {
 	fontFamily: 'roboto',
 	position: 'relative',
@@ -555,10 +542,15 @@ export const projectContent = {
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 };
 export const textSlideshow = {
-	//maxWidth: '1000px',
 	position: 'relative',
 	padding: '15px',
 	right: '5px',
+};
+/* Hide the images by default */
+export const mySlides = {
+	display: 'block',
+	animationName: 'fade',
+	animationDuration: ' 1.5s',
 };
 /* Hide the images by default */
 export const projectSlides = {
@@ -567,7 +559,6 @@ export const projectSlides = {
 	width: '400px',
 };
 export const slideTitle = {
-	//padding: '5px',
 	fontSize: '26px',
 	textAlign: 'center',
 	fontWeight: 'bold',
@@ -581,43 +572,24 @@ export const iconContainer = {
 export const github = {
 	fontSize: '40px',
 };
-// export const keyframes = {
-//   "#github": {
-//     animationDelay: "0.1s",
-//   },
-//   "@keyframes animate": {
-//     from: {
-//       filter: "hue-rotate(0deg)",
-//     },
-//     to: {
-//       filter: "hue-rotate(360deg)",
-//     },
-//   },
-// };
+
 /* ===============RIGHT SIDE COMPUTER SECTION STARTS */
 /* computer image */
 export const computer = {
 	pointerEvents: 'none',
 	position: 'relative',
-	// top: '150px',
 	width: '600px',
 	height: '600px',
 	display: 'inline-block',
-	// bottom: '1vh',
-	// right: '130px',
 	left: '15px',
 	transition: 'all 1.5s ease',
 };
 export const computerImage = {
-	//height: '325px',
 	width: '550px',
 	height: '310px',
 	left: '35px',
 	top: '55px',
 	position: 'absolute',
-
-	//bottom: '50%',
-	//right: '-15px',
 };
 /* Computer container */
 export const computerContainer = {
@@ -626,9 +598,7 @@ export const computerContainer = {
 	height: '600px',
 	width: '600px',
 	marginTop: '100px',
-	//top: '10px',
 };
-/* Slideshow container */
 
 /* Next & previous buttons */
 export const arrows = {
@@ -647,95 +617,16 @@ export const arrows = {
 /* Position the "next button" to the right */
 export const next = {
 	right: '-75px',
-	//top: '22vh',
 	borderRadius: '3px 0 0 3px',
 };
 export const prev = {
 	left: '-45px',
-	//top: '22vh',
 	borderRadius: '3px 0 0 3px',
 };
-// export const textNext = {
-//     left: '455px',
-//     borderRadius: '3px 0 0 3px',
-// }
-/* The dots/bullets/indicators */
-// export const dotContainer = {
-// 	textAlign: 'center',
-// 	marginTop: '-400px',
-// 	marginRright: '35px',
-// };
-// export const dot = {
-// 	cursor: 'pointer',
-// 	height: '15px',
-// 	width: '15px',
-// 	margin: '0 2px',
-// 	backgroundColor: '#bbb',
-// 	borderRadius: '50%',
-// 	display: 'inline-block',
-// 	transition: 'background-color 0.6s ease',
-// };
-// export const activeDot = {
-// 	backgroundColor: '#0072ff',
-// };
 /* Fading animation */
 export const fade = {
 	animationName: 'fade',
 	animationDuration: '1.5s',
-};
-// /* // TODO: add to styles.jsx */
-// @keyframes fade {
-//     from {
-//         opacity: 0.4;
-//     }
-//     to {
-//         opacity: 1;
-//     }
-// }
-// export const startButton = {
-//   borderRadius: "36px",
-//   border: "solid 1px white",
-//   position: "relative",
-//   textAlign: "center",
-//   listStyle: "none",
-//   width: "125px",
-//   top: "65vh",
-//   left: "5",
-//   height: "65px",
-//   color: "white",
-//   fontSize: "18px",
-//   cursor: "pointer",
-// };
-export const mouseContainer = {
-	// bottom: "-25vh",
-	bottom: '125vh',
-	// position: 'absolute',
-	position: 'relative',
-	left: '25%',
-	cursor: 'pointer',
-	// top: '5vh'
-};
-export const mouse = {
-	posiiton: 'absolute',
-	color: 'white',
-	fontSize: '170px',
-	// position: "static",
-	cursor: 'pointer',
-	// marginRight: '100px',
-};
-export const mouseBtn = {
-	wordBreak: 'break-all',
-	width: '100px',
-	fontSize: '30px',
-	cursor: 'pointer',
-};
-export const mouseBtnText = {
-	wordBreak: 'break-all',
-	width: '90px',
-	fontSize: '26px',
-	marginLeft: '-270px',
-	marginBottom: '100px',
-	lineHeight: 'initial',
 };
 /* ============================== RESUME SECTION ============================== */
 export const resumeButtonSpan = {
