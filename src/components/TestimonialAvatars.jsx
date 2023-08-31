@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { center, cardImage } from './Styles';
-// This function renders main content of web app
+// This function renders the first testimonial avatar content of web app
 function FirstAvatar() {
 	return (
 		<svg
@@ -24,6 +24,7 @@ function FirstAvatar() {
 					<path d="M 106,132 C 113,127 125,128 125,132 125,128 137,127 144,132 141,142  134,146  125,146  116,146 109,142 106,132 Z" />
 				</clipPath>
 			</defs>
+			{/* Background circle */}
 			<circle cx="125" cy="125" r="120" fill="rgba(0,0,0,0.15)" />
 			<g stroke="none" strokeWidth="0" clipPath="url(#scene)">
 				<rect x="0" y="0" width="250" height="250" fill="#b0d2e5" />
@@ -183,6 +184,7 @@ function FirstAvatar() {
 		</svg>
 	);
 }
+// This function renders the second testimonial avatar content of web app
 function SecondAvatar() {
 	return (
 		<svg
@@ -203,6 +205,7 @@ function SecondAvatar() {
 					<path d="M 106,132 C 113,127 125,128 125,132 125,128 137,127 144,132 141,142  134,146  125,146  116,146 109,142 106,132 Z" />
 				</clipPath>
 			</defs>
+			{/* Background circle */}
 			<circle cx="125" cy="125" r="120" fill="rgba(0,0,0,0.15)" />
 			<g stroke="none" strokeWidth="0" clipPath="url(#scene)">
 				<rect x="0" y="0" width="250" height="250" fill="#b0d2e5" />
@@ -326,6 +329,7 @@ function SecondAvatar() {
 		</svg>
 	);
 }
+// This function renders the third testimonial avatar content of web app
 function ThirdAvatar() {
 	return (
 		<svg
@@ -346,6 +350,7 @@ function ThirdAvatar() {
 					<path d="M 106,132 C 113,127 125,128 125,132 125,128 137,127 144,132 141,142  134,146  125,146  116,146 109,142 106,132 Z" />
 				</clipPath>
 			</defs>
+			{/* Background circle */}
 			<circle cx="125" cy="125" r="120" fill="rgba(0,0,0,0.15)" />
 			<g stroke="none" strokeWidth="0" clipPath="url(#scene)">
 				<rect x="0" y="0" width="250" height="250" fill="#b0d2e5" />

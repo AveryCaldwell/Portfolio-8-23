@@ -6,22 +6,20 @@ import { FirstAvatar, SecondAvatar, ThirdAvatar } from './TestimonialAvatars'; /
 
 // IMPORT ICONS
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 
 // IMPORT STYLING
 import {
-	refContainer,
+	testimonialsContainer,
 	testimonialsButtonSpan,
 	pageContainer,
 	testimonialsButton,
-	refBox,
-	refTitle,
+	testimonialsBox,
+	testimonialsTitle,
 	center,
 	card,
 	userCard,
 	userCardStats,
 	points,
-	cardImage,
 	moreInfo,
 	moreInfoTitle,
 	coords,
@@ -31,24 +29,24 @@ import {
 	value,
 	general,
 	more,
-	// secondAdd,
-	// thirdAdd,
-	refSubtitle,
-	// firstAdd,
+	testimonialsSubtitle,
 } from './Styles';
 
-// This function renders main content of web app
+// This function renders Testimonials content of web app
 function Testimonials({ props }) {
+	// State to track hovering over the reference card
 	const [hover, setHover] = useState(false);
-
+	// Event handler for mouse entering the reference card
 	const handleMouseEnter = () => {
 		setHover(true);
 	};
 
+	// Event handler for mouse leaving the reference card
 	const handleMouseLeave = () => {
 		setHover(false);
 	};
-	// styling for when user hovers over reference card
+
+	// Styling for when the user hovers over the reference card
 	const additionalStyles = {
 		position: 'absolute',
 		width: hover ? '100%' : '150px',
@@ -61,7 +59,7 @@ function Testimonials({ props }) {
 		zIndex: 2,
 		borderRadius: hover ? '0 5px 5px 0' : 'none',
 	};
-
+	// State and buttons for controlling testimonials page navigation
 	const [testimonialsState, setTestimonialsButtonState] = React.useState({
 		Resume: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 		Contact: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
@@ -70,6 +68,8 @@ function Testimonials({ props }) {
 		{ target: 'Resume', span: 'Back', name: 'Resume' },
 		{ target: 'Contact', span: 'Next', name: 'Contact' },
 	];
+
+	// Function to set the button style when hovering
 	function setTestimonialsHoverButton(name, style) {
 		let obj = Object.assign({}, testimonialsState);
 		obj[name] = style;
@@ -78,9 +78,10 @@ function Testimonials({ props }) {
 
 	return (
 		<React.Fragment>
+			{/* Testimonials Container */}
 			<div
-				className="refContainer pageContainer"
-				style={{ ...refContainer, ...pageContainer }}
+				className="testimonialsContainer pageContainer"
+				style={{ ...testimonialsContainer, ...pageContainer }}
 			>
 				<div
 					style={{
@@ -91,13 +92,13 @@ function Testimonials({ props }) {
 						justifyContent: 'space-between',
 					}}
 				>
-					<div className="refTitle" style={refTitle}>
+					<div className="testimonialsTitle" style={testimonialsTitle}>
 						REFERENCES:{' '}
-						<span style={refSubtitle}>What's the sitch?</span>
+						<span style={testimonialsSubtitle}>What's the sitch?</span>
 					</div>
 				</div>
 
-				<div className="refBox" style={refBox}>
+				<div className="testimonialsBox" style={testimonialsBox}>
 					{/* === CARD 1 === */}
 					<div className="card first" style={card}>
 						<div
@@ -377,7 +378,7 @@ function Testimonials({ props }) {
 							}}
 							onClick={function () {
 								props.setActivePage(element.target);
-								setProjectsHoverButton(element.target, {
+								setTestimonialsHoverButton(element.target, {
 									boxShadow:
 										'0 4px 10px rgba(255, 255, 255, 0.0)',
 								});

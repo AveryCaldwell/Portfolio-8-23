@@ -818,14 +818,14 @@ export const text = {
 	// right: '0',
 };
 
-/* ============================== REFERENCE SECTION ============================== */
-export const refContainer = {
+/* ============================== TESTIMONIALS SECTION ============================== */
+export const testimonialsContainer = {
 	display: 'flex',
 	position: 'relative',
 	fontFamily: 'Roboto',
 };
 
-export const refTitle = {
+export const testimonialsTitle = {
 	color: 'white',
 	transition: 'all .2s ease',
 	display: 'flex',
@@ -836,7 +836,7 @@ export const refTitle = {
 	minWidth: '50%',
 	alignItems: 'center',
 };
-export const refSubtitle = {
+export const testimonialsSubtitle = {
 	fontSize: '36px',
 	color: 'white',
 	fontFamily: 'Roboto',
@@ -850,32 +850,19 @@ export const refSubtitle = {
 	maxWidth: '50%',
 };
 // box containing ref cards
-export const refBox = {
+export const testimonialsBox = {
 	flexWrap: 'wrap',
 	display: 'flex',
 	position: 'relative',
 	height: '700px',
 	width: '100%',
 	overflow: 'hidden',
-	// fontSize: '18px',
 	top: '100px',
 	right: '30%',
-	// width: '1000px',
-	// fontSize: '18px',
-	// overflow: 'hidden',
-	// justifyContent: 'space-between',
-	// alignItems: 'center',
-	// width: '1000px',
-	// height: '800px',
-	// flexDirection: 'column',
 };
 // USED IN MULTIPLE PLACES ON CARD
 export const center = {
 	position: 'absolute',
-	// margin: '35px',
-	// minWidth: '1130px',
-	// maxWidth: '1130px',
-	// height: '700px',
 	top: '50%',
 	left: '50%',
 	WebkitTransform: 'translate(-50%, -50%)',
@@ -913,7 +900,6 @@ export const userCard = {
 	position: 'relative',
 	float: 'left',
 	borderLeft: '2px solid rgba(0,0,0,0.025)',
-	// },
 };
 export const userCardStats = {
 	top: '15%',
@@ -982,7 +968,6 @@ export const stats = {
 	width: '100%',
 	textShadow: `2px 2px rgba(0,0,0,0.1)`,
 };
-// .card .additional .stats > div {
 export const statsTitle = {
 	flex: '1',
 	fontSize: '18px',
@@ -1000,7 +985,6 @@ export const value = {
 	width: '100%',
 };
 
-// .card .general {
 export const general = {
 	width: '400px',
 	height: '100%',
@@ -1044,7 +1028,6 @@ export const testimonialsButton = {
 	lineHeight: '1.25',
 	backgroundColor: 'transparent',
 	cursor: 'pointer',
-	// marginTop: '30px',
 };
 /* ============================== CONTACT SECTION ============================== */
 export const contactContainer = {
