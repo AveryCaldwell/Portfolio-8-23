@@ -5,8 +5,13 @@
 </p>
 <hr/>
 <h4 align="center">I am a recent grad from the University of Washington Coding Bootcamp. Previously in the Banking industry for six years along with 2+ years of Marketing experience backed by a B.S in Marketing. I am an passionate and a innovative person who loves to take up new challenges and learn new skills. I love growing my knowledge, meeting & collabing with new people, and creating awesome things!</h4>
-<br>
 
+<hr/>
+
+### 💻 Live Link
+<a href="https://averycaldwell.github.io/Portfolio-8-23/"> Portfolio Site </a>
+
+<hr/>
 
 ## 🛠️ My Skills
 
