@@ -16,25 +16,34 @@ import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOu
 function Landing({ props }) {
 	// Animation effect using the useEffect hook
 	useEffect(() => {
+		console.log('anime firing');
 		// Define an animation using the anime.js library
-		const animation = anime({
+
+		const animate = anime({
 			targets: '.letter', // Targets elements with the 'letter' class
-			opacity: 1,
+			opacity: {
+				value: props.currentNavNameState ? 0 : 1,
+				duration: 500,
+			},
 			translateY: 50, // Move vertically by 50 units
 			rotate: {
 				value: 360, // Rotate by 360 degrees
 				duration: 2000, // Animation duration of 2000ms
-				easing: 'easeInExpo', // Use easing function 'easeInExpo'
+				//easing: 'easeInOutExpo', // Use easing function 'easeInExpo'
 			},
-			scale: anime.stagger([0.7, 1], { from: 'center' }), // Apply staggered scaling
-			delay: anime.stagger(100, { start: 1000 }), // Apply staggered delays
-			translateX: [-10, 30], // Move horizontally between -10 and 30 units
+			//direction: props.currentNavNameState ? 'reverse' : 'both',
+			//scale: anime.stagger([0.7, 1], { from: 'center' }), // Apply staggered scaling
+			delay: props.currentNavNameState
+				? 500
+				: anime.stagger(100, { start: 1000 }), // Apply staggered delays
+			translateX: [-10, 26], // Move horizontally between -10 and 30 units
+			direction: props.currentNavNameState ? 'reverse' : 'both',
 		});
-		// Return a cleanup function to pause the animation when the component unmounts
-		return () => {
-			animation.pause(); // Pause the animation
-		};
-	}, []);
+		//Return a cleanup function to pause the animation when the component unmounts
+		// return () => {
+		// 	animation.pause(); // Pause the animation
+		// };
+	}, [props.currentNavNameState]);
 	// Reference to the container element for scrolling
 	const containerRef = useRef(null);
 

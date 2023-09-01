@@ -30,6 +30,16 @@ export const pageContainer = {
 };
 
 /* ============================== NAV SECTION ============================== */
+export const navTitle = {
+	fontSize: '40px',
+	paddingRight: '24px',
+	position: 'absolute',
+	bottom: '10px',
+	right: '10px',
+	transition: 'all 1.5s ease',
+	textShadow: `2px 2px rgba(0,0,0,0.1)`,
+	//opacity: 0,
+};
 export const navBox = {
 	display: 'flex',
 	paddingTop: '50px',
@@ -74,7 +84,6 @@ export const closeIcon = {
 	cursor: 'pointer',
 	padding: '20px',
 	borderRadius: 300,
-	cursor: 'pointer',
 	background: ' rgba(255, 255, 255, 0.2)',
 	boxShadow: '0 2px 30px rgba(0, 0, 0, 0.1)',
 	backdropFilter: 'blur(5px)',
@@ -129,7 +138,7 @@ export const landingHeader = {
 	position: 'relative',
 	color: 'white',
 	left: '40%',
-	top: '30%',
+	top: '26%',
 	height: '50px',
 	fontSize: '50px',
 	fontFamily: 'Roboto',
@@ -173,13 +182,15 @@ export const landingButton = {
 /* { NAME ANIMATION } */
 export const letter = {
 	display: 'inline-block',
-	opacity: '1',
+	opacity: '0',
+	pointerEvents: 'none',
+	transition: 'all .2s ease',
 };
 /* ============================== ABOUT SECTION ============================== */
 
 export const aboutTitle = {
 	color: 'white',
-	transition: 'all .2s ease',
+	//transition: 'all .2s ease',
 	display: 'flex',
 	fontSize: '80px',
 	fontFamily: 'Roboto',
@@ -338,6 +349,7 @@ export const orbitalBox = {
 	marginBottom: '150px',
 	cursor: 'pointer',
 	borderRadius: '36px',
+	transition: 'all .2s ease',
 };
 
 export const eduTitle = {
@@ -426,6 +438,7 @@ export const eduImage = {
 	marginRight: 'auto',
 	WebkitFilter: 'drop-shadow(5px 5px 5px #666666)',
 	filter: 'drop-shadow(5px 5px 5px #666666)',
+	transition: 'all .3s ease',
 };
 export const eduImageInactive = {
 	width: '150px',
@@ -434,12 +447,12 @@ export const eduImageActive = {
 	width: '250px',
 };
 export const eduSlideshow = {
-	height: 'fit-content',
+	height: '275px',
 	fontFamily: 'Roboto',
 	fontSize: '20px',
 	padding: '15px',
 	justifyContent: 'center',
-	textAlign: 'center',
+
 	color: 'white',
 	display: 'flex',
 	width: '350px',
@@ -453,16 +466,32 @@ export const eduSlideshow = {
 	border: '1px solid rgba(255, 255, 255, 0.3)',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 	listStyleType: 'none',
+	transition: 'all .2s ease',
 };
 export const myEduActive = {
 	display: 'block',
-	animationName: 'fade',
-	animationDuration: ' 1.5s',
+
+	height: 275,
+	textAlign: 'center',
+
+	opacity: 1,
+	position: 'absolute',
+	//height: '250px',
+	//animationName: 'fade',
+	//animationDuration: ' 1.5s',
+	transition: 'all 1s ease',
 };
 export const myEduInactive = {
-	display: 'none',
-	animationName: 'fade',
-	animationDuration: ' 1.5s',
+	height: 275,
+	display: 'block',
+	textAlign: 'center',
+	opacity: 0,
+
+	position: 'absolute',
+	//height: '250px',
+	//animationName: 'fade',
+	//animationDuration: ' 1.5s',
+	transition: 'all 1s ease',
 };
 /* ============================== SVG PATH SECTION ============================== */
 export const svgContainer = {
@@ -477,6 +506,7 @@ export const svgCord = {
 	width: '120vh',
 	height: '120vh',
 	pointerEvents: 'none',
+	//opacity: 0,
 };
 
 export const animateSvgStroke1 = {

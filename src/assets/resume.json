@@ -1,0 +1,204 @@
+{
+	"header": {
+		"name": "Avery Caldwell",
+		"title": "React/Full Stack Developer",
+		"location": "Seattle, WA",
+		"phone": "601-506-1057",
+		"linkedin": "linkedin.com/in/averycaldwell",
+		"email": "averycaldwell7@gmail.com",
+		"github": "github.com/averycaldwell",
+		"site": "avery-caldwell.com"
+	},
+	"summary": {
+		"text": "Full Stack web developer with a background in banking. Trained at University of Washington Coding Bootcamp & earned a certificate in full-stack web development. Versatile problem-solver excited about expanding knowledge; focused on adaptive design and development.Strengths in creativity, teamwork, and building projects effectively on all accounts."
+	},
+	"education": [
+		{
+			"title": "Full Stack Development Certificate",
+			"school": "University of Washington, Seattle, WA",
+			"date": "May 2023",
+			"overview": "24 week intensive program focused on gaining skills in front end and back end technologies"
+		},
+		{
+			"title": "Bachelors of Science in Marketing",
+			"school": "Mississippi College, Clinton, MS",
+			"date": "2012-2016",
+			"overview": "Outstanding Marketing Award, Sandra Parks Marketing Award, Hederman Scholar"
+		},
+		{
+			"title": "Business Program Certificate",
+			"school": "Chung Yuan Christian University, Taipei, Taiwan",
+			"date": "2015",
+			"overview": "2 month program focused on gaining international business skills and adapting to new environments"
+		}
+	],
+	"technicalSkills": {
+		"title": "Technical Skills",
+		"values": [
+			"JavaScript",
+			"HTML / CSS / PHP",
+			"MERN",
+			"MySQL",
+			"NoSQL",
+			"GraphQL",
+			"Apollo",
+			"MongoDB",
+			"Insomnia",
+			"Heroku",
+			"Postman",
+			"OAth",
+			"Restful APIs",
+			"Jest",
+			"Git",
+			"Github",
+			"Gitlab",
+			"JSON Web Tokens",
+			"Wordpress",
+			"Passport.js",
+			"React",
+			"Angular",
+			"Vue.js",
+			"Anime.js",
+			"Material-UI",
+			"Bootstrap",
+			"Vite",
+			"Express",
+			"jQuery",
+			"SASS",
+			"Handlebars.js",
+			"Bcrypt",
+			"Node.js",
+			"Tailwind CSS",
+			"Bulma",
+			"Next.js",
+			"Foundation",
+			"Chart.js",
+			"D3.js",
+			"Web / UX Design",
+			"Object Oriented Programming",
+			"Visual Studio",
+			"Microsoft Office"
+		]
+	},
+	"personalSkills": {
+		"title": "Strengths & Personal Skills",
+		"values": [
+			"Problem Solving",
+			"Marketing",
+			"Creativity",
+			"Quality Focus",
+			"Efficiency Focus",
+			"Ambitious",
+			"Hard Working",
+			"Focused",
+			"Interpersonal Skills",
+			"Customer Service",
+			"Brand Identity",
+			"Social Media",
+			"Communication",
+			"Leadership",
+			"Collaboration",
+			"Empathy",
+			"Teamwork",
+			"Listening",
+			"Motivation",
+			"Adaptability",
+			"Time Management",
+			"Writing",
+			"Research",
+			"Analytical",
+			"Organization",
+			"Project Management",
+			"Emotional Intelligence",
+			"Flexibility",
+			"Observant",
+			"Detail"
+		]
+	},
+	"experience": [
+		{
+			"title": "Suspicious Activity Investigator - BSA/AML",
+			"date": "July 2020 - Aug 2022",
+			"employer": "BankPlus",
+			"location": "Ridgeland, MS",
+			"responsibilities": [
+				"Streamlined operations by developing and implementing compliance procedures and guidelines for cross-functional operations teams, resulting in an increase in process efficiency and improved collaboration among departments.",
+				"Utilized critical thinking skills to evaluate risk levels of customer behavior, including transactional trends and historical statistics, effectively preventing money laundering and ensuring regulatory compliance.",
+				"Protected the company's reputation and financial well-being by leading investigations into system-wide suspicious activities."
+			],
+			"accomplishments": [
+				"Played a pivotal role as a liaison to newly acquired banks, driving successful training and transition processes.",
+				"Selected as a distinguished representative to attend the esteemed BSA/AML Conference, showcasing the Bank's commitment to regulatory compliance and industry best practices."
+			]
+		},
+		{
+			"title": "CIP/QA Analyst and Regulatory Specialist",
+			"date": "June 2018 - July 2020",
+			"employer": "BankPlus",
+			"location": "Ridgeland, MS",
+			"responsibilities": [
+				"Demonstrated effective communication and interpersonal skills, fostering a collaborative environment and enhancing team cohesion.",
+				"Collaborated with cross-functional teams to analyze customer accounts, ensuring compliance with federal regulations and fostering a strong attention to detail.",
+				"Successfully identified and reported counterfeit money incidents, showcasing the ability to detect anomalies and contribute to risk management efforts."
+			],
+			"accomplishments": [
+				"Played a key role in the education department, contributing to employee training and onboarding during two company mergers",
+				"Selected for assisting in designing and delivering training materials, ensuring seamless knowledge transfer and a smooth transition for new employees."
+			]
+		}
+	],
+	"projects": [
+		{
+			"title": "Wear You Wander",
+			"github": "github.com/AveryCaldwell/WearYouWander",
+			"site": "averycaldwell.github.io/WearYouWander",
+			"overview": "As Team Lead for this project, I assigned tasks, created the concept of the application, brand design & logo, worked with the Shuttershock API and Visual Crossing API, and integrated the team’s work to ensure acceptance criteria was met.",
+			"technologies": [
+				"HTML",
+				"CSS",
+				"Foundation Framework",
+				"JavaScript",
+				"jQuery"
+			]
+		},
+		{
+			"title": "Cheers Check",
+			"github": "github.com/AveryCaldwell/CheersCheck",
+			"site": "averycaldwell.github.io/CheersCheck",
+			"overview": "As Team Lead for this project, I assigned tasks, created the concept, functionality, & styling of the application, created the powerpoint presentation, & integrated the team’s code to produce a successfully functioning application. All Acceptance Criteria was met for this project.",
+			"technologies": [
+				"jQuery",
+				"JavaScript",
+				"MySQL",
+				"Sequelize",
+				"Handlebars.js. Node",
+				"Express",
+				"Heroku",
+				"Anime.js",
+				"Bootstrap HTML",
+				"CSS"
+			]
+		},
+		{
+			"title": "TasteBuds",
+			"github": "github.com/AveryCaldwell/TasteBuds",
+			"site": " taste-buds.herokuapp.com",
+			"overview": "As a Team Member, I ensured app functionality and that acceptance criteria was met, as well as, created the concept & design of the application and integrated the front to the backend.",
+			"technologies": [
+				"React",
+				"Javascript",
+				"Tailwind",
+				"Express",
+				"Node",
+				"Heroku",
+				"MongoDB",
+				"Mongoose",
+				"MongoCompass",
+				"Apollo",
+				"GraphQL",
+				"HTML",
+				"CSS"
+			]
+		}
+	]
+}

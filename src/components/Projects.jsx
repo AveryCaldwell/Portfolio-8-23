@@ -49,19 +49,23 @@ function Projects({ props }) {
 
 	// Function to animate SVG stroke
 	const animateSvgStroke = () => {
-		anime({
+		//let direction;
+		const animeProps = {
 			targets: svgPathRef.current,
 			strokeDashoffset: [anime.setDashoffset, 0],
 			easing: 'cubicBezier(0.47, 0, 0.745, 0.715)',
-			duration: 1000,
-			delay: 400,
-			direction: 'both',
-		});
+			duration: 1200,
+		};
+		if (!props.currentCordState) {
+			animeProps.direction = 'reverse';
+		}
+		anime(animeProps);
 	};
 	// Trigger animation on component mount
 	useEffect(() => {
+		//console.log('fired');
 		animateSvgStroke();
-	}, []); // Empty dependency array to run once after initial render
+	}, [props.currentCordState]); // Empty dependency array to run once after initial render
 
 	// Trigger animation on component mount
 	const projects = [
@@ -218,14 +222,6 @@ function Projects({ props }) {
 					</div>
 					{/* Buttons */}
 					<div id="projectsButtonSpan" style={projectsButtonSpan}>
-						{/* SVG Animation Button */}
-						<button
-							id="svgbuttonstyle"
-							style={svgButton}
-							onClick={animateSvgStroke}
-						>
-							✨ MAGIC ✨
-						</button>
 						{/* Other Buttons */}
 						{projectsButtons.map(function (element, index) {
 							return (

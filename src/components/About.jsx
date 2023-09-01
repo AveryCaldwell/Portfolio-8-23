@@ -112,7 +112,7 @@ function About({ props }) {
 					>
 						{/* Introduction content */}
 						<div className="aboutSubtitle" style={aboutSubtitle}>
-							TLDR: Career changer, Adventurer, Woman in Business,
+							TLDR: Career Changer, Adventurer, Woman in Business,
 							Creative Thinker + Web Dev
 						</div>
 						<div className="aboutText" style={aboutText}>

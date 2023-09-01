@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 // import anime from 'animejs/lib/anime.es.js';
-
+import resumeJSON from '../assets/resume.json';
+import { GitHub, OpenInBrowser } from '@mui/icons-material/';
 // STYLING
 import {
 	resumeContainer,
@@ -15,7 +16,462 @@ import {
 	resumeButtonSpan,
 	resumeBox,
 } from './Styles';
+function RenderedText({ props }) {
+	const styles = {
+		resumeContainer: {
+			display: 'flex',
+			flexDirection: 'column',
+			textAlign: 'center',
+			justifyContent: 'center',
+			alignItems: 'center',
+		},
+		contentContainer: {
+			display: 'flex',
+			flexDirection: 'column',
+			alignItems: 'center',
+			justifyContent: 'center',
+			textShadow: '1px 1px rgba(0,0,0,0.3)',
+		},
+		contentBox: {
+			display: 'flex',
+			flexDirection: 'column',
+			border: '1px solid white',
 
+			borderRadius: 5,
+			overflow: 'hidden',
+			paddingBottom: 20,
+			marginBottom: 20,
+			background: 'rgba(255,255,255,0.1)',
+		},
+		contentTitleRow: {
+			display: 'flex',
+			background:
+				'linear-gradient(90deg, rgba(228,161,205,0.18) 0%, rgba(157,228,245,0.3) 100%)',
+			padding: '15px 25px 15px 25px',
+			justifyContent: 'space-between',
+		},
+		projectTitleRow: {
+			fontWeight: 'bold',
+			alignItems: 'center',
+		},
+		educationTitleRow: {
+			fontWeight: 'bold',
+			flexDirection: 'row',
+		},
+		experienceTitleRow: {
+			flexDirection: 'column',
+		},
+		experienceTitleSuperRow: {
+			display: 'flex',
+			fontWeight: 'bold',
+			flexDirection: 'row',
+			justifyContent: 'space-between',
+		},
+		experienceTitleSubRow: {
+			display: 'flex',
+			flexDirection: 'row',
+			justifyContent: 'space-between',
+			fontWeight: 'lighter',
+		},
+		headerBox: {
+			width: 700,
+		},
+		experienceBox: {
+			width: 700,
+		},
+		educationBox: {
+			width: 700,
+		},
+
+		contentDetailsBox: {
+			paddingLeft: 45,
+			paddingRight: 45,
+		},
+		experienceDetailsBox: {
+			textAlign: 'left',
+		},
+		skillBox: {
+			display: 'flex',
+			flexWrap: 'wrap',
+			alignItems: 'center',
+			justifyContent: 'center',
+			width: 900,
+		},
+		subSkillBox: {
+			display: 'flex',
+			flexWrap: 'wrap',
+			alignItems: 'center',
+			justifyContent: 'center',
+			width: 600,
+		},
+		skill: {
+			border: '1px solid white',
+			padding: 10,
+			margin: 5,
+			borderRadius: 5,
+			fontWeight: 'lighter',
+		},
+		personalSkill: {
+			background: 'rgba(228,161,205,0.18)',
+		},
+		techSkill: {
+			background: 'rgba(157,228,245,0.18)',
+		},
+		lighter: {
+			fontWeight: 'lighter',
+		},
+		bold: {
+			fontWeight: 'bold',
+		},
+		titleBarIcon: {
+			fontSize: 32,
+			marginLeft: 10,
+			cursor: 'pointer',
+		},
+		contactInfo: {
+			margin: 5,
+		},
+	};
+	const openLink = function (link) {
+		window.open(`https://${link}`, '_blank');
+	};
+	return (
+		<>
+			<div style={styles.resumeContainer}>
+				<div id="renderHeader">
+					<h1>{resumeJSON.header.name}</h1>
+					<div
+						style={{
+							...styles.contentBox,
+							...styles.headerBox,
+						}}
+					>
+						<div
+							style={{
+								...styles.contentTitleRow,
+								...styles.projectTitleRow,
+							}}
+						>
+							<div>{resumeJSON.header.title}</div>
+							<div>
+								<GitHub
+									onClick={() =>
+										openLink(resumeJSON.header.github)
+									}
+									style={styles.titleBarIcon}
+								/>
+								<OpenInBrowser
+									onClick={() =>
+										openLink(resumeJSON.header.site)
+									}
+									style={styles.titleBarIcon}
+								/>
+							</div>
+						</div>
+						<div
+							style={{
+								...styles.contentDetailsBox,
+								...styles.experienceDetailsBox,
+								...styles.lighter,
+							}}
+						>
+							<div
+								style={{
+									display: 'flex',
+									flexDirection: 'row',
+									justifyContent: 'space-around',
+									marginTop: 20,
+								}}
+							>
+								<div
+									style={{
+										display: 'flex',
+										flexDirection: 'column',
+										width: '50%',
+									}}
+								>
+									<p style={styles.contactInfo}>
+										<strong>Location:</strong> <br />
+										{resumeJSON.header.location}
+									</p>
+									<p style={styles.contactInfo}>
+										<strong>Phone:</strong> <br />
+										{resumeJSON.header.phone}
+									</p>
+									<p style={styles.contactInfo}>
+										<strong>Portfolio:</strong> <br />
+										{resumeJSON.header.site}
+									</p>
+								</div>
+								<div
+									style={{
+										display: 'flex',
+										flexDirection: 'column',
+										width: '50%',
+									}}
+								>
+									<p style={styles.contactInfo}>
+										<strong>Email: </strong>
+										<br />
+										{resumeJSON.header.email}
+									</p>
+									<p style={styles.contactInfo}>
+										<strong>GitHub:</strong> <br />
+										{resumeJSON.header.github}
+									</p>
+									<p style={styles.contactInfo}>
+										<strong>LinkedIn:</strong> <br />
+										{resumeJSON.header.linkedin}
+									</p>
+								</div>
+							</div>
+							<h2>Summary</h2>
+							<p>{resumeJSON.summary.text}</p>
+						</div>
+					</div>
+				</div>
+				<div id="renderSummary"></div>
+				<div>
+					<h2>Education</h2>
+					<div style={styles.contentContainer}>
+						{resumeJSON.education.map(function (element, index) {
+							return (
+								<div
+									key={`education${index}`}
+									style={{
+										...styles.contentBox,
+										...styles.educationBox,
+									}}
+								>
+									<div
+										style={{
+											...styles.contentTitleRow,
+											...styles.educationTitleRow,
+										}}
+									>
+										<div>{element.title}</div>
+										<div>{element.date}</div>
+									</div>
+									<div
+										style={{
+											...styles.contentDetailsBox,
+											...styles.lighter,
+										}}
+									>
+										<p>
+											<strong>{element.school}</strong>
+										</p>
+										<p>{element.overview}</p>
+									</div>
+								</div>
+							);
+						})}
+					</div>
+				</div>
+				<div>
+					<h2>{resumeJSON.technicalSkills.title}</h2>
+					<div style={styles.skillBox}>
+						{resumeJSON.technicalSkills.values.map(function (
+							element,
+							index
+						) {
+							return (
+								<div
+									key={`techSkill${index}`}
+									style={{
+										...styles.skill,
+										...styles.techSkill,
+									}}
+								>
+									{element}
+								</div>
+							);
+						})}
+					</div>
+				</div>
+				<div>
+					<h2>{resumeJSON.personalSkills.title}</h2>
+					<div style={styles.skillBox}>
+						{resumeJSON.personalSkills.values.map(function (
+							element,
+							index
+						) {
+							return (
+								<div
+									key={`personalSkill${index}`}
+									style={{
+										...styles.skill,
+										...styles.personalSkill,
+									}}
+								>
+									{element}
+								</div>
+							);
+						})}
+					</div>
+				</div>
+				<div>
+					<h2>Experience</h2>
+					<div style={{ ...styles.contentContainer }}>
+						{resumeJSON.experience.map(function (element, index) {
+							return (
+								<div
+									key={`experience${index}`}
+									style={{
+										...styles.contentBox,
+										...styles.experienceBox,
+									}}
+								>
+									{/* <div key={`experience${index}`}> */}
+									<div
+										style={{
+											...styles.contentTitleRow,
+											...styles.experienceTitleRow,
+										}}
+									>
+										<div
+											style={
+												styles.experienceTitleSuperRow
+											}
+										>
+											<div>{element.title}</div>
+											<div>{element.date}</div>
+										</div>
+										<div
+											style={styles.experienceTitleSubRow}
+										>
+											<div>{element.employer}</div>
+											<div>{element.location}</div>
+										</div>
+									</div>
+
+									<div
+										style={{
+											...styles.contentDetailsBox,
+											...styles.experienceDetailsBox,
+										}}
+									>
+										<h4>Responsibilities:</h4>
+										{element.responsibilities.map(function (
+											responsibility,
+											responsibilityIndex
+										) {
+											return (
+												<p
+													key={`responsibility-${index}-${responsibilityIndex}`}
+													style={styles.lighter}
+												>
+													&#x2022; {responsibility}
+												</p>
+											);
+										})}
+									</div>
+									<div
+										style={{
+											...styles.contentDetailsBox,
+											...styles.experienceDetailsBox,
+										}}
+									>
+										<h4>Key Accomplishments:</h4>
+										{element.accomplishments.map(function (
+											accomplishment,
+											accomplishmentIndex
+										) {
+											return (
+												<p
+													key={`accomplishment-${index}-${accomplishmentIndex}`}
+													style={styles.lighter}
+												>
+													&#x2022; {accomplishment}
+												</p>
+											);
+										})}
+									</div>
+								</div>
+							);
+						})}
+					</div>
+				</div>
+				<div>
+					<h2>Projects</h2>
+					<div style={{ ...styles.contentContainer }}>
+						{resumeJSON.projects.map(function (element, index) {
+							return (
+								<div
+									key={`experience${index}`}
+									style={{
+										...styles.contentBox,
+										...styles.experienceBox,
+									}}
+								>
+									<div
+										style={{
+											...styles.contentTitleRow,
+											...styles.projectTitleRow,
+										}}
+									>
+										<div>{element.title}</div>
+										<div>
+											<GitHub
+												onClick={() =>
+													openLink(element.github)
+												}
+												style={styles.titleBarIcon}
+											/>
+											<OpenInBrowser
+												onClick={() =>
+													openLink(element.site)
+												}
+												style={styles.titleBarIcon}
+											/>
+										</div>
+									</div>
+									<div
+										style={{
+											...styles.contentDetailsBox,
+											...styles.experienceDetailsBox,
+										}}
+									>
+										<h4>Overview:</h4>
+										<p style={styles.lighter}>
+											{element.overview}
+										</p>
+										<h4>Key Technologies:</h4>
+										<div style={styles.subSkillBox}>
+											{element.technologies.map(function (
+												technology,
+												technologyIndex
+											) {
+												return (
+													<div
+														key={`responsibility-${index}-${technologyIndex}`}
+														style={{
+															...styles.skill,
+															...styles.techSkill,
+														}}
+													>
+														{technology}
+													</div>
+												);
+											})}
+										</div>
+										<h4>Links:</h4>
+										<p style={styles.lighter}>
+											GitHub: {element.github}
+										</p>
+										<p style={styles.lighter}>
+											Site: {element.site}
+										</p>
+									</div>
+								</div>
+							);
+						})}
+					</div>
+				</div>
+			</div>
+		</>
+	);
+}
 function Resume({ props }) {
 	// State and refs for typing animation
 	const [isTyping, setIsTyping] = useState(false);
@@ -101,7 +557,7 @@ function Resume({ props }) {
 	// Array of resume buttons
 	const resumeButtons = [
 		{ target: 'Code', span: 'Code', name: 'Code' },
-		{ target: 'PlainText', span: 'Plain Text', name: 'PlainText' },
+		{ target: 'PlainText', span: 'Render Text', name: 'PlainText' },
 		{ target: 'Download', span: 'Download', name: 'Download' },
 		{ target: 'Projects', span: 'Back', name: 'Projects' },
 		{ target: 'Testimonials', span: 'Next', name: 'Testimonials' },
@@ -233,7 +689,8 @@ function Resume({ props }) {
 							},
 						}}
 					>
-						<h1>AVERY CALDWELL</h1>
+						<RenderedText />
+						{/* <h1>AVERY CALDWELL</h1>
 						<ul>
 							<li>Seattle, WA </li>
 							<li>Phone: 601-506-1057 </li>
@@ -421,7 +878,7 @@ function Resume({ props }) {
 								international business skills and adapting to
 								new environments.
 							</li>
-						</ul>
+						</ul> */}
 					</div>{' '}
 				</div>
 				{/* Resume buttons */}
@@ -470,7 +927,7 @@ function Resume({ props }) {
 										props.setActivePage(element.target);
 									} else if (element.target === 'Download') {
 										window.open(
-											'/resume.pdf',
+											'./resume.pdf',
 											'_blank' // <- This is what makes it open in a new window.
 										);
 										setResumeHoverButton(element.target, {

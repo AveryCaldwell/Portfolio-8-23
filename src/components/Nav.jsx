@@ -11,6 +11,7 @@ import {
 	navTitleText,
 	navSubtitleText,
 	closeIcon,
+	navTitle,
 } from './Styles';
 // ICONS
 import {
@@ -157,6 +158,16 @@ function Nav({ props }) {
 					onClick={toggleDrawer('left', true)}
 				/>
 				{/* Drawer */}
+				<div
+					style={{
+						...navTitle,
+						...{
+							opacity: props.currentNavNameState ? '1' : '0',
+						},
+					}}
+				>
+					Avery Caldwell // Developer
+				</div>
 			</Material.Toolbar>
 			{['left'].map((anchor) => (
 				<React.Fragment key={anchor}>

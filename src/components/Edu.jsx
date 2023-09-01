@@ -89,7 +89,7 @@ function EduCard({ props }) {
 									props.educationState === index
 										? `myEduActive`
 										: `myEduInactive`
-								} fade`}
+								}`}
 								key={`myEdu${index}`}
 								style={
 									props.educationState === index
@@ -151,7 +151,8 @@ function Edu({ props }) {
 			name: 'University of Washington',
 			src: UW,
 			description: [
-				'Full Stack Developer Coding Bootcamp',
+				'Coding Bootcamp',
+				'Full Stack Developer',
 				'Team Lead',
 				'GPA: 98.27% / 100%',
 			],

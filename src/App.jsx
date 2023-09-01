@@ -3,6 +3,7 @@ import React from 'react';
 import theme from './theme';
 import { ThemeProvider } from '@emotion/react';
 import * as Material from '@mui/material';
+import anime from 'animejs'; // Import anime.js library
 //Components
 import Nav from './components/Nav';
 import Landing from './components/Landing';
@@ -20,6 +21,9 @@ import { appContainer, pagesContainer } from './components/Styles';
 
 // Function to set the active page and perform page transition animations
 function App() {
+	const [currentCordState, setCurrentCordState] = React.useState(false);
+	const [currentNavNameState, setCurrentNavNameState] = React.useState(false);
+
 	// The "useState" hook is used to declare a state variable called "currentPageState" which is initially set to "Landing".
 	const [currentPageState, setCurrentPageState] = React.useState('Landing');
 	const setActivePage = (newPage) => {
@@ -43,6 +47,7 @@ function App() {
 			Testimonials: 5,
 			Contact: 6,
 		};
+
 		// Get the container element for the app
 		const appContainer = document.getElementsByClassName('appContainer')[0];
 		// Calculate the index of the new and current page
@@ -92,6 +97,17 @@ function App() {
 					}, 1200);
 				}
 			}
+
+			if (pageIndex >= 4) {
+				setCurrentCordState(true);
+			} else {
+				setCurrentCordState(false);
+			}
+			if (pageIndex > 0) {
+				setCurrentNavNameState(true);
+			} else {
+				setCurrentNavNameState(false);
+			}
 			// Apply the vertical transition to the app container
 			appContainer.style.top = `calc(0% - ${calculatedVH}vh)`;
 		}
@@ -100,16 +116,21 @@ function App() {
 	return (
 		<>
 			<ThemeProvider theme={theme}>
-				<Nav id={'Header'} props={{ setActivePage }} />
+				<Nav
+					id={'Header'}
+					props={{ setActivePage, currentNavNameState }}
+				/>
 				<Material.Box></Material.Box>
 				<div className="App appContainer" style={appContainer}>
 					<main className="pagesContainer" style={pagesContainer}>
 						<LogoSlider props={{ setActivePage }} />
-						<Landing props={{ setActivePage }} />
+						<Landing
+							props={{ setActivePage, currentNavNameState }}
+						/>
 						<About props={{ setActivePage }} />
 						<Edu props={{ setActivePage }} />
 						{/* <SvgContainer props={{ setActivePage }} /> */}
-						<Projects props={{ setActivePage }} />
+						<Projects props={{ setActivePage, currentCordState }} />
 						<Resume props={{ setActivePage }} />
 						<Testimonials props={{ setActivePage }} />
 						<Contact props={{ setActivePage }} />
