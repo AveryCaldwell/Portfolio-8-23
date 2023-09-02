@@ -31,14 +31,15 @@ export const pageContainer = {
 
 /* ============================== NAV SECTION ============================== */
 export const navTitle = {
-	fontSize: '40px',
+	fontSize: '32px',
 	paddingRight: '24px',
 	position: 'absolute',
 	bottom: '10px',
 	right: '10px',
+	color: 'rgba(255,255,255,0.8)',
 	transition: 'all 1.5s ease',
 	textShadow: `2px 2px rgba(0,0,0,0.1)`,
-	//opacity: 0,
+	//opacity: 0.5,
 };
 export const navBox = {
 	display: 'flex',
@@ -496,14 +497,14 @@ export const myEduInactive = {
 /* ============================== SVG PATH SECTION ============================== */
 export const svgContainer = {
 	position: 'absolute',
-	top: '360vh',
-	left: '250px',
+	top: '345vh',
+	left: '350px',
 	cursor: 'pointer',
 	zIndex: '-1',
 };
 
 export const svgCord = {
-	width: '120vh',
+	//width: '600px',
 	height: '120vh',
 	pointerEvents: 'none',
 	//opacity: 0,
@@ -852,7 +853,9 @@ export const text = {
 export const testimonialsContainer = {
 	display: 'flex',
 	position: 'relative',
+	alignItems: 'center',
 	fontFamily: 'Roboto',
+	flexDirection: 'row',
 };
 
 export const testimonialsTitle = {
@@ -863,8 +866,10 @@ export const testimonialsTitle = {
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
 	textAlign: 'center',
 	margin: '0',
-	minWidth: '50%',
+	marginTop: 50,
+	//minWidth: '50%',
 	alignItems: 'center',
+	//marginBottom: 30,
 };
 export const testimonialsSubtitle = {
 	fontSize: '36px',
@@ -881,14 +886,15 @@ export const testimonialsSubtitle = {
 };
 // box containing ref cards
 export const testimonialsBox = {
-	flexWrap: 'wrap',
+	display: 'flex',
+	flexDirection: 'column',
+	flexWrap: 'nowrap',
+	alignItems: 'center',
 	display: 'flex',
 	position: 'relative',
-	height: '700px',
-	width: '100%',
-	overflow: 'hidden',
-	top: '100px',
-	right: '30%',
+	height: '800px',
+	maxWidth: '560px',
+	//overflow: 'hidden',
 };
 // USED IN MULTIPLE PLACES ON CARD
 export const center = {
@@ -899,7 +905,7 @@ export const center = {
 };
 // EACH CARD STYLING
 export const card = {
-	width: '800px',
+	width: '550px',
 	height: '225px',
 	background: 'linear-gradient(#f8f8f8, #fff)',
 	boxShadow: '0 8px 16px -8px',
@@ -1041,10 +1047,9 @@ export const testimonialsButtonSpan = {
 	justifyContent: 'space-around',
 	flexDirection: 'row',
 	width: '400px',
-	bottom: '225px',
+	marginTop: '25px',
+
 	position: 'relative',
-	left: '30%',
-	height: '150px',
 };
 export const testimonialsButton = {
 	borderRadius: '36px',

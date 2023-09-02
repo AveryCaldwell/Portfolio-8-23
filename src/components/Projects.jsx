@@ -324,7 +324,6 @@ function Projects({ props }) {
 					/>
 				</div>
 			</div>
-
 			{/* SVG Container */}
 			<div className="svgContainer" style={svgContainer}>
 				<svg
