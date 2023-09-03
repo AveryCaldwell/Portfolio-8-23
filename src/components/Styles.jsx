@@ -191,7 +191,6 @@ export const letter = {
 
 export const aboutTitle = {
 	color: 'white',
-	//transition: 'all .2s ease',
 	display: 'flex',
 	fontSize: '80px',
 	fontFamily: 'Roboto',
@@ -205,73 +204,150 @@ export const aboutContent = {
 	width: '700px',
 	height: '650px',
 	position: 'relative',
-	padding: '20px',
+	padding: '15px',
 	borderRadius: '36px',
 	background: ' rgba(255, 255, 255, 0.2)',
 	boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
 	backdropFilter: 'blur(5px)',
 	border: '1px solid rgba(255, 255, 255, 0.3)',
-	fontSize: '18px',
-	color: 'white',
-	lineHeight: '1.35',
-	fontFamily: 'Roboto',
-	overflow: 'hidden',
-};
-export const aboutSubtitle = {
-	padding: '15px',
 	fontSize: '20px',
 	color: 'white',
 	lineHeight: '1.35',
 	fontFamily: 'Roboto',
-	fontWeight: 'bold',
-	textAlign: 'center',
+	textShadow: `1px 1px rgba(0,0,0,0.1)`,
+	overflow: 'hidden',
 };
-export const skillSubtitle = {
-	padding: '10px',
-	fontSize: '18px',
+export const aboutIntroBox = {
+	width: '600px',
+	height: '100%',
+	// position: 'relative',
+	padding: '15px',
 	color: 'white',
+	textShadow: `1px 1px rgba(0,0,0,0.1)`,
+	display: 'flex',
+	flexDirection: 'column',
+	textAlign: 'center',
+	justifyContent: 'center',
+	alignItems: 'center',
+	// FIXME: fadeTransition has 'left:0', left margin is to compensate
+	margin: ' 0px 0px 0px 20px',
+};
+export const aboutSubtitle = {
+	padding: '15px 25px 15px 25px',
+	fontSize: '40px',
+	color: 'white',
+	lineHeight: '1.25',
 	fontFamily: 'Roboto',
-	textAlign: 'left',
-	backgroundColor: '#99b3fc',
-	width: 'fit-content',
-	borderRadius: '36px',
-	marginBottom: '5px',
+	textAlign: 'center',
+	textShadow: '1px 1px rgba(0,0,0,0.3)',
+	transition: 'all .2s ease',
+	margin: '0 0 10px 0',
+	minWidth: '50%',
+	background:
+		'linear-gradient(90deg, rgba(228,161,205,0.18) 0%, rgba(157,228,245,0.3) 100%)',
+	// height: '150px',
 	fontWeight: 'bold',
+	border: '1px solid white',
+	borderRadius: 5,
+};
+export const waveIcon = {
+	fontSize: '40px',
+	verticalAlign: 'middle',
 };
 export const aboutText = {
-	padding: '10px',
-	textIndent: '35px',
+	display: 'flex',
+	flexDirection: 'column',
+	justifyContent: 'center',
+	textShadow: `2px 2px rgba(0,0,0,0.1)`,
+	fontSize: '24px',
+	height: '150px',
+	textAlign: 'column',
+	// fontWeight: 'lighter',
+	textAlign: 'center',
+};
+export const aboutTextSub = {
+	display: 'flex',
+	flexDirection: 'column',
+	justifyContent: 'center',
+	textShadow: `2px 2px rgba(0,0,0,0.1)`,
+	fontSize: '24px',
+	height: '150px',
+	textAlign: 'center',
+};
+
+// Skills portion of about page
+export const skillSubtitle = {
+	fontSize: '24px',
+	fontFamily: 'Roboto',
+	display: 'flex',
+	background:
+		'linear-gradient(90deg, rgba(228,161,205,0.18) 0%, rgba(157,228,245,0.3) 100%)',
+	padding: '15px 25px 15px 25px',
+	justifyContent: 'center',
+	width: 650,
+	fontWeight: 'bold',
+	textShadow: '1px 1px rgba(0,0,0,0.3)',
+};
+export const aboutSkill = {
+	padding: 10,
+	margin: 5,
+	borderRadius: 5,
+	fontWeight: 'lighter',
+};
+
+export const aboutFrontSkill = {
+	background: 'rgba(157,228,245,0.18)',
+};
+export const aboutBackSkill = {
+	background: 'rgba(228,161,205,0.18)',
 };
 
 export const techBox = {
 	color: 'white',
-	top: '148vh',
-	left: '55%',
+	display: 'flex',
+	flexDirection: 'column',
+	border: '1px solid white',
+	borderRadius: 5,
+	overflow: 'hidden',
+	background: 'rgba(0, 0, 0, 0.1)',
 	fontSize: '16px',
-	marginTop: '15px',
 };
 export const skillBox = {
+	display: 'flex',
+	flexDirection: 'column',
+	flexWrap: 'wrap',
+	alignItems: 'center',
+	justifyContent: 'center',
 	color: 'white',
-	top: '155vh',
-	left: '55%',
+	fontWeight: 'lighter',
 	fontSize: '16px',
 	marginTop: '15px',
+	border: '1px solid white',
+	borderRadius: 5,
+	overflow: 'hidden',
+	background: 'rgba(0, 0, 0, 0.1)',
 };
 export const aboutBubbleItem = {
-	textDecoration: 'none',
-	borderRadius: '36px',
-	border: '1px solid #EEEEEE',
-	color: 'white',
-	display: 'inline-block',
 	position: 'relative',
-	margin: '10px 10px 10px 10px',
+	display: 'inline-block',
+	color: 'white',
+	margin: 5,
+	padding: 15,
+	borderRadius: 5,
+	border: '1px solid white',
+	fontWeight: 'lighter',
 	textAlign: 'center',
-	listStyle: 'none',
-	padding: '10px',
-	width: 'fit-content',
-	transition: '0.25s',
+	textDecoration: 'none',
+	textShadow: '1px 1px rgba(0,0,0,0.3)',
+	//
 };
-
+export const subSkillBox = {
+	display: 'flex',
+	flexWrap: 'wrap',
+	alignItems: 'center',
+	justifyContent: 'center',
+	width: 600,
+};
 export const aboutButton = {
 	borderRadius: '36px',
 	border: '1px solid white',
@@ -294,7 +370,7 @@ export const buttonSpan = {
 	height: '150px',
 };
 export const fadeTransition = {
-	transition: `ease 2s`,
+	transition: `ease 1s`,
 	position: 'absolute',
 	top: 0,
 	left: 0,

@@ -13,8 +13,19 @@ import {
 	pageContainer,
 	buttonSpan,
 	fadeTransition,
+	aboutBackSkill,
+	aboutFrontSkill,
+	aboutSkill,
+	subSkillBox,
+	waveIcon,
+	aboutIntroBox,
+	aboutTextSub,
 } from './Styles';
 
+// ICON
+import { WavingHand } from '@mui/icons-material';
+// IMAGE
+import avesHi from '../assets/aves_hi.png';
 // This function component represents the About section of the web app
 function About({ props }) {
 	// Arrays containing frontend and backend technology data
@@ -49,12 +60,20 @@ function About({ props }) {
 	];
 	// Render frontend and backend skills lists
 	const renderedFrontendSkills = frontendData.map((skill, index) => (
-		<li key={index} className="aboutBubbleItem" style={aboutBubbleItem}>
+		<li
+			key={index}
+			className="aboutBubbleItem"
+			style={{ ...aboutBubbleItem, ...aboutFrontSkill }}
+		>
 			{skill}
 		</li>
 	));
 	const renderedBackendSkills = backendData.map((skill, index) => (
-		<li key={index} className="aboutBubbleItem" style={aboutBubbleItem}>
+		<li
+			key={index}
+			className="aboutBubbleItem"
+			style={{ ...aboutBubbleItem, ...aboutBackSkill }}
+		>
 			{skill}
 		</li>
 	));
@@ -85,8 +104,6 @@ function About({ props }) {
 	// State to manage currently active content
 	const [aboutContentState, setAboutContentState] =
 		React.useState('Introduction');
-	// Function to set the active page when a button is clicked
-	// function aboutButtonSetActivePage(target) {}
 
 	return (
 		<div className="aboutContainer pageContainer" style={pageContainer}>
@@ -111,43 +128,26 @@ function About({ props }) {
 						}}
 					>
 						{/* Introduction content */}
-						<div className="aboutSubtitle" style={aboutSubtitle}>
-							TLDR: Career Changer, Adventurer, Woman in Business,
-							Creative Thinker + Web Dev
-						</div>
-						<div className="aboutText" style={aboutText}>
-							Born & raised in Mississippi. Officially a
-							Washingtonian as of October 2022. Now a Full Stack
-							Developer & recent grad of University of Washington
-							Coding Bootcamp. I also have a Bachelors of Science
-							in Marketing from Mississippi College.
-						</div>
-						<div className="aboutText" style={aboutText}>
-							Previously in the Banking industry for six years. My
-							analytical skills from working in compliance helps
-							me troubleshoot and optimize code effectively, while
-							my background in data-driven decision-making ensures
-							that my coding choices are both innovative and
-							valuable.{' '}
-						</div>
-						<div className="aboutText" style={aboutText}>
-							I offer a unique blend of skills that encompasses
-							both interpersonal expertise to full stack
-							development proficiency. With a background in
-							customer service, I bring strong communication,
-							empathy, and problem-solving abilities to the
-							table.This enables me to effectively engage with
-							clients, understand their needs, and translate those
-							insights into impactful solutions. My marketing
-							degree equips me with a user-centric mindset,
-							allowing me to create web applications that align
-							with user needs and preferences. This well-rounded
-							combination positions me as an adaptable and
-							well-rounded professional, capable of contributing
-							meaningfully across various dimensions of a project.
-						</div>
-						<div className="aboutSubtitle" style={aboutSubtitle}>
-							Thanks for reading! - Avery
+						<div id="aboutIntroBox" style={aboutIntroBox}>
+							<div id="aboutSubtitle" style={aboutSubtitle}>
+								HI, I'M AVERY! <WavingHand sx={waveIcon} />
+								{/* TODO: add animation to wave? */}
+							</div>
+							<div id="aboutText1" style={aboutText}>
+								Innovative Business Woman turned Developer
+								currently based in Seattle, Washington, with
+								over 6 years of professional experience.
+							</div>
+							<div id="aboutText2" style={aboutText}>
+								I'm a Freelancer Front-end React & Full Stack
+								Developer working in web development and content
+								creation. I enjoy using my marketing knowledge
+								to create user friendly UX/UI.
+							</div>
+							<div id="aboutText3" style={aboutTextSub}>
+								Career Changer, Adventurer, Woman in Business,
+								Creative Thinker + Web Dev
+							</div>
 						</div>
 					</div>
 					{/* Skills Section */}
@@ -162,24 +162,49 @@ function About({ props }) {
 						}}
 					>
 						{/* Frontend and Backend skills */}
-						<div style={{ overflow: 'scroll', maxHeight: '100%' }}>
+						<div
+							style={{
+								overflow: 'scroll',
+								maxHeight: '100%',
+							}}
+						>
 							<div className="techBox" style={techBox}>
 								<div
 									className="aboutSubtitle"
-									style={skillSubtitle}
+									style={{ ...skillSubtitle }}
 								>
 									Front End Skills
 								</div>
-								{renderedFrontendSkills}
+								<div
+									style={{
+										...aboutSkill,
+									}}
+								>
+									<div style={{ ...subSkillBox }}>
+										{renderedFrontendSkills}
+									</div>
+								</div>
 							</div>
 							<div className="skillBox" style={skillBox}>
 								<div
 									className="aboutSubtitle"
-									style={skillSubtitle}
+									style={{ ...skillSubtitle }}
 								>
 									Back End Skills
 								</div>
-								{renderedBackendSkills}
+								<div
+									style={{
+										...aboutSkill,
+									}}
+								>
+									<div
+										style={{
+											...subSkillBox,
+										}}
+									>
+										{renderedBackendSkills}
+									</div>
+								</div>
 								<div className="aboutBubble"></div>
 							</div>
 						</div>
@@ -226,8 +251,6 @@ function About({ props }) {
 									) {
 										props.setActivePage(element.target);
 									} else {
-										//TODO write logic for changing the data within the about content
-										// console.log(
 										// 	`This is meant to load the data of ${element.target}`
 										// );
 										if (

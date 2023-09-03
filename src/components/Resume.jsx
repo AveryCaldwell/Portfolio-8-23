@@ -36,7 +36,6 @@ function RenderedText({ props }) {
 			display: 'flex',
 			flexDirection: 'column',
 			border: '1px solid white',
-
 			borderRadius: 5,
 			overflow: 'hidden',
 			paddingBottom: 20,
