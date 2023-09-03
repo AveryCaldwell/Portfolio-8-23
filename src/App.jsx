@@ -11,7 +11,7 @@ import About from './components/About';
 import Edu from './components/Edu';
 import Projects from './components/Projects';
 import Resume from './components/Resume';
-import Testimonials from './components/Testimonials';
+import References from './components/References';
 import Contact from './components/Contact';
 import LogoSlider from './components/LogoSlider';
 import Footer from './components/Footer';
@@ -34,7 +34,7 @@ function App() {
 			'Edu',
 			'Projects',
 			'Resume',
-			'Testimonials',
+			'References',
 			'Contact',
 		];
 		// Object mapping page names to their index
@@ -44,7 +44,7 @@ function App() {
 			Edu: 2,
 			Projects: 3,
 			Resume: 4,
-			Testimonials: 5,
+			References: 5,
 			Contact: 6,
 		};
 
@@ -132,7 +132,7 @@ function App() {
 						{/* <SvgContainer props={{ setActivePage }} /> */}
 						<Projects props={{ setActivePage, currentCordState }} />
 						<Resume props={{ setActivePage }} />
-						<Testimonials props={{ setActivePage }} />
+						<References props={{ setActivePage }} />
 						<Contact props={{ setActivePage }} />
 						<Footer props={{ setActivePage }} />
 					</main>

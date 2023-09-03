@@ -849,8 +849,8 @@ export const text = {
 	// right: '0',
 };
 
-/* ============================== TESTIMONIALS SECTION ============================== */
-export const testimonialsContainer = {
+/* ============================== REFERNCES SECTION ============================== */
+export const referencesContainer = {
 	display: 'flex',
 	position: 'relative',
 	alignItems: 'center',
@@ -858,7 +858,7 @@ export const testimonialsContainer = {
 	flexDirection: 'row',
 };
 
-export const testimonialsTitle = {
+export const referencesTitle = {
 	color: 'white',
 	transition: 'all .2s ease',
 	display: 'flex',
@@ -871,7 +871,7 @@ export const testimonialsTitle = {
 	alignItems: 'center',
 	//marginBottom: 30,
 };
-export const testimonialsSubtitle = {
+export const referencesSubtitle = {
 	fontSize: '36px',
 	color: 'white',
 	fontFamily: 'Roboto',
@@ -885,7 +885,7 @@ export const testimonialsSubtitle = {
 	maxWidth: '50%',
 };
 // box containing ref cards
-export const testimonialsBox = {
+export const referencesBox = {
 	display: 'flex',
 	flexDirection: 'column',
 	flexWrap: 'nowrap',
@@ -1042,7 +1042,7 @@ export const more = {
 	fontSize: '0.9rem',
 	color: 'gray',
 };
-export const testimonialsButtonSpan = {
+export const referencesButtonSpan = {
 	display: 'flex',
 	justifyContent: 'space-around',
 	flexDirection: 'row',
@@ -1051,7 +1051,7 @@ export const testimonialsButtonSpan = {
 
 	position: 'relative',
 };
-export const testimonialsButton = {
+export const referencesButton = {
 	borderRadius: '36px',
 	border: '1px solid white',
 	textAlign: 'center',

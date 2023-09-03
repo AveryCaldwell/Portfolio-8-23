@@ -560,7 +560,7 @@ function Resume({ props }) {
 		{ target: 'PlainText', span: 'Render Text', name: 'PlainText' },
 		{ target: 'Download', span: 'Download', name: 'Download' },
 		{ target: 'Projects', span: 'Back', name: 'Projects' },
-		{ target: 'Testimonials', span: 'Next', name: 'Testimonials' },
+		{ target: 'References', span: 'Next', name: 'References' },
 	];
 	// Function to update button style on hover
 	function setResumeHoverButton(name, style) {
@@ -921,7 +921,7 @@ function Resume({ props }) {
 								}}
 								onClick={function () {
 									if (
-										element.target === 'Testimonials' ||
+										element.target === 'References' ||
 										element.target === 'Projects'
 									) {
 										props.setActivePage(element.target);

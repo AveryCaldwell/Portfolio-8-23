@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 // import * as Material from "@mui/material";
 
 // IMPORT SUBCOMPONENTS
-import { FirstAvatar, SecondAvatar, ThirdAvatar } from './TestimonialAvatars'; // Adjust the path accordingly
+import { FirstAvatar, SecondAvatar, ThirdAvatar } from './ReferenceAvatars'; // Adjust the path accordingly
 
 // IMPORT ICONS
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 // IMPORT STYLING
 import {
-	testimonialsContainer,
-	testimonialsButtonSpan,
+	referencesContainer,
+	referencesButtonSpan,
 	pageContainer,
-	testimonialsButton,
-	testimonialsBox,
-	testimonialsTitle,
+	referencesButton,
+	referencesBox,
+	referencesTitle,
 	center,
 	card,
 	userCard,
@@ -29,11 +29,11 @@ import {
 	value,
 	general,
 	more,
-	testimonialsSubtitle,
+	referencesSubtitle,
 } from './Styles';
 
-// This function renders Testimonials content of web app
-function Testimonials({ props }) {
+// This function renders References content of web app
+function References({ props }) {
 	// State to track hovering over the reference card
 	const [hoverState, setHoverState] = useState({
 		0: false,
@@ -66,21 +66,21 @@ function Testimonials({ props }) {
 		zIndex: 2,
 	};
 
-	// State and buttons for controlling testimonials page navigation
-	const [testimonialsState, setTestimonialsButtonState] = React.useState({
+	// State and buttons for controlling references page navigation
+	const [referencesState, setReferencesButtonState] = React.useState({
 		Resume: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 		Contact: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 	});
-	const testimonialsButtons = [
+	const referencesButtons = [
 		{ target: 'Resume', span: 'Back', name: 'Resume' },
 		{ target: 'Contact', span: 'Next', name: 'Contact' },
 	];
 
 	// Function to set the button style when hovering
-	function setTestimonialsHoverButton(name, style) {
-		let obj = Object.assign({}, testimonialsState);
+	function setReferencesHoverButton(name, style) {
+		let obj = Object.assign({}, referencesState);
 		obj[name] = style;
-		setTestimonialsButtonState(obj);
+		setReferencesButtonState(obj);
 	}
 	const cardInfo = [
 		{
@@ -126,10 +126,10 @@ function Testimonials({ props }) {
 
 	return (
 		<React.Fragment>
-			{/* Testimonials Container */}
+			{/* References Container */}
 			<div
-				className="testimonialsContainer pageContainer"
-				style={{ ...pageContainer, ...testimonialsContainer }}
+				className="referencesContainer pageContainer"
+				style={{ ...pageContainer, ...referencesContainer }}
 			>
 				<div
 					id="csslines"
@@ -190,16 +190,16 @@ function Testimonials({ props }) {
 					}}
 				>
 					<div
-						className="testimonialsTitle"
-						style={testimonialsTitle}
+						className="referencesTitle"
+						style={referencesTitle}
 					>
 						REFERENCES
 					</div>
-					<span style={testimonialsSubtitle}>What's the sitch?</span>
+					<span style={referencesSubtitle}>What's the sitch?</span>
 					<div style={{ height: 100 }}></div>
 				</div>
 
-				<div className="testimonialsBox" style={testimonialsBox}>
+				<div className="referencesBox" style={referencesBox}>
 					{/* === CARD 1 === */}
 					{cardInfo.map(function (element, index) {
 						let background = {
@@ -311,22 +311,22 @@ function Testimonials({ props }) {
 						);
 					})}
 					<div
-						id="testimonialsButtonSpan"
-						style={testimonialsButtonSpan}
+						id="referencesButtonSpan"
+						style={referencesButtonSpan}
 					>
-						{testimonialsButtons.map(function (element, index) {
+						{referencesButtons.map(function (element, index) {
 							return (
 								<button
-									className="testimonialsButton"
-									key={`testimonialsButton${index}`}
+									className="referencesButton"
+									key={`referencesButton${index}`}
 									name={element.name}
 									style={{
-										...testimonialsButton,
-										...testimonialsState[element.name],
+										...referencesButton,
+										...referencesState[element.name],
 									}}
 									onMouseEnter={(event) => {
 										//console.log(event.target.name);
-										setTestimonialsHoverButton(
+										setReferencesHoverButton(
 											event.target.name,
 											{
 												boxShadow:
@@ -335,7 +335,7 @@ function Testimonials({ props }) {
 										);
 									}}
 									onMouseLeave={(event) => {
-										setTestimonialsHoverButton(
+										setReferencesHoverButton(
 											event.target.name,
 											{
 												boxShadow:
@@ -345,7 +345,7 @@ function Testimonials({ props }) {
 									}}
 									onClick={function () {
 										props.setActivePage(element.target);
-										setTestimonialsHoverButton(
+										setReferencesHoverButton(
 											element.target,
 											{
 												boxShadow:
@@ -363,33 +363,33 @@ function Testimonials({ props }) {
 				{/* END OF CONTAINER DIV */}
 			</div>{' '}
 			{/* BUTTON SPAN */}
-			{/* <div id="testimonialsButtonSpan" style={testimonialsButtonSpan}>
-				{testimonialsButtons.map(function (element, index) {
+			{/* <div id="referencesButtonSpan" style={referencesButtonSpan}>
+				{referencesButtons.map(function (element, index) {
 					return (
 						<button
-							className="testimonialsButton"
-							key={`testimonialsButton${index}`}
+							className="referencesButton"
+							key={`referencesButton${index}`}
 							name={element.name}
 							style={{
-								...testimonialsButton,
-								...testimonialsState[element.name],
+								...referencesButton,
+								...referencesState[element.name],
 							}}
 							onMouseEnter={(event) => {
 								//console.log(event.target.name);
-								setTestimonialsHoverButton(event.target.name, {
+								setReferencesHoverButton(event.target.name, {
 									boxShadow:
 										'0 4px 10px rgba(255, 255, 255, 0.7)',
 								});
 							}}
 							onMouseLeave={(event) => {
-								setTestimonialsHoverButton(event.target.name, {
+								setReferencesHoverButton(event.target.name, {
 									boxShadow:
 										'0 4px 10px rgba(255, 255, 255, 0.0)',
 								});
 							}}
 							onClick={function () {
 								props.setActivePage(element.target);
-								setTestimonialsHoverButton(element.target, {
+								setReferencesHoverButton(element.target, {
 									boxShadow:
 										'0 4px 10px rgba(255, 255, 255, 0.0)',
 								});
@@ -404,4 +404,4 @@ function Testimonials({ props }) {
 	);
 }
 
-export default Testimonials;
+export default References;
