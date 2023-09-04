@@ -6,18 +6,127 @@ import 'prismjs/plugins/toolbar/prism-toolbar';
 import 'prismjs/plugins/toolbar/prism-toolbar.css'; // Import the CSS if needed
 
 // Import the chosen theme
-import 'prism-themes/themes/prism-z-touch.css';
-// import 'prism-themes/themes/prism-shades-of-purple.css';
+// import 'prism-themes/themes/prism-z-touch.css';
+import 'prism-themes/themes/prism-shades-of-purple.css';
 // import 'prism-themes/themes/prism-synthwave84.css';
 
 const codeSnippet = `
 	import resumeJSON from '../assets/resume.json';
+	import { GitHub, OpenInBrowser } from '@mui/icons-material/';
+	import React, { useState, useEffect, useRef } from 'react';
+
 	function RenderedText({ props }) {
-	
+	const styles = {
+		containerHeaders: {
+			textAlign: 'center',
+		},
+		renderedTextContainer: {
+			display: 'flex',
+			flexDirection: 'column',
+			justifyContent: 'center',
+			alignItems: 'center',
+		},
+		contentContainer: {
+			textShadow: '1px 1px rgba(0,0,0,0.3)',
+		},
+		contentBox: {
+			display: 'flex',
+			flexDirection: 'column',
+			border: '1px solid white',
+			borderRadius: 5,
+			overflow: 'hidden',
+			paddingBottom: 20,
+			marginBottom: 20,
+			background: 'rgba(255,255,255,0.1)',
+		},
+		contentTitleRow: {
+			display: 'flex',
+			background:
+				'linear-gradient(90deg, rgba(228,161,205,0.18) 0%, rgba(157,228,245,0.3) 100%)',
+			padding: '15px 25px 15px 25px',
+			justifyContent: 'space-between',
+		},
+
+		centerAlign: {
+			alignItems: 'center',
+		},
+
+		flexRow: {
+			flexDirection: 'row',
+		},
+		flexColumn: {
+			flexDirection: 'column',
+		},
+		titleRow: {
+			display: 'flex',
+			justifyContent: 'space-between',
+		},
+		contentDetailsBox: {
+			paddingLeft: 45,
+			paddingRight: 45,
+		},
+		boxSize: {
+			width: 700,
+		},
+		experienceDetailsBox: {
+			textAlign: 'left',
+		},
+		skillBox: {
+			width: 900,
+		},
+		subSkillBox: {
+			width: 600,
+		},
+		skillFlex: {
+			display: 'flex',
+			flexWrap: 'wrap',
+			alignItems: 'center',
+			justifyContent: 'center',
+		},
+		skill: {
+			border: '1px solid white',
+			padding: 10,
+			margin: 5,
+			borderRadius: 5,
+		},
+		personalSkill: {
+			background: 'rgba(228,161,205,0.18)',
+		},
+		techSkill: {
+			background: 'rgba(157,228,245,0.18)',
+		},
+		lighter: {
+			fontWeight: 'lighter',
+		},
+		bold: {
+			fontWeight: 'bold',
+		},
+		titleBarIcon: {
+			fontSize: 32,
+			marginLeft: 10,
+			cursor: 'pointer',
+		},
+		contactInfo: {
+			margin: 5,
+		},
+		contactBox: {
+			display: 'flex',
+			flexDirection: 'row',
+			justifyContent: 'space-around',
+			marginTop: 20,
+		},
+		contactSubBox: {
+			display: 'flex',
+			flexDirection: 'column',
+			width: '50%',
+		},
+	};
+
 	// Function that opens the resume in a new browser window
 		const openLink = function (link) {
 			window.open(\`https://\${link}\`, '_blank');
 	};
+
 	return (
 		<>
 			{/* Main container div */}
@@ -27,8 +136,9 @@ const codeSnippet = `
 					...styles.renderedTextContainer,
 				}}
 			>
+			
+			{/* Header section */}
 				<div id="renderHeader">
-					{/* Header section */}
 					<h1>{resumeJSON.header.name}</h1>
 					<div
 						style={{
@@ -60,6 +170,7 @@ const codeSnippet = `
 								/>
 							</div>
 						</div>
+
 						<div
 							style={{
 								...styles.contentDetailsBox,
@@ -105,9 +216,10 @@ const codeSnippet = `
 						</div>
 					</div>
 				</div>
+				
+				{/* Education section title */}
 				<div id="renderSummary"></div>
 				<div>
-					{/* Education section title */}
 					<h2>Education</h2>
 					<div
 						style={{
@@ -153,6 +265,7 @@ const codeSnippet = `
 						})}
 					</div>
 				</div>
+
 				<div>
 					{/* Technical Skills section */}
 					<h2>{resumeJSON.technicalSkills.title}</h2>
@@ -177,6 +290,7 @@ const codeSnippet = `
 						})}
 					</div>
 				</div>
+
 				<div>
 					{/* Personal Skills section */}
 					<h2>{resumeJSON.personalSkills.title}</h2>
@@ -300,6 +414,7 @@ const codeSnippet = `
 						})}
 					</div>
 				</div>
+
 				<div>
 					<h2>Projects</h2>
 					<div
@@ -411,7 +526,8 @@ const CodeSnippet = () => {
 		<>
 			<pre>
 				<code className="language-javascript">{codeSnippet}</code>
-				<pre
+				{/* FIXME: get copy to clipboard button working */}
+				{/* <pre
 					data-src="plugins/toolbar/prism-toolbar.js"
 					data-label="my-label-button"
 				></pre>
@@ -419,7 +535,7 @@ const CodeSnippet = () => {
 					<button onclick="console.log('This is an inline-handler');">
 						My button
 					</button>
-				</template>
+				</template> */}
 			</pre>
 		</>
 	);
