@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-// import * as Material from '@mui/material';
 import anime from 'animejs/lib/anime.es.js';
 import {
 	landingHeader,
@@ -16,9 +15,7 @@ import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOu
 function Landing({ props }) {
 	// Animation effect using the useEffect hook
 	useEffect(() => {
-		console.log('anime firing');
 		// Define an animation using the anime.js library
-
 		const animate = anime({
 			targets: '.letter', // Targets elements with the 'letter' class
 			opacity: {
@@ -29,10 +26,7 @@ function Landing({ props }) {
 			rotate: {
 				value: 360, // Rotate by 360 degrees
 				duration: 2000, // Animation duration of 2000ms
-				//easing: 'easeInOutExpo', // Use easing function 'easeInExpo'
 			},
-			//direction: props.currentNavNameState ? 'reverse' : 'both',
-			//scale: anime.stagger([0.7, 1], { from: 'center' }), // Apply staggered scaling
 			delay: props.currentNavNameState
 				? 500
 				: anime.stagger(100, { start: 1000 }), // Apply staggered delays
@@ -40,9 +34,6 @@ function Landing({ props }) {
 			direction: props.currentNavNameState ? 'reverse' : 'both',
 		});
 		//Return a cleanup function to pause the animation when the component unmounts
-		// return () => {
-		// 	animation.pause(); // Pause the animation
-		// };
 	}, [props.currentNavNameState]);
 	// Reference to the container element for scrolling
 	const containerRef = useRef(null);
