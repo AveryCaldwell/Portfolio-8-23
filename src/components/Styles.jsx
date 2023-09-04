@@ -1,5 +1,5 @@
 import { css, keyframes } from 'styled-components';
-
+// Style thats on the app as a whole
 export const appContainer = {
 	display: 'flex',
 	position: 'absolute',
@@ -11,6 +11,7 @@ export const appContainer = {
 	minWidth: '1200px',
 	fontFamily: 'roboto',
 };
+// Variation of pageContainer
 export const pagesContainer = {
 	height: '800px',
 	display: 'flex',
@@ -20,7 +21,7 @@ export const pagesContainer = {
 	marginTop: 'calc(50vh - 400px)',
 	marginBottom: 'calc(50vh - 400px)',
 };
-
+// style that is on each component page
 export const pageContainer = {
 	display: 'flex',
 	minHeight: '800px',

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-// import anime from 'animejs/lib/anime.es.js';
 import resumeJSON from '../assets/resume.json';
 import { GitHub, OpenInBrowser } from '@mui/icons-material/';
 // STYLING
@@ -16,15 +15,9 @@ import {
 	resumeButtonSpan,
 	resumeBox,
 } from './Styles';
+
 function RenderedText({ props }) {
 	const styles = {
-		resumeContainer: {
-			// display: 'flex',
-			// flexDirection: 'column',
-			textAlign: 'center',
-			// justifyContent: 'center',
-			// alignItems: 'center',
-		},
 		containerStyle: {
 			display: 'flex',
 			flexDirection: 'column',
@@ -32,10 +25,6 @@ function RenderedText({ props }) {
 			alignItems: 'center',
 		},
 		contentContainer: {
-			// display: 'flex',
-			// flexDirection: 'column',
-			// alignItems: 'center',
-			// justifyContent: 'center',
 			textShadow: '1px 1px rgba(0,0,0,0.3)',
 		},
 		contentBox: {
@@ -55,17 +44,10 @@ function RenderedText({ props }) {
 			padding: '15px 25px 15px 25px',
 			justifyContent: 'space-between',
 		},
-		// projectTitleRow: {
-		// 	alignItems: 'center',
-		// },
 
 		centerAlign: {
 			alignItems: 'center',
 		},
-		// educationTitleRow: {
-		// 	fontWeight: 'bold',
-		// 	flexDirection: 'row',
-		// },
 
 		flexRow: {
 			flexDirection: 'row',
@@ -73,29 +55,23 @@ function RenderedText({ props }) {
 		flexColumn: {
 			flexDirection: 'column',
 		},
-		// experienceTitleRow: {
-		// 	flexDirection: 'column',
-		// },
 		titleRow: {
 			display: 'flex',
-			// flexDirection: 'row',
 			justifyContent: 'space-between',
-		},
-		boxSize: {
-			width: 700,
 		},
 		contentDetailsBox: {
 			paddingLeft: 45,
 			paddingRight: 45,
 		},
+		boxSize: {
+			width: 700,
+		},
 		experienceDetailsBox: {
 			textAlign: 'left',
 		},
-		// combined with skillFlex
 		skillBox: {
 			width: 900,
 		},
-		// combined with skillFlex
 		subSkillBox: {
 			width: 600,
 		},
@@ -131,20 +107,33 @@ function RenderedText({ props }) {
 		contactInfo: {
 			margin: 5,
 		},
+		contactBox: {
+			display: 'flex',
+			flexDirection: 'row',
+			justifyContent: 'space-around',
+			marginTop: 20,
+		},
+		contactSubBox: {
+			display: 'flex',
+			flexDirection: 'column',
+			width: '50%',
+		},
 	};
+	// Function that opens the resume in a new browser window
 	const openLink = function (link) {
 		window.open(`https://${link}`, '_blank');
 	};
 	return (
 		<>
+			{/* Main container div */}
 			<div
-				// style={styles.resumeContainer}
 				style={{
 					...styles.resumeContainer,
 					...styles.containerStyle,
 				}}
 			>
 				<div id="renderHeader">
+					{/* Header section */}
 					<h1>{resumeJSON.header.name}</h1>
 					<div
 						style={{
@@ -161,6 +150,7 @@ function RenderedText({ props }) {
 						>
 							<div>{resumeJSON.header.title}</div>
 							<div>
+								{/* Icons for GitHub and website */}
 								<GitHub
 									onClick={() =>
 										openLink(resumeJSON.header.github)
@@ -182,21 +172,9 @@ function RenderedText({ props }) {
 								...styles.lighter,
 							}}
 						>
-							<div
-								style={{
-									display: 'flex',
-									flexDirection: 'row',
-									justifyContent: 'space-around',
-									marginTop: 20,
-								}}
-							>
-								<div
-									style={{
-										display: 'flex',
-										flexDirection: 'column',
-										width: '50%',
-									}}
-								>
+							<div style={styles.contactBox}>
+								<div style={styles.contactSubBox}>
+									{/* Contact information */}
 									<p style={styles.contactInfo}>
 										<strong>Location:</strong> <br />
 										{resumeJSON.header.location}
@@ -210,13 +188,7 @@ function RenderedText({ props }) {
 										{resumeJSON.header.site}
 									</p>
 								</div>
-								<div
-									style={{
-										display: 'flex',
-										flexDirection: 'column',
-										width: '50%',
-									}}
-								>
+								<div style={styles.contactSubBox}>
 									<p style={styles.contactInfo}>
 										<strong>Email: </strong>
 										<br />
@@ -232,6 +204,7 @@ function RenderedText({ props }) {
 									</p>
 								</div>
 							</div>
+							{/* Summary section */}
 							<h2>Summary</h2>
 							<p>{resumeJSON.summary.text}</p>
 						</div>
@@ -239,14 +212,15 @@ function RenderedText({ props }) {
 				</div>
 				<div id="renderSummary"></div>
 				<div>
+					{/* Education section title */}
 					<h2>Education</h2>
-					{/* <div style={styles.contentContainer}>*/}
 					<div
 						style={{
 							...styles.containerStyle,
 							...styles.contentContainer,
 						}}
 					>
+						{/* Map through the 'education' array from 'resumeJSON' */}
 						{resumeJSON.education.map(function (element, index) {
 							return (
 								<div
@@ -263,6 +237,7 @@ function RenderedText({ props }) {
 											...styles.bold,
 										}}
 									>
+										{/* Education title and date */}
 										<div>{element.title}</div>
 										<div>{element.date}</div>
 									</div>
@@ -272,6 +247,7 @@ function RenderedText({ props }) {
 											...styles.lighter,
 										}}
 									>
+										{/* School name and overview */}
 										<p>
 											<strong>{element.school}</strong>
 										</p>
@@ -283,8 +259,10 @@ function RenderedText({ props }) {
 					</div>
 				</div>
 				<div>
+					{/* Technical Skills section */}
 					<h2>{resumeJSON.technicalSkills.title}</h2>
 					<div style={{ ...styles.skillBox, ...styles.skillFlex }}>
+						{/* Map through the 'values' array within 'technicalSkills' */}
 						{resumeJSON.technicalSkills.values.map(function (
 							element,
 							index
@@ -305,8 +283,10 @@ function RenderedText({ props }) {
 					</div>
 				</div>
 				<div>
+					{/* Personal Skills section */}
 					<h2>{resumeJSON.personalSkills.title}</h2>
 					<div style={{ ...styles.skillBox, ...styles.skillFlex }}>
+						{/* Map through the 'values' array within 'personalSkills' */}
 						{resumeJSON.personalSkills.values.map(function (
 							element,
 							index
@@ -326,7 +306,9 @@ function RenderedText({ props }) {
 						})}
 					</div>
 				</div>
+
 				<div>
+					{/* Experience section title */}
 					<h2>Experience</h2>
 					<div
 						style={{
@@ -334,6 +316,7 @@ function RenderedText({ props }) {
 							...styles.containerStyle,
 						}}
 					>
+						{/* Map through the 'experience' array from 'resumeJSON' */}
 						{resumeJSON.experience.map(function (element, index) {
 							return (
 								<div
@@ -343,7 +326,6 @@ function RenderedText({ props }) {
 										...styles.boxSize,
 									}}
 								>
-									{/* <div key={`experience${index}`}> */}
 									<div
 										style={{
 											...styles.contentTitleRow,
@@ -351,24 +333,24 @@ function RenderedText({ props }) {
 										}}
 									>
 										<div
-											// style={styles.experienceTitleSuperRow}
 											style={{
 												...styles.titleRow,
 												...styles.flexRow,
 												...styles.bold,
 											}}
 										>
+											{/* Experience title and date */}
 											<div>{element.title}</div>
 											<div>{element.date}</div>
 										</div>
 										<div
-											// style={styles.experienceTitleSubRow}
 											style={{
 												...styles.titleRow,
 												...styles.flexRow,
 												...styles.lighter,
 											}}
 										>
+											{/* Employer and location */}
 											<div>{element.employer}</div>
 											<div>{element.location}</div>
 										</div>
@@ -380,6 +362,7 @@ function RenderedText({ props }) {
 											...styles.experienceDetailsBox,
 										}}
 									>
+										{/* Responsibilities */}
 										<h4>Responsibilities:</h4>
 										{element.responsibilities.map(function (
 											responsibility,
@@ -401,6 +384,7 @@ function RenderedText({ props }) {
 											...styles.experienceDetailsBox,
 										}}
 									>
+										{/* Key Accomplishments */}
 										<h4>Key Accomplishments:</h4>
 										{element.accomplishments.map(function (
 											accomplishment,
@@ -429,6 +413,7 @@ function RenderedText({ props }) {
 							...styles.containerStyle,
 						}}
 					>
+						{/* Map through the 'projects' array from 'resumeJSON' */}
 						{resumeJSON.projects.map(function (element, index) {
 							return (
 								<div
@@ -445,8 +430,10 @@ function RenderedText({ props }) {
 											...styles.bold,
 										}}
 									>
+										{/* Project title */}
 										<div>{element.title}</div>
 										<div>
+											{/* Icons for GitHub and website */}
 											<GitHub
 												onClick={() =>
 													openLink(element.github)
@@ -467,10 +454,12 @@ function RenderedText({ props }) {
 											...styles.experienceDetailsBox,
 										}}
 									>
+										{/* Project overview */}
 										<h4>Overview:</h4>
 										<p style={styles.lighter}>
 											{element.overview}
 										</p>
+										{/* Key technologies used */}
 										<h4>Key Technologies:</h4>
 										<div
 											style={{
@@ -478,6 +467,7 @@ function RenderedText({ props }) {
 												...styles.skillFlex,
 											}}
 										>
+											{/* Map through the 'technologies' array */}
 											{element.technologies.map(function (
 												technology,
 												technologyIndex
@@ -496,6 +486,7 @@ function RenderedText({ props }) {
 												);
 											})}
 										</div>
+										{/* Links to GitHub and site */}
 										<h4>Links:</h4>
 										<p style={styles.lighter}>
 											GitHub: {element.github}
@@ -584,11 +575,6 @@ function Resume({ props }) {
 			setTimeout(type, typingDelay + 1100);
 		}
 	}
-	// Add an event listener to start the typing effect when the DOM is loaded
-	document.addEventListener('DOMContentLoaded', function () {
-		// On DOM Load initiate the effect
-		// If there are texts in the array, start the typing effect after a delay of newTextDelay' + 250 milliseconds
-	});
 	// State for resume content and button styles
 	const [resumeContentState, setResumeContentState] = React.useState('Code');
 	const [resumeButtonState, setResumeButtonState] = React.useState({
@@ -615,12 +601,13 @@ function Resume({ props }) {
 				className="resumeContainer pageContainer"
 				style={{ ...pageContainer, ...resumeContainer }}
 			>
+				{/* Resume container */}
 				<div style={resumeBox}>
-					{/* ... (resume header) */}
 					<h1 className="resumeTitle" style={resumeTitle}>
 						RESUME
 					</h1>
 
+					{/* Typing effect container */}
 					<div className="typingContainer" style={typingContainer}>
 						<p>
 							Coding is{' '}
@@ -648,32 +635,19 @@ function Resume({ props }) {
 							},
 						}}
 					>
-						<code style={{ color: 'cyan' }}>
-							<span
-								style={{
-									color: 'lime',
-								}}
-							>
-								className
-							</span>{' '}
-							AveryCaldwell
-							<span
-								style={{
-									color: 'lime',
-								}}
-							>
-								{' {'}
-							</span>
+						<code>
+							<span>className</span> AveryCaldwell
+							<span>{' {'}</span>
 						</code>
 
-						<pre style={{ color: 'lime' }}>
+						<pre>
 							{`    constructor() {
     this.name = 'Avery Caldwell';
     this.dayOfBirthTimestamp = 12071993;
     this.email = 'averycaldwell7@gmail.com';
     }`}
 						</pre>
-						<pre style={{ color: 'lime' }}>
+						<pre>
 							{`workExperience() {
         return [
         {'2020-2023': 'Suspicious Activity Investigator - BSA/AML at BankPlus'},
@@ -683,7 +657,7 @@ function Resume({ props }) {
     }
 `}
 						</pre>
-						<pre style={{ color: 'lime' }}>
+						<pre>
 							{`   Education() {
         return [
         {'2022-2023': 'University of Washington - Certificate in Full Stack Development'},
@@ -731,199 +705,11 @@ function Resume({ props }) {
 						}}
 					>
 						<RenderedText />
-						{/* <h1>AVERY CALDWELL</h1>
-						<ul>
-							<li>Seattle, WA </li>
-							<li>Phone: 601-506-1057 </li>
-							<li>Email: averycaldwell7@gmail.com </li>
-							<li>Github: https://github.com/AveryCaldwelll </li>
-							<li>
-								Portfolio:
-								https://github.com/AveryCaldwell/postgrad-portfolio
-							</li>
-						</ul>
-						<h2>SUMMARY</h2>
-						<p>
-							Full Stack web developer with a background in
-							banking. Trained at University of Washington Coding
-							Bootcamp & earned a certificate in full-stack web
-							development. Versatile problem-solver excited about
-							expanding knowledge; focused on adaptive design and
-							development. Strengths in creativity, teamwork, and
-							building projects effectively on all accounts.
-						</p>
-
-						<h2>TECHNICAL SKILLS</h2>
-						<ul>
-							<strong>Technologies:</strong>
-							<li>
-								{' '}
-								JavaScript, HTML, CSS,, React, MERN, MySQL,
-								NoSQL, GraphQL, Apollo, MongoDB, Insomnia,
-								Heroku, Postman, OAth, Restful APIs, Jest, Git,
-								Github, Gitlab, JSON Web Tokens, Wordpress,
-								Passport.js
-							</li>
-							<strong>Frameworks and Libraries:</strong>
-							<li>
-								Angular, Vue.js, Anime.js, Material-UI,
-								Bootstrap, Vite, Express, jQuery, SASS,
-								Handlebars.js, bcrypt, Node.js, Tailwind CSS,
-								Bulma, Next.js, Foundation, Chart.js, D3.js
-							</li>
-						</ul>
-
-						<h2>PROJECTS</h2>
-						<ul>
-							<h3>
-								<strong>Wear You Wander | </strong>
-								https://github.com/AveryCaldwell/WearYouWander |
-								https://averycaldwell.github.io/WearYouWander/
-							</h3>
-							<li>
-								Wear You Wander is an application that uses 2
-								server-side APIs with client-side storage to
-								analyze historical weather conditions to suggest
-								accommodating outerwear.
-							</li>
-							<li>
-								As Team Lead for this project, I assigned tasks,
-								created the concept of the application, worked
-								with both APIs, and integrated the team’s work.
-							</li>
-							<li>
-								{' '}
-								HTML, CSS, Foundation Framework, JavaScript, and
-								jQuery
-							</li>
-
-							<h3>
-								<strong>Cheers Check |</strong>{' '}
-								https://github.com/AveryCaldwell/CheersCheck |
-								https://averycaldwell.github.io/CheersCheck/
-							</h3>
-							<li>
-								{' '}
-								A new liquor inventory application - the perfect
-								tool for anyone who enjoys keeping track of
-								their favorite spirits! You can easily organize
-								your liquor collection, keep track of what you
-								have on hand.
-							</li>
-							<li>
-								{' '}
-								As Team Lead for this project, I assigned tasks,
-								created the concept of the application, worked
-								with both APIs, and integrated the team’s work.
-							</li>
-							<li>
-								HTML, CSS, Bootstrap, JavaScript, MySQL,
-								Sequelize, Handlebars.js. Node, Express, Heroku,
-								and Anime.js jQuery
-							</li>
-
-							<h3>
-								<strong> TasteBuds | </strong>
-								https://github.com/AveryCaldwell/TasteBuds |
-								https://taste-buds.herokuapp.com/
-							</h3>
-							<li>
-								A social media app that allows users to never
-								dine alone again! This app allows the user to
-								create a profile, see other users posts, create
-								posts and comments, and join other events!
-							</li>
-							<li>
-								As a Team Member, I ensured app functionality
-								and that acceptance criteria was met, as well
-								as, created the concept of the application and
-								integrated the front to the backend.
-							</li>
-							<li>
-								{' '}
-								HTML, CSS, Javascript, Tailwind, Express, Node,
-								Heroku, MongoDB, Mongoose, MongoCompass, Apollo,
-								GraphQL, React
-							</li>
-						</ul>
-						<h2>EXPERIENCE</h2>
-
-						<h3>
-							<strong>
-								Suspicious Activity Investigator - BSA/AML{' '}
-							</strong>
-							June 2018 - Aug 2023 BankPlus Ridgeland, MS{' '}
-						</h3>
-						<ul>
-							<li>
-								{' '}
-								Streamlined operations by developing and
-								implementing compliance procresumeres and
-								guidelines for cross-functional operations
-								teams, resulting in an increase in process
-								efficiency and improved collaboration among
-								departments.
-							</li>
-							<li>
-								{' '}
-								Utilized critical thinking skills to evaluate
-								risk levels of customer behavior, including
-								transactional trends and historical statistics,
-								effectively preventing money laundering and
-								ensuring regulatory compliance.
-							</li>
-							<li>
-								{' '}
-								Protected the company's reputation and financial
-								well-being by leading investigations into
-								systemwide suspicious activities
-							</li>
-
-							<em>Key Accomplishments:</em>
-							<li>
-								{' '}
-								Played a pivotal role as a liaison to newly
-								acquired banks, driving successful training and
-								transition processes.
-							</li>
-							<li>
-								{' '}
-								Selected as a distinguished representative to
-								attend the esteemed BSA/AML Conference,
-								showcasing the Bank's commitment to regulatory
-								compliance and industry best practices.
-							</li>
-						</ul>
-
-						<h2>EDUCATION</h2>
-						<ul>
-							<h3>
-								Certificate in Full Stack Development:
-								University of Washington, Seattle, WA May 2023
-							</h3>
-							<li>
-								A 24 week intensive program focused on gaining
-								skills in front end and back end technologies.
-							</li>
-							<h3>
-								Bachelors of Science in Marketing: Mississippi
-								College, Clinton, MS 2012-2016
-							</h3>
-							<h3>
-								Business Program Certificate: Chung Yuan
-								Christian University, Taipei, Taiwan 2015
-							</h3>
-							<li>
-								{' '}
-								A 2 month program focused on gaining
-								international business skills and adapting to
-								new environments.
-							</li>
-						</ul> */}
 					</div>{' '}
 				</div>
 				{/* Resume buttons */}
 				<div id="resumeButtonSpan" style={resumeButtonSpan}>
+					{/* Map through the 'resumeButtons' array */}
 					{resumeButtons.map(function (element, index) {
 						return (
 							<button
@@ -935,6 +721,7 @@ function Resume({ props }) {
 									...resumeButtonState[element.name],
 								}}
 								onMouseEnter={(event) => {
+									// Handle mouse enter event
 									if (
 										event.target.name !== resumeContentState
 									) {
@@ -948,6 +735,7 @@ function Resume({ props }) {
 									}
 								}}
 								onMouseLeave={(event) => {
+									// Handle mouse leave event
 									if (
 										event.target.name !== resumeContentState
 									) {
@@ -961,12 +749,15 @@ function Resume({ props }) {
 									}
 								}}
 								onClick={function () {
+									// Handle button click event
 									if (
 										element.target === 'References' ||
 										element.target === 'Projects'
 									) {
+										// Handle click for 'References' or 'Projects'
 										props.setActivePage(element.target);
 									} else if (element.target === 'Download') {
+										// Handle click for 'Download'
 										window.open(
 											'./resume.pdf',
 											'_blank' // <- This is what makes it open in a new window.
@@ -977,6 +768,7 @@ function Resume({ props }) {
 										});
 									} else {
 										if (
+											// Handle click for other options
 											element.target !==
 											resumeContentState
 										) {
@@ -1007,6 +799,7 @@ function Resume({ props }) {
 								}}
 							>
 								<span>
+									{/* Conditional rendering for '<' and '>' based on 'resumeContentState' */}
 									{resumeContentState === 'Code' ? '< ' : ''}
 									{element.span}
 									{resumeContentState === 'Code' ? ' />' : ''}
