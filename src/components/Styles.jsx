@@ -261,7 +261,6 @@ export const aboutText = {
 	textShadow: `2px 2px rgba(0,0,0,0.1)`,
 	fontSize: '24px',
 	height: '150px',
-	textAlign: 'column',
 	// fontWeight: 'lighter',
 	textAlign: 'center',
 };
@@ -529,7 +528,6 @@ export const eduSlideshow = {
 	fontSize: '20px',
 	padding: '15px',
 	justifyContent: 'center',
-
 	color: 'white',
 	display: 'flex',
 	width: '350px',
@@ -547,15 +545,10 @@ export const eduSlideshow = {
 };
 export const myEduActive = {
 	display: 'block',
-
 	height: 275,
 	textAlign: 'center',
-
 	opacity: 1,
 	position: 'absolute',
-	//height: '250px',
-	//animationName: 'fade',
-	//animationDuration: ' 1.5s',
 	transition: 'all 1s ease',
 };
 export const myEduInactive = {
@@ -563,11 +556,7 @@ export const myEduInactive = {
 	display: 'block',
 	textAlign: 'center',
 	opacity: 0,
-
 	position: 'absolute',
-	//height: '250px',
-	//animationName: 'fade',
-	//animationDuration: ' 1.5s',
 	transition: 'all 1s ease',
 };
 /* ============================== SVG PATH SECTION ============================== */
@@ -775,6 +764,7 @@ export const prev = {
 	borderRadius: '3px 0 0 3px',
 };
 /* Fading animation */
+// FIXME: add transition to all slides/img for smoother look
 export const fade = {
 	animationName: 'fade',
 	animationDuration: '1.5s',
@@ -966,7 +956,6 @@ export const referencesBox = {
 	flexDirection: 'column',
 	flexWrap: 'nowrap',
 	alignItems: 'center',
-	display: 'flex',
 	position: 'relative',
 	height: '800px',
 	maxWidth: '560px',
@@ -1124,7 +1113,6 @@ export const referencesButtonSpan = {
 	flexDirection: 'row',
 	width: '400px',
 	marginTop: '25px',
-
 	position: 'relative',
 };
 export const referencesButton = {
@@ -1141,6 +1129,7 @@ export const referencesButton = {
 	cursor: 'pointer',
 };
 /* ============================== CONTACT SECTION ============================== */
+
 export const contactContainer = {
 	display: 'flex',
 	position: 'relative',
@@ -1148,25 +1137,35 @@ export const contactContainer = {
 	marginTop: 'calc(50vh - 400px)',
 	marginBottom: 'calc(50vh - 400px)',
 };
+/*----------left side box---------> */
+export const contactTextBox = {
+	maxWidth: '600px',
+	color: 'white',
+	textAlign: 'center',
+	width: '600px',
+	height: '100%',
+	display: 'flex',
+	flexDirection: 'column',
+	// background: 'pink',
+};
 export const contactTitle = {
 	color: 'white',
 	transition: 'all .2s ease',
-	display: 'flex',
 	fontSize: '80px',
-	fontFamily: 'Roboto',
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
-	position: 'relative',
 	height: '100px',
-	justifyContent: 'center',
 };
-
-/*---------------- Name drawing --------------------> */
-
+/*---------------- Name drawing ---------> */
+// contains the text and svg animation image, does not include the buttons
+export const contactAnimation = {
+	textAlign: 'center',
+	fontSize: '26px',
+	color: 'white',
+	fontWeight: 'light',
+	height: '550px',
+};
 export const thanksText = {
 	textAlign: 'center',
-	display: 'flex',
-	position: 'relative',
-	flexDirection: 'column',
 	fontSize: '26px',
 	color: 'white',
 	fontWeight: 'light',
@@ -1176,18 +1175,53 @@ export const myPath = {
 	fill: 'none',
 	stroke: 'white',
 	strokeWidth: '4',
-	width: '75%',
 };
 export const lineDrawing = {
-	position: 'relative',
-	display: 'flex',
-};
-export const svgName = {
-	width: '75%',
-	height: '500px',
+	// background: 'green',
 };
 
-/*---------------- FORM --------------------> */
+export const svgName = {
+	height: '400px',
+};
+// =============== contact buttons ===============
+export const contactButtonSpan = {
+	display: 'flex',
+	justifyContent: 'space-around',
+	flexDirection: 'row',
+	width: '600px',
+	height: '125px',
+	// background: 'purple',
+};
+export const contactButton = {
+	borderRadius: '36px',
+	border: '1px solid white',
+	textAlign: 'center',
+	listStyle: 'none',
+	width: '150px',
+	height: '65px',
+	color: 'white',
+	fontSize: '18px',
+	lineHeight: '1.25',
+	backgroundColor: 'transparent',
+	cursor: 'pointer',
+	marginTop: '30px',
+};
+/*---------------- FORM ----------> */
+/*---------------- right side box ----------> */
+export const formDiv = {
+	// display: 'flex',
+	backgroundColor: 'rgba(72, 72, 72, 0.4)',
+	padding: '50px',
+	MozBorderRadius: '7px',
+	WebkitBorderRadius: '7px',
+	alignItems: 'center',
+	textAlign: 'center',
+	height: '100%',
+	maxWidth: '600px',
+	width: '600px',
+	display: 'flex',
+	flexDirection: 'column',
+};
 export const contactSubtitle = {
 	color: '#3c3c3c',
 	transition: 'all .2s ease',
@@ -1196,20 +1230,6 @@ export const contactSubtitle = {
 	position: 'relative',
 	padding: '10px',
 	marginBottom: '10px',
-};
-export const formDiv = {
-	display: 'flex',
-	backgroundColor: 'rgba(72, 72, 72, 0.4)',
-	padding: '50px',
-	width: '50%',
-	MozBorderRadius: '7px',
-	WebkitBorderRadius: '7px',
-	flexDirection: 'column',
-	alignItems: 'center',
-	position: 'relative',
-	textAlign: 'center',
-	height: '725px',
-	maxWidth: '600px',
 };
 export const feedbackInput = {
 	color: '#3c3c3c',
@@ -1259,37 +1279,6 @@ export const textArea = {
 	resize: 'vertical',
 };
 
-export const contactButton = {
-	display: 'flex',
-	justifyContent: 'space-around',
-	borderRadius: '36px',
-	border: '1px solid white',
-	textAlign: 'center',
-	width: '450px',
-	height: '65px',
-	color: 'white',
-	fontSize: '18px',
-	lineHeight: '1.25',
-	backgroundColor: 'transparent',
-	cursor: 'pointer',
-	marginTop: '20px',
-};
-export const contactButtonSpan = {
-	display: 'flex',
-	justifyContent: 'space-evenly',
-	alignItems: 'center',
-	flexDirection: 'row',
-	borderRadius: '36px',
-	border: '1px solid white',
-	textAlign: 'center',
-	width: '150px',
-	height: '65px',
-	color: 'white',
-	fontSize: '18px',
-	lineHeight: '1.25',
-	backgroundColor: 'transparent',
-	cursor: 'pointer',
-};
 export const ease = {
 	width: '0px',
 	height: '74px',
