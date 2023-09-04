@@ -46,6 +46,7 @@ function Landing({ props }) {
 				style={landingContainer}
 				ref={containerRef}
 			>
+				{/* Name animation by each letter */}
 				<div className="landingHeader" style={landingHeader}>
 					<span className="letter" style={letter}>
 						A
@@ -95,6 +96,7 @@ function Landing({ props }) {
 					<div className="landingSubtitle" style={landingSubtitle}>
 						React/Full Stack Developer
 						<span>
+							{/* Button to go to next page */}
 							<button
 								className="landingButton"
 								onClick={() => props.setActivePage('About')}
