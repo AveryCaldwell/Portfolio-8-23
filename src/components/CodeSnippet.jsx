@@ -1,7 +1,14 @@
 // SeparateCodeSnippet.jsx
 import React, { useEffect } from 'react';
 import Prism from 'prismjs';
-import 'prism-themes/themes/prism-xonokai.css'; // Import the chosen theme
+// Import Prism.js and the Prism Toolbar plugin
+import 'prismjs/plugins/toolbar/prism-toolbar';
+import 'prismjs/plugins/toolbar/prism-toolbar.css'; // Import the CSS if needed
+
+// Import the chosen theme
+import 'prism-themes/themes/prism-z-touch.css';
+// import 'prism-themes/themes/prism-shades-of-purple.css';
+// import 'prism-themes/themes/prism-synthwave84.css';
 
 const codeSnippet = `
 	import resumeJSON from '../assets/resume.json';
@@ -401,9 +408,20 @@ const CodeSnippet = () => {
 	}, []);
 
 	return (
-		<pre>
-			<code className="language-javascript">{codeSnippet}</code>
-		</pre>
+		<>
+			<pre>
+				<code className="language-javascript">{codeSnippet}</code>
+				<pre
+					data-src="plugins/toolbar/prism-toolbar.js"
+					data-label="my-label-button"
+				></pre>
+				<template id="my-label-button">
+					<button onclick="console.log('This is an inline-handler');">
+						My button
+					</button>
+				</template>
+			</pre>
+		</>
 	);
 };
 
