@@ -189,10 +189,7 @@ function References({ props }) {
 						justifyContent: 'center',
 					}}
 				>
-					<div
-						className="referencesTitle"
-						style={referencesTitle}
-					>
+					<div className="referencesTitle" style={referencesTitle}>
 						REFERENCES
 					</div>
 					<span style={referencesSubtitle}>What's the sitch?</span>
@@ -310,10 +307,7 @@ function References({ props }) {
 							</div>
 						);
 					})}
-					<div
-						id="referencesButtonSpan"
-						style={referencesButtonSpan}
-					>
+					<div id="referencesButtonSpan" style={referencesButtonSpan}>
 						{referencesButtons.map(function (element, index) {
 							return (
 								<button

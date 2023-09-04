@@ -11,7 +11,7 @@ import {
 	aboutSubtitle,
 	skillSubtitle,
 	pageContainer,
-	buttonSpan,
+	aboutButtonSpan,
 	fadeTransition,
 	aboutBackSkill,
 	aboutFrontSkill,
@@ -212,7 +212,7 @@ function About({ props }) {
 				</div>
 
 				{/* Buttons to navigate between content sections */}
-				<div id="buttonSpan" style={buttonSpan}>
+				<div id="aboutButtonSpan" style={aboutButtonSpan}>
 					{aboutButtons.map(function (element, index) {
 						return (
 							<button

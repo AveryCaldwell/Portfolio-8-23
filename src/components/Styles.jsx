@@ -72,6 +72,7 @@ export const menuIcon = {
 	height: '50px',
 	width: '50px',
 	cursor: 'pointer',
+	textShadow: '4px 4px rgba(0,0,0,0.3)',
 };
 export const avesImg = {
 	height: '150px',
@@ -372,6 +373,7 @@ export const subSkillBox = {
 	alignItems: 'center',
 	justifyContent: 'center',
 	width: 600,
+	overflow: 'hidden',
 };
 export const aboutButton = {
 	borderRadius: '36px',
@@ -387,7 +389,7 @@ export const aboutButton = {
 	cursor: 'pointer',
 	marginTop: '30px',
 };
-export const buttonSpan = {
+export const aboutButtonSpan = {
 	display: 'flex',
 	justifyContent: 'space-around',
 	flexDirection: 'row',
@@ -576,6 +578,8 @@ export const myEduActive = {
 	opacity: 1,
 	position: 'absolute',
 	transition: 'all 1s ease',
+	marginTop: 10,
+	// lineHeight: 1.25,
 };
 export const myEduInactive = {
 	height: 275,

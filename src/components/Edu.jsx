@@ -135,7 +135,7 @@ function Edu({ props }) {
 				'Sandra Parks Award',
 				"Who's Who",
 				'Mortar Board',
-				'Delta Mu Delta, Epsilon Iota Delta, Omicron Delta Kappa',
+				// 'Delta Mu Delta, Epsilon Iota Delta, Omicron Delta Kappa',
 			],
 		},
 		{
@@ -145,6 +145,8 @@ function Edu({ props }) {
 				'Taipei, Taiwan',
 				'Summer Business Program 2015',
 				'Certificate of Completion',
+				'GPA: 4.0/4.0',
+				'1 of 3 students chosen',
 			],
 		},
 		{

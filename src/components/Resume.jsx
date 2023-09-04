@@ -19,17 +19,23 @@ import {
 function RenderedText({ props }) {
 	const styles = {
 		resumeContainer: {
+			// display: 'flex',
+			// flexDirection: 'column',
+			textAlign: 'center',
+			// justifyContent: 'center',
+			// alignItems: 'center',
+		},
+		containerStyle: {
 			display: 'flex',
 			flexDirection: 'column',
-			textAlign: 'center',
 			justifyContent: 'center',
 			alignItems: 'center',
 		},
 		contentContainer: {
-			display: 'flex',
-			flexDirection: 'column',
-			alignItems: 'center',
-			justifyContent: 'center',
+			// display: 'flex',
+			// flexDirection: 'column',
+			// alignItems: 'center',
+			// justifyContent: 'center',
 			textShadow: '1px 1px rgba(0,0,0,0.3)',
 		},
 		contentBox: {
@@ -49,39 +55,35 @@ function RenderedText({ props }) {
 			padding: '15px 25px 15px 25px',
 			justifyContent: 'space-between',
 		},
-		projectTitleRow: {
-			fontWeight: 'bold',
+		// projectTitleRow: {
+		// 	alignItems: 'center',
+		// },
+
+		centerAlign: {
 			alignItems: 'center',
 		},
-		educationTitleRow: {
-			fontWeight: 'bold',
+		// educationTitleRow: {
+		// 	fontWeight: 'bold',
+		// 	flexDirection: 'row',
+		// },
+
+		flexRow: {
 			flexDirection: 'row',
 		},
-		experienceTitleRow: {
+		flexColumn: {
 			flexDirection: 'column',
 		},
-		experienceTitleSuperRow: {
+		// experienceTitleRow: {
+		// 	flexDirection: 'column',
+		// },
+		titleRow: {
 			display: 'flex',
-			fontWeight: 'bold',
-			flexDirection: 'row',
+			// flexDirection: 'row',
 			justifyContent: 'space-between',
 		},
-		experienceTitleSubRow: {
-			display: 'flex',
-			flexDirection: 'row',
-			justifyContent: 'space-between',
-			fontWeight: 'lighter',
-		},
-		headerBox: {
+		boxSize: {
 			width: 700,
 		},
-		experienceBox: {
-			width: 700,
-		},
-		educationBox: {
-			width: 700,
-		},
-
 		contentDetailsBox: {
 			paddingLeft: 45,
 			paddingRight: 45,
@@ -89,26 +91,25 @@ function RenderedText({ props }) {
 		experienceDetailsBox: {
 			textAlign: 'left',
 		},
+		// combined with skillFlex
 		skillBox: {
-			display: 'flex',
-			flexWrap: 'wrap',
-			alignItems: 'center',
-			justifyContent: 'center',
 			width: 900,
 		},
+		// combined with skillFlex
 		subSkillBox: {
+			width: 600,
+		},
+		skillFlex: {
 			display: 'flex',
 			flexWrap: 'wrap',
 			alignItems: 'center',
 			justifyContent: 'center',
-			width: 600,
 		},
 		skill: {
 			border: '1px solid white',
 			padding: 10,
 			margin: 5,
 			borderRadius: 5,
-			fontWeight: 'lighter',
 		},
 		personalSkill: {
 			background: 'rgba(228,161,205,0.18)',
@@ -136,19 +137,26 @@ function RenderedText({ props }) {
 	};
 	return (
 		<>
-			<div style={styles.resumeContainer}>
+			<div
+				// style={styles.resumeContainer}
+				style={{
+					...styles.resumeContainer,
+					...styles.containerStyle,
+				}}
+			>
 				<div id="renderHeader">
 					<h1>{resumeJSON.header.name}</h1>
 					<div
 						style={{
 							...styles.contentBox,
-							...styles.headerBox,
+							...styles.boxSize,
 						}}
 					>
 						<div
 							style={{
 								...styles.contentTitleRow,
-								...styles.projectTitleRow,
+								...styles.centerAlign,
+								...styles.bold,
 							}}
 						>
 							<div>{resumeJSON.header.title}</div>
@@ -232,20 +240,27 @@ function RenderedText({ props }) {
 				<div id="renderSummary"></div>
 				<div>
 					<h2>Education</h2>
-					<div style={styles.contentContainer}>
+					{/* <div style={styles.contentContainer}>*/}
+					<div
+						style={{
+							...styles.containerStyle,
+							...styles.contentContainer,
+						}}
+					>
 						{resumeJSON.education.map(function (element, index) {
 							return (
 								<div
 									key={`education${index}`}
 									style={{
 										...styles.contentBox,
-										...styles.educationBox,
+										...styles.boxSize,
 									}}
 								>
 									<div
 										style={{
 											...styles.contentTitleRow,
-											...styles.educationTitleRow,
+											...styles.flexRow,
+											...styles.bold,
 										}}
 									>
 										<div>{element.title}</div>
@@ -269,7 +284,7 @@ function RenderedText({ props }) {
 				</div>
 				<div>
 					<h2>{resumeJSON.technicalSkills.title}</h2>
-					<div style={styles.skillBox}>
+					<div style={{ ...styles.skillBox, ...styles.skillFlex }}>
 						{resumeJSON.technicalSkills.values.map(function (
 							element,
 							index
@@ -279,6 +294,7 @@ function RenderedText({ props }) {
 									key={`techSkill${index}`}
 									style={{
 										...styles.skill,
+										...styles.lighter,
 										...styles.techSkill,
 									}}
 								>
@@ -290,7 +306,7 @@ function RenderedText({ props }) {
 				</div>
 				<div>
 					<h2>{resumeJSON.personalSkills.title}</h2>
-					<div style={styles.skillBox}>
+					<div style={{ ...styles.skillBox, ...styles.skillFlex }}>
 						{resumeJSON.personalSkills.values.map(function (
 							element,
 							index
@@ -300,6 +316,7 @@ function RenderedText({ props }) {
 									key={`personalSkill${index}`}
 									style={{
 										...styles.skill,
+										...styles.lighter,
 										...styles.personalSkill,
 									}}
 								>
@@ -311,33 +328,46 @@ function RenderedText({ props }) {
 				</div>
 				<div>
 					<h2>Experience</h2>
-					<div style={{ ...styles.contentContainer }}>
+					<div
+						style={{
+							...styles.contentContainer,
+							...styles.containerStyle,
+						}}
+					>
 						{resumeJSON.experience.map(function (element, index) {
 							return (
 								<div
 									key={`experience${index}`}
 									style={{
 										...styles.contentBox,
-										...styles.experienceBox,
+										...styles.boxSize,
 									}}
 								>
 									{/* <div key={`experience${index}`}> */}
 									<div
 										style={{
 											...styles.contentTitleRow,
-											...styles.experienceTitleRow,
+											...styles.flexColumn,
 										}}
 									>
 										<div
-											style={
-												styles.experienceTitleSuperRow
-											}
+											// style={styles.experienceTitleSuperRow}
+											style={{
+												...styles.titleRow,
+												...styles.flexRow,
+												...styles.bold,
+											}}
 										>
 											<div>{element.title}</div>
 											<div>{element.date}</div>
 										</div>
 										<div
-											style={styles.experienceTitleSubRow}
+											// style={styles.experienceTitleSubRow}
+											style={{
+												...styles.titleRow,
+												...styles.flexRow,
+												...styles.lighter,
+											}}
 										>
 											<div>{element.employer}</div>
 											<div>{element.location}</div>
@@ -393,20 +423,26 @@ function RenderedText({ props }) {
 				</div>
 				<div>
 					<h2>Projects</h2>
-					<div style={{ ...styles.contentContainer }}>
+					<div
+						style={{
+							...styles.contentContainer,
+							...styles.containerStyle,
+						}}
+					>
 						{resumeJSON.projects.map(function (element, index) {
 							return (
 								<div
 									key={`experience${index}`}
 									style={{
 										...styles.contentBox,
-										...styles.experienceBox,
+										...styles.boxSize,
 									}}
 								>
 									<div
 										style={{
 											...styles.contentTitleRow,
-											...styles.projectTitleRow,
+											...styles.centerAlign,
+											...styles.bold,
 										}}
 									>
 										<div>{element.title}</div>
@@ -436,7 +472,12 @@ function RenderedText({ props }) {
 											{element.overview}
 										</p>
 										<h4>Key Technologies:</h4>
-										<div style={styles.subSkillBox}>
+										<div
+											style={{
+												...styles.subSkillBox,
+												...styles.skillFlex,
+											}}
+										>
 											{element.technologies.map(function (
 												technology,
 												technologyIndex
@@ -446,6 +487,7 @@ function RenderedText({ props }) {
 														key={`responsibility-${index}-${technologyIndex}`}
 														style={{
 															...styles.skill,
+															...styles.lighter,
 															...styles.techSkill,
 														}}
 													>
