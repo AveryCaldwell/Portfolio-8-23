@@ -1,4 +1,6 @@
 import React from 'react';
+import Prism from 'prismjs'; // Import Prism.js
+// import 'prismjs/themes/your-theme.css'; // Import your chosen theme
 // MUI
 import theme from './theme';
 import { ThemeProvider } from '@emotion/react';
@@ -21,6 +23,7 @@ import { appContainer, pagesContainer } from './components/Styles';
 
 // Function to set the active page and perform page transition animations
 function App() {
+	Prism.highlightAll();
 	const [currentCordState, setCurrentCordState] = React.useState(false);
 	const [currentNavNameState, setCurrentNavNameState] = React.useState(false);
 
