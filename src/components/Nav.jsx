@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as Material from '@mui/material';
 import avesLogo from '../assets/aves.png';
+// import avery from '../assets/avery.png';
+import avery from '../assets/old-avery.png';
 // MUI COMPONENT
 import { Typography } from '@mui/material';
 
@@ -12,6 +14,9 @@ import {
 	navSubtitleText,
 	closeIcon,
 	navTitle,
+	navToolbar,
+	menuIcon,
+	toolbarImage,
 } from './Styles';
 // ICONS
 import {
@@ -135,28 +140,9 @@ function Nav({ props }) {
 	// Render the top header
 	return (
 		<div>
-			<Material.Toolbar
-				sx={{
-					color: 'white',
-					//p: 2,
-					display: 'flex',
-					alignContent: 'start',
-					alignItems: 'baseline',
-					marginLeft: '5px',
-					background: ' rgba(255, 255, 255, 0.2)',
-					zIndex: '5',
-					padding: '5px',
-				}}
-			>
+			<Material.Toolbar sx={navToolbar}>
 				{/* Menu icon */}
-				<Menu
-					sx={{
-						height: '50px',
-						width: '50px',
-						cursor: 'pointer',
-					}}
-					onClick={toggleDrawer('left', true)}
-				/>
+				<Menu sx={menuIcon} onClick={toggleDrawer('left', true)} />
 				{/* Drawer */}
 				<div
 					style={{
@@ -166,7 +152,13 @@ function Nav({ props }) {
 						},
 					}}
 				>
-					Avery Caldwell // Developer
+					<span> Avery Caldwell // Developer</span>
+
+					<img
+						alt="Avery Headshot"
+						src={avery}
+						style={toolbarImage}
+					/>
 				</div>
 			</Material.Toolbar>
 			{['left'].map((anchor) => (

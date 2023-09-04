@@ -38,7 +38,7 @@ export const navTitle = {
 	right: '10px',
 	color: 'rgba(255,255,255,0.8)',
 	transition: 'all 1.5s ease',
-	textShadow: `2px 2px rgba(0,0,0,0.1)`,
+	textShadow: `2px 2px rgba(0,0,0,0.2)`,
 	//opacity: 0.5,
 };
 export const navBox = {
@@ -46,7 +46,33 @@ export const navBox = {
 	paddingTop: '50px',
 	cursor: 'pointer',
 };
-
+export const navToolbar = {
+	color: 'white',
+	display: 'flex',
+	alignContent: 'start',
+	alignItems: 'baseline',
+	marginLeft: '5px',
+	background: ' rgba(255, 255, 255, 0.3)',
+	textShadow: `2px 2px rgba(0,0,0,0.2)`,
+	zIndex: '5',
+	padding: '5px',
+};
+export const toolbarImage = {
+	height: '25px',
+	width: '25px',
+	borderRadius: '100%',
+	transform: 'scale(2)',
+	overflow: 'hidden',
+	display: 'inline-block',
+	border: ' 1px solid white',
+	boxShadow: '0 0 55px 5px white',
+	marginLeft: 25,
+};
+export const menuIcon = {
+	height: '50px',
+	width: '50px',
+	cursor: 'pointer',
+};
 export const avesImg = {
 	height: '150px',
 	width: '150px',
