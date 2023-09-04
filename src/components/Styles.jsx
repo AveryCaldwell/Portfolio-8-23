@@ -720,14 +720,17 @@ export const textSlideshow = {
 /* Hide the images by default */
 export const mySlides = {
 	display: 'block',
-	animationName: 'fade',
-	animationDuration: ' 1.5s',
+	transition: 'all 1.0s ease',
 };
 /* Hide the images by default */
 export const projectSlides = {
-	display: 'none',
+	display: 'block',
+	position: 'absolute',
+	top: 0,
+	left: 15,
 	height: '400px',
 	width: '400px',
+	transition: 'all 1.0s ease',
 };
 export const slideTitle = {
 	fontSize: '26px',

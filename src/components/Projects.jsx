@@ -192,10 +192,7 @@ function Projects({ props }) {
 									style={{
 										...fade,
 										...projectSlides,
-										display:
-											index === slideIndex
-												? 'block'
-												: 'none',
+										opacity: index === slideIndex ? 1 : 0,
 									}}
 								>
 									{/* Slide Title */}
@@ -288,8 +285,7 @@ function Projects({ props }) {
 								style={{
 									...fade,
 									...mySlides,
-									display:
-										index === slideIndex ? 'block' : 'none',
+									opacity: index === slideIndex ? 1 : 0,
 								}}
 							>
 								<img
