@@ -1220,7 +1220,6 @@ export const contactTextBox = {
 	height: '100%',
 	display: 'flex',
 	flexDirection: 'column',
-	// background: 'pink',
 };
 export const contactTitle = {
 	color: 'white',
@@ -1228,6 +1227,22 @@ export const contactTitle = {
 	fontSize: '80px',
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
 	height: '100px',
+};
+export const contactSubtitle = {
+	display: 'flex',
+	justifyContent: 'space-between',
+	padding: '10px',
+	width: '100%',
+	marginBottom: '20px',
+	borderRadius: 7,
+	textAlign: 'center',
+	color: '#EEE',
+	transition: 'all .2s ease',
+	fontSize: '26px',
+	fontWeight: 'normal',
+	textShadow: `2px 2px rgba(0,0,0,0.3)`,
+	background:
+		'linear-gradient(90deg, rgba(228,161,205,0.18) 0%, rgba(157,228,245,0.3) 100%)',
 };
 /*---------------- Name drawing ---------> */
 // contains the text and svg animation image, does not include the buttons
@@ -1244,6 +1259,7 @@ export const thanksText = {
 	color: 'white',
 	fontWeight: 'light',
 	height: '100px',
+	textShadow: `1px 1px rgba(0,0,0,0.3)`,
 };
 export const myPath = {
 	fill: 'none',
@@ -1283,28 +1299,21 @@ export const contactButton = {
 /*---------------- FORM ----------> */
 /*---------------- right side box ----------> */
 export const formDiv = {
-	// display: 'flex',
-	backgroundColor: 'rgba(72, 72, 72, 0.4)',
-	padding: '50px',
-	MozBorderRadius: '7px',
+	backgroundColor: 'rgba(72, 72, 72, 0.1)',
 	WebkitBorderRadius: '7px',
 	alignItems: 'center',
 	textAlign: 'center',
-	height: '100%',
-	maxWidth: '600px',
 	width: '600px',
+	height: '100%',
+	padding: '15px 25px 15px 25px',
+	textShadow: '1px 1px rgba(0,0,0,0.3)',
+	justifyContent: 'space-between',
 	display: 'flex',
 	flexDirection: 'column',
+	border: '1px solid white',
+	overflow: 'hidden',
 };
-export const contactSubtitle = {
-	color: '#3c3c3c',
-	transition: 'all .2s ease',
-	fontSize: '22px',
-	width: '100%',
-	position: 'relative',
-	padding: '10px',
-	marginBottom: '10px',
-};
+
 export const feedbackInput = {
 	color: '#3c3c3c',
 	fontFamily: 'Helvetica, Arial, sans-serif',
@@ -1316,16 +1325,17 @@ export const feedbackInput = {
 	textAlign: 'left',
 	width: '100%',
 	border: '3px solid rgba(0, 0, 0, 0)',
-	// marginBottom: '10px',
 	borderRadius: '8px',
 };
 export const formText = {
 	textAlign: 'left',
-	fontSize: '26px',
 	backgroundPosition: '11px 8px',
 	backgroundRepeat: 'no-repeat',
-	marginBottom: '10px',
+	fontSize: '26px',
+	marginBottom: 10,
 	display: 'block',
+	color: '#EEE',
+	textShadow: `1px 1px rgba(0,0,0,0.4)`,
 };
 export const name = {
 	backgroundSize: '30px 30px',

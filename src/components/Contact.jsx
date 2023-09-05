@@ -15,7 +15,6 @@ import {
 	textArea,
 	comment,
 	contactButton,
-	ease,
 	thanksText,
 	myPath,
 	lineDrawing,
@@ -37,6 +36,13 @@ function Contact({ props }) {
 		References: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 		Landing: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 	});
+
+	const contactAlert = () => {
+		alert(
+			"The contact form is currently disabled until Avery's site has officially launched. I apologize for the inconvenience."
+		);
+		return false;
+	};
 	// Edu button data
 	const contactButtons = [
 		{ target: 'References', span: 'Back', name: 'References' },
@@ -81,7 +87,7 @@ function Contact({ props }) {
 						<div className="thanksText" style={thanksText}>
 							<div style={thanksText}>
 								Thank you for visiting my portfolio!
-								<div className="nameTitle">Sincerely,</div>
+								<div id="nameTitle">Sincerely,</div>
 							</div>
 							{/* <div id="lineDrawing" style={lineDrawing}>*/}
 							<div id="lineDrawing" style={lineDrawing}>
@@ -155,9 +161,14 @@ function Contact({ props }) {
 						<form method="post" className="form" id="form1">
 							{/* Privacy note */}
 							<h1 style={contactSubtitle}>
-								** All info will be kept private{' '}
-								<MoodIcon style={{ verticalAlign: 'middle' }} />{' '}
-								**
+								** The contact form is currently disabled until
+								Avery's site has officially launched. I
+								apologize for the inconvenience. **
+								{/* <MoodIcon
+									style={{
+										verticalAlign: 'middle',
+									}}
+								/>{' '} */}
 							</h1>
 							{/* Name input */}
 							<div className="name" style={name}>
@@ -201,8 +212,7 @@ function Contact({ props }) {
 							</div>
 							{/* Submit button */}
 							{/* <!-- TODO: make email functional --> */}
-
-							<div className="submit">
+							{/* <button className="submit" >
 								<input
 									action="mailto:averycaldwell7@gmail.com"
 									encType="text/plain"
@@ -210,9 +220,9 @@ function Contact({ props }) {
 									type="submit"
 									value="Send"
 									id="button-blue"
+									onClick={contactAlert}
 								/>
-								{/* <div className="ease" style={ease}></div> */}
-							</div>
+							</button> */}
 						</form>
 					</div>
 					{/* <!-- form-div  --> */}
