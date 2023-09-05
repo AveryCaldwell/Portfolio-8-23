@@ -205,9 +205,10 @@ export const landingButton = {
 	padding: '7px',
 	backgroundColor: 'transparent',
 	border: 'none',
-	fontSize: '50px',
+	fontSize: '65px',
 	cursor: 'pointer',
 };
+
 /* { NAME ANIMATION } */
 export const letter = {
 	display: 'inline-block',
