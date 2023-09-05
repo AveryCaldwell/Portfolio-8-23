@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 import anime from 'animejs/lib/anime.es.js';
+import { PulseButton } from './Styles'; // Replace './styles' with the correct path
+
 import {
 	landingHeader,
 	landingTitle,
@@ -8,6 +10,7 @@ import {
 	landingButton,
 	letter,
 	landingContainer,
+	landingButtonSpan,
 } from './Styles';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 
@@ -95,17 +98,17 @@ function Landing({ props }) {
 					</div>
 					<div className="landingSubtitle" style={landingSubtitle}>
 						React/Full Stack Developer
-						<span>
+						<span style={landingButtonSpan}>
 							{/* Button to go to next page */}
-							<button
-								className="landingButton"
+							<PulseButton
+								id="pulseButton"
 								onClick={() => props.setActivePage('About')}
 								style={landingButton}
 							>
 								<ArrowCircleRightOutlinedIcon
 									style={landingButton}
 								/>
-							</button>
+							</PulseButton>
 						</span>
 					</div>
 				</div>

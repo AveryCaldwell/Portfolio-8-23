@@ -1,4 +1,5 @@
-import { css, keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
+
 // Style thats on the app as a whole
 export const appContainer = {
 	display: 'flex',
@@ -193,23 +194,61 @@ export const landingTitle = {
 };
 export const landingSubtitle = {
 	marginTop: '15px',
+	marginBottom: '15px',
 	borderRadius: '36px',
 	width: '400px',
 	padding: '5px',
 	display: 'block',
 	fontFamily: 'Roboto',
+	position: 'absolute',
 };
 
 export const landingButton = {
 	color: 'white',
-	padding: '7px',
 	backgroundColor: 'transparent',
 	border: 'none',
 	fontSize: '65px',
 	cursor: 'pointer',
 };
+export const landingButtonSpan = {
+	display: 'flex',
+	justifyContent: 'space-around',
+	flexDirection: 'row',
+	width: '100%',
+	height: '100px',
+	alignItems: 'center',
+};
+// =========PULSE ANIMATION ON BUTTONS
+// Define the keyframes for the pulse animation
+export const pulseAnimation = keyframes`
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+  }
+`;
+export const PulseButton = styled.button`
+	display: flex;
 
-/* { NAME ANIMATION } */
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border: none;
+	border-radius: 50%;
+	background: white;
+	cursor: pointer;
+	box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+	animation: ${pulseAnimation} 1.5s infinite;
+`;
+
+/* { ========= NAME ANIMATION } */
 export const letter = {
 	display: 'inline-block',
 	opacity: '0',
