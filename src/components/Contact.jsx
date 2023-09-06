@@ -64,7 +64,7 @@ function Contact({ props }) {
 		}
 
 		const animateSvgPath = () => {
-			const lineDrawing = anime({
+			anime({
 				targets: svgPath,
 				strokeDashoffset: [anime.setDashoffset, 0],
 				easing: 'easeInOutSine',
@@ -98,11 +98,7 @@ function Contact({ props }) {
 
 							{/* Name drawing animation */}
 							<div id="lineDrawing">
-								<svg
-									viewBox="0 0 1000 1500"
-									// className="svgName"
-									// style={svgName}
-								>
+								<svg viewBox="0 0 1000 1500" style={svgName}>
 									<g className="lines" style={myPath}></g>
 									<path
 										ref={svgPathRef}

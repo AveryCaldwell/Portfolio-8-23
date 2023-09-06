@@ -1287,6 +1287,7 @@ export const lineDrawing = {
 
 export const svgName = {
 	height: '400px',
+	transform: 'scale(1.5)',
 };
 // =============== contact buttons ===============
 export const contactButtonSpan = {
