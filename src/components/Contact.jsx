@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 // import * as Material from '@mui/material';
 // LIBRARY
 import anime from 'animejs/lib/anime.es.js';
 // ICON
-import MoodIcon from '@mui/icons-material/Mood';
+// import MoodIcon from '@mui/icons-material/Mood';
 // STYLING
 import {
 	contactContainer,
@@ -30,7 +30,6 @@ import {
 
 // This function renders Content component of the app
 function Contact({ props }) {
-	const [animationStarted, setAnimationStarted] = useState(false); // State to track animation start
 	// State management for education content and button styles
 	const [contactButtonState, setContactButtonState] = React.useState({
 		References: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
@@ -55,21 +54,29 @@ function Contact({ props }) {
 		setContactButtonState(obj);
 	}
 	// Function to start the name drawing animation
-	const startAnimation = () => {
-		const lineDrawing = anime({
-			targets: '#lineDrawing .lines path',
-			strokeDashoffset: [anime.setDashoffset, 0],
-			easing: 'easeInOutSine',
-			duration: 3000,
-			delay: (el, i) => {
-				i * 250;
-			},
-			direction: 'alternate',
-			loop: true,
-		});
-		setAnimationStarted(true);
-		// console.log('animation fired');
-	};
+	const svgPathRef = useRef(null);
+
+	useEffect(() => {
+		const svgPath = svgPathRef.current;
+		if (!svgPath) {
+			console.error('SVG path element not found');
+			return;
+		}
+
+		const animateSvgPath = () => {
+			const lineDrawing = anime({
+				targets: svgPath,
+				strokeDashoffset: [anime.setDashoffset, 0],
+				easing: 'easeInOutSine',
+				duration: 3000,
+				delay: (el, i) => i * 250,
+				direction: 'alternate',
+				loop: true,
+			});
+		};
+
+		animateSvgPath(); // Call the function to start the animation
+	}, []);
 
 	return (
 		<>
@@ -82,27 +89,24 @@ function Contact({ props }) {
 						LET'S CHAT!
 					</h1>
 
-					{/* Name drawing animation */}
 					<div id="contactAnimation" style={contactAnimation}>
 						<div className="thanksText" style={thanksText}>
 							<div style={thanksText}>
 								Thank you for visiting my portfolio!
 								<div id="nameTitle">Sincerely,</div>
 							</div>
-							{/* <div id="lineDrawing" style={lineDrawing}>*/}
-							<div id="lineDrawing" style={lineDrawing}>
+
+							{/* Name drawing animation */}
+							<div id="lineDrawing">
 								<svg
 									viewBox="0 0 1000 1500"
-									className="svgName"
-									style={svgName}
+									// className="svgName"
+									// style={svgName}
 								>
 									<g className="lines" style={myPath}></g>
 									<path
-										className="myPath"
-										// className={`my-path ${
-										// 	animationStarted ? 'active' : ''
-										// }`}
-										id="myPath"
+										ref={svgPathRef}
+										className="my-path"
 										fill="none"
 										strokeWidth="4"
 										style={myPath}

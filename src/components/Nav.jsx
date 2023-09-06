@@ -1,8 +1,7 @@
 import * as React from 'react';
 import * as Material from '@mui/material';
 import avesLogo from '../assets/aves.png';
-// import avery from '../assets/avery.png';
-import avery from '../assets/old-avery.png';
+
 // MUI COMPONENT
 import { Typography } from '@mui/material';
 
@@ -156,7 +155,7 @@ function Nav({ props }) {
 
 					<img
 						alt="Avery Headshot"
-						src={avery}
+						src={avesLogo}
 						style={toolbarImage}
 					/>
 				</div>

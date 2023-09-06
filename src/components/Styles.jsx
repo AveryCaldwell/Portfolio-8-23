@@ -212,12 +212,20 @@ export const landingButton = {
 };
 export const landingButtonSpan = {
 	display: 'flex',
-	justifyContent: 'space-around',
+	justifyContent: 'space-evenly',
 	flexDirection: 'row',
 	width: '100%',
 	height: '100px',
 	alignItems: 'center',
 };
+// export const landingCTA = {
+// 	fontFamily: 'Space Mono, monospaced',
+// 	textShadow: `1px 1px rgba(0,0,0,0.3)`,
+// 	display: 'inline',
+// 	animation: css`
+// 		${pulseAnimation} 1.5s infinite
+// 	`,
+// }
 // =========PULSE ANIMATION ON BUTTONS
 // Define the keyframes for the pulse animation
 export const pulseAnimation = keyframes`
@@ -233,9 +241,16 @@ export const pulseAnimation = keyframes`
     box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
   }
 `;
+export const LandingCTA = styled.span`
+	font-family: 'Space Mono', monospaced;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+	animation: ${pulseAnimation} 1.5s infinite;
+	display: 'inline';
+	transition: 'all .2s ease';
+	width: 100%;
+`;
 export const PulseButton = styled.button`
 	display: flex;
-
 	align-items: center;
 	justify-content: center;
 	width: 50px;

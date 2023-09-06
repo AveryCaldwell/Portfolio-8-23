@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import anime from 'animejs/lib/anime.es.js';
-import { PulseButton } from './Styles'; // Replace './styles' with the correct path
+import { PulseButton, LandingCTA } from './Styles'; // Replace './styles' with the correct path
+// font-family: 'Space Mono', monospace;
 
 import {
 	landingHeader,
@@ -98,8 +99,9 @@ function Landing({ props }) {
 					</div>
 					<div className="landingSubtitle" style={landingSubtitle}>
 						React/Full Stack Developer
-						<span style={landingButtonSpan}>
-							{/* Button to go to next page */}
+						{/* Button to go to next page */}
+						<div style={landingButtonSpan}>
+							<LandingCTA>Show me more! </LandingCTA>{' '}
 							<PulseButton
 								id="pulseButton"
 								onClick={() => props.setActivePage('About')}
@@ -109,7 +111,7 @@ function Landing({ props }) {
 									style={landingButton}
 								/>
 							</PulseButton>
-						</span>
+						</div>
 					</div>
 				</div>
 			</div>
