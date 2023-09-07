@@ -4,7 +4,7 @@ import avesLogo from '../assets/aves.png';
 import avery from '../assets/avery.png';
 
 // MUI COMPONENT
-import { Typography, useMediaQuery } from '@mui/material';
+import { Typography } from '@mui/material';
 
 // STYLING
 import {
@@ -41,26 +41,6 @@ function Nav({ props }) {
 		right: false,
 	});
 
-	const isMobile = useMediaQuery((theme) => theme.breakpoints.down('mobile'));
-
-	// Define styles for the title and image based on screen size
-	const titleStyle = {
-		opacity: props.currentNavNameState ? '1' : '0',
-		...(isMobile && {
-			fontSize: '16px', // Adjust as needed for mobile
-		}),
-		...(!isMobile && {
-			fontSize: '24px', // Adjust as needed for desktop
-		}),
-	};
-	const imageStyle = {
-		...(isMobile && {
-			width: '50px', // Adjust as needed for mobile
-		}),
-		...(!isMobile && {
-			width: '100px', // Adjust as needed for desktop
-		}),
-	};
 	// Toggle the drawer's open/close status
 	const toggleDrawer = (anchor, open) => (event) => {
 		if (
@@ -166,7 +146,6 @@ function Nav({ props }) {
 				{/* Drawer */}
 				<div
 					style={{
-						...titleStyle,
 						...navTitle,
 						...{
 							opacity: props.currentNavNameState ? '1' : '0',
@@ -178,7 +157,7 @@ function Nav({ props }) {
 					<img
 						alt="Avery Headshot"
 						src={avery}
-						style={{ ...toolbarImage, ...imageStyle }}
+						style={toolbarImage}
 					/>
 				</div>
 			</Material.Toolbar>
