@@ -17,9 +17,12 @@ import References from './components/References';
 import Contact from './components/Contact';
 import LogoSlider from './components/LogoSlider';
 import Footer from './components/Footer';
-// import SvgContainer from './components/SvgContainer';
 // Styling
 import { appContainer, pagesContainer } from './components/Styles';
+
+// import DesktopBreakpoint from './responsive_utilities/desktop_breakpoint';
+// import TabletBreakpoint from './responsive_utilities/tablet_breakpoint';
+// import PhoneBreakpoint from './responsive_utilities/phone_breakpoint';
 
 // Function to set the active page and perform page transition animations
 function App() {

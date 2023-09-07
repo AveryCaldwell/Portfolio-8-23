@@ -1,5 +1,6 @@
 import * as React from 'react';
 import avesLogo from '../assets/aves.png';
+
 import {
 	logoSliderImage,
 	logoSliderContainer,

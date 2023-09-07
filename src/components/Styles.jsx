@@ -1,5 +1,12 @@
 import styled, { keyframes, css } from 'styled-components';
 
+// Define your breakpoints
+const breakpoints = {
+	mobile: '0px',
+	tablet: '640px',
+	laptop: '1024px',
+	desktop: '1200px',
+};
 // Style thats on the app as a whole
 export const appContainer = {
 	display: 'flex',
