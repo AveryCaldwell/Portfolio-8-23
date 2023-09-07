@@ -55,6 +55,12 @@ export const navBox = {
 	paddingTop: '50px',
 	cursor: 'pointer',
 };
+export const navLinks = {
+	display: 'inline-block',
+	marginRight: '20px',
+	lineHeight: 1.5,
+	padding: 0,
+};
 export const navToolbar = {
 	color: 'white',
 	display: 'flex',
@@ -81,7 +87,9 @@ export const menuIcon = {
 	height: '50px',
 	width: '50px',
 	cursor: 'pointer',
-	textShadow: '4px 4px rgba(0,0,0,0.3)',
+	textShadow: '2px 2px rgba(0,0,0,0.3)',
+	minWidth: '30px', // Set a minimum width
+	minHeight: '30px', // Set a minimum height
 };
 export const avesImg = {
 	height: '150px',

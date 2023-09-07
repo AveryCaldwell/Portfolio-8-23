@@ -25,14 +25,7 @@ const theme = createTheme({
 		color: 'white',
 		fontSize: '25px',
 	},
-	breakpoints: {
-		values: {
-			mobile: 0,
-			tablet: 640,
-			laptop: 1024,
-			desktop: 1200,
-		},
-	},
+
 	'@global': {
 		'*::-webkit-scrollbar': {
 			width: '0.4em',

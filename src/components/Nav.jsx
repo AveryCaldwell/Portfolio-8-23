@@ -5,7 +5,8 @@ import avery from '../assets/avery.png';
 
 // MUI COMPONENT
 import { Typography } from '@mui/material';
-
+// React Responsive
+import { useMediaQuery } from 'react-responsive';
 // STYLING
 import {
 	navBox,
@@ -17,6 +18,7 @@ import {
 	navToolbar,
 	menuIcon,
 	toolbarImage,
+	navLinks,
 } from './Styles';
 // ICONS
 import {
@@ -40,7 +42,34 @@ function Nav({ props }) {
 		bottom: false,
 		right: false,
 	});
-
+	const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+	const mobileNavBox = {
+		width: '100vh',
+		color: 'black',
+		display: 'block',
+		textAlign: 'center',
+	};
+	const defaultNavBox = {
+		// placeholder styling
+		height: '100%',
+		color: 'white',
+		width: 250,
+	};
+	const mobileNavLinks = {
+		display: 'inline-block',
+		padding: 0,
+		color: '#EEE',
+		textAlign: 'center',
+		width: 50,
+	};
+	// const navLinks = {
+	// 	display: 'inline-block',
+	// 	marginRight: '20px',
+	// 	lineHeight: 1.5,
+	// 	padding: 0,
+	// };
+	const responsiveNavBox = isMobile ? mobileNavBox : defaultNavBox;
+	const responsiveNavLinks = isMobile ? mobileNavLinks : navLinks;
 	// Toggle the drawer's open/close status
 	const toggleDrawer = (anchor, open) => (event) => {
 		if (
@@ -55,6 +84,7 @@ function Nav({ props }) {
 	// Render the drawer's content
 	const iemsList = (anchor) => (
 		<Material.Box
+			// sx={responsiveNavBox}
 			sx={{
 				width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250,
 				height: '100%',
@@ -68,7 +98,7 @@ function Nav({ props }) {
 			<Material.Box className="navBox" sx={navBox}>
 				<img
 					src={avesLogo}
-					style={avesImg}
+					style={isMobile ? { display: 'none' } : avesImg}
 					onClick={() => {
 						handleClick('Landing');
 						setOpen(false);
@@ -86,19 +116,31 @@ function Nav({ props }) {
 					onClick={() => props.setActivePage('Landing')}
 				>
 					<Material.ListItemIcon>{<Home />}</Material.ListItemIcon>
-					<Material.ListItemText primary={'Home'} />
+					<Material.ListItemText
+						primary={'Home'}
+						// sx={responsiveNavLinks}
+						sx={navLinks}
+					/>
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('About')}
 				>
 					<Material.ListItemIcon>{<Info />}</Material.ListItemIcon>
-					<Material.ListItemText primary={'About'} />
+					<Material.ListItemText
+						primary={'About'}
+						// sx={responsiveNavLinks}
+						sx={navLinks}
+					/>
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Edu')}
 				>
 					<Material.ListItemIcon>{<School />}</Material.ListItemIcon>
-					<Material.ListItemText primary={'Education'} />
+					<Material.ListItemText
+						primary={'Education'}
+						// sx={responsiveNavLinks}
+						sx={navLinks}
+					/>
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Projects')}
@@ -106,13 +148,21 @@ function Nav({ props }) {
 					<Material.ListItemIcon>
 						{<FolderOpen />}
 					</Material.ListItemIcon>
-					<Material.ListItemText primary={'Projects'} />
+					<Material.ListItemText
+						primary={'Projects'}
+						// sx={responsiveNavLinks}
+						sx={navLinks}
+					/>
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Resume')}
 				>
 					<Material.ListItemIcon>{<Article />}</Material.ListItemIcon>
-					<Material.ListItemText primary={'Resume'} />
+					<Material.ListItemText
+						primary={'Resume'}
+						// sx={responsiveNavLinks}
+						sx={navLinks}
+					/>
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('References')}
@@ -120,7 +170,11 @@ function Nav({ props }) {
 					<Material.ListItemIcon>
 						{<PermContactCalendar />}
 					</Material.ListItemIcon>
-					<Material.ListItemText primary={'References'} />
+					<Material.ListItemText
+						primary={'References'}
+						// sx={responsiveNavLinks}
+						sx={navLinks}
+					/>
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Contact')}
@@ -128,7 +182,11 @@ function Nav({ props }) {
 					<Material.ListItemIcon>
 						{<AlternateEmail />}
 					</Material.ListItemIcon>
-					<Material.ListItemText primary={'Contact'} />
+					<Material.ListItemText
+						primary={'Contact'}
+						// sx={responsiveNavLinks}
+						sx={navLinks}
+					/>
 				</Material.ListItemButton>
 			</Material.List>
 			<Material.Divider />
@@ -140,15 +198,31 @@ function Nav({ props }) {
 	// Render the top header
 	return (
 		<div>
-			<Material.Toolbar sx={navToolbar}>
+			<Material.Toolbar
+				sx={{
+					...navToolbar,
+					background: isMobile
+						? 'transparent'
+						: 'rgba(255, 255, 255, 0.3)',
+				}}
+			>
 				{/* Menu icon */}
-				<Menu sx={menuIcon} onClick={toggleDrawer('left', true)} />
+				<Menu
+					sx={{
+						...menuIcon,
+						background: isMobile
+							? 'rgba(0,0,0,0.3)'
+							: 'transparent',
+					}}
+					onClick={toggleDrawer('left', true)}
+				/>
 				{/* Drawer */}
 				<div
 					style={{
 						...navTitle,
 						...{
 							opacity: props.currentNavNameState ? '1' : '0',
+							display: isMobile ? 'none' : 'block', // Hide on mobile
 						},
 					}}
 				>
