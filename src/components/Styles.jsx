@@ -66,8 +66,8 @@ export const toolbarImage = {
 	transform: 'scale(2)',
 	overflow: 'hidden',
 	display: 'inline-block',
-	border: ' 1px solid white',
-	boxShadow: '0 0 55px 5px white',
+	// border: ' 1px solid white',
+	// boxShadow: '0 0 10px 10px white',
 	marginLeft: 25,
 };
 export const menuIcon = {
