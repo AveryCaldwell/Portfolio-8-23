@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'; // Importing useEffect and useRef
 import anime from 'animejs/lib/anime.es.js';
+import {} from './ResponsiveStyles';
+import { useMediaQuery } from 'react-responsive';
 // SCHOOL LOGOS
 import CYCU from '../assets/CYCU.png';
 import MC from '../assets/MC.png';

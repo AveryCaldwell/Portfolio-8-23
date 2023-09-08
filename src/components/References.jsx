@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 // import * as Material from "@mui/material";
+import {} from './ResponsiveStyles';
+import { useMediaQuery } from 'react-responsive';
 
 // IMPORT SUBCOMPONENTS
 import { FirstAvatar, SecondAvatar, ThirdAvatar } from './ReferenceAvatars'; // Adjust the path accordingly

@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import CodeSnippet from './CodeSnippet'; // Import the CodeSnippet component
 import resumeJSON from '../assets/resume.json';
 import { GitHub, OpenInBrowser } from '@mui/icons-material/';
+import {} from './ResponsiveStyles';
+import { useMediaQuery } from 'react-responsive';
 // STYLING
 import {
 	resumeContainer,

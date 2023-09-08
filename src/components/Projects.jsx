@@ -2,6 +2,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import anime from 'animejs'; // Import anime.js library
 // import * as Material from '@mui/material';
+import {} from './ResponsiveStyles';
+import { useMediaQuery } from 'react-responsive';
 
 // STYLING
 import {

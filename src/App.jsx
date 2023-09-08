@@ -140,7 +140,7 @@ function App() {
 						<Resume props={{ setActivePage }} />
 						<References props={{ setActivePage }} />
 						<Contact props={{ setActivePage }} />
-						<Footer props={{ setActivePage }} />
+						{/* <Footer props={{ setActivePage }} /> */}
 					</main>
 				</div>
 			</ThemeProvider>

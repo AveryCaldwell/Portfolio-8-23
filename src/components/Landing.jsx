@@ -13,16 +13,13 @@ import {
 	landingContainer,
 	landingButtonSpan,
 } from './Styles';
+import { mobileLandingContainer } from './ResponsiveStyles';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import { useMediaQuery } from 'react-responsive';
 // This function component represents the Landing page of the web app
 function Landing({ props }) {
 	const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
-	const mobileLandingContainer = {
-		display: 'grid',
-		minHeight: '600px',
-		marginBottom: '0',
-	};
+
 	// Animation effect using the useEffect hook
 	useEffect(() => {
 		// Define an animation using the anime.js library

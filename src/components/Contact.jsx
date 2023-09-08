@@ -3,6 +3,8 @@ import React, { useEffect, useState, useRef } from 'react';
 // import * as Material from '@mui/material';
 // LIBRARY
 import anime from 'animejs/lib/anime.es.js';
+import {} from './ResponsiveStyles';
+import { useMediaQuery } from 'react-responsive';
 // ICON
 // import MoodIcon from '@mui/icons-material/Mood';
 // STYLING

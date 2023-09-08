@@ -1,4 +1,6 @@
 import * as React from 'react';
+import {} from './ResponsiveStyles';
+import { useMediaQuery } from 'react-responsive';
 // Import styling
 import {
 	aboutContent,

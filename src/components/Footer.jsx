@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as Material from '@mui/material';
 import { footerContainer, siteFooter, pageContainer } from './Styles';
+import {} from './ResponsiveStyles';
+import { useMediaQuery } from 'react-responsive';
 
 // This function renders main content of web app
 function Footer() {
