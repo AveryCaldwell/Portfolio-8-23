@@ -54,6 +54,8 @@ export const navBox = {
 	display: 'flex',
 	paddingTop: '50px',
 	cursor: 'pointer',
+	width: 250,
+	color: 'white',
 };
 export const navLinks = {
 	display: 'inline-block',

@@ -13,7 +13,10 @@ import {
 	landingContainer,
 	landingButtonSpan,
 } from './Styles';
-import { mobileLandingContainer } from './ResponsiveStyles';
+import {
+	mobileLandingContainer,
+	mobilePageContainer,
+} from './ResponsiveStyles';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import { useMediaQuery } from 'react-responsive';
 // This function component represents the Landing page of the web app
@@ -51,7 +54,11 @@ function Landing({ props }) {
 			<div
 				className="landingContainer pageContainer"
 				// style={landingContainer}
-				style={isMobile ? mobileLandingContainer : landingContainer}
+				style={
+					isMobile
+						? { ...mobileLandingContainer, ...mobilePageContainer }
+						: landingContainer
+				}
 				ref={containerRef}
 			>
 				{/* Name animation by each letter */}

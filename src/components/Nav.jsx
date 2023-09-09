@@ -44,10 +44,18 @@ function Nav({ props }) {
 	});
 	const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 	const mobileNavBox = {
-		width: '100vh',
-		color: 'black',
-		display: 'block',
+		width: '100vw',
 		textAlign: 'center',
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		cursor: 'pointer',
+		maxWidth: '768px',
+		color: 'white',
+		justifyContent: 'space-evenly',
+		// position: 'absolute',
+		// width: '100%',
+		// height: '100vh',
 	};
 	const defaultNavBox = {
 		// placeholder styling
@@ -55,21 +63,31 @@ function Nav({ props }) {
 		color: 'white',
 		width: 250,
 	};
-	const mobileNavLinks = {
-		display: 'inline-block',
-		padding: 0,
-		color: '#EEE',
-		textAlign: 'center',
-		width: 50,
-	};
-	// const navLinks = {
-	// 	display: 'inline-block',
-	// 	marginRight: '20px',
-	// 	lineHeight: 1.5,
-	// 	padding: 0,
+	// const mobileNavLinks = {
+	// 	display: 'flex',
+	// 	color: '#EEE',
+	// 	position: 'absolute',
+	// 	alignItems: 'center',
+	// 	width: '100%',
 	// };
+	const mobileNavIcons = {
+		display: 'none',
+	};
+	const navIcons = {
+		display: 'block',
+	};
+	const navList = { display: 'block' };
+	const mobileNavList = {
+		display: 'flex',
+		alignItems: 'center',
+		flexDirection: 'column',
+		padding: 0,
+		marign: 0,
+	};
+	const responsiveNavList = isMobile ? mobileNavList : navList;
 	const responsiveNavBox = isMobile ? mobileNavBox : defaultNavBox;
-	const responsiveNavLinks = isMobile ? mobileNavLinks : navLinks;
+	// const responsiveNavLinks = isMobile ? mobileNavLinks : navLinks;
+	const responsiveNavIcons = isMobile ? mobileNavIcons : navIcons;
 	// Toggle the drawer's open/close status
 	const toggleDrawer = (anchor, open) => (event) => {
 		if (
@@ -84,12 +102,13 @@ function Nav({ props }) {
 	// Render the drawer's content
 	const iemsList = (anchor) => (
 		<Material.Box
-			// sx={responsiveNavBox}
-			sx={{
-				width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250,
-				height: '100%',
-				color: 'white',
-			}}
+			id="navbarBox"
+			sx={responsiveNavBox}
+			// sx={{
+			// 	width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250,
+			// 	height: '100%',
+			// 	color: 'white',
+			// }}
 			role="drawer"
 			onClick={toggleDrawer(anchor, false)}
 			onKeyDown={toggleDrawer(anchor, false)}
@@ -111,81 +130,89 @@ function Nav({ props }) {
 			<Typography sx={navSubtitleText}>Full Stack Developer</Typography>
 			<Material.Divider />
 			{/* Navigation links */}
-			<Material.List>
+			<Material.List id="navList">
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Landing')}
 				>
-					<Material.ListItemIcon>{<Home />}</Material.ListItemIcon>
+					<Material.ListItemIcon sx={responsiveNavIcons}>
+						{<Home />}
+					</Material.ListItemIcon>
 					<Material.ListItemText
 						primary={'Home'}
-						// sx={responsiveNavLinks}
-						sx={navLinks}
+						sx={responsiveNavList}
+						// sx={navLinks}
 					/>
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('About')}
 				>
-					<Material.ListItemIcon>{<Info />}</Material.ListItemIcon>
+					<Material.ListItemIcon sx={responsiveNavIcons}>
+						{<Info />}
+					</Material.ListItemIcon>
 					<Material.ListItemText
 						primary={'About'}
-						// sx={responsiveNavLinks}
-						sx={navLinks}
+						sx={responsiveNavList}
+						// sx={navLinks}
 					/>
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Edu')}
 				>
-					<Material.ListItemIcon>{<School />}</Material.ListItemIcon>
+					<Material.ListItemIcon sx={responsiveNavIcons}>
+						{<School />}
+					</Material.ListItemIcon>
 					<Material.ListItemText
 						primary={'Education'}
-						// sx={responsiveNavLinks}
-						sx={navLinks}
+						sx={responsiveNavList}
+						// sx={navLinks}
 					/>
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Projects')}
 				>
-					<Material.ListItemIcon>
+					<Material.ListItemIcon sx={responsiveNavIcons}>
 						{<FolderOpen />}
 					</Material.ListItemIcon>
 					<Material.ListItemText
 						primary={'Projects'}
-						// sx={responsiveNavLinks}
-						sx={navLinks}
+						sx={responsiveNavList}
+						// sx={navLinks}
 					/>
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Resume')}
 				>
-					<Material.ListItemIcon>{<Article />}</Material.ListItemIcon>
+					<Material.ListItemIcon sx={responsiveNavIcons}>
+						{<Article />}
+					</Material.ListItemIcon>
 					<Material.ListItemText
 						primary={'Resume'}
-						// sx={responsiveNavLinks}
-						sx={navLinks}
+						sx={responsiveNavList}
+						// sx={navLinks}
 					/>
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('References')}
 				>
-					<Material.ListItemIcon>
+					<Material.ListItemIcon sx={responsiveNavIcons}>
 						{<PermContactCalendar />}
 					</Material.ListItemIcon>
 					<Material.ListItemText
 						primary={'References'}
-						// sx={responsiveNavLinks}
-						sx={navLinks}
+						sx={responsiveNavList}
+						// sx={navLinks}
 					/>
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Contact')}
 				>
-					<Material.ListItemIcon>
+					<Material.ListItemIcon sx={responsiveNavIcons}>
 						{<AlternateEmail />}
 					</Material.ListItemIcon>
 					<Material.ListItemText
 						primary={'Contact'}
-						// sx={responsiveNavLinks}
-						sx={navLinks}
+						sx={responsiveNavList}
+						// sx={navLinks}
 					/>
 				</Material.ListItemButton>
 			</Material.List>

@@ -3,6 +3,7 @@ import avesLogo from '../assets/aves.png';
 import {
 	mobileLogoSliderContainer,
 	mobileLogoSliderImage,
+	mobileLogoSliderCircle,
 } from './ResponsiveStyles';
 import { useMediaQuery } from 'react-responsive';
 import {
@@ -25,13 +26,13 @@ function LogoSlider() {
 				src={avesLogo}
 				alt="aves"
 				className="logoSliderImage"
-				style={logoSliderImage}
+				style={isMobile ? mobileLogoSliderImage : logoSliderImage}
 			/>
 			{/* Display a circular element for logo animation */}
 			<div
 				className="logoSliderCircle"
 				// style={logoSliderCircle}
-				style={isMobile ? mobileLogoSliderImage : logoSliderCircle}
+				style={isMobile ? mobileLogoSliderCircle : logoSliderCircle}
 			></div>
 		</div>
 	);
