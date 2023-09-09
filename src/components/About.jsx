@@ -23,13 +23,17 @@ import {
 	aboutIntroBox,
 	aboutTextSub,
 } from './Styles';
-
+import { mobilePageContainer } from './ResponsiveStyles';
 // ICON
 import { WavingHand } from '@mui/icons-material';
 // IMAGE
-import avesHi from '../assets/aves_hi.png';
+// import avesHi from '../assets/aves_hi.png';
 // This function component represents the About section of the web app
 function About({ props }) {
+	const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+	const responsiveAboutContainer = isMobile
+		? mobilePageContainer
+		: pageContainer;
 	// Arrays containing frontend and backend technology data
 	const frontendData = [
 		'HTML/CSS',
@@ -108,7 +112,11 @@ function About({ props }) {
 		React.useState('Introduction');
 
 	return (
-		<div className="aboutContainer pageContainer" style={pageContainer}>
+		<div
+			className="aboutContainer pageContainer"
+			// style={pageContainer}
+			style={responsiveAboutContainer}
+		>
 			<div className="aboutTitle" style={aboutTitle}>
 				ABOUT ME
 			</div>

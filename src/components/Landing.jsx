@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import anime from 'animejs/lib/anime.es.js';
-import { PulseButton, LandingCTA } from './Styles'; // Replace './styles' with the correct path
-// font-family: 'Space Mono', monospace;
+import { PulseButton, LandingCTA } from './Styles';
 
 import {
 	landingHeader,

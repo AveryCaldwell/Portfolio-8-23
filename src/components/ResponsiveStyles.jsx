@@ -1,8 +1,8 @@
 // style that is on each component page
 export const mobilePageContainer = {
 	display: 'block',
-	maxWidth: '600px',
-	minWidth: '600px',
+	// maxWidth: '600px',
+	// minWidth: '600px',
 	marginTop: 'calc(50vh - 200px)',
 	marginBottom: 'calc(50vh - 200px)',
 	// display: 'flex',
@@ -37,55 +37,59 @@ export const mobileMenuIcon = {
 // 	textAlign: 'center',
 // 	width: 50,
 // };
-/* ============================== LANDING SECTION ============================== */
-export const mobileLandingContainer = {
-	display: 'block',
-	minHeight: '400px',
-	marginBottom: 'calc(50vh - 200px)',
-	background: 'black',
-	height: '100vh',
-};
+
 /* ============================== LOGO SLIDING SECTION ============================== */
 export const mobileLogoSliderContainer = {
-	width: '175px',
+	width: '215px',
 	display: 'block',
 	position: 'absolute',
 	zIndex: 1,
 	borderRadius: '250px',
-	left: '20%',
-	top: '5%',
-	height: '100vh',
+	left: '25%',
+	top: '25%',
+	height: '120vh',
 	background: `linear-gradient(
         rgba(255, 255, 255, 1),
         rgba(255, 255, 255, 0.25)
     )`,
 };
 export const mobileLogoSliderImage = {
-	width: '150px',
-	height: '150px',
-	left: '12px',
+	width: '175px',
+	height: '175px',
+	// left: '25%',
 	position: 'relative',
 	display: 'inline-block',
-	top: '7px',
+	// top: '15px',
+	top: 'calc( 100% - 190px)',
 	borderRadius: '50%',
-	left: '12px',
+	left: '20px',
 	transition: 'all 1.5s ease',
 };
 export const mobileLogoSliderCircle = {
-	height: '200px',
-	width: '200px',
-	left: '10px',
-	bottom: '10px',
+	height: '230px',
+	width: '230px',
 	opacity: 1,
 	boxShadow: '0 0 15px 5px white',
 	borderRadius: '50%',
-	boxShadow: '0 0 30px 15px white',
+	// boxShadow: '0 0 30px 15px white',
 	display: 'block',
 	transition: 'all 0.5s ease',
-	left: '-16px',
-	bottom: '-20px',
+	left: '-10px',
+	bottom: '-15px',
 	position: 'absolute',
 	// opacity: '0',
+};
+/* ============================== LANDING SECTION ============================== */
+export const mobileLandingContainer = {
+	display: 'block',
+	position: 'absolute',
+	left: '7%',
+	top: 0,
+	width: '100%',
+	minHeight: '400px',
+	marginBottom: 'calc(50vh - 200px)',
+	background: 'black',
+	overflow: 'hidden',
 };
 /* ============================== ABOUT SECTION ============================== */
 
