@@ -1,0 +1,11 @@
+DROP DATABASE IF EXISTS contact_db;
+CREATE DATABASE contact_db;
+
+USE contact_db;
+
+CREATE TABLE contacts (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  comment TEXT NOT NULL
+)

@@ -1,12 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
-
+import axios from 'axios';
 // import * as Material from '@mui/material';
 // LIBRARY
 import anime from 'animejs/lib/anime.es.js';
 import {} from './ResponsiveStyles';
 import { useMediaQuery } from 'react-responsive';
-// ICON
-// import MoodIcon from '@mui/icons-material/Mood';
 // STYLING
 import {
 	contactContainer,
@@ -37,14 +35,23 @@ function Contact({ props }) {
 		References: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 		Landing: { boxShadow: '0 4px 10px rgba(255, 255, 255, 0.0)' },
 	});
-
-	const contactAlert = () => {
-		alert(
-			"The contact form is currently disabled until Avery's site has officially launched. I apologize for the inconvenience."
-		);
-		return false;
+	// State management for form data
+	const [formData, setFormData] = useState({
+		name: '',
+		email: '',
+		message: '',
+	});
+	const handleSubmit = async (e) => {
+		e.preventDefault(); // Prevent the default form submission behavior
+		axios
+			.post('http://localhost:3001/api/contact', formData)
+			.then((response) => {})
+			.catch((error) => {
+				console.error('Error:', error);
+			});
 	};
-	// Edu button data
+
+	// Contact button data
 	const contactButtons = [
 		{ target: 'References', span: 'Back', name: 'References' },
 		{ target: 'Landing', span: 'Top', name: 'Landing' },
@@ -160,17 +167,17 @@ function Contact({ props }) {
 				{/* Form section */}
 				<div id="formDiv" style={formDiv}>
 					<div id="contactForm">
-						<form method="post" className="form" id="form1">
+						<form
+							method="post"
+							className="form"
+							id="form1"
+							onSubmit={handleSubmit}
+						>
 							{/* Privacy note */}
 							<h1 style={contactSubtitle}>
-								** The contact form is currently disabled until
+								{/* ** The contact form is currently disabled until
 								Avery's site has officially launched. I
-								apologize for the inconvenience. **
-								{/* <MoodIcon
-									style={{
-										verticalAlign: 'middle',
-									}}
-								/>{' '} */}
+								apologize for the inconvenience. ** */}
 							</h1>
 							{/* Name input */}
 							<div className="name" style={name}>
@@ -179,9 +186,15 @@ function Contact({ props }) {
 									style={feedbackInput}
 									name="name"
 									type="text"
-									className="validate[required,custom[onlyLetter],length[0,100]] feedback-input"
 									placeholder="Name"
 									id="name"
+									value={formData.name}
+									onChange={(e) =>
+										setFormData({
+											...formData,
+											name: e.target.value,
+										})
+									}
 								/>
 							</div>
 							{/* Email input */}
@@ -192,9 +205,15 @@ function Contact({ props }) {
 									style={feedbackInput}
 									name="email"
 									type="text"
-									className="validate[required,custom[email]] feedback-input"
 									id="email"
 									placeholder="Email"
+									value={formData.email}
+									onChange={(e) =>
+										setFormData({
+											...formData,
+											email: e.target.value,
+										})
+									}
 								/>
 							</div>
 							{/* Message input */}
@@ -207,24 +226,21 @@ function Contact({ props }) {
 										...feedbackInput,
 									}}
 									name="text"
-									className="validate[required,length[6,300]] feedback-input"
 									id="comment"
 									placeholder="Comment"
+									value={formData.comment}
+									onChange={(e) =>
+										setFormData({
+											...formData,
+											comment: e.target.value,
+										})
+									}
 								></textarea>
 							</div>
 							{/* Submit button */}
-							{/* <!-- TODO: make email functional --> */}
-							{/* <button className="submit" >
-								<input
-									action="mailto:averycaldwell7@gmail.com"
-									encType="text/plain"
-									style={contactButton}
-									type="submit"
-									value="Send"
-									id="button-blue"
-									onClick={contactAlert}
-								/>
-							</button> */}
+							<button>
+								<input style={contactButton} type="submit" />{' '}
+							</button>
 						</form>
 					</div>
 					{/* <!-- form-div  --> */}
