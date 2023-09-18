@@ -14,7 +14,7 @@ import {
 
 // This function defines the LogoSlider component responsible for rendering the main content of the web app
 function LogoSlider() {
-	const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+	const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
 	// Return JSX representing the LogoSlider component that floats between the Landing and About page
 	return (
 		<div

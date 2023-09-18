@@ -88,11 +88,39 @@ export const mobileLandingContainer = {
 	width: '100%',
 	minHeight: '400px',
 	marginBottom: 'calc(50vh - 200px)',
-	background: 'black',
+	// background: 'pink',
 	overflow: 'hidden',
 };
+export const mobileLandingFont = {
+	fontSize: '.75em! important',
+	display: 'block',
+};
+export const mobileLandingHeader = {
+	fontSize: '2.75rem',
+	position: 'relative',
+	color: 'white',
+	left: '40%',
+	height: '150px',
+	fontFamily: 'Roboto',
+};
 /* ============================== ABOUT SECTION ============================== */
-
+export const mobileAboutContent = {
+	width: '350px',
+	height: '325px',
+	position: 'relative',
+	padding: '15px',
+	borderRadius: '36px',
+	background: ' rgba(255, 255, 255, 0.2)',
+	boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+	backdropFilter: 'blur(5px)',
+	border: '1px solid rgba(255, 255, 255, 0.3)',
+	fontSize: '20px',
+	color: 'white',
+	lineHeight: '1.35',
+	fontFamily: 'Roboto',
+	textShadow: `1px 1px rgba(0,0,0,0.1)`,
+	overflow: 'hidden',
+};
 /* ============================== EDUCATION SECTION ============================== */
 export const mobileOrbitalContainer = {
 	// height: '780px',

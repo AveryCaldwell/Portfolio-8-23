@@ -15,13 +15,12 @@ import {
 import {
 	mobileLandingContainer,
 	mobilePageContainer,
+	mobileLandingHeader,
 } from './ResponsiveStyles';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import { useMediaQuery } from 'react-responsive';
 // This function component represents the Landing page of the web app
 function Landing({ props }) {
-	const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
-
 	// Animation effect using the useEffect hook
 	useEffect(() => {
 		// Define an animation using the anime.js library
@@ -47,21 +46,25 @@ function Landing({ props }) {
 	// Reference to the container element for scrolling
 	const containerRef = useRef(null);
 
+	// RESPONSIVE DESIGN
+	const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
+	const responsiveLandingContainer = isMobile
+		? { ...mobileLandingContainer, ...mobilePageContainer }
+		: landingContainer;
+	const responsiveLandingHeader = isMobile
+		? mobileLandingHeader
+		: landingHeader;
 	// render landing page
 	return (
 		<>
 			<div
 				className="landingContainer pageContainer"
 				// style={landingContainer}
-				style={
-					isMobile
-						? { ...mobileLandingContainer, ...mobilePageContainer }
-						: landingContainer
-				}
+				style={responsiveLandingContainer}
 				ref={containerRef}
 			>
 				{/* Name animation by each letter */}
-				<div className="landingHeader" style={landingHeader}>
+				<div className="landingHeader" style={responsiveLandingHeader}>
 					<span className="letter" style={letter}>
 						A
 					</span>

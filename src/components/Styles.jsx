@@ -208,6 +208,7 @@ export const landingTitle = {
 	textAlign: 'center',
 	letterSpacing: '5px',
 	fontFamily: 'Roboto',
+	fontSize: '1em',
 };
 export const landingSubtitle = {
 	marginTop: '15px',
@@ -218,6 +219,7 @@ export const landingSubtitle = {
 	display: 'block',
 	fontFamily: 'Roboto',
 	position: 'absolute',
+	fontSize: '1em',
 };
 
 export const landingButton = {
@@ -286,6 +288,7 @@ export const letter = {
 	opacity: '0',
 	pointerEvents: 'none',
 	transition: 'all .2s ease',
+	fontSize: '1em',
 };
 /* ============================== ABOUT SECTION ============================== */
 
