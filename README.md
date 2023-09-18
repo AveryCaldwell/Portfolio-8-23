@@ -4,7 +4,7 @@
   <a href="https://github.com/DenverCoder1/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?lines=Web+Dev;Creative+Thinker;Always%20learning%20new%20things&center=true&width=500&height=50"></a>
 </p>
 <hr/>
-<h4 align="center">I am a recent grad from the University of Washington Coding Bootcamp. Previously in the Banking industry for six years along with 2+ years of Marketing experience backed by a B.S in Marketing. I am an passionate and a innovative person who loves to take up new challenges and learn new skills. I love growing my knowledge, meeting & collabing with new people, and creating awesome things!</h4>
+<h4 align="center">I am a recent grad from the University of Washington Coding Bootcamp. Previously in the Banking industry for 6 years along with 2+ years of Marketing experience backed by a B.S in Marketing. I am an passionate and a innovative person who loves to take up new challenges and learn new skills. I love growing my knowledge, meeting & collabing with new people, and creating awesome things!</h4>
 
 <hr/>
 <br>
