@@ -127,6 +127,7 @@ export const mobileAboutContainer = {
 	marginBottom: 'calc(100vh - 20px)',
 	marginTop: 'calc(100vh - 20px)',
 	marginLeft: '10%',
+	minWidth: '300px',
 };
 export const mobileAboutContent = {
 	width: '70vw',
@@ -208,12 +209,27 @@ export const mobileAboutButtonSpan = {
 	display: 'flex',
 	justifyContent: 'space-evenly',
 	flexDirection: 'row',
-	width: '80vw',
+	width: '75vw',
 	height: '125px',
-	margin: '0px 10% 0px 10%',
+	margin: '0px auto',
 	alignItems: 'center',
 };
-export const mobileTechBox = {
+export const mobileAboutButton = {
+	borderRadius: '36px',
+	border: '1px solid white',
+	textAlign: 'center',
+	listStyle: 'none',
+	width: '100px',
+	height: '45px',
+	color: 'white',
+	fontSize: '14px',
+	lineHeight: '1.25',
+	backgroundColor: 'transparent',
+	cursor: 'pointer',
+	marginTop: '30px',
+};
+
+export const mobileBox = {
 	color: 'white',
 	display: 'flex',
 	flexDirection: 'column',
@@ -221,7 +237,53 @@ export const mobileTechBox = {
 	borderRadius: 5,
 	overflow: 'hidden',
 	background: 'rgba(0, 0, 0, 0.1)',
-	fontSize: '12px',
+	fontSize: '14px',
+	marginTop: '15px',
+};
+// Skills portion of about page
+export const mobileSkillSubtitle = {
+	fontSize: '18px',
+	fontFamily: 'Roboto',
+	display: 'flex',
+	background:
+		'linear-gradient(90deg, rgba(228,161,205,0.18) 0%, rgba(157,228,245,0.3) 100%)',
+	padding: '10px 20px 10px 20px',
+	justifyContent: 'center',
+	fontWeight: 'bold',
+	textShadow: '1px 1px rgba(0,0,0,0.3)',
+};
+
+export const mobileSubSkillBox = {
+	display: 'flex',
+	flexWrap: 'wrap',
+	alignItems: 'center',
+	justifyContent: 'center',
+	padding: 5,
+	margin: 2.5,
+	borderRadius: 5,
+	// overflow: 'scroll',
+};
+
+export const mobileAboutBubbleItem = {
+	position: 'relative',
+	display: 'inline-block',
+	color: 'white',
+	margin: 3,
+	padding: 10,
+	borderRadius: 5,
+	border: '1px solid white',
+	fontWeight: 'lighter',
+	textAlign: 'center',
+	textDecoration: 'none',
+	textShadow: '1px 1px rgba(0,0,0,0.3)',
+	//
+};
+
+export const mobileAboutSkill = {
+	padding: 5,
+	margin: 2.5,
+	borderRadius: 5,
+	fontWeight: 'lighter',
 };
 /* ============================== EDUCATION SECTION ============================== */
 export const mobileOrbitalContainer = {

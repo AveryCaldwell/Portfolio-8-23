@@ -21,7 +21,6 @@ import {
 	subSkillBox,
 	waveIcon,
 	aboutIntroBox,
-	aboutTextSub,
 	aboutOverflow,
 } from './Styles';
 import {
@@ -33,13 +32,23 @@ import {
 	mobileWaveIcon,
 	mobileAboutSubtitle,
 	mobileAboutButtonSpan,
-	mobileTechBox,
+	mobileSkillSubtitle,
+	mobileSubSkillBox,
+	mobileAboutBubbleItem,
+	mobileAboutSkill,
+	mobileAboutButton,
+	mobileBox,
 } from './ResponsiveStyles';
 // ICON
 import { WavingHand } from '@mui/icons-material';
 // IMAGE
 // This function component represents the About section of the web app
 function About({ props }) {
+	// RESPONSIVE DESIGN
+	const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
+	const responsiveAboutBubbleItem = isMobile
+		? mobileAboutBubbleItem
+		: aboutBubbleItem;
 	// Arrays containing frontend and backend technology data
 	const frontendData = [
 		'HTML/CSS',
@@ -75,7 +84,7 @@ function About({ props }) {
 		<li
 			key={index}
 			className="aboutBubbleItem"
-			style={{ ...aboutBubbleItem, ...aboutFrontSkill }}
+			style={{ ...responsiveAboutBubbleItem, ...aboutFrontSkill }}
 		>
 			{skill}
 		</li>
@@ -84,7 +93,7 @@ function About({ props }) {
 		<li
 			key={index}
 			className="aboutBubbleItem"
-			style={{ ...aboutBubbleItem, ...aboutBackSkill }}
+			style={{ ...responsiveAboutBubbleItem, ...aboutBackSkill }}
 		>
 			{skill}
 		</li>
@@ -116,8 +125,7 @@ function About({ props }) {
 	// State to manage currently active content
 	const [aboutContentState, setAboutContentState] =
 		React.useState('Introduction');
-	// RESPONSIVE DESIGN
-	const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
+
 	const responsiveAboutContainer = isMobile
 		? mobileAboutContainer
 		: pageContainer;
@@ -135,7 +143,16 @@ function About({ props }) {
 	const responsiveAboutButtonSpan = isMobile
 		? mobileAboutButtonSpan
 		: aboutButtonSpan;
-	const responsiveTechBox = isMobile ? mobileTechBox : techBox;
+	const responsiveTechBox = isMobile ? mobileBox : techBox;
+	const responsiveSkillSubtitle = isMobile
+		? mobileSkillSubtitle
+		: skillSubtitle;
+	const responsiveSkillBox = isMobile ? mobileBox : skillBox;
+	const responsiveSubSkillBox = isMobile ? mobileSubSkillBox : subSkillBox;
+
+	const responsiveAboutSkill = isMobile ? mobileAboutSkill : aboutSkill;
+	const responsiveAboutButton = isMobile ? mobileAboutButton : aboutButton;
+
 	return (
 		<div
 			className="aboutContainer pageContainer"
@@ -205,37 +222,28 @@ function About({ props }) {
 							<div className="techBox" style={responsiveTechBox}>
 								<div
 									className="aboutSubtitle"
-									style={{ ...skillSubtitle }}
+									style={responsiveSkillSubtitle}
 								>
 									Front End Skills
 								</div>
-								<div
-									style={{
-										...aboutSkill,
-									}}
-								>
-									<div style={{ ...subSkillBox }}>
+								<div style={responsiveAboutSkill}>
+									<div style={responsiveSubSkillBox}>
 										{renderedFrontendSkills}
 									</div>
 								</div>
 							</div>
-							<div className="skillBox" style={skillBox}>
+							<div
+								className="skillBox"
+								style={responsiveSkillBox}
+							>
 								<div
 									className="aboutSubtitle"
-									style={{ ...skillSubtitle }}
+									style={responsiveSkillSubtitle}
 								>
 									Back End Skills
 								</div>
-								<div
-									style={{
-										...aboutSkill,
-									}}
-								>
-									<div
-										style={{
-											...subSkillBox,
-										}}
-									>
+								<div style={responsiveAboutSkill}>
+									<div style={responsiveSubSkillBox}>
 										{renderedBackendSkills}
 									</div>
 								</div>
@@ -254,7 +262,7 @@ function About({ props }) {
 								key={`aboutButton${index}`}
 								name={element.name}
 								style={{
-									...aboutButton,
+									...responsiveAboutButton,
 									...aboutButtonState[element.name],
 								}}
 								onMouseEnter={(event) => {
