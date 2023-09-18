@@ -22,8 +22,19 @@ import {
 	waveIcon,
 	aboutIntroBox,
 	aboutTextSub,
+	aboutOverflow,
 } from './Styles';
-import { mobilePageContainer, mobileAboutContent } from './ResponsiveStyles';
+import {
+	mobileAboutContent,
+	mobileAboutContainer,
+	mobileAboutTitle,
+	mobileAboutIntroBox,
+	mobileAboutText,
+	mobileWaveIcon,
+	mobileAboutSubtitle,
+	mobileAboutButtonSpan,
+	mobileTechBox,
+} from './ResponsiveStyles';
 // ICON
 import { WavingHand } from '@mui/icons-material';
 // IMAGE
@@ -108,23 +119,36 @@ function About({ props }) {
 	// RESPONSIVE DESIGN
 	const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
 	const responsiveAboutContainer = isMobile
-		? mobilePageContainer
+		? mobileAboutContainer
 		: pageContainer;
 	const responsiveAboutContent = isMobile ? mobileAboutContent : aboutContent;
+	const responsiveAboutTitle = isMobile ? mobileAboutTitle : aboutTitle;
+	const responsiveAboutIntroBox = isMobile
+		? mobileAboutIntroBox
+		: aboutIntroBox;
+	const responsiveAboutText = isMobile ? mobileAboutText : aboutText;
+	const responsiveWaveIcon = isMobile ? mobileWaveIcon : waveIcon;
 
+	const responsiveAboutSubtitle = isMobile
+		? mobileAboutSubtitle
+		: aboutSubtitle;
+	const responsiveAboutButtonSpan = isMobile
+		? mobileAboutButtonSpan
+		: aboutButtonSpan;
+	const responsiveTechBox = isMobile ? mobileTechBox : techBox;
 	return (
 		<div
 			className="aboutContainer pageContainer"
 			// style={pageContainer}
 			style={responsiveAboutContainer}
 		>
-			<div className="aboutTitle" style={responsiveAboutContent}>
+			<div className="aboutTitle" style={responsiveAboutTitle}>
 				ABOUT ME
 			</div>
 			{/* Content Container */}
 			<div id="ContentContainer" style={{ marginLeft: '20px' }}>
 				{/* About Content Sections */}
-				<div className="aboutContent" style={aboutContent}>
+				<div className="aboutContent" style={responsiveAboutContent}>
 					{/* Introduction Section */}
 					<div
 						id="Introduction"
@@ -139,23 +163,27 @@ function About({ props }) {
 						}}
 					>
 						{/* Introduction content */}
-						<div id="aboutIntroBox" style={aboutIntroBox}>
-							<div id="aboutSubtitle" style={aboutSubtitle}>
-								HI, I'M AVERY! <WavingHand sx={waveIcon} />
+						<div id="aboutIntroBox" style={responsiveAboutIntroBox}>
+							<div
+								id="aboutSubtitle"
+								style={responsiveAboutSubtitle}
+							>
+								HI, I'M AVERY!{' '}
+								<WavingHand sx={responsiveWaveIcon} />
 								{/* TODO: add animation to wave? */}
 							</div>
-							<div id="aboutText1" style={aboutText}>
+							<div id="aboutText1" style={responsiveAboutText}>
 								Innovative Business Woman turned Developer
 								currently based in Seattle, Washington, with
 								over 6 years of professional experience.
 							</div>
-							<div id="aboutText2" style={aboutText}>
+							<div id="aboutText2" style={responsiveAboutText}>
 								I'm a Freelancer Front-end React & Full Stack
 								Developer working in web development and content
 								creation. I enjoy using my marketing knowledge
 								to create user friendly UX/UI.
 							</div>
-							<div id="aboutText3" style={aboutTextSub}>
+							<div id="aboutText3" style={responsiveAboutText}>
 								Career Changer, Adventurer, Woman in Business,
 								Creative Thinker + Web Dev
 							</div>
@@ -173,13 +201,8 @@ function About({ props }) {
 						}}
 					>
 						{/* Frontend and Backend skills */}
-						<div
-							style={{
-								overflow: 'scroll',
-								maxHeight: '100%',
-							}}
-						>
-							<div className="techBox" style={techBox}>
+						<div style={aboutOverflow}>
+							<div className="techBox" style={responsiveTechBox}>
 								<div
 									className="aboutSubtitle"
 									style={{ ...skillSubtitle }}
@@ -223,7 +246,7 @@ function About({ props }) {
 				</div>
 
 				{/* Buttons to navigate between content sections */}
-				<div id="aboutButtonSpan" style={aboutButtonSpan}>
+				<div id="aboutButtonSpan" style={responsiveAboutButtonSpan}>
 					{aboutButtons.map(function (element, index) {
 						return (
 							<button

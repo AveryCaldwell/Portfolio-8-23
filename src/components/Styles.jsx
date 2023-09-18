@@ -1,12 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
 
-// Define your breakpoints
-const breakpoints = {
-	mobile: '0px',
-	tablet: '640px',
-	laptop: '1024px',
-	desktop: '1200px',
-};
 // Style thats on the app as a whole
 export const appContainer = {
 	display: 'flex',
@@ -40,8 +33,9 @@ export const pageContainer = {
 
 /* ============================== NAV SECTION ============================== */
 export const navTitle = {
-	fontSize: '32px',
-	paddingRight: '24px',
+	fontSize: '1.75rem',
+	// paddingRight: '24px',
+	paddingRight: '3%',
 	position: 'absolute',
 	bottom: '10px',
 	right: '10px',
@@ -73,6 +67,7 @@ export const navToolbar = {
 	textShadow: `2px 2px rgba(0,0,0,0.2)`,
 	zIndex: '5',
 	padding: '5px',
+	width: '100vw',
 };
 export const toolbarImage = {
 	height: '25px',
@@ -313,7 +308,6 @@ export const aboutContent = {
 	boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
 	backdropFilter: 'blur(5px)',
 	border: '1px solid rgba(255, 255, 255, 0.3)',
-	fontSize: '20px',
 	color: 'white',
 	lineHeight: '1.35',
 	fontFamily: 'Roboto',
@@ -376,7 +370,10 @@ export const aboutTextSub = {
 	height: '150px',
 	textAlign: 'center',
 };
-
+export const aboutOverflow = {
+	overflow: 'scroll',
+	maxHeight: '100%',
+};
 // Skills portion of about page
 export const skillSubtitle = {
 	fontSize: '24px',

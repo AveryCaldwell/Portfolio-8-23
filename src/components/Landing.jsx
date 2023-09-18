@@ -12,13 +12,16 @@ import {
 	landingContainer,
 	landingButtonSpan,
 } from './Styles';
+
+import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
+import { useMediaQuery } from 'react-responsive';
 import {
 	mobileLandingContainer,
 	mobilePageContainer,
 	mobileLandingHeader,
+	mobileLandingText,
+	mobileLandingButtonSpan,
 } from './ResponsiveStyles';
-import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
-import { useMediaQuery } from 'react-responsive';
 // This function component represents the Landing page of the web app
 function Landing({ props }) {
 	// Animation effect using the useEffect hook
@@ -54,6 +57,11 @@ function Landing({ props }) {
 	const responsiveLandingHeader = isMobile
 		? mobileLandingHeader
 		: landingHeader;
+	const responsiveLandingText = isMobile ? mobileLandingText : landingText;
+
+	const responsiveLandingButtonSpan = isMobile
+		? mobileLandingButtonSpan
+		: landingButtonSpan;
 	// render landing page
 	return (
 		<>
@@ -106,14 +114,14 @@ function Landing({ props }) {
 						l
 					</span>
 				</div>
-				<div className="landingText" style={landingText}>
+				<div className="landingText" style={responsiveLandingText}>
 					<div className="landingTitle" style={landingTitle}>
 						Portfolio 2023
 					</div>
 					<div className="landingSubtitle" style={landingSubtitle}>
 						React/Full Stack Developer
 						{/* Button to go to next page */}
-						<div style={landingButtonSpan}>
+						<div style={responsiveLandingButtonSpan}>
 							<LandingCTA>Show me more! </LandingCTA>{' '}
 							<PulseButton
 								id="pulseButton"
