@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'; // Importing useEffect and useRef
-import anime from 'animejs/lib/anime.es.js';
-import {} from './ResponsiveStyles';
 import { useMediaQuery } from 'react-responsive';
 // SCHOOL LOGOS
 import CYCU from '../assets/CYCU.png';
@@ -28,6 +26,13 @@ import {
 	eduButtonSpan,
 	eduButton,
 } from './Styles';
+import {
+	mobileCardContainer,
+	mobileEduContainer,
+	mobileOrbitalContainer,
+	mobileOrbitalBox,
+	mobileEduTitle,
+} from './ResponsiveStyles';
 // ICON
 import SchoolIcon from '@mui/icons-material/School';
 
@@ -51,6 +56,11 @@ function ImageIconRender({ props }) {
 }
 // Function to render educational card
 function EduCard({ props }) {
+	const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
+	const responsiveCardContainer = isMobile
+		? mobileCardContainer
+		: cardContainer;
+
 	return (
 		<ThemeProvider theme={theme}>
 			<div className="cardContainer" style={cardContainer}>
@@ -124,6 +134,16 @@ function EduCard({ props }) {
 
 // Main Edu component
 function Edu({ props }) {
+	// Responsive design
+	const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
+	const responsivePageContainer = isMobile
+		? mobileEduContainer
+		: pageContainer;
+	const responsiveOrbitalContainer = isMobile
+		? mobileOrbitalContainer
+		: orbitalContainer;
+	const responsiveOrbitalBox = isMobile ? mobileOrbitalBox : orbitalBox;
+	const responsiveEduTitle = isMobile ? mobileEduTitle : eduTitle;
 	// Array containing education data
 	const EducationArr = [
 		{
@@ -303,13 +323,19 @@ function Edu({ props }) {
 	// Component rendering
 	return (
 		<ThemeProvider theme={theme}>
-			<div className="eduContainer pageContainer" style={pageContainer}>
+			<div
+				className="eduContainer pageContainer"
+				style={responsivePageContainer}
+			>
 				{/* Education content */}
 				<div style={{ width: '50%', marginLeft: '100px' }}>
-					<h1 className="eduTitle" style={eduTitle}>
+					<h1 className="eduTitle" style={responsiveEduTitle}>
 						EDUCATION
 					</h1>
-					<div className="orbitalContainer" style={orbitalContainer}>
+					<div
+						className="orbitalContainer"
+						style={responsiveOrbitalContainer}
+					>
 						{/* Mapping through EducationArr to render orbital boxes */}
 						{EducationArr.map(function (element, index) {
 							return (
@@ -318,7 +344,7 @@ function Edu({ props }) {
 									key={`object${index + 1}`}
 									className={'orbitalBox'}
 									onClick={() => rotatorClick(index)}
-									style={orbitalBox}
+									style={responsiveOrbitalBox}
 								>
 									<ImageIconRender
 										props={{

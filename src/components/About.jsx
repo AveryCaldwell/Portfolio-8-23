@@ -25,7 +25,6 @@ import {
 } from './Styles';
 import {
 	mobileAboutContent,
-	mobileAboutContainer,
 	mobileAboutTitle,
 	mobileAboutIntroBox,
 	mobileAboutText,
@@ -38,10 +37,10 @@ import {
 	mobileAboutSkill,
 	mobileAboutButton,
 	mobileBox,
+	mobilePageContainer,
 } from './ResponsiveStyles';
 // ICON
 import { WavingHand } from '@mui/icons-material';
-// IMAGE
 // This function component represents the About section of the web app
 function About({ props }) {
 	// RESPONSIVE DESIGN
@@ -49,6 +48,34 @@ function About({ props }) {
 	const responsiveAboutBubbleItem = isMobile
 		? mobileAboutBubbleItem
 		: aboutBubbleItem;
+	// const responsiveAboutContainer = isMobile
+	// 	? mobileAboutContainer
+	// 	: pageContainer;
+	const responsiveAboutContent = isMobile ? mobileAboutContent : aboutContent;
+	const responsiveAboutTitle = isMobile ? mobileAboutTitle : aboutTitle;
+	const responsiveAboutIntroBox = isMobile
+		? mobileAboutIntroBox
+		: aboutIntroBox;
+	const responsiveAboutText = isMobile ? mobileAboutText : aboutText;
+	const responsiveWaveIcon = isMobile ? mobileWaveIcon : waveIcon;
+
+	const responsiveAboutSubtitle = isMobile
+		? mobileAboutSubtitle
+		: aboutSubtitle;
+	const responsiveAboutButtonSpan = isMobile
+		? mobileAboutButtonSpan
+		: aboutButtonSpan;
+	const responsiveTechBox = isMobile ? mobileBox : techBox;
+	const responsiveSkillSubtitle = isMobile
+		? mobileSkillSubtitle
+		: skillSubtitle;
+	const responsiveSkillBox = isMobile ? mobileBox : skillBox;
+	const responsiveSubSkillBox = isMobile ? mobileSubSkillBox : subSkillBox;
+	const responsiveAboutSkill = isMobile ? mobileAboutSkill : aboutSkill;
+	const responsiveAboutButton = isMobile ? mobileAboutButton : aboutButton;
+	const responsivePageContainer = isMobile
+		? mobilePageContainer
+		: pageContainer;
 	// Arrays containing frontend and backend technology data
 	const frontendData = [
 		'HTML/CSS',
@@ -126,38 +153,11 @@ function About({ props }) {
 	const [aboutContentState, setAboutContentState] =
 		React.useState('Introduction');
 
-	const responsiveAboutContainer = isMobile
-		? mobileAboutContainer
-		: pageContainer;
-	const responsiveAboutContent = isMobile ? mobileAboutContent : aboutContent;
-	const responsiveAboutTitle = isMobile ? mobileAboutTitle : aboutTitle;
-	const responsiveAboutIntroBox = isMobile
-		? mobileAboutIntroBox
-		: aboutIntroBox;
-	const responsiveAboutText = isMobile ? mobileAboutText : aboutText;
-	const responsiveWaveIcon = isMobile ? mobileWaveIcon : waveIcon;
-
-	const responsiveAboutSubtitle = isMobile
-		? mobileAboutSubtitle
-		: aboutSubtitle;
-	const responsiveAboutButtonSpan = isMobile
-		? mobileAboutButtonSpan
-		: aboutButtonSpan;
-	const responsiveTechBox = isMobile ? mobileBox : techBox;
-	const responsiveSkillSubtitle = isMobile
-		? mobileSkillSubtitle
-		: skillSubtitle;
-	const responsiveSkillBox = isMobile ? mobileBox : skillBox;
-	const responsiveSubSkillBox = isMobile ? mobileSubSkillBox : subSkillBox;
-
-	const responsiveAboutSkill = isMobile ? mobileAboutSkill : aboutSkill;
-	const responsiveAboutButton = isMobile ? mobileAboutButton : aboutButton;
-
 	return (
 		<div
 			className="aboutContainer pageContainer"
 			// style={pageContainer}
-			style={responsiveAboutContainer}
+			style={responsivePageContainer}
 		>
 			<div className="aboutTitle" style={responsiveAboutTitle}>
 				ABOUT ME

@@ -1,13 +1,40 @@
+export const mobileAppContainer = {
+	// display: 'flex',
+	// position: 'absolute',
+	// left: 'calc(50% - 300px)',
+	// height: '100vh',
+	// top: '0',
+	// transition: 'all 1.5s ease',
+	// maxWidth: '800px',
+	// minWidth: '800px',
+	// fontFamily: 'roboto',
+	display: 'flex',
+	position: 'relative', // Change to relative positioning
+	margin: '0 auto', // Center the container horizontally
+	height: '100vh',
+	top: '0',
+	transition: 'all 1.5s ease',
+	maxWidth: '800px', // Adjust the max-width to 800px for the breakpoint
+	width: '100%', // Set width to 100% to ensure responsiveness
+	fontFamily: 'roboto',
+};
+
 // style that is on each component page
 export const mobilePageContainer = {
-	display: 'block',
-	// maxWidth: '600px',
-	// minWidth: '600px',
-	marginTop: 'calc(50vh - 200px)',
-	marginBottom: 'calc(50vh - 200px)',
+	// display: 'flex',
+	// flexDirection: 'column',
+	// minHeight: '800px',
+	// maxHeight: '800px',
+	// marginTop: 'calc(50vh - 200px)',
+	// marginBottom: 'calc(50vh - 200px)',
 	// display: 'flex',
 	// flexDirection: 'column',
 	// alignItems: 'center',
+	display: 'flex',
+	minHeight: '800px',
+	maxHeight: '800px',
+	margin: 'auto', // Center the container horizontally
+	marginTop: 'calc(50vh - 400px)', // Center vertically by calculating half
 };
 /* ============================== NAV SECTION ============================== */
 export const mobileMenuIcon = {
@@ -40,66 +67,67 @@ export const mobileMenuIcon = {
 
 /* ============================== LOGO SLIDING SECTION ============================== */
 export const mobileLogoSliderContainer = {
-	width: '215px',
-	display: 'block',
+	width: '205px',
+	// display: 'flex',
 	position: 'absolute',
+	// flexDirection: 'column',
 	zIndex: 1,
 	borderRadius: '250px',
-	left: '25%',
-	top: '25%',
+	// left: '25%',
+	marginLeft: '25%',
+	marginTop: '15%',
+	minHeight: '1200px',
+	// top: '5%',
 	height: '120vh',
 	background: `linear-gradient(
-        rgba(255, 255, 255, 1),
-        rgba(255, 255, 255, 0.25)
-    )`,
+	    rgba(255, 255, 255, 1),
+	    rgba(255, 255, 255, 0.25)
+	)`,
 };
 export const mobileLogoSliderImage = {
 	width: '175px',
 	height: '175px',
-	// left: '25%',
 	position: 'relative',
 	display: 'inline-block',
-	// top: '15px',
-	top: 'calc( 100% - 190px)',
+	top: '15px',
 	borderRadius: '50%',
-	left: '20px',
+	left: '15px',
 	transition: 'all 1.5s ease',
+	// marginLeft: '8%',
+	// marginTop: '6%',
 };
 export const mobileLogoSliderCircle = {
-	height: '210px',
-	width: '210px',
-	opacity: 1,
-	boxShadow: '0 0 15px 5px white',
+	position: 'absolute',
+	color: 'white',
+	border: ' 5px solid white',
+	height: '200px',
+	width: '200px',
 	borderRadius: '50%',
-	// boxShadow: '0 0 30px 15px white',
+	left: '2px',
+	bottom: '135px',
+	boxShadow: '0 0 15px 5px white',
 	display: 'block',
 	transition: 'all 0.5s ease',
-	left: '0px',
-	bottom: '0px',
-	position: 'absolute',
-	// opacity: '0',
+	opacity: '0',
 };
 /* ============================== LANDING SECTION ============================== */
 export const mobileLandingContainer = {
-	display: 'block',
-	position: 'absolute',
-	left: '7%',
-	top: 0,
-	width: '100%',
-	minHeight: '400px',
-	marginBottom: 'calc(50vh - 200px)',
-	// background: 'pink',
+	// width: '100%',
+	minHeight: '800px',
+	// marginBottom: 'calc(50vh - 200px)',
 	overflow: 'hidden',
+	background: 'pink',
 };
 export const mobileLandingFont = {
-	fontSize: '.75em! important',
-	display: 'block',
+	fontSize: '.75em',
+	display: 'inline-block',
 };
 export const mobileLandingHeader = {
 	fontSize: '2.75rem',
 	position: 'relative',
 	color: 'white',
 	left: '40%',
+	top: '26%',
 	height: '150px',
 	fontFamily: 'Roboto',
 };
@@ -120,15 +148,15 @@ export const mobileLandingButtonSpan = {
 	alignItems: 'left',
 };
 /* ============================== ABOUT SECTION ============================== */
-export const mobileAboutContainer = {
-	height: '600px',
-	display: 'flex',
-	flexDirection: 'column',
-	marginBottom: 'calc(100vh - 20px)',
-	marginTop: 'calc(100vh - 20px)',
-	marginLeft: '10%',
-	minWidth: '300px',
-};
+// export const mobileAboutContainer = {
+// 	height: '600px',
+// 	display: 'flex',
+// 	flexDirection: 'column',
+// 	marginTop: 'calc(80vh + 200px)',
+// 	marginBottom: 'calc(50vh + 20px)',
+// 	marginLeft: '10%',
+// 	minWidth: '300px',
+// };
 export const mobileAboutContent = {
 	width: '70vw',
 	height: '600px',
@@ -286,23 +314,44 @@ export const mobileAboutSkill = {
 	fontWeight: 'lighter',
 };
 /* ============================== EDUCATION SECTION ============================== */
+export const mobileEduContainer = {
+	display: 'flex',
+	flexDirection: 'row',
+	alignItems: 'center',
+};
 export const mobileOrbitalContainer = {
-	// height: '780px',
-	// width: '600px',
-	// opacity: '0',
-	// position: 'relative',
-	// transition: 'all 1s ease',
-	// display: 'flex',
-	// alignItems: 'center',
-	// left: '-120px',
-	// top: '50px',
+	width: '50%',
+	opacity: '0',
 };
 export const mobileCardContainer = {
-	display: 'block',
-	minHeight: 'auto',
-	maxHeight: 'none',
-	marginTop: 0,
-	marginBottom: 0,
-	padding: 20,
-	overflow: 'auto',
+	width: '200px',
+	display: 'flex',
+	transition: 'all 1s ease',
+	flexDirection: 'column',
+	overflow: 'hidden',
+};
+export const mobileEduTitle = {
+	position: 'relative',
+	justifyContent: 'center',
+	// position: 'absolute',
+	color: 'white',
+	fontSize: '40px',
+	textAlign: 'center',
+	textShadow: `4px 4px rgba(0,0,0,0.1)`,
+	left: '50px',
+	bottom: '350px',
+	height: '100px',
+};
+
+export const mobileOrbitalBox = {
+	offsetPath: `path('M150,0 A150,150 0 1,1 150,300 A150,150 0 1,1 150,0')`,
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	position: 'absolute',
+	left: '300px',
+	cursor: 'pointer',
+	borderRadius: '36px',
+	transition: 'all .2s ease',
+	height: '300px',
 };

@@ -1,38 +1,126 @@
 import styled, { keyframes, css } from 'styled-components';
 
 // Style thats on the app as a whole
-export const appContainer = {
+export const appContainer = (theme) => ({
 	display: 'flex',
 	position: 'absolute',
-	left: 'calc(50% - 600px)',
 	height: '100vh',
 	top: '0',
 	transition: 'all 1.5s ease',
-	maxWidth: '1200px',
-	minWidth: '1200px',
+	[theme.breakpoints.up('xs')]: {
+		left: 'calc(50% - 150px)',
+		maxWidth: '300px',
+		minWidth: '300px',
+	},
+	[theme.breakpoints.up('sm')]: {
+		left: 'calc(50% - 300px)',
+		maxWidth: '600px',
+		minWidth: '600px',
+	},
+	[theme.breakpoints.up('md')]: {
+		left: 'calc(50% - 450px)',
+		maxWidth: '900px',
+		minWidth: '900px',
+	},
+	[theme.breakpoints.up('lg')]: {
+		left: 'calc(50% - 600px)',
+		maxWidth: '1200px',
+		minWidth: '1200px',
+	},
+	[theme.breakpoints.up('xl')]: {
+		left: 'calc(50% - 600px)',
+		maxWidth: '1200px',
+		minWidth: '1200px',
+	},
 	fontFamily: 'roboto',
-};
+});
 // Variation of pageContainer
-export const pagesContainer = {
-	height: '800px',
+export const pagesContainer = (theme) => ({
 	display: 'flex',
 	flexDirection: 'column',
-	maxWidth: '1200px',
-	minWidth: '1200px',
-	marginTop: 'calc(50vh - 400px)',
-	marginBottom: 'calc(50vh - 400px)',
-};
+	[theme.breakpoints.up('xs')]: {
+		height: '400px',
+		maxWidth: '400px',
+		minWidth: '400px',
+		marginTop: 'calc(50vh - 20px)',
+		marginBottom: 'calc(50vh - 20px)',
+	},
+	[theme.breakpoints.up('sm')]: {
+		height: '600px',
+		maxWidth: '600px',
+		minWidth: '600px',
+		marginTop: 'calc(50vh - 300px)',
+		marginBottom: 'calc(50vh - 300px)',
+	},
+	[theme.breakpoints.up('md')]: {
+		height: '600px',
+		maxWidth: '900px',
+		minWidth: '900px',
+		marginTop: 'calc(50vh - 300px)',
+		marginBottom: 'calc(50vh - 300px)',
+	},
+	[theme.breakpoints.up('lg')]: {
+		height: '800px',
+		maxWidth: '1200px',
+		minWidth: '1200px',
+		marginTop: 'calc(50vh - 400px)',
+		marginBottom: 'calc(50vh - 400px)',
+	},
+	[theme.breakpoints.up('xl')]: {
+		height: '800px',
+		maxWidth: '1200px',
+		minWidth: '1200px',
+		marginTop: 'calc(50vh - 400px)',
+		marginBottom: 'calc(50vh - 400px)',
+	},
+});
 // style that is on each component page
-export const pageContainer = {
+export const pageContainer = (theme) => ({
 	display: 'flex',
-	minHeight: '800px',
-	maxHeight: '800px',
-	marginTop: 'calc(50vh - 400px)',
-	marginBottom: 'calc(50vh - 400px)',
-};
+	[theme.breakpoints.up('xs')]: {
+		maxHeight: '400px',
+		minHeight: '400px',
+		maxWidth: '400px',
+		minWidth: '400px',
+		marginTop: 'calc(50vh - 20px)',
+		marginBottom: 'calc(50vh - 20px)',
+	},
+	[theme.breakpoints.up('sm')]: {
+		maxHeight: '600px',
+		minHeight: '600px',
+		maxWidth: '600px',
+		minWidth: '600px',
+		marginTop: 'calc(50vh - 300px)',
+		marginBottom: 'calc(50vh - 300px)',
+	},
+	[theme.breakpoints.up('md')]: {
+		maxHeight: '600px',
+		minHeight: '600px',
+		maxWidth: '900px',
+		minWidth: '900px',
+		marginTop: 'calc(50vh - 300px)',
+		marginBottom: 'calc(50vh - 300px)',
+	},
+	[theme.breakpoints.up('lg')]: {
+		maxHeight: '800px',
+		minHeight: '800px',
+		maxWidth: '1200px',
+		minWidth: '1200px',
+		marginTop: 'calc(50vh - 400px)',
+		marginBottom: 'calc(50vh - 400px)',
+	},
+	[theme.breakpoints.up('xl')]: {
+		maxHeight: '800px',
+		minHeight: '800px',
+		maxWidth: '1200px',
+		minWidth: '1200px',
+		marginTop: 'calc(50vh - 400px)',
+		marginBottom: 'calc(50vh - 400px)',
+	},
+});
 
 /* ============================== NAV SECTION ============================== */
-export const navTitle = {
+export const navTitle = (theme) => ({
 	fontSize: '1.75rem',
 	// paddingRight: '24px',
 	paddingRight: '3%',
@@ -43,21 +131,21 @@ export const navTitle = {
 	transition: 'all 1.5s ease',
 	textShadow: `2px 2px rgba(0,0,0,0.2)`,
 	//opacity: 0.5,
-};
-export const navBox = {
+});
+export const navBox = (theme) => ({
 	display: 'flex',
 	paddingTop: '50px',
 	cursor: 'pointer',
 	width: 250,
 	color: 'white',
-};
-export const navLinks = {
+});
+export const navLinks = (theme) => ({
 	display: 'inline-block',
 	marginRight: '20px',
 	lineHeight: 1.5,
 	padding: 0,
-};
-export const navToolbar = {
+});
+export const navToolbar = (theme) => ({
 	color: 'white',
 	display: 'flex',
 	alignContent: 'start',
@@ -68,8 +156,8 @@ export const navToolbar = {
 	zIndex: '5',
 	padding: '5px',
 	width: '100vw',
-};
-export const toolbarImage = {
+});
+export const toolbarImage = (theme) => ({
 	height: '25px',
 	width: '25px',
 	borderRadius: '100%',
@@ -79,16 +167,16 @@ export const toolbarImage = {
 	// border: ' 1px solid white',
 	// boxShadow: '0 0 10px 10px white',
 	marginLeft: 25,
-};
-export const menuIcon = {
+});
+export const menuIcon = (theme) => ({
 	height: '50px',
 	width: '50px',
 	cursor: 'pointer',
 	textShadow: '2px 2px rgba(0,0,0,0.3)',
 	minWidth: '30px', // Set a minimum width
 	minHeight: '30px', // Set a minimum height
-};
-export const avesImg = {
+});
+export const avesImg = (theme) => ({
 	height: '150px',
 	width: '150px',
 	borderRadius: 300,
@@ -97,17 +185,17 @@ export const avesImg = {
 	cursor: 'pointer',
 	marginLeft: 'auto',
 	marginRight: 'auto',
-};
+});
 
-export const navTitleText = {
+export const navTitleText = (theme) => ({
 	fontFamily: 'Roboto',
 	textAlign: 'center',
 	pt: 4,
 	color: 'white',
 	fontSize: 22,
 	marginBottom: '5px',
-};
-export const navSubtitleText = {
+});
+export const navSubtitleText = (theme) => ({
 	fontFamily: 'Roboto',
 	textAlign: 'center',
 	fontWeight: 'lighter',
@@ -115,9 +203,9 @@ export const navSubtitleText = {
 	color: 'white',
 	fontSize: 18,
 	marginBottom: '20px',
-};
+});
 
-export const closeIcon = {
+export const closeIcon = (theme) => ({
 	display: 'block',
 	textAlign: 'center',
 	height: '75px',
@@ -130,9 +218,9 @@ export const closeIcon = {
 	boxShadow: '0 2px 30px rgba(0, 0, 0, 0.1)',
 	backdropFilter: 'blur(5px)',
 	border: '1px solid rgba(255, 255, 255, 0.2)',
-};
+});
 /* ============================== LOGO SLIDING SECTION ============================== */
-export const logoSliderContainer = {
+export const logoSliderContainer = (theme) => ({
 	position: 'absolute',
 	color: 'white',
 	background: `linear-gradient(
@@ -144,8 +232,8 @@ export const logoSliderContainer = {
 	borderRadius: '250px',
 	left: '5%',
 	top: '35%',
-};
-export const logoSliderImage = {
+});
+export const logoSliderImage = (theme) => ({
 	pointerEvents: 'none',
 	position: 'relative',
 	width: '300px',
@@ -155,8 +243,8 @@ export const logoSliderImage = {
 	borderRadius: '50%',
 	left: '24px',
 	transition: 'all 1.5s ease',
-};
-export const logoSliderCircle = {
+});
+export const logoSliderCircle = (theme) => ({
 	position: 'absolute',
 	color: 'white',
 	border: ' 5px solid white',
@@ -169,14 +257,14 @@ export const logoSliderCircle = {
 	display: 'block',
 	transition: 'all 0.5s ease',
 	opacity: '0',
-};
+});
 /* ============================== LANDING SECTION ============================== */
-export const landingContainer = {
+export const landingContainer = (theme) => ({
 	minHeight: '800px',
 	overflow: 'hidden',
 	marginBottom: 'calc(50vh - 400px)',
-};
-export const landingHeader = {
+});
+export const landingHeader = (theme) => ({
 	position: 'relative',
 	color: 'white',
 	left: '40%',
@@ -184,8 +272,8 @@ export const landingHeader = {
 	height: '50px',
 	fontSize: '50px',
 	fontFamily: 'Roboto',
-};
-export const landingText = {
+});
+export const landingText = (theme) => ({
 	display: 'inline-block',
 	fontSize: '32px',
 	position: 'relative',
@@ -194,8 +282,8 @@ export const landingText = {
 	color: 'white',
 	marginTop: '15px',
 	width: '400px',
-};
-export const landingTitle = {
+});
+export const landingTitle = (theme) => ({
 	border: 'solid 1px white',
 	borderRadius: '36px',
 	padding: '5px',
@@ -204,8 +292,8 @@ export const landingTitle = {
 	letterSpacing: '5px',
 	fontFamily: 'Roboto',
 	fontSize: '1em',
-};
-export const landingSubtitle = {
+});
+export const landingSubtitle = (theme) => ({
 	marginTop: '15px',
 	marginBottom: '15px',
 	borderRadius: '36px',
@@ -215,24 +303,24 @@ export const landingSubtitle = {
 	fontFamily: 'Roboto',
 	position: 'absolute',
 	fontSize: '1em',
-};
+});
 
-export const landingButton = {
+export const landingButton = (theme) => ({
 	color: 'white',
 	backgroundColor: 'transparent',
 	border: 'none',
 	fontSize: '65px',
 	cursor: 'pointer',
-};
-export const landingButtonSpan = {
+});
+export const landingButtonSpan = (theme) => ({
 	display: 'flex',
 	justifyContent: 'space-evenly',
 	flexDirection: 'row',
 	width: '100%',
 	height: '100px',
 	alignItems: 'center',
-};
-// export const landingCTA = {
+});
+// export const landingCTA = (theme) => ({
 // 	fontFamily: 'Space Mono, monospaced',
 // 	textShadow: `1px 1px rgba(0,0,0,0.3)`,
 // 	display: 'inline',
@@ -278,16 +366,16 @@ export const PulseButton = styled.button`
 `;
 
 /* { ========= NAME ANIMATION } */
-export const letter = {
+export const letter = (theme) => ({
 	display: 'inline-block',
 	opacity: '0',
 	pointerEvents: 'none',
 	transition: 'all .2s ease',
 	fontSize: '1em',
-};
+});
 /* ============================== ABOUT SECTION ============================== */
 
-export const aboutTitle = {
+export const aboutTitle = (theme) => ({
 	color: 'white',
 	display: 'flex',
 	fontSize: '80px',
@@ -297,8 +385,8 @@ export const aboutTitle = {
 	left: '2.5%',
 	top: '65%',
 	position: 'relative',
-};
-export const aboutContent = {
+});
+export const aboutContent = (theme) => ({
 	width: '700px',
 	height: '650px',
 	position: 'relative',
@@ -313,8 +401,8 @@ export const aboutContent = {
 	fontFamily: 'Roboto',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 	overflow: 'hidden',
-};
-export const aboutIntroBox = {
+});
+export const aboutIntroBox = (theme) => ({
 	width: '600px',
 	height: '100%',
 	// position: 'relative',
@@ -328,8 +416,8 @@ export const aboutIntroBox = {
 	alignItems: 'center',
 	// FIXME: fadeTransition has 'left:0', left margin is to compensate
 	margin: ' 0px 0px 0px 20px',
-};
-export const aboutSubtitle = {
+});
+export const aboutSubtitle = (theme) => ({
 	padding: '15px 25px 15px 25px',
 	fontSize: '40px',
 	color: 'white',
@@ -346,12 +434,12 @@ export const aboutSubtitle = {
 	fontWeight: 'bold',
 	border: '1px solid white',
 	borderRadius: 5,
-};
-export const waveIcon = {
+});
+export const waveIcon = (theme) => ({
 	fontSize: '40px',
 	verticalAlign: 'middle',
-};
-export const aboutText = {
+});
+export const aboutText = (theme) => ({
 	display: 'flex',
 	flexDirection: 'column',
 	justifyContent: 'center',
@@ -360,8 +448,8 @@ export const aboutText = {
 	height: '150px',
 	// fontWeight: 'lighter',
 	textAlign: 'center',
-};
-export const aboutTextSub = {
+});
+export const aboutTextSub = (theme) => ({
 	display: 'flex',
 	flexDirection: 'column',
 	justifyContent: 'center',
@@ -369,13 +457,13 @@ export const aboutTextSub = {
 	fontSize: '24px',
 	height: '150px',
 	textAlign: 'center',
-};
-export const aboutOverflow = {
+});
+export const aboutOverflow = (theme) => ({
 	overflow: 'scroll',
 	maxHeight: '100%',
-};
+});
 // Skills portion of about page
-export const skillSubtitle = {
+export const skillSubtitle = (theme) => ({
 	fontSize: '24px',
 	fontFamily: 'Roboto',
 	display: 'flex',
@@ -386,22 +474,22 @@ export const skillSubtitle = {
 	width: 650,
 	fontWeight: 'bold',
 	textShadow: '1px 1px rgba(0,0,0,0.3)',
-};
-export const aboutSkill = {
+});
+export const aboutSkill = (theme) => ({
 	padding: 10,
 	margin: 5,
 	borderRadius: 5,
 	fontWeight: 'lighter',
-};
+});
 
-export const aboutFrontSkill = {
+export const aboutFrontSkill = (theme) => ({
 	background: 'rgba(157,228,245,0.18)',
-};
-export const aboutBackSkill = {
+});
+export const aboutBackSkill = (theme) => ({
 	background: 'rgba(228,161,205,0.18)',
-};
+});
 
-export const techBox = {
+export const techBox = (theme) => ({
 	color: 'white',
 	display: 'flex',
 	flexDirection: 'column',
@@ -410,8 +498,8 @@ export const techBox = {
 	overflow: 'hidden',
 	background: 'rgba(0, 0, 0, 0.1)',
 	fontSize: '16px',
-};
-export const skillBox = {
+});
+export const skillBox = (theme) => ({
 	display: 'flex',
 	flexDirection: 'column',
 	flexWrap: 'wrap',
@@ -425,8 +513,8 @@ export const skillBox = {
 	borderRadius: 5,
 	overflow: 'hidden',
 	background: 'rgba(0, 0, 0, 0.1)',
-};
-export const aboutBubbleItem = {
+});
+export const aboutBubbleItem = (theme) => ({
 	position: 'relative',
 	display: 'inline-block',
 	color: 'white',
@@ -439,16 +527,16 @@ export const aboutBubbleItem = {
 	textDecoration: 'none',
 	textShadow: '1px 1px rgba(0,0,0,0.3)',
 	//
-};
-export const subSkillBox = {
+});
+export const subSkillBox = (theme) => ({
 	display: 'flex',
 	flexWrap: 'wrap',
 	alignItems: 'center',
 	justifyContent: 'center',
 	width: 600,
 	overflow: 'hidden',
-};
-export const aboutButton = {
+});
+export const aboutButton = (theme) => ({
 	borderRadius: '36px',
 	border: '1px solid white',
 	textAlign: 'center',
@@ -461,33 +549,33 @@ export const aboutButton = {
 	backgroundColor: 'transparent',
 	cursor: 'pointer',
 	marginTop: '30px',
-};
-export const aboutButtonSpan = {
+});
+export const aboutButtonSpan = (theme) => ({
 	display: 'flex',
 	justifyContent: 'space-around',
 	flexDirection: 'row',
 	width: '700px',
 	height: '150px',
-};
-export const fadeTransition = {
+});
+export const fadeTransition = (theme) => ({
 	transition: `ease 1s`,
 	position: 'absolute',
 	top: 0,
 	left: 0,
 	padding: '20px',
 	height: '650px',
-};
+});
 
 /* ============================== EDUCATION SECTION ============================== */
-export const eduButtonSpan = {
+export const eduButtonSpan = (theme) => ({
 	display: 'flex',
 	justifyContent: 'space-around',
 	flexDirection: 'row',
 	width: '380px',
 	height: '150px',
-};
+});
 
-export const eduButton = {
+export const eduButton = (theme) => ({
 	borderRadius: '36px',
 	border: '1px solid white',
 	textAlign: 'center',
@@ -500,9 +588,9 @@ export const eduButton = {
 	backgroundColor: 'transparent',
 	cursor: 'pointer',
 	marginTop: '30px',
-};
+});
 
-export const orbitalContainer = {
+export const orbitalContainer = (theme) => ({
 	height: '780px',
 	width: '600px',
 	opacity: '0',
@@ -512,9 +600,9 @@ export const orbitalContainer = {
 	alignItems: 'center',
 	left: '-120px',
 	top: '50px',
-};
+});
 
-export const orbitalBox = {
+export const orbitalBox = (theme) => ({
 	offsetPath: `path('M150,0 A150,150 0 1,1 150,300 A150,150 0 1,1 150,0')`,
 	display: 'flex',
 	alignItems: 'center',
@@ -527,9 +615,9 @@ export const orbitalBox = {
 	cursor: 'pointer',
 	borderRadius: '36px',
 	transition: 'all .2s ease',
-};
+});
 
-export const eduTitle = {
+export const eduTitle = (theme) => ({
 	position: 'absolute',
 	color: 'white',
 	transition: 'all .2s ease',
@@ -541,9 +629,9 @@ export const eduTitle = {
 	fontSize: '80px',
 	fontFamily: 'Roboto',
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
-};
+});
 
-export const eduDescriptionHeader = {
+export const eduDescriptionHeader = (theme) => ({
 	color: 'white',
 	transition: 'all .2s ease',
 	textAlign: 'center',
@@ -551,17 +639,17 @@ export const eduDescriptionHeader = {
 	paddingTop: '20px',
 	fontFamily: 'Roboto',
 	textShadow: `2px 2px rgba(0,0,0,0.1)`,
-};
+});
 
-export const cardContainer = {
+export const cardContainer = (theme) => ({
 	width: '400px',
 	display: 'flex',
 	transition: 'all 1s ease',
 	flexDirection: 'column',
 	overflow: 'hidden',
-};
+});
 
-export const eduHeader = {
+export const eduHeader = (theme) => ({
 	transition: 'all 0.2s ease',
 	padding: '5px',
 	color: 'white',
@@ -571,9 +659,9 @@ export const eduHeader = {
 	display: 'flex',
 	fontFamily: 'Roboto',
 	textShadow: `2px 2px rgba(0,0,0,0.1)`,
-};
+});
 
-export const eduCardActive = {
+export const eduCardActive = (theme) => ({
 	height: 'fit-content',
 	fontFamily: 'Roboto',
 	padding: '15px',
@@ -589,9 +677,9 @@ export const eduCardActive = {
 	boxShadow: ' 0 4px 20px rgba(255, 255, 255, 0.5)',
 	backdropFilter: ' blur(5px)',
 	border: '1px solid rgba(255, 255, 255, 0.8)',
-};
+});
 
-export const eduCardInactive = {
+export const eduCardInactive = (theme) => ({
 	height: 'fit-content',
 	fontFamily: 'Roboto',
 	padding: '15px',
@@ -607,22 +695,22 @@ export const eduCardInactive = {
 	boxShadow: ' 0 4px 30px rgba(0, 0, 0, 0.1)',
 	backdropFilter: ' blur(5px)',
 	border: '1px solid rgba(255, 255, 255, 0.3)',
-};
-export const eduImage = {
+});
+export const eduImage = (theme) => ({
 	display: 'flex',
 	marginLeft: 'auto',
 	marginRight: 'auto',
 	WebkitFilter: 'drop-shadow(5px 5px 5px #666666)',
 	filter: 'drop-shadow(5px 5px 5px #666666)',
 	transition: 'all .3s ease',
-};
-export const eduImageInactive = {
+});
+export const eduImageInactive = (theme) => ({
 	width: '150px',
-};
-export const eduImageActive = {
+});
+export const eduImageActive = (theme) => ({
 	width: '250px',
-};
-export const eduSlideshow = {
+});
+export const eduSlideshow = (theme) => ({
 	height: '275px',
 	fontFamily: 'Roboto',
 	fontSize: '20px',
@@ -642,8 +730,8 @@ export const eduSlideshow = {
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 	listStyleType: 'none',
 	transition: 'all .2s ease',
-};
-export const myEduActive = {
+});
+export const myEduActive = (theme) => ({
 	display: 'block',
 	height: 275,
 	textAlign: 'center',
@@ -652,32 +740,32 @@ export const myEduActive = {
 	transition: 'all 1s ease',
 	marginTop: 10,
 	// lineHeight: 1.25,
-};
-export const myEduInactive = {
+});
+export const myEduInactive = (theme) => ({
 	height: 275,
 	display: 'block',
 	textAlign: 'center',
 	opacity: 0,
 	position: 'absolute',
 	transition: 'all 1s ease',
-};
+});
 /* ============================== SVG PATH SECTION ============================== */
-export const svgContainer = {
+export const svgContainer = (theme) => ({
 	position: 'absolute',
 	top: '345vh',
 	left: '350px',
 	cursor: 'pointer',
 	zIndex: '-1',
-};
+});
 
-export const svgCord = {
+export const svgCord = (theme) => ({
 	//width: '600px',
 	height: '120vh',
 	pointerEvents: 'none',
 	//opacity: 0,
-};
+});
 
-export const animateSvgStroke1 = {
+export const animateSvgStroke1 = (theme) => ({
 	'@WebkitKeyframes animateSvgStroke1': {
 		'0%': {
 			strokeDashoffset: '2515.90478515625px',
@@ -708,9 +796,9 @@ export const animateSvgStroke1 = {
 			strokeDasharray: '2515.90478515625px',
 		},
 	},
-};
+});
 
-export const svgButton = {
+export const svgButton = (theme) => ({
 	borderRadius: '36px',
 	border: '1px solid white',
 	textAlign: 'center',
@@ -723,16 +811,16 @@ export const svgButton = {
 	backgroundColor: 'transparent',
 	cursor: 'pointer',
 	marginTop: '30px',
-};
+});
 /* ============================== PROJECTS SECTION ============================== */
-export const projectsButtonSpan = {
+export const projectsButtonSpan = (theme) => ({
 	display: 'flex',
 	justifyContent: 'space-around',
 	flexDirection: 'row',
 	width: '450px',
 	height: '150px',
-};
-export const projectsButton = {
+});
+export const projectsButton = (theme) => ({
 	borderRadius: '36px',
 	border: '1px solid white',
 	textAlign: 'center',
@@ -745,17 +833,17 @@ export const projectsButton = {
 	backgroundColor: 'transparent',
 	cursor: 'pointer',
 	marginTop: '30px',
-};
-export const projectContainer = {
+});
+export const projectContainer = (theme) => ({
 	display: 'flex',
 	flexDirection: 'column', // Stack content vertically
 	alignItems: 'center', // Center horizontally
 	justifyContent: 'center', // Center vertically
 	fontFamily: 'Roboto',
-};
+});
 /* ========== LEFT SIDE COMPUTER SECTION STARTS*/
 /* Project page title */
-export const projectTitle = {
+export const projectTitle = (theme) => ({
 	position: 'relative',
 	color: 'white',
 	transition: 'all .2s ease',
@@ -766,9 +854,9 @@ export const projectTitle = {
 	display: 'flex',
 	fontSize: '80px',
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
-};
+});
 /* Project text blerb */
-export const projectContent = {
+export const projectContent = (theme) => ({
 	fontFamily: 'roboto',
 	position: 'relative',
 	height: '400px',
@@ -782,19 +870,19 @@ export const projectContent = {
 	color: 'white',
 	padding: '15px',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
-};
-export const textSlideshow = {
+});
+export const textSlideshow = (theme) => ({
 	position: 'relative',
 	padding: '15px',
 	right: '5px',
-};
+});
 /* Hide the images by default */
-export const mySlides = {
+export const mySlides = (theme) => ({
 	display: 'block',
 	transition: 'all 1.0s ease',
-};
+});
 /* Hide the images by default */
-export const projectSlides = {
+export const projectSlides = (theme) => ({
 	display: 'block',
 	position: 'absolute',
 	top: 0,
@@ -802,25 +890,25 @@ export const projectSlides = {
 	height: '400px',
 	width: '400px',
 	transition: 'all 1.0s ease',
-};
-export const slideTitle = {
+});
+export const slideTitle = (theme) => ({
 	fontSize: '26px',
 	textAlign: 'center',
 	fontWeight: 'bold',
-};
+});
 /* project github icon */
-export const iconContainer = {
+export const iconContainer = (theme) => ({
 	display: 'flex',
 	justifyContent: 'center',
 	alignItems: 'center',
-};
-export const github = {
+});
+export const github = (theme) => ({
 	fontSize: '40px',
-};
+});
 
 /* ===============RIGHT SIDE COMPUTER SECTION STARTS */
 /* computer image */
-export const computer = {
+export const computer = (theme) => ({
 	pointerEvents: 'none',
 	position: 'relative',
 	width: '600px',
@@ -828,25 +916,25 @@ export const computer = {
 	display: 'inline-block',
 	left: '15px',
 	transition: 'all 1.5s ease',
-};
-export const computerImage = {
+});
+export const computerImage = (theme) => ({
 	width: '550px',
 	height: '310px',
 	left: '35px',
 	top: '55px',
 	position: 'absolute',
-};
+});
 /* Computer container */
-export const computerContainer = {
+export const computerContainer = (theme) => ({
 	display: 'flex',
 	position: 'relative',
 	height: '600px',
 	width: '600px',
 	marginTop: '100px',
-};
+});
 
 /* Next & previous buttons */
-export const arrows = {
+export const arrows = (theme) => ({
 	cursor: 'pointer',
 	position: 'absolute',
 	top: '30%',
@@ -858,35 +946,35 @@ export const arrows = {
 	transition: '0.6s ease',
 	borderRadius: '0 3px 3px 0',
 	userSelect: 'none',
-};
+});
 /* Position the "next button" to the right */
-export const next = {
+export const next = (theme) => ({
 	right: '-75px',
 	borderRadius: '3px 0 0 3px',
-};
-export const prev = {
+});
+export const prev = (theme) => ({
 	left: '-45px',
 	borderRadius: '3px 0 0 3px',
-};
+});
 /* Fading animation */
 // FIXME: add transition to all slides/img for smoother look
-export const fade = {
+export const fade = (theme) => ({
 	animationName: 'fade',
 	animationDuration: '1.5s',
-};
+});
 /* ============================== RESUME SECTION ============================== */
-export const resumeContainer = {
+export const resumeContainer = (theme) => ({
 	flexDirection: 'column',
-};
+});
 
-export const resumeButtonSpan = {
+export const resumeButtonSpan = (theme) => ({
 	display: 'flex',
 	justifyContent: 'space-around',
 	flexDirection: 'row',
 	width: '800px',
 	height: '150px',
-};
-export const resumeButton = {
+});
+export const resumeButton = (theme) => ({
 	borderRadius: '36px',
 	border: '1px solid white',
 	textAlign: 'center',
@@ -899,9 +987,9 @@ export const resumeButton = {
 	backgroundColor: 'transparent',
 	cursor: 'pointer',
 	marginTop: '30px',
-};
+});
 
-export const resumeTitle = {
+export const resumeTitle = (theme) => ({
 	color: 'white',
 	transition: 'all .2s ease',
 	textAlign: 'center',
@@ -912,17 +1000,17 @@ export const resumeTitle = {
 	fontFamily: 'Roboto',
 	minWidth: '50%',
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
-};
-export const resumeBox = {
+});
+export const resumeBox = (theme) => ({
 	display: 'flex',
 	width: '100%',
 	height: '100px',
 	flexDirection: 'horizontal',
 	justifyContent: 'space-between',
-};
+});
 
 /* typing animation */
-export const typingContainer = {
+export const typingContainer = (theme) => ({
 	textShadow: `2px 2px rgba(0,0,0,0.1)`,
 	fontSize: '36px',
 	color: 'white',
@@ -935,9 +1023,9 @@ export const typingContainer = {
 	minWidth: '50%',
 	height: '50px',
 	maxWidth: '50%',
-};
+});
 /* snippet of code for resume */
-export const codeBox = {
+export const codeBox = (theme) => ({
 	textShadow: `2px 2px rgba(0,0,0,0.1)`,
 	flexWrap: 'wrap',
 	display: 'flex',
@@ -952,8 +1040,8 @@ export const codeBox = {
 	backdropFilter: 'blur(5px)',
 	WebkitBackdropFilter: 'blur(5px)',
 	border: '1px solid rgba(255, 255, 255, 0.6)',
-};
-export const codeContent = {
+});
+export const codeContent = (theme) => ({
 	position: 'absolute',
 	margin: '35px',
 	minWidth: '1130px',
@@ -963,8 +1051,8 @@ export const codeContent = {
 	whiteSpace: 'pre-wrap',
 	overflowWrap: 'normal',
 	//WordWrap: 'normal,',
-};
-export const resumePlainText = {
+});
+export const resumePlainText = (theme) => ({
 	color: 'white',
 	fontFamily: 'roboto',
 	borderRadius: '25px',
@@ -976,11 +1064,11 @@ export const resumePlainText = {
 	height: '500px',
 	whiteSpace: 'pre-wrap',
 	overflowWrap: 'normal',
-};
-export const typedText = {
+});
+export const typedText = (theme) => ({
 	fontWeight: 'normal',
 	color: 'rgba(248, 201, 195, 1)',
-};
+});
 
 // Define the blink keyframes
 // TODO: incorporate with code
@@ -1010,7 +1098,7 @@ export const codeCursor = css`
 	animation: ${blink} 1s infinite;
 `;
 
-export const text = {
+export const text = (theme) => ({
 	// font: 'bold 1.25rem/1 helvetica',
 	// color: 'rgba(153, 179, 252, 1)',
 	// position: 'absolute',
@@ -1018,18 +1106,18 @@ export const text = {
 	// transform: 'translateY(-52%)',
 	// left: '0',
 	// right: '0',
-};
+});
 
 /* ============================== REFERNCES SECTION ============================== */
-export const referencesContainer = {
+export const referencesContainer = (theme) => ({
 	display: 'flex',
 	position: 'relative',
 	alignItems: 'center',
 	fontFamily: 'Roboto',
 	flexDirection: 'row',
-};
+});
 
-export const referencesTitle = {
+export const referencesTitle = (theme) => ({
 	color: 'white',
 	transition: 'all .2s ease',
 	display: 'flex',
@@ -1041,8 +1129,8 @@ export const referencesTitle = {
 	//minWidth: '50%',
 	alignItems: 'center',
 	//marginBottom: 30,
-};
-export const referencesSubtitle = {
+});
+export const referencesSubtitle = (theme) => ({
 	fontSize: '36px',
 	color: 'white',
 	fontFamily: 'Roboto',
@@ -1054,9 +1142,9 @@ export const referencesSubtitle = {
 	display: 'flex',
 	justifyContent: 'end',
 	maxWidth: '50%',
-};
+});
 // box containing ref cards
-export const referencesBox = {
+export const referencesBox = (theme) => ({
 	display: 'flex',
 	flexDirection: 'column',
 	flexWrap: 'nowrap',
@@ -1065,16 +1153,16 @@ export const referencesBox = {
 	height: '800px',
 	maxWidth: '560px',
 	//overflow: 'hidden',
-};
+});
 // USED IN MULTIPLE PLACES ON CARD
-export const center = {
+export const center = (theme) => ({
 	position: 'absolute',
 	top: '50%',
 	left: '50%',
 	WebkitTransform: 'translate(-50%, -50%)',
-};
+});
 // EACH CARD STYLING
-export const card = {
+export const card = (theme) => ({
 	width: '550px',
 	height: '225px',
 	background: 'linear-gradient(#f8f8f8, #fff)',
@@ -1083,13 +1171,13 @@ export const card = {
 	overflow: 'hidden',
 	position: 'relative',
 	margin: '5px',
-};
+});
 // NAME TEXT
-export const cardHeader = {
+export const cardHeader = (theme) => ({
 	textAlign: 'center',
-};
+});
 // BACKGROUND COLOR AND CONTAINS AVATAR ON LEFT OF CARD
-export const additional = {
+export const additional = (theme) => ({
 	position: 'initial',
 	width: '110px',
 	height: '100%',
@@ -1097,17 +1185,17 @@ export const additional = {
 	overflow: 'hidden',
 	zIndex: '2',
 	background: `radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(134,70,252,1) 100%)`,
-};
+});
 
 // .card .additional .user-card::after {
-export const userCard = {
+export const userCard = (theme) => ({
 	width: '150px',
 	height: '100%',
 	position: 'relative',
 	float: 'left',
 	borderLeft: '2px solid rgba(0,0,0,0.025)',
-};
-export const userCardStats = {
+});
+export const userCardStats = (theme) => ({
 	top: '15%',
 	color: '#fff',
 	textTransform: 'uppercase',
@@ -1118,21 +1206,21 @@ export const userCardStats = {
 	borderRadius: '100px',
 	whiteSpace: 'nowrap',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
-};
+});
 // .card .additional .user-card .points
-export const points = {
+export const points = (theme) => ({
 	top: '85%',
 	position: 'relative',
 	textAlign: 'center',
 	width: '50%',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
-};
-export const cardImage = {
+});
+export const cardImage = (theme) => ({
 	top: '50%',
 	width: '110px',
 	height: '110px',
-};
-export const moreInfo = {
+});
+export const moreInfo = (theme) => ({
 	width: '350px',
 	float: 'left',
 	position: 'absolute',
@@ -1142,25 +1230,25 @@ export const moreInfo = {
 	height: '100%',
 	textAlign: 'center',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
-};
-export const moreInfoTitle = {
+});
+export const moreInfoTitle = (theme) => ({
 	color: 'white',
 	marginBottom: '30px',
 	fontSize: '30px',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
-};
-export const coords = {
+});
+export const coords = (theme) => ({
 	margin: '0 1rem',
 	color: 'white',
 	fontSize: '18px',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
-};
-export const coordsSpan = {
+});
+export const coordsSpan = (theme) => ({
 	float: 'center',
 	textAlign: 'center',
-};
+});
 
-export const stats = {
+export const stats = (theme) => ({
 	fontSize: '18px',
 	display: 'inline-block',
 	textAlign: 'center',
@@ -1173,25 +1261,25 @@ export const stats = {
 	padding: '10px',
 	width: '100%',
 	textShadow: `2px 2px rgba(0,0,0,0.1)`,
-};
-export const statsTitle = {
+});
+export const statsTitle = (theme) => ({
 	flex: '1',
 	fontSize: '18px',
 	textAlign: 'left',
 	color: '#fff',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 	width: '100%',
-};
+});
 
-export const value = {
+export const value = (theme) => ({
 	fontWeight: 'light',
 	fontSize: '16px',
 	textAlign: 'left',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 	width: '100%',
-};
+});
 
-export const general = {
+export const general = (theme) => ({
 	width: '400px',
 	height: '100%',
 	position: 'absolute',
@@ -1204,23 +1292,23 @@ export const general = {
 	textAlign: 'center',
 	color: '#333333',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
-};
-export const more = {
+});
+export const more = (theme) => ({
 	position: 'absolute',
 	bottom: '1rem',
 	right: '1rem',
 	fontSize: '0.9rem',
 	color: 'gray',
-};
-export const referencesButtonSpan = {
+});
+export const referencesButtonSpan = (theme) => ({
 	display: 'flex',
 	justifyContent: 'space-around',
 	flexDirection: 'row',
 	width: '400px',
 	marginTop: '25px',
 	position: 'relative',
-};
-export const referencesButton = {
+});
+export const referencesButton = (theme) => ({
 	borderRadius: '36px',
 	border: '1px solid white',
 	textAlign: 'center',
@@ -1232,18 +1320,18 @@ export const referencesButton = {
 	lineHeight: '1.25',
 	backgroundColor: 'transparent',
 	cursor: 'pointer',
-};
+});
 /* ============================== CONTACT SECTION ============================== */
 
-export const contactContainer = {
+export const contactContainer = (theme) => ({
 	display: 'flex',
 	position: 'relative',
 	fontFamily: 'Roboto',
 	marginTop: 'calc(50vh - 400px)',
 	marginBottom: 'calc(50vh - 400px)',
-};
+});
 /*----------left side box---------> */
-export const contactTextBox = {
+export const contactTextBox = (theme) => ({
 	maxWidth: '600px',
 	color: 'white',
 	textAlign: 'center',
@@ -1251,15 +1339,15 @@ export const contactTextBox = {
 	height: '100%',
 	display: 'flex',
 	flexDirection: 'column',
-};
-export const contactTitle = {
+});
+export const contactTitle = (theme) => ({
 	color: 'white',
 	transition: 'all .2s ease',
 	fontSize: '80px',
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
 	height: '100px',
-};
-export const contactSubtitle = {
+});
+export const contactSubtitle = (theme) => ({
 	display: 'flex',
 	justifyContent: 'space-between',
 	padding: '10px',
@@ -1274,47 +1362,47 @@ export const contactSubtitle = {
 	textShadow: `2px 2px rgba(0,0,0,0.3)`,
 	background:
 		'linear-gradient(90deg, rgba(228,161,205,0.18) 0%, rgba(157,228,245,0.3) 100%)',
-};
+});
 /*---------------- Name drawing ---------> */
 // contains the text and svg animation image, does not include the buttons
-export const contactAnimation = {
+export const contactAnimation = (theme) => ({
 	textAlign: 'center',
 	fontSize: '26px',
 	color: 'white',
 	fontWeight: 'light',
 	height: '550px',
-};
-export const thanksText = {
+});
+export const thanksText = (theme) => ({
 	textAlign: 'center',
 	fontSize: '26px',
 	color: 'white',
 	fontWeight: 'light',
 	height: '100px',
 	textShadow: `1px 1px rgba(0,0,0,0.3)`,
-};
-export const myPath = {
+});
+export const myPath = (theme) => ({
 	fill: 'none',
 	stroke: 'white',
 	strokeWidth: '4',
-};
-export const lineDrawing = {
+});
+export const lineDrawing = (theme) => ({
 	// background: 'green',
-};
+});
 
-export const svgName = {
+export const svgName = (theme) => ({
 	height: '400px',
 	transform: 'scale(1.5)',
-};
+});
 // =============== contact buttons ===============
-export const contactButtonSpan = {
+export const contactButtonSpan = (theme) => ({
 	display: 'flex',
 	justifyContent: 'space-around',
 	flexDirection: 'row',
 	width: '600px',
 	height: '125px',
 	// background: 'purple',
-};
-export const contactButton = {
+});
+export const contactButton = (theme) => ({
 	borderRadius: '36px',
 	border: '1px solid white',
 	textAlign: 'center',
@@ -1327,10 +1415,10 @@ export const contactButton = {
 	backgroundColor: 'transparent',
 	cursor: 'pointer',
 	marginTop: '30px',
-};
+});
 /*---------------- FORM ----------> */
 /*---------------- right side box ----------> */
-export const formDiv = {
+export const formDiv = (theme) => ({
 	backgroundColor: 'rgba(72, 72, 72, 0.1)',
 	WebkitBorderRadius: '7px',
 	alignItems: 'center',
@@ -1344,9 +1432,9 @@ export const formDiv = {
 	flexDirection: 'column',
 	border: '1px solid white',
 	overflow: 'hidden',
-};
+});
 
-export const feedbackInput = {
+export const feedbackInput = (theme) => ({
 	color: '#3c3c3c',
 	fontFamily: 'Helvetica, Arial, sans-serif',
 	fontWeight: '500',
@@ -1358,8 +1446,8 @@ export const feedbackInput = {
 	width: '100%',
 	border: '3px solid rgba(0, 0, 0, 0)',
 	borderRadius: '8px',
-};
-export const formText = {
+});
+export const formText = (theme) => ({
 	textAlign: 'left',
 	backgroundPosition: '11px 8px',
 	backgroundRepeat: 'no-repeat',
@@ -1368,34 +1456,34 @@ export const formText = {
 	display: 'block',
 	color: '#EEE',
 	textShadow: `1px 1px rgba(0,0,0,0.4)`,
-};
-export const name = {
+});
+export const name = (theme) => ({
 	backgroundSize: '30px 30px',
 	backgroundPosition: '11px 8px',
 	backgroundRepeat: 'no-repeat',
 	marginBottom: '20px',
-};
-export const email = {
+});
+export const email = (theme) => ({
 	backgroundSize: '30px 30px',
 	backgroundPosition: '11px 8px',
 	backgroundRepeat: 'no-repeat',
 	marginBottom: '20px',
-};
-export const comment = {
+});
+export const comment = (theme) => ({
 	backgroundSize: '30px 30px',
 	backgroundPosition: '11px 8px',
 	backgroundRepeat: 'no-repeat',
 	padding: '10px',
-};
+});
 
-export const textArea = {
+export const textArea = (theme) => ({
 	width: '100%',
 	height: '150px',
 	lineHeight: '22px',
 	resize: 'vertical',
-};
+});
 
-export const ease = {
+export const ease = (theme) => ({
 	width: '0px',
 	height: '74px',
 	backgroundColor: '#fbfbfb',
@@ -1404,10 +1492,10 @@ export const ease = {
 	MozTransition: '0.3s ease',
 	OTransition: '0.3s ease',
 	msTransition: '0.3s ease',
-};
+});
 
 /* ============================== FOOTER SECTION ============================== */
-export const footerContainer = {
+export const footerContainer = (theme) => ({
 	position: 'static',
 	left: '0',
 	right: '0',
@@ -1418,11 +1506,11 @@ export const footerContainer = {
 	WebkitBackdropFilter: 'blur(5px)',
 	marginBottom: 'auto',
 	width: '100%',
-};
-export const siteFooter = {
+});
+export const siteFooter = (theme) => ({
 	padding: '45px 0 20px',
 	fontSize: '15px',
 	lineHeight: '24px',
 	width: '100%',
 	textAlign: 'center',
-};
+});

@@ -6,6 +6,12 @@ import theme from './theme';
 import { ThemeProvider } from '@emotion/react';
 import * as Material from '@mui/material';
 import anime from 'animejs'; // Import anime.js library
+import useMediaQuery from '@mui/material/useMediaQuery';
+import {
+	mobilePageContainer,
+	mobileAppContainer,
+} from './components/ResponsiveStyles';
+//import { styles, appContainer } from './components/Styles-Theme';
 //Components
 import Nav from './components/Nav';
 import Landing from './components/Landing';
@@ -18,8 +24,8 @@ import Contact from './components/Contact';
 import LogoSlider from './components/LogoSlider';
 import Footer from './components/Footer';
 // Styling
-import { appContainer, pagesContainer } from './components/Styles';
-
+import { appContainer, pagesContainer } from './components/Styles-Theme';
+//import { pagesContainer } from './components/Styles';
 // import DesktopBreakpoint from './responsive_utilities/desktop_breakpoint';
 // import TabletBreakpoint from './responsive_utilities/tablet_breakpoint';
 // import PhoneBreakpoint from './responsive_utilities/phone_breakpoint';
@@ -32,6 +38,8 @@ function App() {
 
 	// The "useState" hook is used to declare a state variable called "currentPageState" which is initially set to "Landing".
 	const [currentPageState, setCurrentPageState] = React.useState('Landing');
+
+	//const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
 	const setActivePage = (newPage) => {
 		// Array of page names
 		const pages = [
@@ -118,7 +126,42 @@ function App() {
 			appContainer.style.top = `calc(0% - ${calculatedVH}vh)`;
 		}
 	};
-
+	//let styles;
+	//const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
+	let appContainerStyle = {
+		display: 'flex',
+		position: 'absolute',
+		height: '100vh',
+		top: '0',
+		transition: 'all 1.5s ease',
+		[theme.breakpoints.up('xs')]: {
+			left: 'calc(50% - 150px)',
+			maxWidth: '300px',
+			minWidth: '300px',
+		},
+		[theme.breakpoints.up('sm')]: {
+			left: 'calc(50% - 300px)',
+			maxWidth: '600px',
+			minWidth: '600px',
+		},
+		[theme.breakpoints.up('md')]: {
+			left: 'calc(50% - 450px)',
+			maxWidth: '900px',
+			minWidth: '900px',
+		},
+		[theme.breakpoints.up('lg')]: {
+			left: 'calc(50% - 600px)',
+			maxWidth: '1200px',
+			minWidth: '1200px',
+		},
+		[theme.breakpoints.up('xl')]: {
+			left: 'calc(50% - 600px)',
+			maxWidth: '1200px',
+			minWidth: '1200px',
+		},
+		fontFamily: 'roboto',
+	};
+	//const responsiveAppContainer = isMobile ? mobileAppContainer : appContainer;
 	return (
 		<>
 			<ThemeProvider theme={theme}>
@@ -127,8 +170,15 @@ function App() {
 					props={{ setActivePage, currentNavNameState }}
 				/>
 				<Material.Box></Material.Box>
-				<div className="App appContainer" style={appContainer}>
-					<main className="pagesContainer" style={pagesContainer}>
+				<Material.Box
+					className="App appContainer"
+					//style={responsiveAppContainer}
+					sx={appContainer}
+				>
+					<Material.Box
+						className="pagesContainer"
+						sx={pagesContainer}
+					>
 						<LogoSlider props={{ setActivePage }} />
 						<Landing
 							props={{ setActivePage, currentNavNameState }}
@@ -141,8 +191,8 @@ function App() {
 						<References props={{ setActivePage }} />
 						<Contact props={{ setActivePage }} />
 						{/* <Footer props={{ setActivePage }} /> */}
-					</main>
-				</div>
+					</Material.Box>
+				</Material.Box>
 			</ThemeProvider>
 		</>
 	);
