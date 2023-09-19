@@ -145,6 +145,9 @@ export const navLinks = (theme) => ({
 	lineHeight: 1.5,
 	padding: 0,
 });
+export const navIcons = (theme) => ({
+	display: 'block',
+});
 export const navToolbar = (theme) => ({
 	color: 'white',
 	display: 'flex',
@@ -156,6 +159,11 @@ export const navToolbar = (theme) => ({
 	zIndex: '5',
 	padding: '5px',
 	width: '100vw',
+	[theme.breakpoints.up('xs')]: { background: 'transparent' },
+	[theme.breakpoints.up('sm')]: { background: 'transparent' },
+	[theme.breakpoints.up('md')]: { background: 'rgba(255, 255, 255, 0.3)' },
+	[theme.breakpoints.up('lg')]: { background: 'rgba(255, 255, 255, 0.3)' },
+	[theme.breakpoints.up('xl')]: { background: 'rgba(255, 255, 255, 0.3)' },
 });
 export const toolbarImage = (theme) => ({
 	height: '25px',
@@ -175,6 +183,13 @@ export const menuIcon = (theme) => ({
 	textShadow: '2px 2px rgba(0,0,0,0.3)',
 	minWidth: '30px', // Set a minimum width
 	minHeight: '30px', // Set a minimum height
+	display: 'block',
+	color: 'primary',
+	[theme.breakpoints.up('xs')]: { background: 'rgba(0,0,0,0.3)' },
+	[theme.breakpoints.up('sm')]: { background: 'rgba(0,0,0,0.3)' },
+	[theme.breakpoints.up('md')]: { background: 'transparent' },
+	[theme.breakpoints.up('lg')]: { background: 'transparent' },
+	[theme.breakpoints.up('xl')]: { background: 'transparent' },
 });
 export const avesImg = (theme) => ({
 	height: '150px',
@@ -260,15 +275,33 @@ export const logoSliderCircle = (theme) => ({
 });
 /* ============================== LANDING SECTION ============================== */
 export const landingContainer = (theme) => ({
-	minHeight: '800px',
 	overflow: 'hidden',
-	marginBottom: 'calc(50vh - 400px)',
+	[theme.breakpoints.up('xs')]: {
+		minHeight: '400px',
+		marginTop: 'calc(50vh - 20px)',
+	},
+	[theme.breakpoints.up('sm')]: {
+		minHeight: '600px',
+		marginTop: 'calc(50vh - 300px)',
+	},
+	[theme.breakpoints.up('md')]: {
+		minHeight: '600px',
+		marginTop: 'calc(50vh - 300px)',
+	},
+	[theme.breakpoints.up('lg')]: {
+		minHeight: '800px',
+		marginTop: 'calc(50vh - 400px)',
+	},
+	[theme.breakpoints.up('xl')]: {
+		minHeight: '800px',
+		marginTop: 'calc(50vh - 400px)',
+	},
 });
 export const landingHeader = (theme) => ({
 	position: 'relative',
 	color: 'white',
 	left: '40%',
-	top: '26%',
+	top: '22%',
 	height: '50px',
 	fontSize: '50px',
 	fontFamily: 'Roboto',
@@ -320,17 +353,10 @@ export const landingButtonSpan = (theme) => ({
 	height: '100px',
 	alignItems: 'center',
 });
-// export const landingCTA = (theme) => ({
-// 	fontFamily: 'Space Mono, monospaced',
-// 	textShadow: `1px 1px rgba(0,0,0,0.3)`,
-// 	display: 'inline',
-// 	animation: css`
-// 		${pulseAnimation} 1.5s infinite
-// 	`,
-// }
+
 // =========PULSE ANIMATION ON BUTTONS
 // Define the keyframes for the pulse animation
-export const pulseAnimation = keyframes`
+export const pulseAnimation = (theme) => keyframes`
   0% {
     transform: scale(0.9);
   }
@@ -351,7 +377,7 @@ export const LandingCTA = styled.span`
 	transition: 'all .2s ease';
 	width: 100%;
 `;
-export const PulseButton = styled.button`
+export const PulseButton = styled.span`
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -383,7 +409,7 @@ export const aboutTitle = (theme) => ({
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
 	width: '440px',
 	left: '2.5%',
-	top: '65%',
+	top: '67%',
 	position: 'relative',
 });
 export const aboutContent = (theme) => ({

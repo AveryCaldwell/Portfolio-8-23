@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'; // Importing useEffect and useRef
-import { useMediaQuery } from 'react-responsive';
+import * as Material from '@mui/material';
 // SCHOOL LOGOS
 import CYCU from '../assets/CYCU.png';
 import MC from '../assets/MC.png';
@@ -25,91 +25,87 @@ import {
 	pageContainer,
 	eduButtonSpan,
 	eduButton,
-} from './Styles';
-import {
-	mobileCardContainer,
-	mobileEduContainer,
-	mobileOrbitalContainer,
-	mobileOrbitalBox,
-	mobileEduTitle,
-} from './ResponsiveStyles';
-// ICON
-import SchoolIcon from '@mui/icons-material/School';
+} from './Styles-Theme';
 
-// Function to render individual education images
+// ICON
+import { School } from '@mui/icons-material';
+
+// Function to render inBoxidual education images
 function ImageIconRender({ props }) {
 	return (
-		<img
-			src={props.element.src}
-			className="eduImage"
-			alt={props.element.name}
-			style={
-				props.index === props.educationState
-					? { ...eduImage, ...eduImageActive }
-					: {
-							...eduImage,
-							...eduImageInactive,
-					  }
-			}
-		/>
+		<Material.ImageListItem>
+			<img
+				src={props.element.src}
+				className="eduImage"
+				alt={props.element.name}
+				sx={
+					props.index === props.educationState
+						? { ...eduImage, ...eduImageActive }
+						: {
+								...eduImage,
+								...eduImageInactive,
+						  }
+				}
+			/>
+		</Material.ImageListItem>
 	);
 }
 // Function to render educational card
 function EduCard({ props }) {
-	const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
-	const responsiveCardContainer = isMobile
-		? mobileCardContainer
-		: cardContainer;
+	// const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
+	// const responsiveCardContainer = isMobile
+	// 	? mobileCardContainer
+	// 	: cardContainer;
 
 	return (
 		<ThemeProvider theme={theme}>
-			<div className="cardContainer" style={cardContainer}>
+			<Material.Box className="cardContainer" sx={cardContainer}>
 				{/* Mapping through EducationArr to render education cards */}
 				{props.EducationArr.map(function (element, index) {
 					return (
-						<div
+						<Material.Box
 							className={`eduCard${index} square`}
 							onClick={() => props.rotatorClick(index)}
 							key={`eduCard${index}`}
-							style={
+							sx={
 								props.educationState === index
 									? eduCardActive
 									: eduCardInactive
 							}
 						>
-							<div
+							<Material.Box
 								className="eduHeader"
 								onClick={() => props.setEducationState(index)}
-								style={eduHeader}
+								sx={eduHeader}
 							>
 								{element.name}
-							</div>
-						</div>
+							</Material.Box>
+						</Material.Box>
 					);
 				})}
 
-				<label style={eduDescriptionHeader}>
-					ACCOLADES <SchoolIcon />
-				</label>
+				<Material.Typography sx={eduDescriptionHeader}>
+					ACCOLADES <School />
+				</Material.Typography>
 				{/* Education description slideshow */}
-				<div id="eduSlideshow" style={eduSlideshow}>
+				<Material.Box id="eduSlideshow" sx={eduSlideshow}>
 					{/* Mapping through EducationArr to render education descriptions */}
 					{props.EducationArr.map(function (element, index) {
 						return (
-							<div
+							<Material.Box
 								className={`${
 									props.educationState === index
 										? `myEduActive`
 										: `myEduInactive`
 								}`}
 								key={`myEdu${index}`}
-								style={
+								sx={
 									props.educationState === index
 										? myEduActive
 										: myEduInactive
 								}
 							>
-								<div className="numbertext">
+								<Material.Box className="numbertext">
 									{props.EducationArr[index].description.map(
 										function (description, descIndex) {
 											return (
@@ -121,30 +117,19 @@ function EduCard({ props }) {
 											);
 										}
 									)}
-								</div>
-							</div>
+								</Material.Box>
+							</Material.Box>
 						);
 					})}
-				</div>
+				</Material.Box>
 				{/* <!-- eduSlideshow --> */}
-			</div>
+			</Material.Box>
 		</ThemeProvider>
 	);
 }
 
 // Main Edu component
 function Edu({ props }) {
-	// Responsive design
-	const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
-	const responsivePageContainer = isMobile
-		? mobileEduContainer
-		: pageContainer;
-	const responsiveOrbitalContainer = isMobile
-		? mobileOrbitalContainer
-		: orbitalContainer;
-	const responsiveOrbitalBox = isMobile ? mobileOrbitalBox : orbitalBox;
-	const responsiveEduTitle = isMobile ? mobileEduTitle : eduTitle;
-	// Array containing education data
 	const EducationArr = [
 		{
 			name: 'Mississippi College',
@@ -285,9 +270,7 @@ function Edu({ props }) {
 		experienceRotation((2 / 3) * 100, 'object3', 1);
 
 		// Make the orbital container visible and start constant orbit
-		document.getElementsByClassName(
-			'orbitalContainer'
-		)[0].style.opacity = 1;
+		document.getElementsByClassName('orbitalContainer')[0].sx.opacity = 1;
 		constantOrbit();
 	}
 	let orbitting = false;
@@ -315,36 +298,40 @@ function Edu({ props }) {
 		{ target: 'Projects', span: 'Next', name: 'Projects' },
 	];
 	// Function to handle button hover animation
-	function setEduHoverButton(name, style) {
+	function setEduHoverButton(name, sx) {
 		let obj = Object.assign({}, eduButtonState);
-		obj[name] = style;
+		obj[name] = sx;
 		setEduButtonState(obj);
 	}
 	// Component rendering
 	return (
 		<ThemeProvider theme={theme}>
-			<div
+			<Material.Box
 				className="eduContainer pageContainer"
-				style={responsivePageContainer}
+				sx={pageContainer}
 			>
 				{/* Education content */}
-				<div style={{ width: '50%', marginLeft: '100px' }}>
-					<h1 className="eduTitle" style={responsiveEduTitle}>
+				<Material.Box sx={{ width: '50%', marginLeft: '100px' }}>
+					<Material.Typography
+						component="h1"
+						className="eduTitle"
+						sx={eduTitle}
+					>
 						EDUCATION
-					</h1>
-					<div
+					</Material.Typography>
+					<Material.Box
 						className="orbitalContainer"
-						style={responsiveOrbitalContainer}
+						sx={orbitalContainer}
 					>
 						{/* Mapping through EducationArr to render orbital boxes */}
 						{EducationArr.map(function (element, index) {
 							return (
-								<div
+								<Material.Box
 									id={`object${index + 1}`}
 									key={`object${index + 1}`}
 									className={'orbitalBox'}
 									onClick={() => rotatorClick(index)}
-									style={responsiveOrbitalBox}
+									sx={orbitalBox}
 								>
 									<ImageIconRender
 										props={{
@@ -355,13 +342,13 @@ function Edu({ props }) {
 											index: index,
 										}}
 									/>
-								</div>
+								</Material.Box>
 							);
 						})}
-					</div>
-				</div>
+					</Material.Box>
+				</Material.Box>
 				{/* <!-- cardContainer --> */}
-				<div>
+				<Material.Box>
 					<EduCard
 						props={{
 							setEducationState: setEducationState,
@@ -371,14 +358,14 @@ function Edu({ props }) {
 						}}
 					/>
 
-					<div id="eduButtonSpan" style={eduButtonSpan}>
+					<Material.Box id="eduButtonSpan" sx={eduButtonSpan}>
 						{eduButtons.map(function (element, index) {
 							return (
-								<button
+								<Material.Button
 									className="eduButton"
 									key={`eduButton${index}`}
 									name={element.name}
-									style={{
+									sx={{
 										...eduButton,
 										...eduButtonState[element.name],
 									}}
@@ -398,14 +385,16 @@ function Edu({ props }) {
 										props.setActivePage(element.target);
 									}}
 								>
-									<span>{element.span}</span>
-								</button>
+									<Material.Typography>
+										{element.span}
+									</Material.Typography>
+								</Material.Button>
 							);
 						})}
-					</div>
-				</div>
+					</Material.Box>
+				</Material.Box>
 				{/* <!-- btn container --> */}
-			</div>
+			</Material.Box>
 		</ThemeProvider>
 	);
 }

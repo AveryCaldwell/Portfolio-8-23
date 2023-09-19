@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import anime from 'animejs/lib/anime.es.js';
-import { PulseButton, LandingCTA } from './Styles';
+import { PulseButton, LandingCTA } from './Styles-Theme';
+import * as Material from '@mui/material';
 
 import {
 	landingHeader,
@@ -11,17 +12,9 @@ import {
 	letter,
 	landingContainer,
 	landingButtonSpan,
-} from './Styles';
+} from './Styles-Theme';
+import { ArrowCircleRightOutlined } from '@mui/icons-material';
 
-import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
-import { useMediaQuery } from 'react-responsive';
-import {
-	mobileLandingContainer,
-	mobilePageContainer,
-	mobileLandingHeader,
-	mobileLandingText,
-	mobileLandingButtonSpan,
-} from './ResponsiveStyles';
 // This function component represents the Landing page of the web app
 function Landing({ props }) {
 	// Animation effect using the useEffect hook
@@ -49,93 +42,79 @@ function Landing({ props }) {
 	// Reference to the container element for scrolling
 	const containerRef = useRef(null);
 
-	// RESPONSIVE DESIGN
-	const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
-	const responsiveLandingContainer = isMobile
-		? { ...mobileLandingContainer, ...mobilePageContainer }
-		: landingContainer;
-	const responsiveLandingHeader = isMobile
-		? mobileLandingHeader
-		: landingHeader;
-	const responsiveLandingText = isMobile ? mobileLandingText : landingText;
-
-	const responsiveLandingButtonSpan = isMobile
-		? mobileLandingButtonSpan
-		: landingButtonSpan;
-	// render landing page
 	return (
 		<>
-			<div
+			<Material.Box
 				className="landingContainer pageContainer"
-				// style={landingContainer}
-				style={responsiveLandingContainer}
+				sx={landingContainer}
 				ref={containerRef}
 			>
 				{/* Name animation by each letter */}
-				<div className="landingHeader" style={responsiveLandingHeader}>
-					<span className="letter" style={letter}>
+				<Material.Box className="landingHeader" sx={landingHeader}>
+					<Material.Typography className="letter" sx={letter}>
 						A
-					</span>
-					<span className="letter" style={letter}>
+					</Material.Typography>
+					<Material.Typography className="letter" sx={letter}>
 						v
-					</span>
-					<span className="letter" style={letter}>
+					</Material.Typography>
+					<Material.Typography className="letter" sx={letter}>
 						e
-					</span>
-					<span className="letter" style={letter}>
+					</Material.Typography>
+					<Material.Typography className="letter" sx={letter}>
 						r
-					</span>
-					<span className="letter" style={letter}>
+					</Material.Typography>
+					<Material.Typography className="letter" sx={letter}>
 						y
-					</span>
-					<div></div>
-					<span className="letter" style={letter}>
+					</Material.Typography>
+					<Material.Box></Material.Box>
+					<Material.Typography className="letter" sx={letter}>
 						C
-					</span>
-					<span className="letter" style={letter}>
+					</Material.Typography>
+					<Material.Typography className="letter" sx={letter}>
 						a
-					</span>
-					<span className="letter" style={letter}>
+					</Material.Typography>
+					<Material.Typography className="letter" sx={letter}>
 						l
-					</span>
-					<span className="letter" style={letter}>
+					</Material.Typography>
+					<Material.Typography className="letter" sx={letter}>
 						d
-					</span>
-					<span className="letter" style={letter}>
+					</Material.Typography>
+					<Material.Typography className="letter" sx={letter}>
 						w
-					</span>
-					<span className="letter" style={letter}>
+					</Material.Typography>
+					<Material.Typography className="letter" sx={letter}>
 						e
-					</span>
-					<span className="letter" style={letter}>
+					</Material.Typography>
+					<Material.Typography className="letter" sx={letter}>
 						l
-					</span>
-					<span className="letter" style={letter}>
+					</Material.Typography>
+					<Material.Typography className="letter" sx={letter}>
 						l
-					</span>
-				</div>
-				<div className="landingText" style={responsiveLandingText}>
-					<div className="landingTitle" style={landingTitle}>
+					</Material.Typography>
+				</Material.Box>
+				<Material.Box className="landingText" sx={landingText}>
+					<Material.Box className="landingTitle" sx={landingTitle}>
 						Portfolio 2023
-					</div>
-					<div className="landingSubtitle" style={landingSubtitle}>
+					</Material.Box>
+					<Material.Box
+						className="landingSubtitle"
+						sx={landingSubtitle}
+					>
 						React/Full Stack Developer
 						{/* Button to go to next page */}
-						<div style={responsiveLandingButtonSpan}>
+						<Material.Box sx={landingButtonSpan}>
 							<LandingCTA>Show me more! </LandingCTA>{' '}
 							<PulseButton
 								id="pulseButton"
 								onClick={() => props.setActivePage('About')}
-								style={landingButton}
+								sx={landingButton}
 							>
-								<ArrowCircleRightOutlinedIcon
-									style={landingButton}
-								/>
+								<ArrowCircleRightOutlined sx={landingButton} />
 							</PulseButton>
-						</div>
-					</div>
-				</div>
-			</div>
+						</Material.Box>
+					</Material.Box>
+				</Material.Box>
+			</Material.Box>
 		</>
 	);
 }

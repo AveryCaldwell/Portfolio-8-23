@@ -1,40 +1,29 @@
 import * as React from 'react';
+import * as Material from '@mui/material';
 import avesLogo from '../assets/aves.png';
-import {
-	mobileLogoSliderContainer,
-	mobileLogoSliderImage,
-	mobileLogoSliderCircle,
-} from './ResponsiveStyles';
-import { useMediaQuery } from 'react-responsive';
 import {
 	logoSliderImage,
 	logoSliderContainer,
 	logoSliderCircle,
-} from './Styles';
+} from './Styles-Theme';
 
 // This function defines the LogoSlider component responsible for rendering the main content of the web app
 function LogoSlider() {
-	const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
 	// Return JSX representing the LogoSlider component that floats between the Landing and About page
 	return (
-		<div
-			className="logoSliderContainer"
-			// style={logoSliderContainer}
-			style={isMobile ? mobileLogoSliderContainer : logoSliderContainer}
-		>
-			<img
-				src={avesLogo}
+		<Material.Box className="logoSliderContainer" sx={logoSliderContainer}>
+			<Material.CardMedia
+				component="img"
 				alt="aves"
-				className="logoSliderImage"
-				style={isMobile ? mobileLogoSliderImage : logoSliderImage}
+				sx={logoSliderImage}
+				image={avesLogo}
 			/>
 			{/* Display a circular element for logo animation */}
-			<div
+			<Material.Box
 				className="logoSliderCircle"
-				// style={logoSliderCircle}
-				style={isMobile ? mobileLogoSliderCircle : logoSliderCircle}
-			></div>
-		</div>
+				sx={logoSliderCircle}
+			></Material.Box>
+		</Material.Box>
 	);
 }
 

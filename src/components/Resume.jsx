@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import CodeSnippet from './CodeSnippet'; // Import the CodeSnippet component
 import resumeJSON from '../assets/resume.json';
 import { GitHub, OpenInBrowser } from '@mui/icons-material/';
-import {} from './ResponsiveStyles';
-import { useMediaQuery } from 'react-responsive';
+import * as Material from '@mui/material';
 // STYLING
 import {
 	resumeContainer,
@@ -17,7 +16,7 @@ import {
 	resumeButton,
 	resumeButtonSpan,
 	resumeBox,
-} from './Styles';
+} from './Styles-Theme';
 /*this needs to be absolutely clean */
 function RenderedText({ props }) {
 	const styles = {
@@ -132,54 +131,58 @@ function RenderedText({ props }) {
 	return (
 		<>
 			{/* Main container div */}
-			<div
-				style={{
+			<Material.Box
+				sx={{
 					...styles.containerHeaders,
 					...styles.renderedTextContainer,
 				}}
 			>
-				<div id="renderHeader">
+				<Material.Box id="renderHeader">
 					{/* Header section */}
-					<h1>{resumeJSON.header.name}</h1>
-					<div
-						style={{
+					<Material.Typography>
+						{resumeJSON.header.name}
+					</Material.Typography>
+					<Material.Box
+						sx={{
 							...styles.contentBox,
 							...styles.boxSize,
 						}}
 					>
-						<div
-							style={{
+						<Material.Box
+							sx={{
 								...styles.contentTitleRow,
 								...styles.centerAlign,
 								...styles.bold,
 							}}
 						>
-							<div>{resumeJSON.header.title}</div>
-							<div>
+							<Material.Box>
+								{resumeJSON.header.title}
+							</Material.Box>
+							<Material.Box>
 								{/* Icons for GitHub and website */}
 								<GitHub
 									onClick={() =>
 										openLink(resumeJSON.header.github)
 									}
-									style={styles.titleBarIcon}
+									sx={styles.titleBarIcon}
 								/>
 								<OpenInBrowser
 									onClick={() =>
 										openLink(resumeJSON.header.site)
 									}
-									style={styles.titleBarIcon}
+									sx={styles.titleBarIcon}
 								/>
-							</div>
-						</div>
-						<div
-							style={{
+							</Material.Box>
+						</Material.Box>
+						<Material.Box
+							sx={{
 								...styles.contentDetailsBox,
 								...styles.experienceDetailsBox,
 								...styles.lighter,
 							}}
 						>
-							<div style={styles.contactBox}>
-								<div style={styles.contactSubBox}>
+							<Material.Box sx={styles.contactBox}>
+								<Material.Box sx={styles.contactSubBox}>
 									{/* Contact information */}
 									<p style={styles.contactInfo}>
 										<strong>Location:</strong> <br />
@@ -193,8 +196,8 @@ function RenderedText({ props }) {
 										<strong>Portfolio:</strong> <br />
 										{resumeJSON.header.site}
 									</p>
-								</div>
-								<div style={styles.contactSubBox}>
+								</Material.Box>
+								<Material.Box sx={styles.contactSubBox}>
 									<p style={styles.contactInfo}>
 										<strong>Email: </strong>
 										<br />
@@ -208,20 +211,20 @@ function RenderedText({ props }) {
 										<strong>LinkedIn:</strong> <br />
 										{resumeJSON.header.linkedin}
 									</p>
-								</div>
-							</div>
+								</Material.Box>
+							</Material.Box>
 							{/* Summary section */}
 							<h2>Summary</h2>
 							<p>{resumeJSON.summary.text}</p>
-						</div>
-					</div>
-				</div>
-				<div id="renderSummary"></div>
-				<div>
+						</Material.Box>
+					</Material.Box>
+				</Material.Box>
+				<Material.Box id="renderSummary"></Material.Box>
+				<Material.Box>
 					{/* Education section title */}
 					<h2>Education</h2>
-					<div
-						style={{
+					<Material.Box
+						sx={{
 							...styles.renderedTextContainer,
 							...styles.contentContainer,
 						}}
@@ -229,26 +232,30 @@ function RenderedText({ props }) {
 						{/* Map through the 'education' array from 'resumeJSON' */}
 						{resumeJSON.education.map(function (element, index) {
 							return (
-								<div
+								<Material.Box
 									key={`education${index}`}
-									style={{
+									sx={{
 										...styles.contentBox,
 										...styles.boxSize,
 									}}
 								>
-									<div
-										style={{
+									<Material.Box
+										sx={{
 											...styles.contentTitleRow,
 											...styles.flexRow,
 											...styles.bold,
 										}}
 									>
 										{/* Education title and date */}
-										<div>{element.title}</div>
-										<div>{element.date}</div>
-									</div>
-									<div
-										style={{
+										<Material.Box>
+											{element.title}
+										</Material.Box>
+										<Material.Box>
+											{element.date}
+										</Material.Box>
+									</Material.Box>
+									<Material.Box
+										sx={{
 											...styles.contentDetailsBox,
 											...styles.lighter,
 										}}
@@ -258,66 +265,70 @@ function RenderedText({ props }) {
 											<strong>{element.school}</strong>
 										</p>
 										<p>{element.overview}</p>
-									</div>
-								</div>
+									</Material.Box>
+								</Material.Box>
 							);
 						})}
-					</div>
-				</div>
-				<div>
+					</Material.Box>
+				</Material.Box>
+				<Material.Box>
 					{/* Technical Skills section */}
 					<h2>{resumeJSON.technicalSkills.title}</h2>
-					<div style={{ ...styles.skillBox, ...styles.skillFlex }}>
+					<Material.Box
+						sx={{ ...styles.skillBox, ...styles.skillFlex }}
+					>
 						{/* Map through the 'values' array within 'technicalSkills' */}
 						{resumeJSON.technicalSkills.values.map(function (
 							element,
 							index
 						) {
 							return (
-								<div
+								<Material.Box
 									key={`techSkill${index}`}
-									style={{
+									sx={{
 										...styles.skill,
 										...styles.lighter,
 										...styles.techSkill,
 									}}
 								>
 									{element}
-								</div>
+								</Material.Box>
 							);
 						})}
-					</div>
-				</div>
-				<div>
+					</Material.Box>
+				</Material.Box>
+				<Material.Box>
 					{/* Personal Skills section */}
 					<h2>{resumeJSON.personalSkills.title}</h2>
-					<div style={{ ...styles.skillBox, ...styles.skillFlex }}>
+					<Material.Box
+						sx={{ ...styles.skillBox, ...styles.skillFlex }}
+					>
 						{/* Map through the 'values' array within 'personalSkills' */}
 						{resumeJSON.personalSkills.values.map(function (
 							element,
 							index
 						) {
 							return (
-								<div
+								<Material.Box
 									key={`personalSkill${index}`}
-									style={{
+									sx={{
 										...styles.skill,
 										...styles.lighter,
 										...styles.personalSkill,
 									}}
 								>
 									{element}
-								</div>
+								</Material.Box>
 							);
 						})}
-					</div>
-				</div>
+					</Material.Box>
+				</Material.Box>
 
-				<div>
+				<Material.Box>
 					{/* Experience section title */}
 					<h2>Experience</h2>
-					<div
-						style={{
+					<Material.Box
+						sx={{
 							...styles.contentContainer,
 							...styles.renderedTextContainer,
 						}}
@@ -325,45 +336,53 @@ function RenderedText({ props }) {
 						{/* Map through the 'experience' array from 'resumeJSON' */}
 						{resumeJSON.experience.map(function (element, index) {
 							return (
-								<div
+								<Material.Box
 									key={`experience${index}`}
-									style={{
+									sx={{
 										...styles.contentBox,
 										...styles.boxSize,
 									}}
 								>
-									<div
-										style={{
+									<Material.Box
+										sx={{
 											...styles.contentTitleRow,
 											...styles.flexColumn,
 										}}
 									>
-										<div
-											style={{
+										<Material.Box
+											sx={{
 												...styles.titleRow,
 												...styles.flexRow,
 												...styles.bold,
 											}}
 										>
 											{/* Experience title and date */}
-											<div>{element.title}</div>
-											<div>{element.date}</div>
-										</div>
-										<div
-											style={{
+											<Material.Box>
+												{element.title}
+											</Material.Box>
+											<Material.Box>
+												{element.date}
+											</Material.Box>
+										</Material.Box>
+										<Material.Box
+											sx={{
 												...styles.titleRow,
 												...styles.flexRow,
 												...styles.lighter,
 											}}
 										>
 											{/* Employer and location */}
-											<div>{element.employer}</div>
-											<div>{element.location}</div>
-										</div>
-									</div>
+											<Material.Box>
+												{element.employer}
+											</Material.Box>
+											<Material.Box>
+												{element.location}
+											</Material.Box>
+										</Material.Box>
+									</Material.Box>
 
-									<div
-										style={{
+									<Material.Box
+										sx={{
 											...styles.contentDetailsBox,
 											...styles.experienceDetailsBox,
 										}}
@@ -383,9 +402,9 @@ function RenderedText({ props }) {
 												</p>
 											);
 										})}
-									</div>
-									<div
-										style={{
+									</Material.Box>
+									<Material.Box
+										sx={{
 											...styles.contentDetailsBox,
 											...styles.experienceDetailsBox,
 										}}
@@ -405,16 +424,16 @@ function RenderedText({ props }) {
 												</p>
 											);
 										})}
-									</div>
-								</div>
+									</Material.Box>
+								</Material.Box>
 							);
 						})}
-					</div>
-				</div>
-				<div>
+					</Material.Box>
+				</Material.Box>
+				<Material.Box>
 					<h2>Projects</h2>
-					<div
-						style={{
+					<Material.Box
+						sx={{
 							...styles.contentContainer,
 							...styles.renderedTextContainer,
 						}}
@@ -422,40 +441,42 @@ function RenderedText({ props }) {
 						{/* Map through the 'projects' array from 'resumeJSON' */}
 						{resumeJSON.projects.map(function (element, index) {
 							return (
-								<div
+								<Material.Box
 									key={`experience${index}`}
-									style={{
+									sx={{
 										...styles.contentBox,
 										...styles.boxSize,
 									}}
 								>
-									<div
-										style={{
+									<Material.Box
+										sx={{
 											...styles.contentTitleRow,
 											...styles.centerAlign,
 											...styles.bold,
 										}}
 									>
 										{/* Project title */}
-										<div>{element.title}</div>
-										<div>
+										<Material.Box>
+											{element.title}
+										</Material.Box>
+										<Material.Box>
 											{/* Icons for GitHub and website */}
 											<GitHub
 												onClick={() =>
 													openLink(element.github)
 												}
-												style={styles.titleBarIcon}
+												sx={styles.titleBarIcon}
 											/>
 											<OpenInBrowser
 												onClick={() =>
 													openLink(element.site)
 												}
-												style={styles.titleBarIcon}
+												sx={styles.titleBarIcon}
 											/>
-										</div>
-									</div>
-									<div
-										style={{
+										</Material.Box>
+									</Material.Box>
+									<Material.Box
+										sx={{
 											...styles.contentDetailsBox,
 											...styles.experienceDetailsBox,
 										}}
@@ -467,8 +488,8 @@ function RenderedText({ props }) {
 										</p>
 										{/* Key technologies used */}
 										<h4>Key Technologies:</h4>
-										<div
-											style={{
+										<Material.Box
+											sx={{
 												...styles.subSkillBox,
 												...styles.skillFlex,
 											}}
@@ -479,19 +500,19 @@ function RenderedText({ props }) {
 												technologyIndex
 											) {
 												return (
-													<div
+													<Material.Box
 														key={`responsibility-${index}-${technologyIndex}`}
-														style={{
+														sx={{
 															...styles.skill,
 															...styles.lighter,
 															...styles.techSkill,
 														}}
 													>
 														{technology}
-													</div>
+													</Material.Box>
 												);
 											})}
-										</div>
+										</Material.Box>
 										{/* Links to GitHub and site */}
 										<h4>Links:</h4>
 										<p style={styles.lighter}>
@@ -500,13 +521,13 @@ function RenderedText({ props }) {
 										<p style={styles.lighter}>
 											Site: {element.site}
 										</p>
-									</div>
-								</div>
+									</Material.Box>
+								</Material.Box>
 							);
 						})}
-					</div>
-				</div>
-			</div>
+					</Material.Box>
+				</Material.Box>
+			</Material.Box>
 		</>
 	);
 }
@@ -604,37 +625,46 @@ function Resume({ props }) {
 	}
 	return (
 		<>
-			<div
+			<Material.Box
 				className="resumeContainer pageContainer"
-				style={{ ...pageContainer, ...resumeContainer }}
+				sx={{ ...pageContainer, ...resumeContainer }}
 			>
 				{/* Resume container */}
-				<div style={resumeBox}>
-					<h1 className="resumeTitle" style={resumeTitle}>
+				<Material.Box sx={resumeBox}>
+					<Material.Typography
+						className="resumeTitle"
+						sx={resumeTitle}
+					>
 						RESUME
-					</h1>
+					</Material.Typography>
 
 					{/* Typing effect container */}
-					<div className="typingContainer" style={typingContainer}>
+					<Material.Box
+						className="typingContainer"
+						sx={typingContainer}
+					>
 						<p>
 							Coding is{' '}
-							<span ref={typedTextRef} style={typedText}></span>
-							<span
+							<Material.Typography
+								ref={typedTextRef}
+								sx={typedText}
+							></Material.Typography>
+							<Material.Typography
 								ref={cursorRef}
 								className={isTyping ? 'typing' : ''}
 							>
 								&nbsp;
-							</span>
+							</Material.Typography>
 						</p>
-					</div>
-				</div>
+					</Material.Box>
+				</Material.Box>
 
 				{/* === Resume Code Starts Here === */}
-				<div className="codeBox" style={codeBox}>
+				<Material.Box className="codeBox" sx={codeBox}>
 					{/* Code content */}
-					<div
+					<Material.Box
 						id="codeContent"
-						style={{
+						sx={{
 							...codeContent,
 							...{
 								opacity:
@@ -644,11 +674,11 @@ function Resume({ props }) {
 					>
 						{/* Render the CodeSnippet component here */}
 						<CodeSnippet />
-					</div>
+					</Material.Box>
 					{/* <!-- PLAIN TEXT RESUME --> */}
-					<div
+					<Material.Box
 						className="resumePlainText"
-						style={{
+						sx={{
 							...resumePlainText,
 							...{
 								opacity:
@@ -663,18 +693,18 @@ function Resume({ props }) {
 						}}
 					>
 						<RenderedText />
-					</div>{' '}
-				</div>
+					</Material.Box>{' '}
+				</Material.Box>
 				{/* Resume buttons */}
-				<div id="resumeButtonSpan" style={resumeButtonSpan}>
+				<Material.Box id="resumeButtonSpan" sx={resumeButtonSpan}>
 					{/* Map through the 'resumeButtons' array */}
 					{resumeButtons.map(function (element, index) {
 						return (
-							<button
+							<Material.Button
 								className="resumeButton"
 								key={`resumeButton${index}`}
 								name={element.name}
-								style={{
+								sx={{
 									...resumeButton,
 									...resumeButtonState[element.name],
 								}}
@@ -756,17 +786,17 @@ function Resume({ props }) {
 									}
 								}}
 							>
-								<span>
+								<Material.Typography>
 									{/* Conditional rendering for '<' and '>' based on 'resumeContentState' */}
 									{resumeContentState === 'Code' ? '< ' : ''}
 									{element.span}
 									{resumeContentState === 'Code' ? ' />' : ''}
-								</span>
-							</button>
+								</Material.Typography>
+							</Material.Button>
 						);
 					})}
-				</div>
-			</div>
+				</Material.Box>
+			</Material.Box>
 		</>
 	);
 }

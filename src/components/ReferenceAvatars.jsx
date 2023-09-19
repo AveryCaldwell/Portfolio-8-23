@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { center, cardImage } from './Styles';
+import * as Material from '@mui/material';
+import { center, cardImage } from './Styles-Theme';
 // This function renders the first testimonial avatar content of web app
 function FirstAvatar() {
 	return (
-		<svg
+		<Material.SvgIcon
 			className="center"
-			style={{ ...cardImage, ...center }}
+			sx={{ ...cardImage, ...center }}
 			viewBox="0 0 250 250"
 			xmlns="http://www.w3.org/2000/svg"
 			role="img"
@@ -181,15 +182,15 @@ function FirstAvatar() {
 					/>
 				</g>
 			</g>
-		</svg>
+		</Material.SvgIcon>
 	);
 }
 // This function renders the second testimonial avatar content of web app
 function SecondAvatar() {
 	return (
-		<svg
+		<Material.SvgIcon
 			className="center"
-			style={{ ...cardImage, ...center }}
+			sx={{ ...cardImage, ...center }}
 			viewBox="0 0 250 250"
 			xmlns="http://www.w3.org/2000/svg"
 			role="img"
@@ -326,15 +327,15 @@ function SecondAvatar() {
 					/>
 				</g>
 			</g>
-		</svg>
+		</Material.SvgIcon>
 	);
 }
 // This function renders the third testimonial avatar content of web app
 function ThirdAvatar() {
 	return (
-		<svg
+		<Material.SvgIcon
 			className="center"
-			style={{ ...cardImage, ...center }}
+			sx={{ ...cardImage, ...center }}
 			viewBox="0 0 250 250"
 			xmlns="http://www.w3.org/2000/svg"
 			role="img"
@@ -476,7 +477,7 @@ function ThirdAvatar() {
 					/>
 				</g>
 			</g>
-		</svg>
+		</Material.SvgIcon>
 	);
 }
 export { FirstAvatar, SecondAvatar, ThirdAvatar };

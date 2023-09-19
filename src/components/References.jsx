@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-// import * as Material from "@mui/material";
-import {} from './ResponsiveStyles';
-import { useMediaQuery } from 'react-responsive';
+import * as Material from '@mui/material';
 
 // IMPORT SUBCOMPONENTS
 import { FirstAvatar, SecondAvatar, ThirdAvatar } from './ReferenceAvatars'; // Adjust the path accordingly
@@ -32,7 +30,7 @@ import {
 	general,
 	more,
 	referencesSubtitle,
-} from './Styles';
+} from './Styles-Theme';
 
 // This function renders References content of web app
 function References({ props }) {
@@ -59,10 +57,7 @@ function References({ props }) {
 	// Styling for when the user hovers over the reference card
 	const additionalStyles = {
 		position: 'absolute',
-
 		height: '100%',
-		// background:
-		// 	'linear-gradient( rgba(63,94,251,1) 0%, rgba(134,70,252,1)100%)',
 		transition: 'width 0.4s',
 		overflow: 'hidden',
 		zIndex: 2,
@@ -129,20 +124,20 @@ function References({ props }) {
 	return (
 		<React.Fragment>
 			{/* References Container */}
-			<div
+			<Material.Box
 				className="referencesContainer pageContainer"
-				style={{ ...pageContainer, ...referencesContainer }}
+				sx={{ ...pageContainer, ...referencesContainer }}
 			>
-				<div
+				<Material.Box
 					id="csslines"
-					style={{
+					sx={{
 						position: 'absolute',
 						top: '255px',
 						left: '600px',
 					}}
 				>
-					<div
-						style={{
+					<Material.Box
+						sx={{
 							borderBottom: '3px solid rgba(255, 255, 255,0.7)',
 							borderImage:
 								'linear-gradient(45deg, rgba(255, 255, 255,0.7), rgba(255, 255, 255,0.1)) 1',
@@ -154,8 +149,8 @@ function References({ props }) {
 							top: '-90px',
 						}}
 					/>
-					<div
-						style={{
+					<Material.Box
+						sx={{
 							borderBottom: '3px solid rgba(255, 255, 255,0.7)',
 							borderImage:
 								'linear-gradient(45deg, rgba(255, 255, 255,0.7), rgba(255, 255, 255,0.1)) 1',
@@ -167,8 +162,8 @@ function References({ props }) {
 							top: '265px',
 						}}
 					/>
-					<div
-						style={{
+					<Material.Box
+						sx={{
 							borderBottom: '3px solid rgba(255, 255, 255,0.7)',
 							borderImage:
 								'linear-gradient(45deg, rgba(255, 255, 255,0.7), rgba(255, 255, 255,0.1)) 1',
@@ -180,9 +175,9 @@ function References({ props }) {
 							top: '85px',
 						}}
 					/>
-				</div>
-				<div
-					style={{
+				</Material.Box>
+				<Material.Box
+					sx={{
 						display: 'flex',
 						width: '600px',
 						height: '800px',
@@ -191,14 +186,22 @@ function References({ props }) {
 						justifyContent: 'center',
 					}}
 				>
-					<div className="referencesTitle" style={referencesTitle}>
+					<Material.Box
+						className="referencesTitle"
+						sx={referencesTitle}
+					>
 						REFERENCES
-					</div>
-					<span style={referencesSubtitle}>What's the sitch?</span>
-					<div style={{ height: 100 }}></div>
-				</div>
+					</Material.Box>
+					<Material.Typography
+						component="span"
+						sx={referencesSubtitle}
+					>
+						What's the sitch?
+					</Material.Typography>
+					<Material.Box sx={{ height: 100 }}></Material.Box>
+				</Material.Box>
 
-				<div className="referencesBox" style={referencesBox}>
+				<Material.Box className="referencesBox" sx={referencesBox}>
 					{/* === CARD 1 === */}
 					{cardInfo.map(function (element, index) {
 						let background = {
@@ -209,114 +212,140 @@ function References({ props }) {
 								: 'none',
 						};
 						return (
-							<div className="card first" style={card}>
-								<div
+							<Material.Box className="card first" sx={card}>
+								<Material.Box
 									className="additional first"
-									style={{
+									sx={{
 										...additionalStyles,
 										...background,
 									}}
 									onMouseEnter={() => handleMouseEnter(index)}
 									onMouseLeave={() => handleMouseLeave(index)}
 								>
-									<div className="user-card" style={userCard}>
-										<div
+									<Material.Box
+										className="user-card"
+										sx={userCard}
+									>
+										<Material.Box
 											className="points center"
-											style={{
+											sx={{
 												...userCardStats,
 												...center,
 												...points,
 											}}
 										>
 											Level {element.level}
-										</div>
+										</Material.Box>
 										{/* === CLIP ART === */}
 										{element.avatar}
-									</div>
+									</Material.Box>
 									{/* BACKSIDE OF CARD */}
-									<div
-										style={{
+									<Material.Box
+										sx={{
 											color: 'white',
 											textAlign: 'center',
 											padding: '5px',
 										}}
 									>
-										<div
+										<Material.Box
 											className="more-info"
-											style={moreInfo}
+											sx={moreInfo}
 										>
-											<h1 style={moreInfoTitle}>
-												{element.name}
-											</h1>
-											<div id="title">
-												{element.title}
-											</div>
-											<div
-												className="coords"
-												style={coords}
+											<Material.Typography
+												sx={moreInfoTitle}
 											>
-												<span style={coordsSpan}>
+												{element.name}
+											</Material.Typography>
+											<Material.Box id="title">
+												{element.title}
+											</Material.Box>
+											<Material.Box
+												className="coords"
+												sx={coords}
+											>
+												<Material.Typography
+													component="span"
+													sx={coordsSpan}
+												>
 													{element.company}:
-												</span>
-												<span style={coordsSpan}>
+												</Material.Typography>
+												<Material.Typography
+													component="span"
+													sx={coordsSpan}
+												>
 													{' '}
 													Joined {element.dateJoined}
-												</span>
-											</div>
-											<div
+												</Material.Typography>
+											</Material.Box>
+											<Material.Box
 												className="coords"
-												style={coords}
+												sx={coords}
 											>
-												<span style={coordsSpan}>
+												<Material.Typography
+													component="span"
+													sx={coordsSpan}
+												>
 													{element.location}
-												</span>
-											</div>
-											<div
+												</Material.Typography>
+											</Material.Box>
+											<Material.Box
 												className="stats"
-												style={stats}
+												sx={stats}
 											>
-												<div>
-													<div style={statsTitle}>
+												<Material.Box>
+													<Material.Box
+														sx={statsTitle}
+													>
 														<MailOutlineIcon
-															style={{
+															sx={{
 																verticalAlign:
 																	'middle',
 															}}
 														/>{' '}
 														Email:{' '}
-														<span style={value}>
+														<Material.Typography
+															component="span"
+															sx={value}
+														>
 															{' '}
 															{element.email}{' '}
-														</span>
-													</div>
-												</div>
+														</Material.Typography>
+													</Material.Box>
+												</Material.Box>
 
-												<div></div>
-											</div>
-										</div>
-									</div>
-								</div>
+												<Material.Box></Material.Box>
+											</Material.Box>
+										</Material.Box>
+									</Material.Box>
+								</Material.Box>
 								{/* === FRONT BLERP ON CARD === */}
-								<div className="general" style={general}>
-									<h1 className="cardHeader">
+								<Material.Box className="general" sx={general}>
+									<Material.Typography className="cardHeader">
 										{element.name}
-									</h1>
+									</Material.Typography>
 									<p>{element.about}</p>
-									<span className="more" style={more}>
+									<Material.Typography
+										component="span"
+										className="more"
+										sx={more}
+									>
 										Mouse over the avatar for more info
-									</span>
-								</div>
-							</div>
+									</Material.Typography>
+								</Material.Box>
+							</Material.Box>
 						);
 					})}
-					<div id="referencesButtonSpan" style={referencesButtonSpan}>
+					<Material.Box
+						id="referencesButtonSpan"
+						sx={referencesButtonSpan}
+					>
 						{referencesButtons.map(function (element, index) {
 							return (
-								<button
+								<Material.Button
 									className="referencesButton"
 									key={`referencesButton${index}`}
 									name={element.name}
-									style={{
+									sx={{
 										...referencesButton,
 										...referencesState[element.name],
 									}}
@@ -350,52 +379,16 @@ function References({ props }) {
 										);
 									}}
 								>
-									<span>{element.span}</span>
-								</button>
+									<Material.Typography component="span">
+										{element.span}
+									</Material.Typography>
+								</Material.Button>
 							);
 						})}
-					</div>
-				</div>
+					</Material.Box>
+				</Material.Box>
 				{/* END OF CONTAINER DIV */}
-			</div>{' '}
-			{/* BUTTON SPAN */}
-			{/* <div id="referencesButtonSpan" style={referencesButtonSpan}>
-				{referencesButtons.map(function (element, index) {
-					return (
-						<button
-							className="referencesButton"
-							key={`referencesButton${index}`}
-							name={element.name}
-							style={{
-								...referencesButton,
-								...referencesState[element.name],
-							}}
-							onMouseEnter={(event) => {
-								//console.log(event.target.name);
-								setReferencesHoverButton(event.target.name, {
-									boxShadow:
-										'0 4px 10px rgba(255, 255, 255, 0.7)',
-								});
-							}}
-							onMouseLeave={(event) => {
-								setReferencesHoverButton(event.target.name, {
-									boxShadow:
-										'0 4px 10px rgba(255, 255, 255, 0.0)',
-								});
-							}}
-							onClick={function () {
-								props.setActivePage(element.target);
-								setReferencesHoverButton(element.target, {
-									boxShadow:
-										'0 4px 10px rgba(255, 255, 255, 0.0)',
-								});
-							}}
-						>
-							<span>{element.span}</span>
-						</button>
-					);
-				})}
-			</div> */}
+			</Material.Box>{' '}
 		</React.Fragment>
 	);
 }

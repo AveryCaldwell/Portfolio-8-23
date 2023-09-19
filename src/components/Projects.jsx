@@ -1,16 +1,13 @@
 // Import necessary libraries and styles
 import React, { useRef, useEffect, useState } from 'react';
 import anime from 'animejs'; // Import anime.js library
-// import * as Material from '@mui/material';
-import {} from './ResponsiveStyles';
-import { useMediaQuery } from 'react-responsive';
+import * as Material from '@mui/material';
 
 // STYLING
 import {
 	svgContainer,
 	svgCord,
 	animateSvgStroke1,
-	svgButton,
 	pageContainer,
 	projectTitle,
 	projectContent,
@@ -29,7 +26,7 @@ import {
 	prev,
 	projectsButtonSpan,
 	projectsButton,
-} from './Styles';
+} from './Styles-Theme';
 
 // Import images and icons
 import Tech from '../assets/Tech.png';
@@ -160,7 +157,7 @@ function Projects({ props }) {
 	const projectsButtons = [
 		{
 			target: 'GitHub',
-			span: <GitHubIcon style={github} />,
+			span: <GitHubIcon sx={github} />,
 			name: 'GitHub',
 		},
 		{ target: 'Edu', span: 'Back', name: 'Edu' },
@@ -173,62 +170,74 @@ function Projects({ props }) {
 	}
 	return (
 		<>
-			<div
+			<Material.Box
 				className="projectContainer pageContainer"
-				style={pageContainer}
+				sx={pageContainer}
 			>
-				<div style={{ width: '500px' }}>
-					<h1 className="projectTitle" style={projectTitle}>
+				<Material.Box sx={{ width: '500px' }}>
+					<Material.Typography
+						className="projectTitle"
+						sx={projectTitle}
+					>
 						PROJECTS
-					</h1>
+					</Material.Typography>
 					{/* Slideshow */}
-					<div className="projectContent" style={projectContent}>
-						<div className="textSlideshow" style={textSlideshow}>
+					<Material.Box
+						className="projectContent"
+						sx={projectContent}
+					>
+						<Material.Box
+							className="textSlideshow"
+							sx={textSlideshow}
+						>
 							{projects.map((project, index) => (
 								// Project slide
-								<div
+								<Material.Box
 									key={index}
 									className={`projectSlides fade ${
 										index === slideIndex ? 'active' : ''
 									}`}
-									style={{
+									sx={{
 										...fade,
 										...projectSlides,
 										opacity: index === slideIndex ? 1 : 0,
 									}}
 								>
 									{/* Slide Title */}
-									<div
+									<Material.Box
 										id="slideTitle"
 										className="numbertext"
-										style={slideTitle}
+										sx={slideTitle}
 									>
 										{project.title}
-									</div>
+									</Material.Box>
 									{/* Project Details */}
-									<div className="projectDetails">
+									<Material.Box className="projectDetails">
 										<p>{project.description}</p>
 										<p>{project.technologies}</p>
 										{/* Icons */}
-										<div
+										<Material.Box
 											className="iconContainer"
-											style={iconContainer}
-										></div>
-									</div>
-								</div>
+											sx={iconContainer}
+										></Material.Box>
+									</Material.Box>
+								</Material.Box>
 							))}
-						</div>
-					</div>
+						</Material.Box>
+					</Material.Box>
 					{/* Buttons */}
-					<div id="projectsButtonSpan" style={projectsButtonSpan}>
+					<Material.Box
+						id="projectsButtonSpan"
+						sx={projectsButtonSpan}
+					>
 						{/* Other Buttons */}
 						{projectsButtons.map(function (element, index) {
 							return (
-								<button
+								<Material.Button
 									className="projectsButton"
 									key={`projectsButton${index}`}
 									name={element.name}
-									style={{
+									sx={{
 										...projectsButton,
 										...projectsButtonState[element.name],
 									}}
@@ -269,66 +278,73 @@ function Projects({ props }) {
 									}}
 								>
 									<span>{element.span}</span>
-								</button>
+								</Material.Button>
 							);
 						})}
-					</div>
-				</div>
+					</Material.Box>
+				</Material.Box>
 
 				{/* Computer and Slideshow */}
-				<div className="computerContainer" style={computerContainer}>
-					<div className="slideshowContainer">
+				<Material.Box
+					className="computerContainer"
+					sx={computerContainer}
+				>
+					<Material.Box className="slideshowContainer">
 						{projects.map((project, index) => (
-							<div
+							<Material.Box
 								key={index}
 								className={`mySlides fade ${
 									index === slideIndex ? 'active' : ''
 								}`}
-								style={{
+								sx={{
 									...fade,
 									...mySlides,
 									opacity: index === slideIndex ? 1 : 0,
 								}}
 							>
-								<img
-									src={project.image}
-									style={computerImage}
-									alt={`Slide ${index + 1}`}
-								/>
-							</div>
+								<Material.ImageListItem>
+									<img
+										src={project.image}
+										style={computerImage}
+										alt={`Slide ${index + 1}`}
+									/>
+								</Material.ImageListItem>
+							</Material.Box>
 						))}
 
 						{/* Next & previous buttons */}
-						<a
+						<Material.Link
 							className="prev"
-							style={{ ...arrows, ...prev }}
+							sx={{ ...arrows, ...prev }}
 							onClick={() => plusSlides(1)}
 						>
 							❮
-						</a>
-						<a
+						</Material.Link>
+						<Material.Link
 							className="next"
-							style={{ ...arrows, ...next }}
+							sx={{ ...arrows, ...next }}
 							onClick={() => plusSlides(1)}
 						>
 							❯
-						</a>
-					</div>
-					<img
-						src={comp}
-						alt="comp"
-						className="computer"
-						style={computer}
-					/>
-				</div>
-			</div>
+						</Material.Link>
+					</Material.Box>
+					<Material.ImageListItem>
+						<img
+							src={comp}
+							alt="comp"
+							className="computer"
+							style={computer}
+						/>
+					</Material.ImageListItem>
+				</Material.Box>
+			</Material.Box>
 			{/* SVG Container */}
-			<div className="svgContainer" style={svgContainer}>
-				<svg
+			<Material.Box className="svgContainer" sx={svgContainer}>
+				<Material.SvgIcon
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="616.321 -210 744.3 1389"
 					className="svg-cord"
-					style={svgCord}
+					sx={svgCord}
 				>
 					<path
 						ref={svgPathRef} // Use the ref to target the SVG path for animation
@@ -339,8 +355,8 @@ function Projects({ props }) {
 						d="M869-207q137 214-71 346-196 76-177-11 36-95 125 56c66 127-103 197-119 165-6-11-18-90 106-118a50 50 0 1 1 267 705"
 						style={animateSvgStroke1} // Apply the animateSvgStroke1 styling
 					/>
-				</svg>
-			</div>
+				</Material.SvgIcon>
+			</Material.Box>
 		</>
 	);
 }

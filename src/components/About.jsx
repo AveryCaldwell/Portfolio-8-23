@@ -1,6 +1,5 @@
 import * as React from 'react';
-import {} from './ResponsiveStyles';
-import { useMediaQuery } from 'react-responsive';
+import * as Material from '@mui/material';
 // Import styling
 import {
 	aboutContent,
@@ -22,60 +21,12 @@ import {
 	waveIcon,
 	aboutIntroBox,
 	aboutOverflow,
-} from './Styles';
-import {
-	mobileAboutContent,
-	mobileAboutTitle,
-	mobileAboutIntroBox,
-	mobileAboutText,
-	mobileWaveIcon,
-	mobileAboutSubtitle,
-	mobileAboutButtonSpan,
-	mobileSkillSubtitle,
-	mobileSubSkillBox,
-	mobileAboutBubbleItem,
-	mobileAboutSkill,
-	mobileAboutButton,
-	mobileBox,
-	mobilePageContainer,
-} from './ResponsiveStyles';
+} from './Styles-Theme';
+
 // ICON
 import { WavingHand } from '@mui/icons-material';
 // This function component represents the About section of the web app
 function About({ props }) {
-	// RESPONSIVE DESIGN
-	const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
-	const responsiveAboutBubbleItem = isMobile
-		? mobileAboutBubbleItem
-		: aboutBubbleItem;
-	// const responsiveAboutContainer = isMobile
-	// 	? mobileAboutContainer
-	// 	: pageContainer;
-	const responsiveAboutContent = isMobile ? mobileAboutContent : aboutContent;
-	const responsiveAboutTitle = isMobile ? mobileAboutTitle : aboutTitle;
-	const responsiveAboutIntroBox = isMobile
-		? mobileAboutIntroBox
-		: aboutIntroBox;
-	const responsiveAboutText = isMobile ? mobileAboutText : aboutText;
-	const responsiveWaveIcon = isMobile ? mobileWaveIcon : waveIcon;
-
-	const responsiveAboutSubtitle = isMobile
-		? mobileAboutSubtitle
-		: aboutSubtitle;
-	const responsiveAboutButtonSpan = isMobile
-		? mobileAboutButtonSpan
-		: aboutButtonSpan;
-	const responsiveTechBox = isMobile ? mobileBox : techBox;
-	const responsiveSkillSubtitle = isMobile
-		? mobileSkillSubtitle
-		: skillSubtitle;
-	const responsiveSkillBox = isMobile ? mobileBox : skillBox;
-	const responsiveSubSkillBox = isMobile ? mobileSubSkillBox : subSkillBox;
-	const responsiveAboutSkill = isMobile ? mobileAboutSkill : aboutSkill;
-	const responsiveAboutButton = isMobile ? mobileAboutButton : aboutButton;
-	const responsivePageContainer = isMobile
-		? mobilePageContainer
-		: pageContainer;
 	// Arrays containing frontend and backend technology data
 	const frontendData = [
 		'HTML/CSS',
@@ -108,22 +59,22 @@ function About({ props }) {
 	];
 	// Render frontend and backend skills lists
 	const renderedFrontendSkills = frontendData.map((skill, index) => (
-		<li
+		<Material.List
 			key={index}
 			className="aboutBubbleItem"
-			style={{ ...responsiveAboutBubbleItem, ...aboutFrontSkill }}
+			sx={{ ...aboutBubbleItem, ...aboutFrontSkill }}
 		>
-			{skill}
-		</li>
+			<Material.ListItem>{skill}</Material.ListItem>
+		</Material.List>
 	));
 	const renderedBackendSkills = backendData.map((skill, index) => (
-		<li
+		<Material.List
 			key={index}
 			className="aboutBubbleItem"
-			style={{ ...responsiveAboutBubbleItem, ...aboutBackSkill }}
+			sx={{ ...aboutBubbleItem, ...aboutBackSkill }}
 		>
-			{skill}
-		</li>
+			<Material.ListItem>{skill}</Material.ListItem>
+		</Material.List>
 	));
 
 	// State to manage button styles for hovering
@@ -154,22 +105,21 @@ function About({ props }) {
 		React.useState('Introduction');
 
 	return (
-		<div
+		<Material.Box
 			className="aboutContainer pageContainer"
-			// style={pageContainer}
-			style={responsivePageContainer}
+			sx={pageContainer}
 		>
-			<div className="aboutTitle" style={responsiveAboutTitle}>
+			<Material.Box className="aboutTitle" sx={aboutTitle}>
 				ABOUT ME
-			</div>
+			</Material.Box>
 			{/* Content Container */}
-			<div id="ContentContainer" style={{ marginLeft: '20px' }}>
+			<Material.Box id="ContentContainer" sx={{ marginLeft: '20px' }}>
 				{/* About Content Sections */}
-				<div className="aboutContent" style={responsiveAboutContent}>
+				<Material.Box className="aboutContent" sx={aboutContent}>
 					{/* Introduction Section */}
-					<div
+					<Material.Box
 						id="Introduction"
-						style={{
+						sx={{
 							...{
 								opacity:
 									aboutContentState === 'Introduction'
@@ -180,36 +130,35 @@ function About({ props }) {
 						}}
 					>
 						{/* Introduction content */}
-						<div id="aboutIntroBox" style={responsiveAboutIntroBox}>
-							<div
+						<Material.Box id="aboutIntroBox" sx={aboutIntroBox}>
+							<Material.Typography
 								id="aboutSubtitle"
-								style={responsiveAboutSubtitle}
+								sx={aboutSubtitle}
 							>
-								HI, I'M AVERY!{' '}
-								<WavingHand sx={responsiveWaveIcon} />
+								HI, I'M AVERY! <WavingHand sx={waveIcon} />
 								{/* TODO: add animation to wave? */}
-							</div>
-							<div id="aboutText1" style={responsiveAboutText}>
+							</Material.Typography>
+							<Material.Typography id="aboutText1" sx={aboutText}>
 								Innovative Business Woman turned Developer
 								currently based in Seattle, Washington, with
 								over 6 years of professional experience.
-							</div>
-							<div id="aboutText2" style={responsiveAboutText}>
+							</Material.Typography>
+							<Material.Typography id="aboutText2" sx={aboutText}>
 								I'm a Freelancer Front-end React & Full Stack
 								Developer working in web development and content
 								creation. I enjoy using my marketing knowledge
 								to create user friendly UX/UI.
-							</div>
-							<div id="aboutText3" style={responsiveAboutText}>
+							</Material.Typography>
+							<Material.Typography id="aboutText3" sx={aboutText}>
 								Career Changer, Adventurer, Woman in Business,
 								Creative Thinker + Web Dev
-							</div>
-						</div>
-					</div>
+							</Material.Typography>
+						</Material.Box>
+					</Material.Box>
 					{/* Skills Section */}
-					<div
+					<Material.Box
 						id="Skills"
-						style={{
+						sx={{
 							...{
 								opacity:
 									aboutContentState === 'Skills' ? '1' : '0',
@@ -218,51 +167,48 @@ function About({ props }) {
 						}}
 					>
 						{/* Frontend and Backend skills */}
-						<div style={aboutOverflow}>
-							<div className="techBox" style={responsiveTechBox}>
-								<div
+						<Material.Box sx={aboutOverflow}>
+							<Material.Box className="techBox" sx={techBox}>
+								<Material.Typography
 									className="aboutSubtitle"
-									style={responsiveSkillSubtitle}
+									sx={skillSubtitle}
 								>
 									Front End Skills
-								</div>
-								<div style={responsiveAboutSkill}>
-									<div style={responsiveSubSkillBox}>
+								</Material.Typography>
+								<Material.Box sx={aboutSkill}>
+									<Material.Typography sx={subSkillBox}>
 										{renderedFrontendSkills}
-									</div>
-								</div>
-							</div>
-							<div
-								className="skillBox"
-								style={responsiveSkillBox}
-							>
-								<div
+									</Material.Typography>
+								</Material.Box>
+							</Material.Box>
+							<Material.Box className="skillBox" sx={skillBox}>
+								<Material.Typography
 									className="aboutSubtitle"
-									style={responsiveSkillSubtitle}
+									sx={skillSubtitle}
 								>
 									Back End Skills
-								</div>
-								<div style={responsiveAboutSkill}>
-									<div style={responsiveSubSkillBox}>
+								</Material.Typography>
+								<Material.Box sx={aboutSkill}>
+									<Material.Typography sx={subSkillBox}>
 										{renderedBackendSkills}
-									</div>
-								</div>
-								<div className="aboutBubble"></div>
-							</div>
-						</div>
-					</div>
-				</div>
+									</Material.Typography>
+								</Material.Box>
+								<Material.Typography className="aboutBubble"></Material.Typography>
+							</Material.Box>
+						</Material.Box>
+					</Material.Box>
+				</Material.Box>
 
 				{/* Buttons to navigate between content sections */}
-				<div id="aboutButtonSpan" style={responsiveAboutButtonSpan}>
+				<Material.Box id="aboutButtonSpan" sx={aboutButtonSpan}>
 					{aboutButtons.map(function (element, index) {
 						return (
-							<button
+							<Material.Button
 								className="aboutButton"
 								key={`aboutButton${index}`}
 								name={element.name}
-								style={{
-									...responsiveAboutButton,
+								sx={{
+									...aboutButton,
 									...aboutButtonState[element.name],
 								}}
 								onMouseEnter={(event) => {
@@ -325,13 +271,15 @@ function About({ props }) {
 									}
 								}}
 							>
-								<span>{element.span}</span>
-							</button>
+								<Material.Typography>
+									{element.span}
+								</Material.Typography>
+							</Material.Button>
 						);
 					})}
-				</div>
-			</div>
-		</div>
+				</Material.Box>
+			</Material.Box>
+		</Material.Box>
 	);
 }
 

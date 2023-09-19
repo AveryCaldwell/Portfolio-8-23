@@ -3,10 +3,6 @@ import * as Material from '@mui/material';
 import avesLogo from '../assets/aves.png';
 import avery from '../assets/avery.png';
 
-// MUI COMPONENT
-import { Typography } from '@mui/material';
-// React Responsive
-import { useMediaQuery } from 'react-responsive';
 // STYLING
 import {
 	navBox,
@@ -19,7 +15,8 @@ import {
 	menuIcon,
 	toolbarImage,
 	navLinks,
-} from './Styles';
+	navIcons,
+} from './Styles-Theme';
 // ICONS
 import {
 	Article,
@@ -42,52 +39,7 @@ function Nav({ props }) {
 		bottom: false,
 		right: false,
 	});
-	const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
-	const mobileNavBox = {
-		width: '100vw',
-		textAlign: 'center',
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-		cursor: 'pointer',
-		maxWidth: '768px',
-		color: 'white',
-		justifyContent: 'space-evenly',
-		// position: 'absolute',
-		// width: '100%',
-		// height: '100vh',
-	};
-	const defaultNavBox = {
-		// placeholder styling
-		height: '100%',
-		color: 'white',
-		width: 250,
-	};
-	// const mobileNavLinks = {
-	// 	display: 'flex',
-	// 	color: '#EEE',
-	// 	position: 'absolute',
-	// 	alignItems: 'center',
-	// 	width: '100%',
-	// };
-	const mobileNavIcons = {
-		display: 'none',
-	};
-	const navIcons = {
-		display: 'block',
-	};
-	const navList = { display: 'block' };
-	const mobileNavList = {
-		display: 'flex',
-		alignItems: 'center',
-		flexDirection: 'column',
-		padding: 0,
-		marign: 0,
-	};
-	const responsiveNavList = isMobile ? mobileNavList : navList;
-	const responsiveNavBox = isMobile ? mobileNavBox : defaultNavBox;
-	// const responsiveNavLinks = isMobile ? mobileNavLinks : navLinks;
-	const responsiveNavIcons = isMobile ? mobileNavIcons : navIcons;
+
 	// Toggle the drawer's open/close status
 	const toggleDrawer = (anchor, open) => (event) => {
 		if (
@@ -103,7 +55,7 @@ function Nav({ props }) {
 	const iemsList = (anchor) => (
 		<Material.Box
 			id="navbarBox"
-			sx={responsiveNavBox}
+			sx={navBox}
 			// sx={{
 			// 	width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250,
 			// 	height: '100%',
@@ -114,10 +66,11 @@ function Nav({ props }) {
 			onKeyDown={toggleDrawer(anchor, false)}
 		>
 			{/* Logo */}
-			<Material.Box className="navBox" sx={navBox}>
-				<img
-					src={avesLogo}
-					style={isMobile ? { display: 'none' } : avesImg}
+			<Material.Box component="nav" className="navBox" sx={navBox}>
+				<Material.CardMedia
+					component="img"
+					image={avesLogo}
+					sx={avesImg}
 					onClick={() => {
 						handleClick('Landing');
 						setOpen(false);
@@ -126,94 +79,86 @@ function Nav({ props }) {
 				/>
 			</Material.Box>
 			{/* Name and title */}
-			<Typography sx={navTitleText}>Avery Caldwell</Typography>{' '}
-			<Typography sx={navSubtitleText}>Full Stack Developer</Typography>
+			<Material.List>
+				<Material.ListItem
+					component="div"
+					id="nested-list-subheader"
+					sx={navTitleText}
+				>
+					Avery Caldwell
+				</Material.ListItem>{' '}
+				<Material.ListItem
+					component="div"
+					id="nested-list-subheader"
+					sx={navSubtitleText}
+				>
+					Full Stack Developer
+				</Material.ListItem>
+			</Material.List>
 			<Material.Divider />
 			{/* Navigation links */}
 			<Material.List id="navList">
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Landing')}
 				>
-					<Material.ListItemIcon sx={responsiveNavIcons}>
+					<Material.ListItemIcon sx={navIcons}>
 						{<Home />}
 					</Material.ListItemIcon>
-					<Material.ListItemText
-						primary={'Home'}
-						sx={responsiveNavList}
-						// sx={navLinks}
-					/>
+					<Material.ListItemText primary={'Home'} sx={navLinks} />
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('About')}
 				>
-					<Material.ListItemIcon sx={responsiveNavIcons}>
+					<Material.ListItemIcon sx={navIcons}>
 						{<Info />}
 					</Material.ListItemIcon>
-					<Material.ListItemText
-						primary={'About'}
-						sx={responsiveNavList}
-						// sx={navLinks}
-					/>
+					<Material.ListItemText primary={'About'} sx={navLinks} />
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Edu')}
 				>
-					<Material.ListItemIcon sx={responsiveNavIcons}>
+					<Material.ListItemIcon sx={navIcons}>
 						{<School />}
 					</Material.ListItemIcon>
 					<Material.ListItemText
 						primary={'Education'}
-						sx={responsiveNavList}
-						// sx={navLinks}
+						sx={navLinks}
 					/>
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Projects')}
 				>
-					<Material.ListItemIcon sx={responsiveNavIcons}>
+					<Material.ListItemIcon sx={navIcons}>
 						{<FolderOpen />}
 					</Material.ListItemIcon>
-					<Material.ListItemText
-						primary={'Projects'}
-						sx={responsiveNavList}
-						// sx={navLinks}
-					/>
+					<Material.ListItemText primary={'Projects'} sx={navLinks} />
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Resume')}
 				>
-					<Material.ListItemIcon sx={responsiveNavIcons}>
+					<Material.ListItemIcon sx={navIcons}>
 						{<Article />}
 					</Material.ListItemIcon>
-					<Material.ListItemText
-						primary={'Resume'}
-						sx={responsiveNavList}
-						// sx={navLinks}
-					/>
+					<Material.ListItemText primary={'Resume'} sx={navLinks} />
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('References')}
 				>
-					<Material.ListItemIcon sx={responsiveNavIcons}>
+					<Material.ListItemIcon sx={navIcons}>
 						{<PermContactCalendar />}
 					</Material.ListItemIcon>
 					<Material.ListItemText
 						primary={'References'}
-						sx={responsiveNavList}
-						// sx={navLinks}
+						sx={navLinks}
 					/>
 				</Material.ListItemButton>
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Contact')}
 				>
-					<Material.ListItemIcon sx={responsiveNavIcons}>
+					<Material.ListItemIcon sx={navIcons}>
 						{<AlternateEmail />}
 					</Material.ListItemIcon>
-					<Material.ListItemText
-						primary={'Contact'}
-						sx={responsiveNavList}
-						// sx={navLinks}
-					/>
+					<Material.ListItemText primary={'Contact'} sx={navLinks} />
 				</Material.ListItemButton>
 			</Material.List>
 			<Material.Divider />
@@ -224,43 +169,31 @@ function Nav({ props }) {
 
 	// Render the top header
 	return (
-		<div>
-			<Material.Toolbar
-				sx={{
-					...navToolbar,
-					background: isMobile
-						? 'transparent'
-						: 'rgba(255, 255, 255, 0.3)',
-				}}
-			>
+		<Material.Box>
+			<Material.Toolbar sx={navToolbar}>
 				{/* Menu icon */}
-				<Menu
-					sx={{
-						...menuIcon,
-						background: isMobile
-							? 'rgba(0,0,0,0.3)'
-							: 'transparent',
-					}}
-					onClick={toggleDrawer('left', true)}
-				/>
+				<Menu sx={menuIcon} onClick={toggleDrawer('left', true)} />
+
 				{/* Drawer */}
-				<div
-					style={{
+				<Material.Box
+					sx={{
 						...navTitle,
 						...{
 							opacity: props.currentNavNameState ? '1' : '0',
-							display: isMobile ? 'none' : 'block', // Hide on mobile
+							// display: isMobile ? 'none' : 'block', // Hide on mobile
 						},
 					}}
 				>
-					<span> Avery Caldwell // Developer</span>
-
-					<img
+					<Material.Typography>
+						Avery Caldwell // Developer
+					</Material.Typography>
+					<Material.CardMedia
+						component="img"
 						alt="Avery Headshot"
-						src={avery}
-						style={toolbarImage}
+						image={avery}
+						sx={toolbarImage}
 					/>
-				</div>
+				</Material.Box>
 			</Material.Toolbar>
 			{['left'].map((anchor) => (
 				<React.Fragment key={anchor}>
@@ -273,7 +206,7 @@ function Nav({ props }) {
 					</Material.Drawer>
 				</React.Fragment>
 			))}
-		</div>
+		</Material.Box>
 	);
 }
 
