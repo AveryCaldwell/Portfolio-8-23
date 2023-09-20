@@ -157,7 +157,7 @@ function Projects({ props }) {
 	const projectsButtons = [
 		{
 			target: 'GitHub',
-			span: <GitHubIcon sx={github} />,
+			span: <GitHubIcon style={github} />,
 			name: 'GitHub',
 		},
 		{ target: 'Edu', span: 'Back', name: 'Edu' },
@@ -277,7 +277,9 @@ function Projects({ props }) {
 										}
 									}}
 								>
-									<span>{element.span}</span>
+									<Material.Typography>
+										{element.span}
+									</Material.Typography>
 								</Material.Button>
 							);
 						})}

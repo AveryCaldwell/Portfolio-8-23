@@ -192,10 +192,7 @@ function References({ props }) {
 					>
 						REFERENCES
 					</Material.Box>
-					<Material.Typography
-						component="span"
-						sx={referencesSubtitle}
-					>
+					<Material.Typography sx={referencesSubtitle}>
 						What's the sitch?
 					</Material.Typography>
 					<Material.Box sx={{ height: 100 }}></Material.Box>
@@ -264,13 +261,11 @@ function References({ props }) {
 												sx={coords}
 											>
 												<Material.Typography
-													component="span"
 													sx={coordsSpan}
 												>
 													{element.company}:
 												</Material.Typography>
 												<Material.Typography
-													component="span"
 													sx={coordsSpan}
 												>
 													{' '}
@@ -282,7 +277,6 @@ function References({ props }) {
 												sx={coords}
 											>
 												<Material.Typography
-													component="span"
 													sx={coordsSpan}
 												>
 													{element.location}
@@ -304,7 +298,6 @@ function References({ props }) {
 														/>{' '}
 														Email:{' '}
 														<Material.Typography
-															component="span"
 															sx={value}
 														>
 															{' '}
@@ -325,7 +318,6 @@ function References({ props }) {
 									</Material.Typography>
 									<p>{element.about}</p>
 									<Material.Typography
-										component="span"
 										className="more"
 										sx={more}
 									>
@@ -379,7 +371,7 @@ function References({ props }) {
 										);
 									}}
 								>
-									<Material.Typography component="span">
+									<Material.Typography>
 										{element.span}
 									</Material.Typography>
 								</Material.Button>

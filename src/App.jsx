@@ -1,14 +1,14 @@
 import React from 'react';
 import * as Material from '@mui/material';
 import Prism from 'prismjs'; // Import Prism.js
-// import 'prismjs/themes/your-theme.css'; // Import your chosen theme
 // MUI
 import theme from './theme';
 import { ThemeProvider } from '@emotion/react';
-// import anime from 'animejs'; // Import anime.js library
 // import useMediaQuery from '@mui/material/useMediaQuery';
 
-//import { styles, appContainer } from './components/Styles-Theme';
+// Styling
+import { appContainer, pagesContainer } from './components/Styles-Theme';
+
 //Components
 import Nav from './components/Nav';
 import Landing from './components/Landing';
@@ -20,8 +20,6 @@ import References from './components/References';
 import Contact from './components/Contact';
 import LogoSlider from './components/LogoSlider';
 // import Footer from './components/Footer';
-// Styling
-import { appContainer, pagesContainer } from './components/Styles-Theme';
 
 // Function to set the active page and perform page transition animations
 function App() {
@@ -132,9 +130,9 @@ function App() {
 						sx={pagesContainer}
 					>
 						<LogoSlider props={{ setActivePage }} />
-						{/* <Landing
+						<Landing
 							props={{ setActivePage, currentNavNameState }}
-						/> */}
+						/>
 						{/* <About props={{ setActivePage }} /> */}
 						{/* <Edu props={{ setActivePage }} /> */}
 						{/* <SvgContainer props={{ setActivePage }} /> */}

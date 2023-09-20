@@ -97,7 +97,7 @@ function Nav({ props }) {
 			</Material.List>
 			<Material.Divider />
 			{/* Navigation links */}
-			<Material.List id="navList">
+			<Material.Box id="navList">
 				<Material.ListItemButton
 					onClick={() => props.setActivePage('Landing')}
 				>
@@ -160,7 +160,7 @@ function Nav({ props }) {
 					</Material.ListItemIcon>
 					<Material.ListItemText primary={'Contact'} sx={navLinks} />
 				</Material.ListItemButton>
-			</Material.List>
+			</Material.Box>
 			<Material.Divider />
 			{/* Close button */}
 			<Close sx={closeIcon} onClick={toggleDrawer('left', false)} />
@@ -180,10 +180,10 @@ function Nav({ props }) {
 						...navTitle,
 						...{
 							opacity: props.currentNavNameState ? '1' : '0',
-							// display: isMobile ? 'none' : 'block', // Hide on mobile
 						},
 					}}
 				>
+					{/* // display: isMobile ? 'none' : 'block', // Hide on mobile */}
 					<Material.Typography>
 						Avery Caldwell // Developer
 					</Material.Typography>

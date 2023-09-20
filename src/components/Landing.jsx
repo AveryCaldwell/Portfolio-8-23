@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react';
 import anime from 'animejs/lib/anime.es.js';
-import { PulseButton, LandingCTA } from './Styles-Theme';
+// import { PulseButton, LandingCTA } from './Styles-Theme';
 import * as Material from '@mui/material';
-
 import {
 	landingHeader,
 	landingTitle,
@@ -11,7 +10,7 @@ import {
 	landingButton,
 	letter,
 	landingContainer,
-	landingButtonSpan,
+	landingButtonBox,
 } from './Styles-Theme';
 import { ArrowCircleRightOutlined } from '@mui/icons-material';
 
@@ -102,15 +101,15 @@ function Landing({ props }) {
 					>
 						React/Full Stack Developer
 						{/* Button to go to next page */}
-						<Material.Box sx={landingButtonSpan}>
-							<LandingCTA>Show me more! </LandingCTA>{' '}
+						<Material.Box sx={landingButtonBox}>
+							{/* <LandingCTA>Show me more! </LandingCTA>{' '}
 							<PulseButton
 								id="pulseButton"
 								onClick={() => props.setActivePage('About')}
-								sx={landingButton}
+								style={landingButton}
 							>
 								<ArrowCircleRightOutlined sx={landingButton} />
-							</PulseButton>
+							</PulseButton> */}
 						</Material.Box>
 					</Material.Box>
 				</Material.Box>
