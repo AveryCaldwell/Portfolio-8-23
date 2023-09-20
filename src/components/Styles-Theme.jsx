@@ -272,16 +272,21 @@ export const closeIcon = (theme) => ({
 /* ============================== LOGO SLIDING SECTION ============================== */
 export const logoSliderContainer = (theme) => ({
 	position: 'absolute',
+	height: '120vh',
 	color: 'white',
 	background: `linear-gradient(
         rgba(255, 255, 255, 1),
         rgba(255, 255, 255, 0.25)
     )`,
-	height: '120vh',
-	width: '350px',
 	borderRadius: '250px',
-	left: '5%',
+
 	top: '35%',
+	display: 'flex',
+	[theme.breakpoints.up('xs')]: { width: '0px', left: '1%' },
+	[theme.breakpoints.up('sm')]: { width: '250px', left: '2%' },
+	[theme.breakpoints.up('md')]: { width: '300px', left: '3%' },
+	[theme.breakpoints.up('lg')]: { width: '350px', left: '4%' },
+	[theme.breakpoints.up('xl')]: { width: '350px', left: '5%' },
 });
 export const logoSliderImage = (theme) => ({
 	pointerEvents: 'none',
@@ -293,6 +298,11 @@ export const logoSliderImage = (theme) => ({
 	borderRadius: '50%',
 	left: '24px',
 	transition: 'all 1.5s ease',
+	[theme.breakpoints.up('xs')]: { width: '0px', height: '0px' },
+	[theme.breakpoints.up('sm')]: { width: '200px', height: '200px' },
+	[theme.breakpoints.up('md')]: { width: '250px', height: '250px' },
+	[theme.breakpoints.up('lg')]: { width: '300px', height: '300px' },
+	[theme.breakpoints.up('xl')]: { width: '300px', height: '300px' },
 });
 export const logoSliderCircle = (theme) => ({
 	position: 'absolute',
@@ -338,18 +348,71 @@ export const landingHeader = (theme) => ({
 	left: '40%',
 	top: '22%',
 	height: '50px',
-	fontSize: '50px',
 	fontFamily: 'Roboto',
+	[theme.breakpoints.up('xs')]: {
+		top: '-50px',
+		fontSize: '45px',
+		margin: 'auto',
+		alignItems: 'center',
+	},
+	[theme.breakpoints.up('sm')]: {
+		top: 0,
+		fontSize: '40px',
+		left: '50%',
+	},
+	[theme.breakpoints.up('md')]: {
+		top: '5%',
+		fontSize: '45px',
+		left: '40%',
+	},
+	[theme.breakpoints.up('lg')]: {
+		top: '15%',
+		fontSize: '50px',
+		left: '40%',
+	},
+	[theme.breakpoints.up('xl')]: {
+		top: '22%',
+		fontSize: '50px',
+		left: '40%',
+	},
 });
 export const landingText = (theme) => ({
 	display: 'inline-block',
-	fontSize: '32px',
 	position: 'relative',
-	left: '40%',
-	top: '40%',
 	color: 'white',
 	marginTop: '15px',
 	width: '400px',
+	[theme.breakpoints.up('xs')]: {
+		top: '25%',
+		fontSize: '24px',
+		width: '300px',
+		margin: 'auto',
+		left: '30%',
+	},
+	[theme.breakpoints.up('sm')]: {
+		top: '20%',
+		fontSize: '26px',
+		left: '50%',
+		width: '300px',
+	},
+	[theme.breakpoints.up('md')]: {
+		top: '30%',
+		fontSize: '26px',
+		left: '40%',
+		width: '375px',
+	},
+	[theme.breakpoints.up('lg')]: {
+		top: '35%',
+		fontSize: '32px',
+		left: '40%',
+		width: '400px',
+	},
+	[theme.breakpoints.up('xl')]: {
+		top: '35%',
+		fontSize: '32px',
+		left: '40%',
+		width: '400px',
+	},
 });
 export const landingTitle = (theme) => ({
 	border: 'solid 1px white',
@@ -362,7 +425,6 @@ export const landingTitle = (theme) => ({
 	fontSize: '1em',
 });
 export const landingSubtitle = (theme) => ({
-	marginTop: '15px',
 	marginBottom: '15px',
 	borderRadius: '36px',
 	width: '400px',
@@ -371,6 +433,39 @@ export const landingSubtitle = (theme) => ({
 	fontFamily: 'Roboto',
 	position: 'absolute',
 	fontSize: '1em',
+	[theme.breakpoints.up('xs')]: {
+		fontSize: '1em',
+		background: 'red',
+		width: '300px',
+		margin: 'auto',
+		letterSpacing: '3px',
+		marginTop: '10px',
+	},
+	[theme.breakpoints.up('sm')]: {
+		fontSize: '.75em',
+		background: 'orange',
+		width: '300px',
+		letterSpacing: '3px',
+		marginTop: '15px',
+	},
+	[theme.breakpoints.up('md')]: {
+		fontSize: '.80em',
+		background: 'yellow',
+		width: '375px',
+		marginTop: '20px',
+	},
+	[theme.breakpoints.up('lg')]: {
+		fontSize: '1em',
+		background: 'green',
+		width: '400px',
+		marginTop: '25px',
+	},
+	[theme.breakpoints.up('xl')]: {
+		fontSize: '1em',
+		background: 'blue',
+		width: '400px',
+		marginTop: '20px',
+	},
 });
 
 export const landingButton = (theme) => ({

@@ -7,7 +7,13 @@ import { ThemeProvider } from '@emotion/react';
 // import useMediaQuery from '@mui/material/useMediaQuery';
 
 // Styling
-import { appContainer, pagesContainer } from './components/Styles-Theme';
+import {
+	appContainer,
+	pagesContainer,
+	logoSliderCircle,
+	logoSliderContainer,
+	logoSliderImage,
+} from './components/Styles-Theme';
 
 //Components
 import Nav from './components/Nav';
@@ -133,7 +139,7 @@ function App() {
 						<Landing
 							props={{ setActivePage, currentNavNameState }}
 						/>
-						{/* <About props={{ setActivePage }} /> */}
+						<About props={{ setActivePage }} />
 						{/* <Edu props={{ setActivePage }} /> */}
 						{/* <SvgContainer props={{ setActivePage }} /> */}
 						{/* <Projects props={{ setActivePage, currentCordState }} /> */}

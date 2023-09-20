@@ -17,6 +17,7 @@ function LogoSlider() {
 				alt="aves"
 				sx={logoSliderImage}
 				image={avesLogo}
+				className="logoSliderImage"
 			/>
 			{/* Display a circular element for logo animation */}
 			<Material.Box

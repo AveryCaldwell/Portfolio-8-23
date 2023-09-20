@@ -107,9 +107,11 @@ function Landing({ props }) {
 								id="pulseButton"
 								onClick={() => props.setActivePage('About')}
 								style={landingButton}
-							>
-								<ArrowCircleRightOutlined sx={landingButton} />
-							</PulseButton> */}
+							></PulseButton>*/}
+							<ArrowCircleRightOutlined
+								sx={landingButton}
+								onClick={() => props.setActivePage('About')}
+							/>
 						</Material.Box>
 					</Material.Box>
 				</Material.Box>
