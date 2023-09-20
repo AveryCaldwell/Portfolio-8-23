@@ -302,23 +302,37 @@ export const logoSliderImage = (theme) => ({
 	position: 'relative',
 	width: '300px',
 	height: '300px',
-	display: 'inline-block',
+
 	top: '15px',
 	borderRadius: '50%',
 	left: '24px',
 	transition: 'all 1.5s ease',
-	[theme.breakpoints.up('xs')]: { width: '0px', height: '0px' },
-	[theme.breakpoints.up('sm')]: { width: '200px', height: '200px' },
-	[theme.breakpoints.up('md')]: { width: '250px', height: '250px' },
-	[theme.breakpoints.up('lg')]: { width: '300px', height: '300px' },
-	[theme.breakpoints.up('xl')]: { width: '300px', height: '300px' },
+	[theme.breakpoints.up('xs')]: { display: 'none' },
+	[theme.breakpoints.up('sm')]: {
+		display: 'inline-block',
+		width: '200px',
+		height: '200px',
+	},
+	[theme.breakpoints.up('md')]: {
+		display: 'inline-block',
+		width: '250px',
+		height: '250px',
+	},
+	[theme.breakpoints.up('lg')]: {
+		display: 'inline-block',
+		width: '300px',
+		height: '300px',
+	},
+	[theme.breakpoints.up('xl')]: {
+		display: 'inline-block',
+		width: '300px',
+		height: '300px',
+	},
 });
 export const logoSliderCircle = (theme) => ({
 	position: 'absolute',
 	color: 'white',
 	border: ' 5px solid white',
-	height: '400px',
-	width: '400px',
 	borderRadius: '50%',
 	left: '-26px',
 	bottom: '-30px',
@@ -326,31 +340,63 @@ export const logoSliderCircle = (theme) => ({
 	display: 'block',
 	transition: 'all 0.5s ease',
 	opacity: '0',
+	[theme.breakpoints.up('xs')]: {
+		display: 'none',
+	},
+	[theme.breakpoints.up('sm')]: {
+		display: 'block',
+		width: '300px',
+		height: '300px',
+		bottom: '65px',
+	},
+	[theme.breakpoints.up('md')]: {
+		display: 'block',
+		width: '350px',
+		height: '350px',
+		bottom: '15px',
+	},
+	[theme.breakpoints.up('lg')]: {
+		display: 'block',
+		width: '400px',
+		height: '400px',
+		bottom: '-30px',
+	},
+	[theme.breakpoints.up('xl')]: {
+		display: 'block',
+		width: '400px',
+		height: '400px',
+		bottom: '-30px',
+	},
 });
 /* ============================== LANDING SECTION ============================== */
 export const landingContainer = (theme) => ({
 	overflow: 'hidden',
 	[theme.breakpoints.up('xs')]: {
 		minHeight: '400px',
-		marginTop: '50%',
-		width: '100vw',
+		// marginTop: '50%',
+		width: '100%',
 		marginBottom: 'calc(50vh - 200px)',
 	},
 	[theme.breakpoints.up('sm')]: {
 		minHeight: '600px',
-		marginTop: 'calc(50vh - 300px)',
+		// marginTop: 'calc(50vh - 300px)',
+		marginBottom: 'calc(50vh - 300px)',
 	},
 	[theme.breakpoints.up('md')]: {
 		minHeight: '600px',
-		marginTop: 'calc(50vh - 300px)',
+		// marginTop: 'calc(50vh - 300px)',
+		marginBottom: 'calc(50vh - 300px)',
 	},
 	[theme.breakpoints.up('lg')]: {
 		minHeight: '800px',
-		marginTop: 'calc(50vh - 400px)',
+		maxHeight: '800px',
+		marginBottom: 'calc(50vh - 400px)',
+		//marginTop: 'calc(50vh - 400px)',
 	},
 	[theme.breakpoints.up('xl')]: {
 		minHeight: '800px',
-		marginTop: 'calc(50vh - 400px)',
+		marginBottom: 'calc(50vh - 400px)',
+		//marginTop: 'calc(50vh - 400px)',
 	},
 });
 export const landingHeader = (theme) => ({
@@ -363,13 +409,14 @@ export const landingHeader = (theme) => ({
 	[theme.breakpoints.up('xs')]: {
 		top: '-50px',
 		fontSize: '45px',
-		margin: 'auto',
+		margin: 'auto 0',
 		alignItems: 'center',
 	},
 	[theme.breakpoints.up('sm')]: {
 		top: 0,
 		fontSize: '40px',
-		left: '50%',
+		// left: '40%',
+		marginLeft: '25px',
 	},
 	[theme.breakpoints.up('md')]: {
 		top: '5%',
@@ -377,14 +424,14 @@ export const landingHeader = (theme) => ({
 		left: '40%',
 	},
 	[theme.breakpoints.up('lg')]: {
-		top: '15%',
+		top: '10%',
 		fontSize: '50px',
-		left: '40%',
+		left: '35%',
 	},
 	[theme.breakpoints.up('xl')]: {
-		top: '22%',
+		top: '15%',
 		fontSize: '50px',
-		left: '40%',
+		left: '35%',
 	},
 });
 export const landingText = (theme) => ({
@@ -409,19 +456,19 @@ export const landingText = (theme) => ({
 	[theme.breakpoints.up('md')]: {
 		top: '30%',
 		fontSize: '26px',
-		left: '40%',
+		left: '35%',
 		width: '375px',
 	},
 	[theme.breakpoints.up('lg')]: {
 		top: '35%',
 		fontSize: '32px',
-		left: '40%',
+		left: '35%',
 		width: '400px',
 	},
 	[theme.breakpoints.up('xl')]: {
 		top: '35%',
 		fontSize: '32px',
-		left: '40%',
+		left: '35%',
 		width: '400px',
 	},
 });
@@ -447,31 +494,33 @@ export const landingSubtitle = (theme) => ({
 	fontSize: '1em',
 	[theme.breakpoints.up('xs')]: {
 		fontSize: '1em',
-		width: '300px',
-		margin: 'auto',
-		letterSpacing: '3px',
+		width: '275px',
 		marginTop: '10px',
+		marginBottom: '10px',
 	},
 	[theme.breakpoints.up('sm')]: {
 		fontSize: '.75em',
 		width: '300px',
-		letterSpacing: '3px',
 		marginTop: '15px',
+		marginBottom: '15px',
 	},
 	[theme.breakpoints.up('md')]: {
 		fontSize: '.80em',
 		width: '375px',
-		marginTop: '20px',
+		marginTop: '15px',
+		marginBottom: '15px',
 	},
 	[theme.breakpoints.up('lg')]: {
 		fontSize: '1em',
 		width: '400px',
-		marginTop: '25px',
+		marginTop: '15px',
+		marginBottom: '15px',
 	},
 	[theme.breakpoints.up('xl')]: {
 		fontSize: '1em',
 		width: '400px',
-		marginTop: '20px',
+		marginTop: '15px',
+		marginBottom: '15px',
 	},
 });
 
@@ -541,17 +590,52 @@ export const letter = (theme) => ({
 export const aboutTitle = (theme) => ({
 	color: 'white',
 	display: 'flex',
-	fontSize: '80px',
 	fontFamily: 'Roboto',
 	textShadow: `4px 4px rgba(0,0,0,0.1)`,
-	width: '440px',
-	left: '2.5%',
-	top: '67%',
+	whiteSpace: 'nowrap',
+	padding: '5px',
 	position: 'relative',
+
+	[theme.breakpoints.up('xs')]: {
+		fontSize: '50px',
+		flexDirection: 'column',
+		width: '300px',
+		justifyContent: 'center',
+		writingMode: 'vertical-lr',
+		top: '-20%',
+		letterSpacing: '1rem',
+	},
+	[theme.breakpoints.up('sm')]: {
+		fontSize: '45px',
+		top: '-20%',
+		width: '400px',
+		writingMode: 'horizontal-tb',
+		letterSpacing: 'normal',
+	},
+	[theme.breakpoints.up('md')]: {
+		fontSize: '50px',
+		top: '-17%',
+		width: '440px',
+		writingMode: 'horizontal-tb',
+		letterSpacing: 'normal',
+	},
+	[theme.breakpoints.up('lg')]: {
+		fontSize: '80px',
+		top: '-10%',
+		width: '440px',
+		writingMode: 'horizontal-tb',
+		letterSpacing: 'normal',
+	},
+	[theme.breakpoints.up('xl')]: {
+		fontSize: '80px',
+		width: '440px',
+		top: '-20%',
+		left: '2.5%',
+		writingMode: 'horizontal-tb',
+		letterSpacing: 'normal',
+	},
 });
 export const aboutContent = (theme) => ({
-	width: '700px',
-	height: '650px',
 	position: 'relative',
 	padding: '15px',
 	borderRadius: '36px',
@@ -564,6 +648,43 @@ export const aboutContent = (theme) => ({
 	fontFamily: 'Roboto',
 	textShadow: `1px 1px rgba(0,0,0,0.1)`,
 	overflow: 'hidden',
+	[theme.breakpoints.up('xs')]: {
+		//minHeight: '400px',
+		background: 'red',
+		width: '400px',
+		height: '600px',
+		//bottom: '75%',
+	},
+	[theme.breakpoints.up('sm')]: {
+		//minHeight: '500px',
+		background: 'orange',
+		width: '400px',
+		height: '600px',
+		//bottom: '65%',
+		//left: '15%',
+	},
+	[theme.breakpoints.up('md')]: {
+		//minHeight: '600px',
+		background: 'yellow',
+		width: '575px',
+		height: '600px',
+		//bottom: '55%',
+		//left: '15%',
+	},
+	[theme.breakpoints.up('lg')]: {
+		width: '700px',
+		height: '650px',
+		background: 'green',
+		//bottom: '30%',
+		//left: '10%',
+	},
+	[theme.breakpoints.up('xl')]: {
+		width: '700px',
+		height: '650px',
+		background: 'blue',
+		//bottom: '40%',
+		//left: '8%',
+	},
 });
 export const aboutIntroBox = (theme) => ({
 	width: '600px',
