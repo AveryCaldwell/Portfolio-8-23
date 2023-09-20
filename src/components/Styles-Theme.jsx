@@ -127,20 +127,19 @@ export const pageContainer = (theme) => ({
 
 /* ============================== NAV SECTION ============================== */
 export const navTitle = (theme) => ({
-	fontSize: '1.75rem',
-	// paddingRight: '24px',
-	paddingRight: '3%',
+	paddingRight: '5%',
 	position: 'absolute',
 	bottom: '10px',
+	color: 'white',
 	right: '10px',
 	color: 'rgba(255,255,255,0.8)',
 	transition: 'all 1.5s ease',
 	textShadow: `2px 2px rgba(0,0,0,0.2)`,
-	[theme.breakpoints.up('xs')]: { display: 'none' },
-	[theme.breakpoints.up('sm')]: { display: 'none' },
-	[theme.breakpoints.up('md')]: { display: 'block' },
-	[theme.breakpoints.up('lg')]: { display: 'block' },
-	[theme.breakpoints.up('xl')]: { display: 'block' },
+	[theme.breakpoints.up('xs')]: { display: 'none', fontSize: '1rem' },
+	[theme.breakpoints.up('sm')]: { display: 'none', fontSize: '1.5rem' },
+	[theme.breakpoints.up('md')]: { display: 'block', fontSize: '1.75rem' },
+	[theme.breakpoints.up('lg')]: { display: 'block', fontSize: '1.75rem' },
+	[theme.breakpoints.up('xl')]: { display: 'block', fontSize: '1.75rem' },
 
 	//opacity: 0.5,
 });
@@ -176,7 +175,8 @@ export const navIcons = (theme) => ({
 });
 export const navTitleText = (theme) => ({
 	fontFamily: 'Roboto',
-	// textAlign: 'center',
+	display: 'flex',
+	textAlign: 'center',
 	pt: 4,
 	color: 'white',
 	fontSize: 24,
@@ -195,11 +195,21 @@ export const navToolbar = (theme) => ({
 	zIndex: '5',
 	padding: '5px',
 	width: '100vw',
-	[theme.breakpoints.up('xs')]: { background: 'transparent' },
-	[theme.breakpoints.up('sm')]: { background: 'transparent' },
-	[theme.breakpoints.up('md')]: { background: 'rgba(255, 255, 255, 0.3)' },
-	[theme.breakpoints.up('lg')]: { background: 'rgba(255, 255, 255, 0.3)' },
-	[theme.breakpoints.up('xl')]: { background: 'rgba(255, 255, 255, 0.3)' },
+	[theme.breakpoints.up('xs')]: {
+		background: 'transparent',
+	},
+	[theme.breakpoints.up('sm')]: {
+		background: 'transparent',
+	},
+	[theme.breakpoints.up('md')]: {
+		background: 'rgba(255, 255, 255, 0.3)',
+	},
+	[theme.breakpoints.up('lg')]: {
+		background: 'rgba(255, 255, 255, 0.3)',
+	},
+	[theme.breakpoints.up('xl')]: {
+		background: 'rgba(255, 255, 255, 0.3)',
+	},
 });
 export const toolbarImage = (theme) => ({
 	height: '25px',
@@ -208,9 +218,8 @@ export const toolbarImage = (theme) => ({
 	transform: 'scale(2)',
 	overflow: 'hidden',
 	display: 'inline-block',
-	// border: ' 1px solid white',
-	// boxShadow: '0 0 10px 10px white',
-	marginLeft: 25,
+	marginLeft: 5,
+	right: '10px',
 });
 export const menuIcon = (theme) => ({
 	height: '50px',

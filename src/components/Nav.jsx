@@ -184,15 +184,15 @@ function Nav({ props }) {
 					}}
 				>
 					{/* // display: isMobile ? 'none' : 'block', // Hide on mobile */}
-					<Material.Typography>
+					<Material.Typography sx={navTitle}>
 						Avery Caldwell // Developer
+						<Material.CardMedia
+							component="img"
+							alt="Avery Headshot"
+							image={avery}
+							sx={toolbarImage}
+						/>
 					</Material.Typography>
-					<Material.CardMedia
-						component="img"
-						alt="Avery Headshot"
-						image={avery}
-						sx={toolbarImage}
-					/>
 				</Material.Box>
 			</Material.Toolbar>
 			{['left'].map((anchor) => (
