@@ -332,7 +332,9 @@ export const landingContainer = (theme) => ({
 	overflow: 'hidden',
 	[theme.breakpoints.up('xs')]: {
 		minHeight: '400px',
-		marginTop: 'calc(50vh - 20px)',
+		marginTop: '50%',
+		width: '100vw',
+		marginBottom: 'calc(50vh - 200px)',
 	},
 	[theme.breakpoints.up('sm')]: {
 		minHeight: '600px',
@@ -433,6 +435,7 @@ export const landingTitle = (theme) => ({
 	fontFamily: 'Roboto',
 	fontSize: '1em',
 });
+
 export const landingSubtitle = (theme) => ({
 	marginBottom: '15px',
 	borderRadius: '36px',
@@ -444,7 +447,6 @@ export const landingSubtitle = (theme) => ({
 	fontSize: '1em',
 	[theme.breakpoints.up('xs')]: {
 		fontSize: '1em',
-		background: 'red',
 		width: '300px',
 		margin: 'auto',
 		letterSpacing: '3px',
@@ -452,26 +454,22 @@ export const landingSubtitle = (theme) => ({
 	},
 	[theme.breakpoints.up('sm')]: {
 		fontSize: '.75em',
-		background: 'orange',
 		width: '300px',
 		letterSpacing: '3px',
 		marginTop: '15px',
 	},
 	[theme.breakpoints.up('md')]: {
 		fontSize: '.80em',
-		background: 'yellow',
 		width: '375px',
 		marginTop: '20px',
 	},
 	[theme.breakpoints.up('lg')]: {
 		fontSize: '1em',
-		background: 'green',
 		width: '400px',
 		marginTop: '25px',
 	},
 	[theme.breakpoints.up('xl')]: {
 		fontSize: '1em',
-		background: 'blue',
 		width: '400px',
 		marginTop: '20px',
 	},
